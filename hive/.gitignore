@@ -1,0 +1,5 @@
+fleet.json
+hooks.sock
+cost-ledger.jsonl
+crashes/
+.DS_Store

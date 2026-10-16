@@ -1,0 +1,30 @@
+{
+  "godId": "god",
+  "agents": {
+    "god": {
+      "id": "god",
+      "name": "Michael",
+      "provider": "antigravity",
+      "cwd": "F:\\videosystem\\myown",
+      "isGod": true,
+      "role": "orchestrator (god)",
+      "capabilities": [],
+      "status": "idle",
+      "cwdValid": true,
+      "archived": false,
+      "lastSeen": 1789887926833
+    },
+    "jim-mu70pv1n": {
+      "id": "jim-mu70pv1n",
+      "name": "Jim",
+      "provider": "antigravity",
+      "cwd": "F:\\videosystem",
+      "role": "Full-stack developer for videosystem. Inspect code, build features, and run tests.",
+      "capabilities": [],
+      "status": "idle",
+      "cwdValid": true,
+      "archived": false,
+      "lastSeen": 1789887934713
+    }
+  }
+}

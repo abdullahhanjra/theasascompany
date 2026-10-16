@@ -1,0 +1,38 @@
+{"ts":1789738740317,"kind":"app-start","version":"0.4.6","packaged":false,"appPath":"F:\\videosystem\\munder-difflin","exePath":"F:\\videosystem\\munder-difflin\\node_modules\\electron\\dist\\electron.exe","electron":"32.3.3","platform":"win32"}
+{"ts":1789738740369,"kind":"drop","reason":"no-inbox","from":"scheduler","to":"god","id":"2026-09-18T13-39-00-367Z-890c68"}
+{"ts":1789738740370,"kind":"message","from":"scheduler","to":"god","act":"request","subject":"Hourly ops standup","id":"2026-09-18T13-39-00-367Z-890c68","delivered":[]}
+{"ts":1789738741996,"kind":"spawn","agentId":"god","name":"Michael","isGod":true}
+{"ts":1789738755492,"kind":"agent-exit","agentId":"god","exitCode":1,"signal":null,"abnormal":true,"tailPath":"F:\\videosystem\\myown\\hive\\crashes\\2026-09-18T13-39-15-448Z-god.log"}
+{"ts":1789738755495,"kind":"archive","agentId":"god","archived":true}
+{"ts":1789738830454,"kind":"message","from":"human","to":"god","act":"request","subject":"Task from the human","id":"2026-09-18T13-40-30-451Z-0d4646","delivered":["god"]}
+{"ts":1789738883417,"kind":"spawn","agentId":"god","name":"Michael","isGod":true}
+{"ts":1789738895283,"kind":"message","from":"human","to":"god","act":"request","subject":"Task from the human","id":"2026-09-18T13-41-35-279Z-2616e0","delivered":["god"]}
+{"ts":1789738901344,"kind":"agent-exit","agentId":"god","exitCode":1,"signal":null,"abnormal":true,"tailPath":"F:\\videosystem\\myown\\hive\\crashes\\2026-09-18T13-41-41-342Z-god.log"}
+{"ts":1789738901348,"kind":"archive","agentId":"god","archived":true}
+{"ts":1789739550110,"kind":"spawn","agentId":"jim-mu70pv1n","name":"Jim","isGod":false}
+{"ts":1789739560804,"kind":"agent-exit","agentId":"jim-mu70pv1n","exitCode":1,"signal":null,"abnormal":true,"tailPath":"F:\\videosystem\\myown\\hive\\crashes\\2026-09-18T13-52-40-803Z-jim-mu70pv1n.log"}
+{"ts":1789739560809,"kind":"archive","agentId":"jim-mu70pv1n","archived":true}
+{"ts":1789739635011,"kind":"message","from":"human","to":"god","act":"request","subject":"Task from the human","id":"2026-09-18T13-53-55-007Z-f82007","delivered":["god"]}
+{"ts":1789740803726,"kind":"spawn","agentId":"god","name":"Michael","isGod":true}
+{"ts":1789740805027,"kind":"spawn","agentId":"jim-mu70pv1n","name":"Jim","isGod":false}
+{"ts":1789740822344,"kind":"agent-exit","agentId":"god","exitCode":1,"signal":null,"abnormal":true,"tailPath":"F:\\videosystem\\myown\\hive\\crashes\\2026-09-18T14-13-42-343Z-god.log"}
+{"ts":1789740822349,"kind":"archive","agentId":"god","archived":true}
+{"ts":1789740823359,"kind":"agent-exit","agentId":"jim-mu70pv1n","exitCode":1,"signal":null,"abnormal":true,"tailPath":"F:\\videosystem\\myown\\hive\\crashes\\2026-09-18T14-13-43-358Z-jim-mu70pv1n.log"}
+{"ts":1789740823362,"kind":"archive","agentId":"jim-mu70pv1n","archived":true}
+{"ts":1789741147944,"kind":"spawn","agentId":"god","name":"Michael","isGod":true}
+{"ts":1789741153385,"kind":"spawn","agentId":"jim-mu70pv1n","name":"Jim","isGod":false}
+{"ts":1789741174925,"kind":"agent-exit","agentId":"god","exitCode":1,"signal":null,"abnormal":true,"tailPath":"F:\\videosystem\\myown\\hive\\crashes\\2026-09-18T14-19-34-924Z-god.log"}
+{"ts":1789741174928,"kind":"archive","agentId":"god","archived":true}
+{"ts":1789741180547,"kind":"agent-exit","agentId":"jim-mu70pv1n","exitCode":1,"signal":null,"abnormal":true,"tailPath":"F:\\videosystem\\myown\\hive\\crashes\\2026-09-18T14-19-40-547Z-jim-mu70pv1n.log"}
+{"ts":1789741180551,"kind":"archive","agentId":"jim-mu70pv1n","archived":true}
+{"ts":1789741527852,"kind":"message","from":"human","to":"god","act":"request","subject":"Task from the human","id":"2026-09-18T14-25-27-849Z-0189c7","delivered":["god"]}
+{"ts":1789741888807,"kind":"spawn","agentId":"god","name":"Michael","isGod":true}
+{"ts":1789741890872,"kind":"spawn","agentId":"jim-mu70pv1n","name":"Jim","isGod":false}
+{"ts":1789742340927,"kind":"message","from":"scheduler","to":"god","act":"request","subject":"Hourly ops standup","id":"2026-09-18T14-39-00-924Z-db3b06","delivered":["god"]}
+{"ts":1789745644971,"kind":"role","agentId":"god","role":"god — runs the floor, triages requests, escalates only critical calls to you"}
+{"ts":1789745940979,"kind":"message","from":"scheduler","to":"god","act":"request","subject":"Hourly ops standup","id":"2026-09-18T15-39-00-976Z-e08947","delivered":["god"]}
+{"ts":1789887898318,"kind":"app-start","version":"0.4.6","packaged":false,"appPath":"F:\\videosystem\\munder-difflin","exePath":"F:\\videosystem\\munder-difflin\\node_modules\\electron\\dist\\electron.exe","electron":"32.3.3","platform":"win32"}
+{"ts":1789887898380,"kind":"archive","agentId":"jim-mu70pv1n","archived":true}
+{"ts":1789887906120,"kind":"message","from":"scheduler","to":"god","act":"request","subject":"Hourly ops standup","id":"2026-09-20T07-05-06-089Z-4fd35a","delivered":["god"]}
+{"ts":1789887926835,"kind":"spawn","agentId":"god","name":"Michael","isGod":true}
+{"ts":1789887934715,"kind":"spawn","agentId":"jim-mu70pv1n","name":"Jim","isGod":false}

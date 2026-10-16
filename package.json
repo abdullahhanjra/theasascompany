@@ -1,0 +1,24 @@
+{
+  "name": "theboringcompany",
+  "version": "1.0.0",
+  "description": "Autonomous AI Software Enterprise Operating System & Multi-Agent Runtime",
+  "main": "hive/bin/hive-proxy.cjs",
+  "scripts": {
+    "train": "node scripts/train-agents.js",
+    "mcp": "node scripts/design-mcp-server.js"
+  },
+  "keywords": [
+    "multi-agent",
+    "autonomous-agents",
+    "ai-software-company",
+    "the-boring-company",
+    "ai-orchestration",
+    "llm-agents"
+  ],
+  "author": "Abdullah Hanjra <youtubrabdullah1626@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/youtubrabdullah1626/theboringcompany.git"
+  },
+  "license": "MIT"
+}
