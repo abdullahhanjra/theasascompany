@@ -1,0 +1,31 @@
+name: Reality Gate CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  reality-gate:
+    name: Reality Gate Verification (${{ matrix.os }} - Node ${{ matrix.node-version }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        node-version: [18.x, 20.x, 22.x]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Run Reality Gate Test Suite (Native Test Runner)
+        run: npm test
+
+      - name: Verify CLI Dispatch Demo (Machine Proof)
+        run: npm run demo

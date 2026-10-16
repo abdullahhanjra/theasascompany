@@ -1,19 +1,31 @@
 {
   "name": "theboringcompany",
   "version": "1.0.0",
-  "description": "Autonomous AI Software Enterprise Operating System & Multi-Agent Runtime",
-  "main": "hive/bin/hive-proxy.cjs",
+  "description": "Autonomous AI Software Enterprise OS & Multi-Agent Runtime Framework",
+  "main": "cli.js",
+  "bin": {
+    "boring-company": "./cli.js",
+    "theboringcompany": "./cli.js"
+  },
   "scripts": {
+    "start": "node cli.js",
+    "test": "node --test test/reality-gate.test.js",
+    "demo": "node cli.js --task \"Optimize transaction throughput and prevent deadlock\"",
     "train": "node scripts/train-agents.js",
     "mcp": "node scripts/design-mcp-server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "keywords": [
     "multi-agent",
     "autonomous-agents",
     "ai-software-company",
     "the-boring-company",
-    "ai-orchestration",
-    "llm-agents"
+    "reality-gate",
+    "adversarial-sparring",
+    "claudex-loop",
+    "ai-orchestration"
   ],
   "author": "Abdullah Hanjra <youtubrabdullah1626@gmail.com>",
   "repository": {

@@ -1,0 +1,3 @@
+# Optional Python dependencies for vector memory palace and data inspection
+chromadb>=0.4.0
+sqlite3-api>=0.1.0; python_version < "3.0"
