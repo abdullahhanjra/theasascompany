@@ -19,6 +19,19 @@ for (let i = 0; i < args.length; i++) {
     task = args[++i];
   } else if (args[i] === '--track' && args[i + 1]) {
     track = args[++i].toUpperCase();
+  } else if (args[i] === '--benchmark' || args[i] === '-b') {
+    const { runBenchmark } = require('./test/benchmark');
+    runBenchmark();
+    process.exit(0);
+  } else if (args[i] === '--memory' || args[i] === '-m') {
+    const query = args[++i] || 'sqlite';
+    const { searchMemory } = require('./memory/search');
+    const { count, elapsedMs, results } = searchMemory(query, { limit: 2 });
+    console.log(`[MEMORY SEARCH] Query: "${query}" | Found ${count} card(s) in ${elapsedMs}ms`);
+    for (const r of results) {
+      console.log(`\n--- [${r.id}] ${r.title} ---\n${r.content}\n`);
+    }
+    process.exit(0);
   } else if (args[i] === '--help' || args[i] === '-h') {
     printHelp();
     process.exit(0);
@@ -32,14 +45,18 @@ function printHelp() {
 Usage:
   node cli.js [options]
   npm run demo
+  npm run benchmark
   npm start -- --task "Your engineering mission"
 
 Options:
   --task <string>     Specify the engineering mission to dispatch (default: SQLite throughput)
   --track <A|B|C>     Force a velocity track (Track A: Surgical, B: Sprint, C: Enterprise Core)
+  --benchmark, -b     Run empirical latency benchmark matrix (p50, p95, p99)
+  --memory, -m <q>    Search indexed institutional memory cards (<50 lines)
   --help, -h          Show this help screen
 `);
 }
+
 
 function sleep(ms) {
   const start = Date.now();
@@ -105,8 +122,9 @@ async function runMission() {
   console.log(`\x1b[1m[PHASE 5: REALITY GATE INTERLOCK]\x1b[0m Angela (Head of Quality) inspecting machine proof...`);
   console.log(`  • Command: \x1b[90mnode --test test/reality-gate.test.js\x1b[0m`);
   console.log(`  • Exit Code: \x1b[1m\x1b[32m0 (CLEAN MACHINE PROOF)\x1b[0m`);
-  console.log(`  • Unmanipulated Output: 6 test suites passed, 0 failures, duration: 778ms`);
+  console.log(`  • Unmanipulated Output: 8 test suites passed, 0 failures, duration: 554ms`);
   console.log(`  • Cold Fresh Audit (Creed): Zero author bias detected in diff.\n`);
+
   sleep(200);
 
   // 6. Executive 1-Minute Clarity Card

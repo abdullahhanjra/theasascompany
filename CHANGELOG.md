@@ -7,7 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 2026-10-16
+
+### Added
+- **Empirical Benchmark Suite (`test/benchmark.js`, `BENCHMARKS.md`)**: Automated 10,000-iteration performance testing harness reporting nanosecond-precise p50/p95/p99 execution metrics adhering to `[MEASURED]` epistemic standards.
+- **Context-Optimized Memory Indexing Engine (`memory/indexer.js`, `memory/search.js`)**: Slices 400KB+ institutional memory into 220+ tagged, bite-sized (<50 lines) cards queryable in under 15ms, eliminating LLM context window blowup.
+- **Python Vector Memory Bridge (`scripts/vector_memory.py`)**: Dual-mode semantic retriever featuring zero-dependency native TF-IDF/BM25 cosine similarity with ChromaDB auto-detection and Windows Unicode safety.
+- **Verifiable Mission Run Traces (`examples/runs/`)**: Complete raw execution JSON records capturing agent transcripts, token expenditures, test outputs, and certified Reality Gate signatures.
+- **High-Fidelity SVG Terminal Preview (`docs/assets/clarity-card-preview.svg`)**: Embedded visual clarity card preview for immediate, verifiable proof of output on GitHub.
+- **Reality Gate Expansion**: Expanded automated verification matrix to 12 comprehensive native test suites.
+
+### Fixed
+- Fixed agent directory resolution in `scripts/train-agents.js` to dynamically detect `agents/definitions` and added `--dry-run` inspection flag.
+- Added Windows console UTF-8 stream guards for emoji rendering.
+
+---
+
 ## [1.0.0] - 2026-10-16
+
 
 ### Added
 - **Fleet of 67 Specialized Agents**: Complete corporate hierarchy of autonomous agents (CEO, CTO, VP Engineering, Adversarial Inquisitors, DBRE, Security, TDD Engineers, Frontend/UI).

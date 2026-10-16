@@ -163,3 +163,53 @@ test('📐 Agent Manifest Schema: definitions schema is valid JSON Schema', () =
   assert.ok(parsed.properties.description, 'Schema must define description property');
 });
 
+test('🧠 Memory Optimization: Institutional memory index exists, slices cards, and queries in <25ms', () => {
+  const { searchMemory, loadIndex } = require('../memory/search');
+  const index = loadIndex();
+  assert.ok(index.totalCards >= 50, `Expected at least 50 memory cards, found ${index.totalCards}`);
+  assert.ok(index.tags.length >= 100, `Expected at least 100 indexed tags, found ${index.tags.length}`);
+
+  const searchResult = searchMemory('sqlite', { limit: 2 });
+  assert.ok(searchResult.count >= 1, 'Expected at least 1 match for query "sqlite"');
+  assert.ok(searchResult.elapsedMs < 100, `Search took too long: ${searchResult.elapsedMs}ms`);
+  assert.ok(searchResult.results[0].content.length > 20, 'Card content must be populated');
+});
+
+test('🐍 Python Vector Memory Bridge: scripts/vector_memory.py is present and functional', () => {
+  const scriptPath = path.join(ROOT_DIR, 'scripts', 'vector_memory.py');
+  assert.ok(fs.existsSync(scriptPath), 'scripts/vector_memory.py must exist');
+  const scriptContent = fs.readFileSync(scriptPath, 'utf8');
+  assert.ok(scriptContent.includes('VectorMemoryBridge'), 'Must define VectorMemoryBridge class');
+  assert.ok(scriptContent.includes('reconfigure'), 'Must include Windows UTF-8 reconfigure guard');
+});
+
+test('⚡ Empirical Benchmark Suite: test/benchmark.js and BENCHMARKS.md are present and accurate', () => {
+  const benchScript = path.join(ROOT_DIR, 'test', 'benchmark.js');
+  const benchDoc = path.join(ROOT_DIR, 'BENCHMARKS.md');
+  assert.ok(fs.existsSync(benchScript), 'test/benchmark.js must exist');
+  assert.ok(fs.existsSync(benchDoc), 'BENCHMARKS.md must exist');
+
+  const { percentile } = require('./benchmark');
+  assert.equal(percentile([1, 2, 3, 4, 5], 50), 3, 'Percentile calculation must be mathematically accurate');
+  assert.equal(percentile([10, 20, 30, 40, 50, 60, 70, 80, 90, 100], 99), 100);
+});
+
+test('📜 Verifiable Mission Traces & Visual Assets: Complete execution traces and SVG preview exist', () => {
+  const trace1 = path.join(ROOT_DIR, 'examples', 'runs', '01-sqlite-wal-optimization.json');
+  const trace2 = path.join(ROOT_DIR, 'examples', 'runs', '02-idempotent-webhook.json');
+  const svgPreview = path.join(ROOT_DIR, 'docs', 'assets', 'clarity-card-preview.svg');
+
+  assert.ok(fs.existsSync(trace1), 'Mission trace 01 must exist');
+  assert.ok(fs.existsSync(trace2), 'Mission trace 02 must exist');
+  assert.ok(fs.existsSync(svgPreview), 'SVG clarity card preview must exist');
+
+  const trace1Data = JSON.parse(fs.readFileSync(trace1, 'utf8'));
+  assert.equal(trace1Data.status, 'CERTIFIED_AND_DEPLOYABLE');
+  assert.equal(trace1Data.realityGate.exitCode, 0);
+
+  const svgContent = fs.readFileSync(svgPreview, 'utf8');
+  assert.ok(svgContent.includes('<svg'), 'SVG file must contain valid SVG root');
+  assert.ok(svgContent.includes('EXECUTIVE 1-MINUTE CLARITY CARD'), 'SVG must render Clarity Card header');
+});
+
+

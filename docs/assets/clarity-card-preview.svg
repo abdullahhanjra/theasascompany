@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0D13" />
+      <stop offset="100%" stop-color="#11141E" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22C55E" stop-opacity="0.2" />
+      <stop offset="50%" stop-color="#22C55E" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#22C55E" stop-opacity="0.2" />
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <rect x="20" y="20" width="840" height="340" rx="14" fill="url(#bg)" stroke="#223048" stroke-width="1.5" filter="url(#cardShadow)" />
+  
+  <!-- Window Header -->
+  <circle cx="50" cy="50" r="6" fill="#EF4444" />
+  <circle cx="70" cy="50" r="6" fill="#F59E0B" />
+  <circle cx="90" cy="50" r="6" fill="#10B981" />
+  <text x="120" y="54" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="12" font-weight="600">boring-company-os — Executive Mission Terminal</text>
+  <rect x="730" y="40" width="110" height="22" rx="4" fill="#064E3B" stroke="#059669" stroke-width="1" />
+  <text x="742" y="55" fill="#34D399" font-family="monospace" font-size="11" font-weight="700">EXIT CODE: 0</text>
+
+  <!-- Divider -->
+  <line x1="20" y1="72" x2="860" y2="72" stroke="#1E293B" stroke-width="1" />
+
+  <!-- Clarity Card Container -->
+  <rect x="45" y="90" width="790" height="245" rx="8" fill="#080A0F" stroke="url(#borderGrad)" stroke-width="1.2" />
+
+  <!-- Clarity Card Header -->
+  <text x="440" y="122" fill="#22C55E" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="800" text-anchor="middle" letter-spacing="1">
+    ╔══════════════════════════════════════════════════════════════════════════════════╗
+  </text>
+  <text x="440" y="142" fill="#22C55E" font-family="'Courier New', Courier, monospace" font-size="13" font-weight="800" text-anchor="middle" letter-spacing="2">
+    EXECUTIVE 1-MINUTE CLARITY CARD (CERTIFIED)
+  </text>
+  <text x="440" y="160" fill="#22C55E" font-family="'Courier New', Courier, monospace" font-size="14" font-weight="800" text-anchor="middle" letter-spacing="1">
+    ╠══════════════════════════════════════════════════════════════════════════════════╣
+  </text>
+
+  <!-- Body Content -->
+  <g font-family="'Courier New', Courier, monospace" font-size="12" fill="#E2E8F0">
+    <text x="75" y="185">
+      <tspan fill="#64748B">Mission:   </tspan><tspan fill="#F8FAFC" font-weight="bold">Optimize transaction throughput and prevent deadlock</tspan>
+    </text>
+    <text x="75" y="205">
+      <tspan fill="#64748B">Status:    </tspan><tspan fill="#4ADE80" font-weight="bold">CERTIFIED &amp; DEPLOYABLE </tspan><tspan fill="#94A3B8">(TRACK B: Feature Sprint)</tspan>
+    </text>
+    
+    <text x="75" y="235" fill="#94A3B8" font-weight="bold">Key Highlights:</text>
+    <text x="75" y="255" fill="#CBD5E1">• Bounded Context: Touched only connection pool layer (14 lines modified).</text>
+    <text x="75" y="275" fill="#CBD5E1">• Reliability: Concurrency deadlock eliminated via atomic BEGIN IMMEDIATE.</text>
+    <text x="75" y="295" fill="#CBD5E1">• Reality Gate: Native test suite passed cleanly with machine exit code 0.</text>
+    
+    <text x="75" y="322">
+      <tspan fill="#64748B">Sign-Offs: </tspan>
+      <tspan fill="#22C55E">CEO ✔</tspan> | 
+      <tspan fill="#22C55E">CTO ✔</tspan> | 
+      <tspan fill="#22C55E">VPEng ✔</tspan> | 
+      <tspan fill="#22C55E">Inquisitor ✔</tspan> | 
+      <tspan fill="#22C55E">Reality Gate (Angela) ✔</tspan>
+    </text>
+  </g>
+</svg>

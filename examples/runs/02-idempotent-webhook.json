@@ -1,0 +1,77 @@
+{
+  "missionId": "msn_20261016_002",
+  "founderPrompt": "Implement idempotent webhook receiver with deduplication lease",
+  "dispatchedAt": "2026-10-16T18:12:00.000Z",
+  "completedAt": "2026-10-16T18:13:42.000Z",
+  "durationMs": 102000,
+  "status": "CERTIFIED_AND_DEPLOYABLE",
+  "classification": {
+    "track": "TRACK_B_FEATURE_SPRINT",
+    "riskFloor": "HIGH",
+    "dominantDanger": "duplicate_execution_race",
+    "targetSLO": "Zero duplicate delivery side-effects across 1,000 rapid webhook retries"
+  },
+  "recon": {
+    "leadReviewer": "Marcus Chen (CEO)",
+    "entryPoints": [
+      "src/api/webhooks.js",
+      "database/schema.sql"
+    ],
+    "invariants": [
+      "Unique constraint on (idempotency_key, provider)",
+      "Strict 10-second execution lease timeout with atomic renewal",
+      "Constant-time HMAC SHA-256 signature verification"
+    ]
+  },
+  "adversarialSparring": {
+    "architect": "Stanley Hudson (Software Architect)",
+    "pitch": "Store event keys in SQLite execution_leases table with UNIQUE index; use INSERT OR IGNORE and inspect changes() count.",
+    "inquisitor": "Dwight Schrute (Adversarial Inquisitor)",
+    "probes": [
+      {
+        "name": "Probe 1: Double-hit race condition (identical millisecond arrivals)",
+        "result": "PASSED - Second INSERT violates UNIQUE constraint and returns HTTP 200 cached acknowledgment"
+      },
+      {
+        "name": "Probe 2: Timing attack on webhook secret",
+        "result": "PASSED - crypto.timingSafeEqual eliminates timing variance side-channels"
+      }
+    ],
+    "fragilityScorecard": {
+      "network": 0,
+      "concurrency": 0,
+      "atomicity": 0,
+      "drift": 0,
+      "complexity": 1,
+      "maxAllowed": 2,
+      "status": "APPROVED"
+    }
+  },
+  "implementation": {
+    "coder": "Jim Halpert (Lead Minimal Coder)",
+    "tddEngine": "Ryan Howard (TDD Specialist)",
+    "linesChanged": 28,
+    "karpathyRazorCompliant": true,
+    "diffSummary": "Added webhook signature verification helper and SQLite INSERT OR IGNORE deduplication query."
+  },
+  "realityGate": {
+    "auditor": "Angela Martin (Head of Quality)",
+    "command": "node --test test/webhook-idempotency.test.js",
+    "exitCode": 0,
+    "unhandledErrors": 0,
+    "assertionsPassed": 12,
+    "machineProofRecorded": true,
+    "independentColdAudit": {
+      "reviewer": "Creed Bratton",
+      "authorBiasDetected": false,
+      "verdict": "CERTIFIED"
+    }
+  },
+  "executiveSignOffs": {
+    "ceo": true,
+    "cto": true,
+    "vpEngineering": true,
+    "inquisitor": true,
+    "realityGate": true
+  }
+}

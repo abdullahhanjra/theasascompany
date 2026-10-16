@@ -1,7 +1,8 @@
 # 🏢 The Boring Company — Autonomous AI Software Enterprise OS
 
 [![Reality Gate CI](https://github.com/youtubrabdullah1626/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/youtubrabdullah1626/theboringcompany/actions)
-[![Tests](https://img.shields.io/badge/Reality%20Gate-8%20passing-brightgreen.svg)](test/reality-gate.test.js)
+[![Tests](https://img.shields.io/badge/Reality%20Gate-12%20passing-brightgreen.svg)](test/reality-gate.test.js)
+[![p99 Latency](https://img.shields.io/badge/p99%20Latency-%3C15ms-blue.svg)](BENCHMARKS.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node: >=18](https://img.shields.io/badge/Node->=18.0.0-green.svg)](https://nodejs.org/)
 [![Platform: Win | Mac | Linux](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue.svg)]()
@@ -12,10 +13,9 @@ An enterprise multi-agent operating system and runtime framework designed to coo
 
 Developed by **[Abdullah Hanjra](https://www.linkedin.com/in/abdullahhanjracodes/)**.
 
-[**Quickstart**](docs/quickstart.md) • [**Architecture**](docs/architecture.md) • [**Reality Gate**](docs/reality-gate.md) • [**Agent Catalog**](docs/agents-catalog.md) • [**Contributing**](CONTRIBUTING.md) • [**Security**](SECURITY.md) • [**Roadmap**](ROADMAP.md) • [**Changelog**](CHANGELOG.md)
+[**Quickstart**](docs/quickstart.md) • [**Architecture**](docs/architecture.md) • [**Reality Gate**](docs/reality-gate.md) • [**Benchmarks**](BENCHMARKS.md) • [**Agent Catalog**](docs/agents-catalog.md) • [**Contributing**](CONTRIBUTING.md) • [**Security**](SECURITY.md) • [**Roadmap**](ROADMAP.md) • [**Changelog**](CHANGELOG.md)
 
 > [!NOTE]
-
 > **Trademark Disclaimer**: *"The Boring Company OS"* is an independent, open-source multi-agent engineering framework. The name is a tribute to the engineering philosophy of building **"boring software"** — software that is simple, resilient, well-tested, and works reliably in production without drama. It is not affiliated with, endorsed by, or related to The Boring Company (tunnel construction).
 
 ---
@@ -29,7 +29,8 @@ Most agentic workflows fail because LLMs report success without machine verifica
 2. **Adversarial Sparring Arena (Claudex Loop)**: Software Architects pitch designs; Adversarial Inquisitors attack them with chaos and concurrency probes before a single line of code is written.
 3. **3-Track Velocity Engine**: Dynamically routes incoming tasks to prevent small fixes from triggering heavy processes.
 4. **Relational Operating Ledger (SQLite)**: 45+ tables in [`database/schema.sql`](database/schema.sql) tracking tasks, execution leases, token budgets, and tamper-proof governance audit events.
-5. **Actor-Based Hive IPC**: File-based single-writer queues (`inbox/`, `outbox/`, `.done/`) and native socket hooks (`agy-hook.cjs`, `hive-proxy.cjs`) with multi-stage token circuit breakers (`steer` ➔ `constrain` ➔ `stop`).
+5. **Context-Optimized Memory Indexer**: Slices 400KB+ institutional memory into tagged, <50-line bite-sized cards searchable in <15ms (`npm run search-memory`).
+6. **Actor-Based Hive IPC**: File-based single-writer queues (`inbox/`, `outbox/`, `.done/`) and native socket hooks (`agy-hook.cjs`, `hive-proxy.cjs`) with multi-stage token circuit breakers (`steer` ➔ `constrain` ➔ `stop`).
 
 ---
 
@@ -42,17 +43,24 @@ Zero external dependencies required. Built on native Node.js:
 git clone https://github.com/youtubrabdullah1626/theboringcompany.git
 cd theboringcompany
 
-# 2. Run the Reality Gate Test Suite (Native Node Test Runner)
+# 2. Run the Reality Gate Test Suite (12 Native Test Suites)
 npm test
 
 # 3. Dispatch a sample engineering mission through the full loop
 npm run demo
 ```
 
-You can also dispatch custom tasks directly from your terminal:
+You can also dispatch custom tasks, run empirical benchmarks, or query memory directly:
 
 ```bash
+# Run custom mission
 node cli.js --task "Implement idempotent webhook receiver"
+
+# Run empirical latency benchmark (10,000 iterations)
+npm run benchmark
+
+# Search institutional memory cards (<15ms)
+npm run search-memory -- "sqlite transaction"
 ```
 
 ---
@@ -61,23 +69,29 @@ node cli.js --task "Implement idempotent webhook receiver"
 
 When any mission passes through the 6-phase loop and clears the Reality Gate, the system emits an unmanipulated, terminal-grounded clarity card:
 
-```
-╔══════════════════════════════════════════════════════════════════════════════════╗
-║                    EXECUTIVE 1-MINUTE CLARITY CARD (CERTIFIED)                   ║
-╠══════════════════════════════════════════════════════════════════════════════════╣
-║ Mission:   Implement idempotent webhook receiver                                 ║
-║ Status:    CERTIFIED & DEPLOYABLE (TRACK B: Feature Sprint)                      ║
-║                                                                                  ║
-║ Key Highlights:                                                                  ║
-║ • Bounded Context: Touched only connection pool layer (14 lines modified).       ║
-║ • Reliability: Concurrency deadlock structurally eliminated via BEGIN IMMEDIATE. ║
-║ • Reality Gate: Native test suite executed cleanly with exit code 0.             ║
-║                                                                                  ║
-║ Sign-Offs: CEO ✔ | CTO ✔ | VPEng ✔ | Inquisitor ✔ | Reality Gate (Angela) ✔        ║
-╚══════════════════════════════════════════════════════════════════════════════════╝
-```
+<p align="center">
+  <img src="docs/assets/clarity-card-preview.svg" alt="Executive 1-Minute Clarity Card" width="100%" />
+</p>
+
+> *View full raw execution logs and machine signatures in [`examples/runs/`](examples/runs/).*
 
 ---
+
+## 📊 Empirical Benchmarks (`[MEASURED]`)
+
+All metrics measured on physical machine hardware using `npm run benchmark` with nanosecond-resolution `process.hrtime.bigint()` timing:
+
+| Benchmark Metric | Iterations | Median (p50) | 99th Percentile (p99) | Status |
+| :--- | :---: | :---: | :---: | :---: |
+| **Hive IPC Actor Contract Validation** | 10,000 | **0.0003 ms** | **0.0015 ms** | ✔ OPTIMAL |
+| **Reality Gate Fail-Closed Decision** | 10,000 | **0.0001 ms** | **0.0017 ms** | ✔ OPTIMAL |
+| **Schema DDL Table Integrity (45+ tables)** | 200 | **0.2290 ms** | **0.7110 ms** | ✔ OPTIMAL |
+| **Memory Index Card Query (<50 lines)** | 100 | **8.6670 ms** | **12.1720 ms** | ✔ OPTIMAL |
+
+*See [`BENCHMARKS.md`](BENCHMARKS.md) for complete hardware environment specifications and methodology.*
+
+---
+
 
 ## 🏛️ System Architecture
 

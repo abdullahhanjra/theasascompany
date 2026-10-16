@@ -10,7 +10,10 @@
 const fs = require('node:fs');
 const path = require('node:path');
 
-const AGENTS_DIR = path.resolve(__dirname, '../.agents/agents');
+const DEFAULT_AGENTS_PATH = path.resolve(__dirname, '../agents/definitions');
+const FALLBACK_AGENTS_PATH = path.resolve(__dirname, '../.agents/agents');
+const AGENTS_DIR = fs.existsSync(DEFAULT_AGENTS_PATH) ? DEFAULT_AGENTS_PATH : FALLBACK_AGENTS_PATH;
+
 
 const ROLE_TRAINING_MODULES = {
   // 1. Executive Board & Leadership
@@ -289,15 +292,20 @@ Always consult real-time documentation via \`context7\` and inspect live viewpor
 ${training.specialty}
 `;
 
-  fs.writeFileSync(agentFile, content, 'utf8');
+  const isDryRun = process.argv.includes('--dry-run');
+  if (!isDryRun) {
+    fs.writeFileSync(agentFile, content, 'utf8');
+  }
   return { agentName, title: training.title, mcpCount: training.mcpArsenal.length, certCount: training.certifications.length };
 }
 
 function run() {
-  console.log('=== The Boring Company: Expert Agent Training Engine ===');
+  const isDryRun = process.argv.includes('--dry-run');
+  console.log(`=== The Boring Company: Expert Agent Training Engine ${isDryRun ? '(DRY RUN)' : ''} ===`);
   if (!fs.existsSync(AGENTS_DIR)) {
     fs.mkdirSync(AGENTS_DIR, { recursive: true });
   }
+
 
   // Ensure aliases exist
   const aliases = [

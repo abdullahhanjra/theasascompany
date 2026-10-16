@@ -1,6 +1,7 @@
 {
   "name": "theboringcompany",
-  "version": "1.0.0",
+  "version": "1.1.0",
+
   "description": "Autonomous AI Software Enterprise OS & Multi-Agent Runtime Framework",
   "main": "cli.js",
   "bin": {
@@ -11,7 +12,11 @@
     "start": "node cli.js",
     "test": "node --test test/reality-gate.test.js",
     "demo": "node cli.js --task \"Optimize transaction throughput and prevent deadlock\"",
-    "train": "node scripts/train-agents.js",
+    "benchmark": "node test/benchmark.js",
+    "index-memory": "node memory/indexer.js",
+    "search-memory": "node memory/search.js",
+    "vector-memory": "python scripts/vector_memory.py",
+    "train": "node scripts/train-agents.js --dry-run",
     "mcp": "node scripts/design-mcp-server.js"
   },
   "engines": {
