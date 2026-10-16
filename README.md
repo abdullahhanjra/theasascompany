@@ -1,6 +1,7 @@
 # 🏢 The Boring Company — Autonomous AI Software Enterprise OS
 
 [![Reality Gate CI](https://github.com/youtubrabdullah1626/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/youtubrabdullah1626/theboringcompany/actions)
+[![Tests](https://img.shields.io/badge/Reality%20Gate-8%20passing-brightgreen.svg)](test/reality-gate.test.js)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node: >=18](https://img.shields.io/badge/Node->=18.0.0-green.svg)](https://nodejs.org/)
 [![Platform: Win | Mac | Linux](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue.svg)]()
@@ -11,7 +12,10 @@ An enterprise multi-agent operating system and runtime framework designed to coo
 
 Developed by **[Abdullah Hanjra](https://www.linkedin.com/in/abdullahhanjracodes/)**.
 
+[**Quickstart**](docs/quickstart.md) • [**Architecture**](docs/architecture.md) • [**Reality Gate**](docs/reality-gate.md) • [**Agent Catalog**](docs/agents-catalog.md) • [**Contributing**](CONTRIBUTING.md) • [**Security**](SECURITY.md) • [**Roadmap**](ROADMAP.md) • [**Changelog**](CHANGELOG.md)
+
 > [!NOTE]
+
 > **Trademark Disclaimer**: *"The Boring Company OS"* is an independent, open-source multi-agent engineering framework. The name is a tribute to the engineering philosophy of building **"boring software"** — software that is simple, resilient, well-tested, and works reliably in production without drama. It is not affiliated with, endorsed by, or related to The Boring Company (tunnel construction).
 
 ---
@@ -140,9 +144,14 @@ The company operates with 67 modular agent configurations located in [`agents/de
 ```
 theboringcompany/
 ├── agents/
-│   ├── definitions/        # 67 Specialist agent configurations (Markdown specs)
+│   ├── definitions/        # 67 Specialist agent configurations + JSON schema
 │   ├── roster.json         # Complete corporate roster & station mapping
 │   └── MASTER_AGENT_DNA.md # Founder's engineering laws & agent reasoning principles
+├── docs/                   # In-depth architectural & developer guides
+│   ├── architecture.md     # 6-Phase loop, SQLite ledger, & Claudex Loop
+│   ├── reality-gate.md     # Verification engine & fail-closed interlock
+│   ├── agents-catalog.md   # Fleet breakdown of all 67 agent roles
+│   └── quickstart.md       # Step-by-step setup and mission guide
 ├── hive/
 │   ├── bin/
 │   │   ├── agy-hook.cjs    # Socket IPC bridge for agent tool call interception
@@ -156,16 +165,22 @@ theboringcompany/
 ├── database/
 │   └── schema.sql          # 45+ relational SQLite tables, indices & audit triggers
 ├── memory/
-│   ├── anti-patterns.md    # 126 KB of documented failure modes & anti-patterns
-│   ├── learnings.md        # 250+ KB of verified empirical solutions
+│   ├── anti-patterns.md    # Documented failure modes & anti-patterns
+│   ├── learnings.md        # Verified empirical engineering solutions
 │   ├── 10X_DECISION_ENGINE.md
 │   ├── FOUNDER_LEARNING_ENGINE.md
 │   └── MEETING_SYSTEM.md   # Autonomous cross-agent synchronous meeting protocol
 ├── test/
-│   └── reality-gate.test.js# Native Node.js test suite enforcing Reality Gate
+│   └── reality-gate.test.js# 8 Native test suites verifying the Reality Gate
 ├── .github/
-│   └── workflows/ci.yml    # GitHub Actions cross-platform matrix CI
+│   ├── workflows/ci.yml    # GitHub Actions cross-platform matrix CI
+│   ├── ISSUE_TEMPLATE/     # Structured bug report, feature & agent templates
+│   └── PULL_REQUEST_TEMPLATE.md
 ├── cli.js                  # Standalone runnable dispatch CLI
+├── CONTRIBUTING.md         # Community contribution guidelines & agent authoring
+├── SECURITY.md             # Fail-closed security policy & disclosure
+├── ROADMAP.md              # Engineering roadmap (v1.0 -> v1.1 -> v2.0)
+├── CHANGELOG.md            # Semantic release history
 ├── package.json            # Scripts: start, test, demo, train
 └── LICENSE                 # MIT License (Abdullah Hanjra)
 ```

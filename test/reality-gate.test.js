@@ -128,3 +128,38 @@ test('🐧 Cross-Platform Parity: Both Windows and Unix shims are provided', () 
   const unixContent = fs.readFileSync(unixSh, 'utf8');
   assert.ok(unixContent.startsWith('#!/usr/bin/env bash'), 'hive-node.sh must contain valid bash shebang');
 });
+
+test('📚 Open-Source Governance: Essential community, security, and architectural documentation exists', () => {
+  const mandatoryDocs = [
+    'CONTRIBUTING.md',
+    'SECURITY.md',
+    'ROADMAP.md',
+    'CHANGELOG.md',
+    path.join('docs', 'architecture.md'),
+    path.join('docs', 'reality-gate.md'),
+    path.join('docs', 'agents-catalog.md'),
+    path.join('docs', 'quickstart.md'),
+    path.join('.github', 'ISSUE_TEMPLATE', 'bug_report.md'),
+    path.join('.github', 'ISSUE_TEMPLATE', 'feature_request.md'),
+    path.join('.github', 'ISSUE_TEMPLATE', 'agent_proposal.md'),
+    path.join('.github', 'PULL_REQUEST_TEMPLATE.md')
+  ];
+
+  for (const doc of mandatoryDocs) {
+    const fullPath = path.join(ROOT_DIR, doc);
+    assert.ok(fs.existsSync(fullPath), `Mandatory open-source document missing: ${doc}`);
+    const stat = fs.statSync(fullPath);
+    assert.ok(stat.size > 50, `Document ${doc} is suspiciously small (${stat.size} bytes)`);
+  }
+});
+
+test('📐 Agent Manifest Schema: definitions schema is valid JSON Schema', () => {
+  const schemaFile = path.join(AGENTS_DIR, 'agent.schema.json');
+  assert.ok(fs.existsSync(schemaFile), 'agent.schema.json must exist');
+  const schemaRaw = fs.readFileSync(schemaFile, 'utf8');
+  const parsed = JSON.parse(schemaRaw);
+  assert.equal(parsed.$schema, 'http://json-schema.org/draft-07/schema#');
+  assert.ok(parsed.properties.name, 'Schema must define name property');
+  assert.ok(parsed.properties.description, 'Schema must define description property');
+});
+

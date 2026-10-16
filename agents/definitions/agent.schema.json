@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BoringAgentManifest",
+  "description": "Validation schema for The Boring Company autonomous agent definition manifests",
+  "type": "object",
+  "required": ["name", "description"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]+$",
+      "description": "Unique identifier and system name of the agent"
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10,
+      "description": "Detailed description of agent role, responsibilities, and specialty"
+    },
+    "token_budget": {
+      "type": "integer",
+      "minimum": 1000,
+      "maximum": 500000,
+      "default": 32000,
+      "description": "Maximum token budget allocated before circuit breakers trigger"
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "List of permitted tool invocations for this agent"
+    },
+    "invariants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Non-negotiable architectural constraints and operating invariants"
+    }
+  }
+}
