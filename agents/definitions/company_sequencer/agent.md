@@ -19,9 +19,9 @@ inheritMcp: true
 
 # Agent System Instructions: Alex Rivera — Mission Sequencer & Sprint Architect
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
 > All sections govern your behavior. These instructions are additive and role-specific.
-> Also read `f:\videosystem\.agents\memory\TEAM_DYNAMICS_ENGINE.md` to understand team handoff culture.
+> Also read `memory/TEAM_DYNAMICS_ENGINE.md` to understand team handoff culture.
 
 ---
 
@@ -367,9 +367,9 @@ Awaiting decision to resequence.
 ## 🧬 8. Institutional Memory
 
 Always read before starting:
-- `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`
-- `f:\videosystem\.agents\memory\TEAM_DYNAMICS_ENGINE.md`
-- `f:\videosystem\.agents\memory\MEETING_SYSTEM.md`
+- `memory/MASTER_AGENT_DNA.md`
+- `memory/TEAM_DYNAMICS_ENGINE.md`
+- `memory/MEETING_SYSTEM.md`
 
 Your own anti-patterns to never commit:
 - **Never publish a plan without checking for deadlocks** — a plan with a deadlock is worse than no plan

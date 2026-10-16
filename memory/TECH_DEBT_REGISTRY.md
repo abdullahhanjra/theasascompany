@@ -1,7 +1,7 @@
 # 🗂️ TECHNICAL DEBT REGISTRY
 **Owner:** Rafael Torres (Staff Engineering Lead — `company_lead`)
 **Last Updated:** 2026-09-27
-**Registry Location:** `f:\videosystem\.agents\memory\TECH_DEBT_REGISTRY.md`
+**Registry Location:** `memory/TECH_DEBT_REGISTRY.md`
 
 > **Law**: Every CRITICAL debt must be scheduled within 2 sprints.
 > Every HIGH debt within 4 sprints. MEDIUM/LOW reviewed quarterly.
@@ -31,7 +31,7 @@ Status:        [OPEN / IN PROGRESS / RESOLVED]
 
 ### DEBT-001 — Baseline Architecture Verification
 - **Introduced:** 2026-09-27 — initial system setup
-- **File:** `f:\videosystem\.agents\agents\company_jim\agent.md`
+- **File:** `agents/definitions/company_jim\agent.md`
 - **Description:** The new ARCHITECTURE.md 8-section standard has been defined but no existing project has had its architecture formally verified against this new standard. The NamazGuard project (`namaz-helper/`) and the Company server (`src/`) both predate this standard.
 - **Type:** Architecture
 - **Risk:** MEDIUM
@@ -43,7 +43,7 @@ Status:        [OPEN / IN PROGRESS / RESOLVED]
 
 ### DEBT-002 — Database Contract Backfill
 - **Introduced:** 2026-09-27 — DBA agent created
-- **File:** `f:\videosystem\namaz-helper\src\db.js` (and equivalents)
+- **File:** `./namaz-helper\src\db.js` (and equivalents)
 - **Description:** Existing database schema predates Dr. Kofi's Database Contract standard. No formal schema DDL with index justifications, invariant documentation, or tested `down()` migrations exists for current tables.
 - **Type:** Maintainability / Architecture
 - **Risk:** MEDIUM
@@ -55,7 +55,7 @@ Status:        [OPEN / IN PROGRESS / RESOLVED]
 
 ### DEBT-003 — Test Coverage: Business Rule Invariants
 - **Introduced:** 2026-09-27 — QA agent and BA agent created
-- **File:** `f:\videosystem\tests\company\`
+- **File:** `./tests\company\`
 - **Description:** No automated tests currently validate the BA-defined invariants (INV-XXX format). All existing tests are unit-level. The 5-layer QA suite (Isabela's Layer 5) does not yet exist for any feature.
 - **Type:** Test Coverage
 - **Risk:** HIGH

@@ -19,7 +19,7 @@ inheritMcp: true
 
 # Agent System Instructions: VP of Operations (System Reliability & Incident Response Lead)
 
-> **Universal Standard**: Read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` before every task.
+> **Universal Standard**: Read `memory/MASTER_AGENT_DNA.md` before every task.
 > These instructions extend — never override — the MASTER_AGENT_DNA.md universal standard.
 
 ---
@@ -67,7 +67,7 @@ OPTION 1 — PIVOT HYPOTHESIS
 OPTION 2 — REVERT TO CLEAN SNAPSHOT
   When to use: Code changes introduced the failure AND a backup exists
   How to execute:
-    1. Verify snapshot exists: f:\videosystem-v3-backups\[taskId]\
+    1. Verify snapshot exists: ./.backups/[taskId]\
     2. Identify EXACT files that changed since last working state
     3. Revert only those files (not the entire project)
     4. Verify system recovers to working state

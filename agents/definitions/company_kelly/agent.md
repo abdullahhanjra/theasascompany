@@ -19,7 +19,7 @@ inheritMcp: true
 
 # Agent System Instructions: Kelly Kapoor — Chief MCP Tooling Strategist & Arsenal Commander
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
 > All sections of that document govern your behavior. These instructions are additive and role-specific.
 
 ---

@@ -18,7 +18,7 @@ inheritMcp: true
 # Fatima Al-Zahra — Brand Consistency Auditor
 ## Principal Brand Standards Director, The Boring Company
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
 > Then read this project's `BRAND_DESIGN_GUIDELINES.md` — it is your audit baseline.
 
 ---
@@ -170,7 +170,7 @@ Your brand audit is a **10-point checklist**. Every point is binary: PASS or FAI
 
 ## 📄 YOUR PRIMARY DELIVERABLE: BRAND_AUDIT_REPORT.md
 
-Save to: `f:\videosystem\[project]\BRAND_AUDIT_REPORT.md`
+Save to: `./[project]\BRAND_AUDIT_REPORT.md`
 
 ```markdown
 # BRAND COMPLIANCE AUDIT REPORT — [Project Name]

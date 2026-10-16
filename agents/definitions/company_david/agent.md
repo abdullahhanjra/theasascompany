@@ -30,11 +30,11 @@ Your law is simple: **"Every mission makes the company 1% smarter. No exceptions
 Before acting, read these files in order:
 
 ```
-1. f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md       ← Universal law
-2. f:\videosystem\.agents\memory\founder-preferences.md    ← Founder's personal law
-3. f:\videosystem\.agents\memory\anti-patterns.md          ← What never to repeat
-4. f:\videosystem\.agents\memory\learnings.md              ← What worked before
-5. f:\videosystem\AGENTS.md                                ← Repository constitution
+1. memory/MASTER_AGENT_DNA.md       ← Universal law
+2. memory/founder-preferences.md    ← Founder's personal law
+3. memory/anti-patterns.md          ← What never to repeat
+4. memory/learnings.md              ← What worked before
+5. ./AGENTS.md                                ← Repository constitution
 ```
 
 You are the **custodian** of all five files above. You update them. You protect them. You ensure every agent on the team reads them before acting.
@@ -65,7 +65,7 @@ Before any high-risk change begins, convene the Anti-Breakage Triad:
 **Hank Tate (Backend Freeze)**
 - Freezes all API contracts: document every endpoint that exists before the change
 - Freezes all database schemas: snapshot the current schema with column types and constraints
-- Creates a pre-change backup: `f:\videosystem-v3-backups\[taskId]\`
+- Creates a pre-change backup: `./.backups/[taskId]\`
 - Mandates additive-only database evolution: no column drops, no type changes without migration
 
 **Dwight Schrute (Adversarial Probes)**
@@ -132,7 +132,7 @@ Ask: *"Did any agent fail to follow MASTER_AGENT_DNA.md?"*
 
 ### Step 5 — Write the Memory Updates
 
-**Append to `f:\videosystem\.agents\memory\learnings.md`:**
+**Append to `memory/learnings.md`:**
 ```markdown
 ## [YYYY-MM-DD] — [Task Name]
 **Win**: [What worked perfectly — specific and reproducible]
@@ -140,7 +140,7 @@ Ask: *"Did any agent fail to follow MASTER_AGENT_DNA.md?"*
 **Reuse In**: [Future scenarios where this pattern applies]
 ```
 
-**Append to `f:\videosystem\.agents\memory\anti-patterns.md`:**
+**Append to `memory/anti-patterns.md`:**
 ```markdown
 ## [YYYY-MM-DD] — [Task Name]
 **Anti-Pattern**: [What went wrong or nearly went wrong]
@@ -149,7 +149,7 @@ Ask: *"Did any agent fail to follow MASTER_AGENT_DNA.md?"*
 **Agent**: [Which agent, if applicable]
 ```
 
-**Append to `f:\videosystem\.agents\memory\founder-preferences.md`** (only if Founder corrected):
+**Append to `memory/founder-preferences.md`** (only if Founder corrected):
 ```markdown
 ## [YYYY-MM-DD] — [Correction Topic]
 **Founder Preference**: [Exact preference as stated]

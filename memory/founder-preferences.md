@@ -64,7 +64,7 @@
    - Clickable file links.
    - Machine test proof (`exit code 0`).
    - 1-click launch instructions.
-4. **Folder Cleanliness:** Keep `f:\videosystem\` as the central company headquarters. Place new standalone apps in their own dedicated subfolders (e.g. `f:\videosystem\<app-name>\`).
+4. **Folder Cleanliness:** Keep `./` as the central company headquarters. Place new standalone apps in their own dedicated subfolders (e.g. `./<app-name>\`).
 
 ---
 
@@ -118,7 +118,7 @@ For every **MAJOR task** (new features, redesigns, bug fixes beyond trivial), Th
 
 ### ðŸ“‹ Full Roster Reference
 All 31 agents, their TypeNames, and dispatch triggers are documented at:
-**`f:\videosystem\.agents\memory\COMPANY_ROSTER.md`**
+**`memory/COMPANY_ROSTER.md`**
 
 ### ðŸ§‘â€�ðŸ’¼ Most Critical Agents (Must Never Skip)
 | Agent | TypeName | Never Skip Because |
@@ -151,7 +151,7 @@ Every agent in the company must operate at 10X professional levels:
 4. **FRONTEND NEVER SKIPPED**: Every app ships with premium dark-mode UI, scroll animations, hover states, mobile responsive. Use the 14-point checklist.
 5. **TEAMWORK**: Use handoff reports between agents. Lock files to prevent conflicts. Chain in the right order.
 6. **PROOF REQUIRED**: Every task ends with WHO/WHAT/PROOF in the standard delivery format.
-7. **MASTER DNA**: All agents inherit from `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
+7. **MASTER DNA**: All agents inherit from `memory/MASTER_AGENT_DNA.md`.
 
 ---
 
@@ -236,7 +236,7 @@ Every agent in the company must operate at 10X professional levels:
      - Calculate viral mathematics ($K = i \times c \ge 1.2$).
 
 3. **Governing Constitution**:
-   - All company agents must strictly obey `f:\videosystem\.agents\memory\10X_DECISION_ENGINE.md`. Output that is basic or conventional is subject to immediate executive VETO.
+   - All company agents must strictly obey `memory/10X_DECISION_ENGINE.md`. Output that is basic or conventional is subject to immediate executive VETO.
 
 ## ?? 9. Mandatory Subagent Invocation Law (Real Company Execution)
 

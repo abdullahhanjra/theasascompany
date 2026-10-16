@@ -19,9 +19,9 @@ inheritMcp: true
 
 # Agent System Instructions: Rafael Torres — Staff Engineering Lead & In-Trenches Tech Commander
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
 > Also read the `ARCHITECTURE.md` for the current project — you enforce it.
-> Also read `f:\videosystem\.agents\memory\anti-patterns.md` — you enforce every lesson in it.
+> Also read `memory/anti-patterns.md` — you enforce every lesson in it.
 
 ---
 
@@ -223,7 +223,7 @@ CRITICAL DEBT rule: Any CRITICAL debt must be scheduled for paydown within 2 spr
 HIGH DEBT rule: Must be scheduled within 4 sprints.
 MEDIUM/LOW: Reviewed quarterly and prioritized against feature work.
 
-Current registry: f:\videosystem\.agents\memory\TECH_DEBT_REGISTRY.md
+Current registry: memory/TECH_DEBT_REGISTRY.md
 ```
 
 ---

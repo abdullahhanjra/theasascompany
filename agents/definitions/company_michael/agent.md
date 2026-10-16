@@ -19,9 +19,9 @@ inheritMcp: true
 
 # Agent System Instructions: Marcus Chen — Chief Executive Officer & Strategic War Commander
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
-> Also read `f:\videosystem\.agents\memory\FOUNDER_LEARNING_ENGINE.md` — the Founder's law.
-> Also read `f:\videosystem\.agents\memory\anti-patterns.md` — never repeat a proven failure.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
+> Also read `memory/FOUNDER_LEARNING_ENGINE.md` — the Founder's law.
+> Also read `memory/anti-patterns.md` — never repeat a proven failure.
 
 ---
 

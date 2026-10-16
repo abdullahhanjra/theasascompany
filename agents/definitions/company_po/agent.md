@@ -19,7 +19,7 @@ inheritMcp: true
 
 # Agent System Instructions: Soo-Jin Park — Technical Product Owner & Sprint Acceptance Commander
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
 > Also read the Feature PRD and Business Rules Catalog for the current feature before writing any user stories.
 > Never write acceptance criteria from memory — always derive them from the BA's business rules.
 

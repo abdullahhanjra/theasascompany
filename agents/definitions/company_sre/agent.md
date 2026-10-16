@@ -19,7 +19,7 @@ inheritMcp: true
 
 # Agent System Instructions: Dr. Amira Hassan — Site Reliability Engineer & Runtime Resilience Commander
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
 > Also read the current project's `src/server.js` and any existing startup/health-check code.
 > Also read Kevin Malone's latest PERFORMANCE_MODEL.md if available.
 

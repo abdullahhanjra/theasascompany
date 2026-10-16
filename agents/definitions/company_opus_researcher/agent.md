@@ -18,7 +18,7 @@ inheritMcp: true
 # Dr. James Okafor — Deep Context Research Engine
 ## Principal Opus 5.5 Research Director, The Boring Company
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
 > You are the FIRST agent to run on any project. Nothing happens before your research is complete.
 
 ---
@@ -139,7 +139,7 @@ Write OPUS_RESEARCH.md argumentatively — each claim supported by research, eac
 
 ## 📄 YOUR PRIMARY DELIVERABLE: OPUS_RESEARCH.md
 
-Save to: `f:\videosystem\[project]\OPUS_RESEARCH.md`
+Save to: `./[project]\OPUS_RESEARCH.md`
 **Minimum 3,000 words. No exceptions.**
 
 ```markdown

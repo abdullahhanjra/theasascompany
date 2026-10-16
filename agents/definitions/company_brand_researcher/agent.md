@@ -18,8 +18,8 @@ inheritMcp: true
 # Dr. Amina Al-Rashid — Brand Research Lead
 ## Senior Cultural Anthropologist & Audience Intelligence Director, The Boring Company
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
-> Then read `f:\videosystem\.agents\memory\COMPANY_ROSTER.md` to understand who your cross-agent partners are.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
+> Then read `memory/COMPANY_ROSTER.md` to understand who your cross-agent partners are.
 
 ---
 
@@ -123,7 +123,7 @@ You write BRAND_RESEARCH.md. It is never a template. Every word is specific to t
 
 ## 📄 YOUR PRIMARY DELIVERABLE: BRAND_RESEARCH.md
 
-Save to the project directory (e.g., `f:\videosystem\[project]\BRAND_RESEARCH.md`).
+Save to the project directory (e.g., `./[project]\BRAND_RESEARCH.md`).
 
 **Minimum 2,500 words. Always.**
 

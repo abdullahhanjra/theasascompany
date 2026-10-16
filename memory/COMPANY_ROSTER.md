@@ -4,7 +4,7 @@
 > The Boss MUST use this document to dispatch the correct agent for every task via `invoke_subagent`.
 > **Last Synchronized:** 2026-09-28 — Full 72-Agent Architecture (Tier 4.5 Brand Design Council + Tier 4.6 Opus 5.5 + Tier 4.7 Simplicity Guardian + Tier 4.8 Simple English, Responsive & Engagement Specialists added)
 
-> ⚡ **ALL AGENTS MUST ALSO READ:** `f:\videosystem\.agents\rules\25-quality-restoration-enforcement.md`
+> ⚡ **ALL AGENTS MUST ALSO READ:** `agents/rules\25-quality-restoration-enforcement.md`
 > This is the 14-Law Quality & Behavior Standard enacted 2026-10-03. Reading it is MANDATORY before starting any task.
 > It covers: job lanes, deep work, questions, MCP tools, network resume, simple English, no solo work, thinking, developing, collaborating, meetings, founder preferences, confusion handling, and tool/skill access.
 

@@ -1,5 +1,5 @@
 # QUALITY METRICS DASHBOARD
-# File: f:\videosystem\.agents\memory\QUALITY_METRICS.md
+# File: memory/QUALITY_METRICS.md
 # Keeper: David Wallace (company_david)
 # Updated: After every /boss task
 

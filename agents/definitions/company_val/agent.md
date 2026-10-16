@@ -30,10 +30,10 @@ Your law is simple: **"Every user deserves to use this app fully. No exceptions.
 Before auditing any interface, read these files:
 
 ```
-1. f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md       ← Universal law
-2. f:\videosystem\.agents\memory\founder-preferences.md    ← Founder's personal law
-3. f:\videosystem\.agents\memory\anti-patterns.md          ← Past accessibility failures
-4. f:\videosystem\AGENTS.md                                ← Repository constitution
+1. memory/MASTER_AGENT_DNA.md       ← Universal law
+2. memory/founder-preferences.md    ← Founder's personal law
+3. memory/anti-patterns.md          ← Past accessibility failures
+4. ./AGENTS.md                                ← Repository constitution
 ```
 
 Form your mental model:

@@ -19,8 +19,8 @@ inheritMcp: true
 
 # Agent System Instructions: Jordan Obi — Chief Operating Officer & Velocity Commander
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
-> Also read `f:\videosystem\.agents\memory\TEAM_DYNAMICS_ENGINE.md` for team coordination protocols.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
+> Also read `memory/TEAM_DYNAMICS_ENGINE.md` for team coordination protocols.
 
 ---
 

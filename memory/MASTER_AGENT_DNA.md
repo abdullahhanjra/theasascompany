@@ -8,7 +8,7 @@
 
 ## 🔥 PREAMBLE: THE GBRAIN THINK ENGINE (Mandatory — Above All Sections)
 
-**Full protocol:** `f:\videosystem\.agents\memory\GBRAIN_THINK_ENGINE.md` — read it first.
+**Full protocol:** `memory/GBRAIN_THINK_ENGINE.md` — read it first.
 
 Every agent operates in two cognitive modes. Knowing the difference is non-negotiable:
 
@@ -274,31 +274,31 @@ Every completed task MUST be reported with:
 
 Before starting ANY task, read these files:
 ```
-f:\videosystem\.agents\memory\10X_DECISION_ENGINE.md           ← Strategic vision & forensic research law
-f:\videosystem\.agents\memory\DESIGN_INTELLIGENCE_PROTOCOL.md  ← 6W reasoning + font/color/animation decisions (NEW)
-f:\videosystem\.agents\memory\FOUNDER_LEARNING_ENGINE.md       ← How to understand & adapt to the Founder
-f:\videosystem\.agents\memory\GITHUB_INTELLIGENCE.md           ← 3 expert repos: gstack/graphify/agent-reach
-f:\videosystem\.agents\memory\PSYCHOLOGY_UX_PLAYBOOK.md        ← UX psychology — USE Section 0 FIRST (context matters)
-f:\videosystem\.agents\memory\TEAM_DYNAMICS_ENGINE.md          ← Real team culture: fight, debate, commit
-f:\videosystem\.agents\memory\founder-preferences.md           ← Founder law
-f:\videosystem\.agents\memory\COMPANY_ROSTER.md                ← Who to call
-f:\videosystem\.agents\memory\learnings.md                     ← Past wins
-f:\videosystem\.agents\memory\anti-patterns.md                 ← Never repeat these (AP-037–039: context-blindness)
-f:\videosystem\AGENTS.md                                       ← Repository constitution
+memory/10X_DECISION_ENGINE.md           ← Strategic vision & forensic research law
+memory/DESIGN_INTELLIGENCE_PROTOCOL.md  ← 6W reasoning + font/color/animation decisions (NEW)
+memory/FOUNDER_LEARNING_ENGINE.md       ← How to understand & adapt to the Founder
+memory/GITHUB_INTELLIGENCE.md           ← 3 expert repos: gstack/graphify/agent-reach
+memory/PSYCHOLOGY_UX_PLAYBOOK.md        ← UX psychology — USE Section 0 FIRST (context matters)
+memory/TEAM_DYNAMICS_ENGINE.md          ← Real team culture: fight, debate, commit
+memory/founder-preferences.md           ← Founder law
+memory/COMPANY_ROSTER.md                ← Who to call
+memory/learnings.md                     ← Past wins
+memory/anti-patterns.md                 ← Never repeat these (AP-037–039: context-blindness)
+./AGENTS.md                                       ← Repository constitution
 ```
 
 After ANY task, David Wallace writes:
 ```
-f:\videosystem\.agents\memory\learnings.md             ← What went well
-f:\videosystem\.agents\memory\anti-patterns.md          ← What to never repeat
-f:\videosystem\.agents\memory\FOUNDER_LEARNING_ENGINE.md ← Update Founder preference signals learned this session
+memory/learnings.md             ← What went well
+memory/anti-patterns.md          ← What to never repeat
+memory/FOUNDER_LEARNING_ENGINE.md ← Update Founder preference signals learned this session
 ```
 
 ---
 
 ## 🚀 SECTION 9: THE BILLION-DOLLAR VISIONARY & FORENSIC RESEARCH ENGINE
 
-Every agent must follow `f:\videosystem\.agents\memory\10X_DECISION_ENGINE.md`:
+Every agent must follow `memory/10X_DECISION_ENGINE.md`:
 
 ### 9.1 The Visionary Reframing ("Michael Scott Law")
 - **NEVER** act like junior interns obsessing over 4px padding while missing multi-billion-dollar opportunities.

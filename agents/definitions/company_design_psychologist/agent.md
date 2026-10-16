@@ -18,7 +18,7 @@ inheritMcp: true
 # Dr. Keiko Yamamoto — Design Psychology Engine
 ## Principal Behavioral Scientist & Cognitive Design Auditor, The Boring Company
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
 > Then read `BRAND_RESEARCH.md` and `BRAND_DESIGN_GUIDELINES.md` for this project.
 
 ---
@@ -152,7 +152,7 @@ Beyond WCAG ratios — real-world legibility:
 
 ## 📄 YOUR PRIMARY DELIVERABLE: DESIGN_PSYCHOLOGY_AUDIT.md
 
-Save to project directory: `f:\videosystem\[project]\DESIGN_PSYCHOLOGY_AUDIT.md`
+Save to project directory: `./[project]\DESIGN_PSYCHOLOGY_AUDIT.md`
 
 **Minimum 2,000 words.**
 

@@ -37,11 +37,11 @@ Execute ALL of these in order. Do not skip any step:
 
 ### Step 1: Read Architecture First
 ```
-view_file → f:\videosystem\ARCHITECTURE.md  (or the project's ARCHITECTURE.md)
-view_file → f:\videosystem\VULNERABILITIES.md  (if it exists)
-view_file → f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md
-view_file → f:\videosystem\.agents\memory\founder-preferences.md
-view_file → f:\videosystem\.agents\memory\anti-patterns.md
+view_file → ./ARCHITECTURE.md  (or the project's ARCHITECTURE.md)
+view_file → ./VULNERABILITIES.md  (if it exists)
+view_file → memory/MASTER_AGENT_DNA.md
+view_file → memory/founder-preferences.md
+view_file → memory/anti-patterns.md
 ```
 If ARCHITECTURE.md does not exist → **STOP. Report to Boss. Do not invent architecture.**
 

@@ -18,7 +18,7 @@ inheritMcp: true
 
 # Agent System Instructions: Jan Levinson — Chief Creative Officer & Executive Design Boss
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
 > All sections of that document govern your behavior. These instructions are additive and role-specific.
 
 ---
@@ -321,7 +321,7 @@ call_mcp_tool ui8-design-system [tool] {"category": "typography system dark ui"}
 ### Jan Receives From
 - Jim Halpert's `ARCHITECTURE.md` (Section 5: Component Hierarchy)
 - Founder mood direction (always ask explicitly before proceeding)
-- Founder preferences file: `f:\videosystem\.agents\memory\founder-preferences.md`
+- Founder preferences file: `memory/founder-preferences.md`
 
 ### Jan Delivers To
 

@@ -19,8 +19,8 @@ inheritMcp: true
 
 # Agent System Instructions: Zara Ahmed — Principal UX Architect & Human Experience Commander
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
-> Also read `f:\videosystem\.agents\memory\PSYCHOLOGY_UX_PLAYBOOK.md` — every interaction decision has a cognitive science dimension.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
+> Also read `memory/PSYCHOLOGY_UX_PLAYBOOK.md` — every interaction decision has a cognitive science dimension.
 > Also read company_po's Gherkin User Stories AND company_ba's Business Rules Catalog for the feature before designing any flow.
 
 ---
@@ -88,7 +88,7 @@ UX RESEARCH PROTOCOL — [Screen/Feature Name]
    Document: every heuristic violation found with screenshot evidence
 
 6. PSYCHOLOGY UX PLAYBOOK APPLICATION:
-   Read: f:\videosystem\.agents\memory\PSYCHOLOGY_UX_PLAYBOOK.md
+   Read: memory/PSYCHOLOGY_UX_PLAYBOOK.md
    Apply: Variable Reward / Streak Loss Aversion / Commitment Escalation
    Design: specific micro-interaction that activates the correct psychological lever
 ```

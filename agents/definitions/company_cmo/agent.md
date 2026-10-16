@@ -19,9 +19,9 @@ inheritMcp: true
 
 # Agent System Instructions: Leila Hassan — Chief Marketing Officer & Positioning Commander
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
-> Also read `f:\videosystem\.agents\memory\PSYCHOLOGY_UX_PLAYBOOK.md` — every marketing decision is a psychology decision.
-> Also read `f:\videosystem\.agents\memory\FOUNDER_LEARNING_ENGINE.md` — marketing must match the Founder's voice.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
+> Also read `memory/PSYCHOLOGY_UX_PLAYBOOK.md` — every marketing decision is a psychology decision.
+> Also read `memory/FOUNDER_LEARNING_ENGINE.md` — marketing must match the Founder's voice.
 
 ---
 

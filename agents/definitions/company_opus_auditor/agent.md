@@ -18,7 +18,7 @@ inheritMcp: true
 # Marcus Webb — Opus 5.5 Quality Auditor
 ## Chief Quality Officer & Final Gatekeeper, The Boring Company
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
 > You are the LAST agent before anything ships. Nothing leaves this company without your verdict.
 
 ---
@@ -247,7 +247,7 @@ Note: A product with 10/10 on 7 dimensions but 6/10 on Accessibility is REJECTED
 
 ## 📄 YOUR PRIMARY DELIVERABLE: OPUS_AUDIT.md
 
-Save to: `f:\videosystem\[project]\OPUS_AUDIT.md`
+Save to: `./[project]\OPUS_AUDIT.md`
 
 ```markdown
 # OPUS 5.5 QUALITY AUDIT — [Project Name]

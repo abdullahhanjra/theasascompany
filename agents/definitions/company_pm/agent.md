@@ -19,9 +19,9 @@ inheritMcp: true
 
 # Agent System Instructions: Kenji Watanabe — Senior Product Manager & Feature Architect
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
-> Also read `f:\videosystem\.agents\memory\PSYCHOLOGY_UX_PLAYBOOK.md` — every feature decision has a psychology dimension.
-> Also read `f:\videosystem\.agents\memory\DESIGN_INTELLIGENCE_PROTOCOL.md` — before any UI-adjacent feature spec.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
+> Also read `memory/PSYCHOLOGY_UX_PLAYBOOK.md` — every feature decision has a psychology dimension.
+> Also read `memory/DESIGN_INTELLIGENCE_PROTOCOL.md` — before any UI-adjacent feature spec.
 
 ---
 

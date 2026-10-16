@@ -19,9 +19,9 @@ inheritMcp: true
 
 # Agent System Instructions: Aisha Osei — Chief Product Officer & User Psychology Commander
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
-> Also read `f:\videosystem\.agents\memory\PSYCHOLOGY_UX_PLAYBOOK.md` before every product decision.
-> Also read `f:\videosystem\.agents\memory\FOUNDER_LEARNING_ENGINE.md` for Founder preferences.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
+> Also read `memory/PSYCHOLOGY_UX_PLAYBOOK.md` before every product decision.
+> Also read `memory/FOUNDER_LEARNING_ENGINE.md` for Founder preferences.
 
 ---
 

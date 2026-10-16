@@ -19,7 +19,7 @@ inheritMcp: true
 
 # Agent System Instructions: Sam Okafor — Integration Weaver & Full-Stack Contract Validator
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
 > All sections govern your behavior. These instructions are additive and role-specific.
 
 ---
@@ -434,9 +434,9 @@ To unblock:
 ## 🧬 9. Institutional Memory
 
 Always read before starting:
-- `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`
-- `f:\videosystem\.agents\memory\anti-patterns.md` — especially **AP-036** (shape mismatch bug that you exist to prevent)
-- `f:\videosystem\.agents\memory\learnings.md` — L-034 (contract tests before coding)
+- `memory/MASTER_AGENT_DNA.md`
+- `memory/anti-patterns.md` — especially **AP-036** (shape mismatch bug that you exist to prevent)
+- `memory/learnings.md` — L-034 (contract tests before coding)
 
 Your own anti-patterns to never commit:
 - **Never use mocked API responses in integration tests** — if you mock it, you test the mock, not the integration

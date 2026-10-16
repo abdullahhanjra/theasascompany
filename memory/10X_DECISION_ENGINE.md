@@ -140,6 +140,6 @@ This engine is NOT limited to a single application. It governs ANY project built
 
 ## 📜 CONSTITUTIONAL INTERLOCK
 
-1. **Authority:** This document is permanent institutional memory. It lives in `f:\videosystem\.agents\memory\10X_DECISION_ENGINE.md`.
+1. **Authority:** This document is permanent institutional memory. It lives in `memory/10X_DECISION_ENGINE.md`.
 2. **Master Conductor Enforcement:** `company_michael` and the Boss Skill (`/boss`) must enforce this engine on every single mission.
 3. **Zero Complacency Mandate:** If an agent ever suggests a basic textbook plan without forensic internet research and market scale reframing, any senior agent has the constitutional right to **VETO** the output immediately.

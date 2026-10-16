@@ -168,7 +168,7 @@
 ### [LN-20260920-09] Scranton Terminal Suite: Multi-Agent Corporate Rogue & Mission Control
 - **Date Recorded**: 2026-09-20
 - **Affected Subsystem**: `testing/` (Standalone Application & Arcade Suite)
-- **Context & Objective**: Autonomously architect, build, and verify a complete zero-bloat standalone Web Application and Retro Arcade Game in `f:\videosystem\testing`, demonstrating multi-agent corporate expertise, TDD discipline, AppSec protection, and Reality Gate certification.
+- **Context & Objective**: Autonomously architect, build, and verify a complete zero-bloat standalone Web Application and Retro Arcade Game in `./testing`, demonstrating multi-agent corporate expertise, TDD discipline, AppSec protection, and Reality Gate certification.
 - **Implemented Pattern**:
   1. Zero-dependency native Node.js architecture: REST API (`/api/health`, `/api/scores`, `/api/agents`), Server-Sent Events stream (`/api/events`), and AppSec path traversal defense.
   2. Canvas 60 FPS Retro Rogue Engine: Procedural item spawners, particle explosions, collision geometry, and 4 character abilities (Megaphone blast, Beet shield, Time freeze, Confetti boost).
@@ -183,7 +183,7 @@
 
 ### [LN-20260920-10] Direct Database Task Admission & Real Subagent Dispatch Engine
 - **Date Recorded**: 2026-09-20
-- **Affected Subsystem**: `src/company/bridge/CompanyDispatcher.js`, Global Subagent Catalog, and Boss Operating Skill (`f:\videosystem\.agents\skills\boss\SKILL.md`).
+- **Affected Subsystem**: `src/company/bridge/CompanyDispatcher.js`, Global Subagent Catalog, and Boss Operating Skill (`agents/skills\boss\SKILL.md`).
 - **Context & Objective**: Bridge the Antigravity chat command `/boss <task>` directly into the real SQLite database (`myown/company.db`) and real background subagents (`invoke_subagent`), eliminating simulated execution and enabling actual autonomous worker dispatch without opening the Munder desktop GUI.
 - **Implemented Pattern**:
   1. `CompanyDispatcher` Bridge (`src/company/bridge/CompanyDispatcher.js`): Automatically creates baseline company entities and records `tasks` (status: `ready`), `executions` (status: `RUNNING` with lease token), and `quality_certifications` directly in `company.db`.
@@ -202,7 +202,7 @@
 ### [LN-20260920-11] PulseBench: Autonomous Developer Studio Built by Real Background Subagent
 - **Date Recorded**: 2026-09-20
 - **Affected Subsystem**: `testing/` (Standalone Developer Tool & Studio)
-- **Context & Objective**: Clean `f:\videosystem\testing` and autonomously construct a non-game developer productivity platform using the newly wired `CompanyDispatcher` and real independent subagent (`company_coder`), validating real multi-agent execution with zero single-model fabrication.
+- **Context & Objective**: Clean `./testing` and autonomously construct a non-game developer productivity platform using the newly wired `CompanyDispatcher` and real independent subagent (`company_coder`), validating real multi-agent execution with zero single-model fabrication.
 - **Implemented Pattern**:
   1. Transactional State Lifecycle: Task `task_1789913099987_fslli` admitted to `company.db`, execution lease `lease_4b3vf0hr33` issued, and certification sealed.
   2. Autonomous Subagent Execution (`company_coder` / Conversation `eeaa7284-00cb-4c45-a3d9-865805f83cb1`): Background subagent authored all files (`package.json`, `bench-engine.js`, `server.js`, `public/index.html`, `public/style.css`, `public/app.js`, `test/bench.test.js`, `start.bat`, `README.md`).
@@ -219,9 +219,9 @@
 - **Affected Subsystem**: Orchestration Core (`src/company/bridge/CompanyDispatcher.js`, `.agents/rules/12-boss-orchestration-v3.md`, `~/.gemini/memory/boss-orchestration-v3.md`, `.agents/skills/boss/SKILL.md`)
 - **Context & Objective**: Permanently enshrine the 10X production-grade Boss Orchestration Rule V3.0 into repository rules, permanent system memory, Boss skill runbook, and physical database dispatcher, eliminating all simulated or faked agent behavior forever.
 - **Implemented Pattern**:
-  1. Complete Rule Enshrinement: Created `f:\videosystem\.agents\rules\12-boss-orchestration-v3.md` (44KB) and global memory `C:\Users\New Select Com\.gemini\memory\boss-orchestration-v3.md` (44KB) defining the 16-agent Unbroken Baton Protocol across all 16 phases.
+  1. Complete Rule Enshrinement: Created `agents/rules\12-boss-orchestration-v3.md` (44KB) and global memory `C:\Users\New Select Com\.gemini\memory\boss-orchestration-v3.md` (44KB) defining the 16-agent Unbroken Baton Protocol across all 16 phases.
   2. Physical Dispatcher Support: Added `logOutput` and `ensureEmployee`/`ensureTask` to `CompanyDispatcher.js` with CLI command `log_output`, recording every phase output into `execution_events` and `work_handoffs` tables in `company.db`, plus emitting live SSE telemetry.
-  3. Upgraded Boss Skill: Updated `f:\videosystem\.agents\skills\boss\SKILL.md` to reflect V3.0 16-phase sequential execution with database sealing at every baton handoff.
+  3. Upgraded Boss Skill: Updated `agents/skills\boss\SKILL.md` to reflect V3.0 16-phase sequential execution with database sealing at every baton handoff.
   4. Test Verification: Extended `tests/company/CompanyDispatcher.test.js` to verify phase event logging and handoff persistence.
 - **Measured Outcome**:
   - Test Suite (`node --test tests/company/*.test.js`): 6/6 tests passing in 622ms (`$? === 0`).
@@ -259,7 +259,7 @@
      - Magic UI (`magicui.design`): Ambient particle canvases, animated border beams, number tickers, kinetic typography.
      - Unlumen UI (`ui.unlumen.com`): 60fps tactile motion, 3D tilt cards, magnetic spring buttons.
      - shadcn / Radix: Zero-layout-shift accessible UI primitives.
-  3. MCP Servers & Skills Synchronized: All tool schemas and skill playbooks configured in `C:\Users\New Select Com\.gemini\antigravity\mcp\` and `f:\videosystem\.agents\skills\`.
+  3. MCP Servers & Skills Synchronized: All tool schemas and skill playbooks configured in `C:\Users\New Select Com\.gemini\antigravity\mcp\` and `agents/skills\`.
   4. Immortal Memory Etched: Rules 5-9 enshrined in `founder-preferences.md`, company roster expanded to 30 active specialists + 1 Founder = 31 total.
 - **Measured Outcome**:
   - `company-health.bat`: Exit code 0, status `HEALTHY`, 30 total employees, 30 total tasks.
@@ -574,7 +574,8 @@ War Room Council v2.0 successfully prevents messy-prompt blind execution.
 **Apply to**: All schema changes forever. Dr. Kofi's migration safety protocol is the company standard.
 
 ## L-060: 6-Pass Code Review Eliminates Error-Handler Double-Send Bug (2026-09-27)
-**Win**: Pass 2 (Error Handling) of Rafael's code review catches the es.json() double-send pattern that causes memory leaks under concurrent load � a bug class that has caused production outages at multiple companies.
+**Win**: Pass 2 (Error Handling) of Rafael's code review catches the 
+es.json() double-send pattern that causes memory leaks under concurrent load � a bug class that has caused production outages at multiple companies.
 **Apply to**: Every PR must pass Rafael's 6-pass review before reaching VP Eng. Pass 2 is mandatory and cannot be skipped.
 
 ## L-061: 5-Layer QA Suite Catches What Unit Tests Cannot (2026-09-27)
@@ -644,7 +645,8 @@ War Room Council v2.0 successfully prevents messy-prompt blind execution.
 **Apply to**: All future interactive checkboxes, counters, and status toggles.
 
 ## L-073: Clamped DPR & Visibility-Aware Canvas Architecture (2026-09-27)
-**Win**: Clamping canvas DPR via Math.min(devicePixelRatio, 2.0) and pausing equestAnimationFrame loops on document.hidden prevents GPU fill-rate saturation on 3x/4x mobile displays, extending battery life and eliminating fan noise.
+**Win**: Clamping canvas DPR via Math.min(devicePixelRatio, 2.0) and pausing 
+equestAnimationFrame loops on document.hidden prevents GPU fill-rate saturation on 3x/4x mobile displays, extending battery life and eliminating fan noise.
 **Apply to**: All background motes, celestial arcs, and particle canvases.
 
 ## 2026-09-27 — task_kaizen_test
@@ -1676,7 +1678,7 @@ War Room Council v2.0 successfully prevents messy-prompt blind execution.
 
 
 ### [L-143] Quality Restoration Mandate — 2026-10-03
-The Boring Company underwent a major quality restoration audit after the Founder identified 7 degradation patterns: job stealing, fast-over-deep work, skipped clarification questions, unused MCP tools, network-restart instead of resume, complex English to Founder, and solo coding by parent agent. Root causes encoded in Rule 25 (14 laws) at `f:\videosystem\.agents\rules\25-quality-restoration-enforcement.md`. Every agent must read Rule 25 before starting any task.
+The Boring Company underwent a major quality restoration audit after the Founder identified 7 degradation patterns: job stealing, fast-over-deep work, skipped clarification questions, unused MCP tools, network-restart instead of resume, complex English to Founder, and solo coding by parent agent. Root causes encoded in Rule 25 (14 laws) at `agents/rules\25-quality-restoration-enforcement.md`. Every agent must read Rule 25 before starting any task.
 
 ### [L-144] MCP-First Law for ALL Frontend Work — 2026-10-03
 Before writing ANY UI component, animation, scroll effect, or visual element by hand, agents must first check the relevant MCP tools: magicui → shadcn → microinteractions → scrollanimations → glassmorphism/neumorphism → autosize → shapemorph. Only hand-code if the MCP comes up empty. MCP-sourced components produce 10x better quality than hand-coded equivalents from memory. This is now mandatory pre-flight for all frontend agents per Law 4 and Law 14 of Rule 25.

@@ -288,7 +288,7 @@ A task is **DONE** when ALL of the following are true, with machine-observable p
 ### The 14-Law Upgrade: Thinking, Developing, Reasoning, Collaborating, Tool Usage
 
 > **Enacted by:** Founder Abdullah Hanjra — after identifying quality degradation in company operations
-> **Full Rule:** `f:\videosystem\.agents\rules\25-quality-restoration-enforcement.md` (MANDATORY reading)
+> **Full Rule:** `agents/rules\25-quality-restoration-enforcement.md` (MANDATORY reading)
 
 ### THE 7 ORIGINAL DEGRADATION PROBLEMS → FIXES
 
@@ -326,4 +326,4 @@ A task is **DONE** when ALL of the following are true, with machine-observable p
 | Clarification questions | 5+ before starting | ask_question tool |
 
 ### COMPLETE SELF-CHECK (Run Before AND After Every Task)
-See: `f:\videosystem\.agents\rules\25-quality-restoration-enforcement.md` — COMPLETE SELF-CHECK section
+See: `agents/rules\25-quality-restoration-enforcement.md` — COMPLETE SELF-CHECK section

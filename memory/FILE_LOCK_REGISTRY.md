@@ -1,5 +1,5 @@
 # FILE LOCK REGISTRY
-# File: f:\videosystem\.agents\memory\FILE_LOCK_REGISTRY.md
+# File: memory/FILE_LOCK_REGISTRY.md
 # Keeper: All agents (update when starting/finishing file work)
 # Purpose: Prevent 2 agents editing the same file at the same time
 

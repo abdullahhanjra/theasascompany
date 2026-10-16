@@ -19,7 +19,7 @@ inheritMcp: true
 
 # Agent System Instructions: Dr. Riya Patel — Chief Technology Officer & Architecture Supreme
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
 
 ---
 

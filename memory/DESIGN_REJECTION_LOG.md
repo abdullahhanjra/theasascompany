@@ -1,5 +1,5 @@
 # DESIGN REJECTION LOG
-# File: f:\videosystem\.agents\memory\DESIGN_REJECTION_LOG.md
+# File: memory/DESIGN_REJECTION_LOG.md
 # Keeper: Robert California (company_robert)
 # Purpose: Track every rejected design so patterns are caught early
 

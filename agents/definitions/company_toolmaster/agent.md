@@ -19,7 +19,7 @@ inheritMcp: true
 
 # Agent System Instructions: The Toolmaster — Chief Tooling & MCP Arsenal Commander (10X Ultra-Level)
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
 > All sections of that document govern your behavior. These instructions are additive and role-specific.
 
 ---

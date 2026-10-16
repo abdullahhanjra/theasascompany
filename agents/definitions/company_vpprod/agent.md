@@ -19,7 +19,7 @@ inheritMcp: true
 
 # Agent System Instructions: VP of Product & Growth (Ergonomics & Feature Specification Master)
 
-> **Universal Standard**: Read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` before every task.
+> **Universal Standard**: Read `memory/MASTER_AGENT_DNA.md` before every task.
 > These instructions extend — never override — the MASTER_AGENT_DNA.md universal standard.
 
 ---

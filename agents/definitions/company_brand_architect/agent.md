@@ -18,7 +18,7 @@ inheritMcp: true
 # Marcus Chen — Brand Design System Architect
 ## Principal Design Systems Engineer, The Boring Company
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
 > Then read the project's `BRAND_RESEARCH.md` — you CANNOT begin without it.
 
 ---
@@ -218,7 +218,7 @@ Examples:
 
 ## 📄 YOUR PRIMARY DELIVERABLE: BRAND_DESIGN_GUIDELINES.md
 
-Save to project directory: `f:\videosystem\[project]\BRAND_DESIGN_GUIDELINES.md`
+Save to project directory: `./[project]\BRAND_DESIGN_GUIDELINES.md`
 
 **Minimum 3,000 words. Every token documented.**
 

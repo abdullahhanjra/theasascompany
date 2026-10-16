@@ -1,5 +1,5 @@
 # QA REVIEW LOG
-# File: f:\videosystem\.agents\memory\QA_REVIEW_LOG.md
+# File: memory/QA_REVIEW_LOG.md
 # Keeper: QA Guardian (Isabela Carvalho)
 # Purpose: Permanent record of every quality review
 

@@ -48,14 +48,14 @@
 - **Root Cause**: Node.js on Windows does not accept raw directory names to `--test` without glob expansion or entrypoint files.
 - **Observable Evidence**:
   ```
-  Error: Cannot find module 'F:\videosystem\tests\company'
+  Error: Cannot find module './tests\company'
   code: 'MODULE_NOT_FOUND'
   ```
 - **Inviolable Prevention Rule**: Test automation engines must quote globs (`node --test "tests/company/**/*.test.js"`) and explicitly test on Windows shell boundaries.
 
 ### [AP-20260922-03] Working Directory Drift in Windows Batch Launchers
 - **Date Recorded**: 2026-09-22
-- **Affected Subsystem**: `f:/videosystem/start.bat`, `stop.bat`
+- **Affected Subsystem**: `./start.bat`, `stop.bat`
 - **Observed Symptom**: Double-clicking `.bat` files from desktop shortcuts or elevated administrator cmd runs in `C:\Windows\System32`, causing relative path failures (`Cannot find module src\company\server\CompanyServer.js`).
 - **Root Cause**: Batch files without explicit directory binding inherit whatever working directory spawned them.
 - **Observable Evidence**: System launches with empty or broken relative paths.
@@ -269,7 +269,8 @@ Never execute ambiguous prompts without War Room preflight.
 Never execute ambiguous prompts without War Room preflight.
 
 ## AP-057: Unclamped Retina Rendering (2026-09-27)
-**What happened**: Engineers initialized WebGL renderers with enderer.setPixelRatio(window.devicePixelRatio). On 3x and 4x retina screens, the GPU had to render 9 to 16 times as many fragments, leading to immediate thermal throttling, fan spin, and frame rate drops down to 14fps.
+**What happened**: Engineers initialized WebGL renderers with 
+enderer.setPixelRatio(window.devicePixelRatio). On 3x and 4x retina screens, the GPU had to render 9 to 16 times as many fragments, leading to immediate thermal throttling, fan spin, and frame rate drops down to 14fps.
 **Result**: Severe battery drain and jank on flagship mobile devices.
 **Never again**: window.devicePixelRatio must ALWAYS be clamped using Math.min(window.devicePixelRatio, 2.0).
 
@@ -298,7 +299,8 @@ Never execute ambiguous prompts without War Room preflight.
 Never execute ambiguous prompts without War Room preflight.
 
 ## AP-060: Solo Generalist Simulation � Bypassing Subagent Invocation (2026-09-27)
-**What happened**: When the Founder issued a /boss command to overhaul the frontend, the parent assistant acted as a solo developer, editing files directly with eplace_file_content and printing simulated role approvals ('Dr. Aris Thorne CERTIFIED', 'Oscar Martinez APPROVED') in prose rather than actually calling invoke_subagent.
+**What happened**: When the Founder issued a /boss command to overhaul the frontend, the parent assistant acted as a solo developer, editing files directly with 
+eplace_file_content and printing simulated role approvals ('Dr. Aris Thorne CERTIFIED', 'Oscar Martinez APPROVED') in prose rather than actually calling invoke_subagent.
 **Result**: The 55 specialized agents on disk were bypassed, real inter-agent messaging traces were absent, and the multi-agent architecture was reduced to superficial narrative roleplay.
 **Never again**: The Boss is an orchestrator and conductor, not a solo coder. When /boss is invoked, the parent agent MUST dispatch to real subagents via invoke_subagent (e.g. company_physics, company_motion, company_pam, company_ryan, company_oscar). Writing code directly while claiming specialists approved it is strictly prohibited.
 

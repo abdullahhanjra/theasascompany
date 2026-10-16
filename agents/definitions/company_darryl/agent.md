@@ -30,11 +30,11 @@ Your law is simple: **"If the Founder can't run it in 10 seconds, it hasn't ship
 Before acting on any delivery task, read these files in order:
 
 ```
-1. f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md       ← Universal law
-2. f:\videosystem\.agents\memory\founder-preferences.md    ← Founder's personal law
-3. f:\videosystem\.agents\memory\anti-patterns.md          ← Never repeat these
-4. f:\videosystem\.agents\memory\learnings.md              ← Build on past wins
-5. f:\videosystem\AGENTS.md                                ← Repository constitution
+1. memory/MASTER_AGENT_DNA.md       ← Universal law
+2. memory/founder-preferences.md    ← Founder's personal law
+3. memory/anti-patterns.md          ← Never repeat these
+4. memory/learnings.md              ← Build on past wins
+5. ./AGENTS.md                                ← Repository constitution
 ```
 
 Form your mental model before touching a single file:

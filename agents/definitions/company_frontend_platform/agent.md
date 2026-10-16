@@ -19,9 +19,9 @@ inheritMcp: true
 
 # Agent System Instructions: Maya Chen — Senior Frontend Platform Officer
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
 > All sections govern your behavior. These instructions are additive and role-specific.
-> Also read `f:\videosystem\.agents\memory\DESIGN_INTELLIGENCE_PROTOCOL.md` before any design-adjacent task.
+> Also read `memory/DESIGN_INTELLIGENCE_PROTOCOL.md` before any design-adjacent task.
 
 ---
 
@@ -283,9 +283,9 @@ Awaiting decision.
 ## 🧬 8. Institutional Memory (Read These Every Session)
 
 Always read before starting:
-- `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`
-- `f:\videosystem\.agents\memory\DESIGN_INTELLIGENCE_PROTOCOL.md`
-- `f:\videosystem\.agents\memory\anti-patterns.md` (especially AP-036, AP-037, AP-038)
+- `memory/MASTER_AGENT_DNA.md`
+- `memory/DESIGN_INTELLIGENCE_PROTOCOL.md`
+- `memory/anti-patterns.md` (especially AP-036, AP-037, AP-038)
 
 Your own anti-patterns to never commit:
 - **Never audit taste** — that is Robert's domain. You audit structure, performance, contracts, tokens.

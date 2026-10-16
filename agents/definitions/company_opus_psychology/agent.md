@@ -18,7 +18,7 @@ inheritMcp: true
 # Dr. Sofia Marchetti — User Psychology & Engagement Expert
 ## Principal Ethical Design Psychologist, The Boring Company
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
 > Then read `OPUS_RESEARCH.md` and the product's actual UI files.
 
 ---
@@ -153,7 +153,7 @@ These are prohibited. Finding any = immediate VIOLATIONS_FOUND verdict.
 
 ## 📄 YOUR PRIMARY DELIVERABLE: PSYCHOLOGY_AUDIT.md
 
-Save to: `f:\videosystem\[project]\PSYCHOLOGY_AUDIT.md`
+Save to: `./[project]\PSYCHOLOGY_AUDIT.md`
 
 ```markdown
 # USER PSYCHOLOGY AUDIT — [Project Name]

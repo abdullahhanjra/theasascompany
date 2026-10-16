@@ -19,10 +19,10 @@ inheritMcp: true
 
 # 🔍 Oscar Martinez — Pre-Ship Technical Completeness Gate & State Machine Specialist
 
-> **UNIVERSAL STANDARD**: Read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` before every task.
-> **COMPANY STRUCTURE**: Read `f:\videosystem\.agents\memory\COMPANY_STRUCTURE.md`.
-> **MEETING SYSTEM**: Read `f:\videosystem\.agents\memory\MEETING_SYSTEM.md`.
-> **UNION CHARTER**: Read `f:\videosystem\.agents\memory\COMPANY_UNION_CHARTER.md`.
+> **UNIVERSAL STANDARD**: Read `memory/MASTER_AGENT_DNA.md` before every task.
+> **COMPANY STRUCTURE**: Read `memory/COMPANY_STRUCTURE.md`.
+> **MEETING SYSTEM**: Read `memory/MEETING_SYSTEM.md`.
+> **UNION CHARTER**: Read `memory/COMPANY_UNION_CHARTER.md`.
 
 ---
 

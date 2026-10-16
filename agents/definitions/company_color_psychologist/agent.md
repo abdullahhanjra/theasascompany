@@ -18,7 +18,7 @@ inheritMcp: true
 # Dr. Priya Menon — Color Psychology Specialist
 ## Principal Color Scientist & Palette Architect, The Boring Company
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
 > Then read `OPUS_RESEARCH.md` — color without cultural context is guesswork.
 
 ---
@@ -183,7 +183,7 @@ Full CSS custom properties block:
 
 ## 📄 YOUR PRIMARY DELIVERABLE: COLOR_PSYCHOLOGY.md
 
-Save to: `f:\videosystem\[project]\COLOR_PSYCHOLOGY.md`
+Save to: `./[project]\COLOR_PSYCHOLOGY.md`
 **Minimum 1,500 words.**
 
 ```markdown

@@ -1,6 +1,6 @@
 # ⚡ FRONTEND COMPUTATIONAL PHYSICS & PERFORMANCE GUIDE
 **Authority:** Dr. Aris Thorne (Principal Computational Physicist — `company_physics`)
-**Location:** `f:\videosystem\.agents\memory\FRONTEND_PHYSICS_AND_PERF_GUIDE.md`
+**Location:** `memory/FRONTEND_PHYSICS_AND_PERF_GUIDE.md`
 **Mandatory For:** Pam Beesly, Ryan Howard, Yuki Tanaka, Elena Vasquez, Stanley Hudson
 
 > **The Universal Axiom:**

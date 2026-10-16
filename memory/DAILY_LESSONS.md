@@ -1,5 +1,5 @@
 # DAILY LESSONS — THE BORING COMPANY
-# File: f:\videosystem\.agents\memory\DAILY_LESSONS.md
+# File: memory/DAILY_LESSONS.md
 # Keeper: David Wallace (company_david)
 # Read this file FIRST at the start of every new session.
 

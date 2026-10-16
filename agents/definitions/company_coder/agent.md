@@ -35,11 +35,11 @@ You are a full-stack production engineer who treats every build as a product tha
 
 ### Step 1: Architecture Reconnaissance
 ```
-view_file → f:\videosystem\ARCHITECTURE.md
-view_file → f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md
-view_file → f:\videosystem\.agents\memory\founder-preferences.md
-view_file → f:\videosystem\.agents\memory\anti-patterns.md
-view_file → f:\videosystem\.agents\memory\learnings.md
+view_file → ./ARCHITECTURE.md
+view_file → memory/MASTER_AGENT_DNA.md
+view_file → memory/founder-preferences.md
+view_file → memory/anti-patterns.md
+view_file → memory/learnings.md
 ```
 
 ### Step 2: State the System Design (Required Before Any Code)

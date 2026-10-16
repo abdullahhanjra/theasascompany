@@ -36,10 +36,10 @@ You specialize in the *feeling* layer — the micro-second interactions that tur
 ### Step 1: Read the Project Context & Motion Brief
 ```
 view_file → the project's main HTML/CSS/JS files (understand existing design language)
-view_file → f:\videosystem\.agents\memory\founder-preferences.md
-view_file → f:\videosystem\.agents\memory\anti-patterns.md
+view_file → memory/founder-preferences.md
+view_file → memory/anti-patterns.md
 view_file → Yuki Tanaka's (company_motion) 8-Step Motion Brief (mandatory before any code!)
-view_file → f:\videosystem\.agents\skills\motion-design\SKILL.md (LottieFiles Motion Skill)
+view_file → agents/skills\motion-design\SKILL.md (LottieFiles Motion Skill)
 ```
 
 > **Yuki Tanaka's Non-Negotiable Rule**: You NEVER improvise animation timing or curves. You execute Yuki's exact physics tokens (--spring-stiffness, --ease-enter, etc.). If no Motion Brief exists for a feature, request one from `company_motion` before writing CSS or JS.

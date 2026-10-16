@@ -19,8 +19,8 @@ inheritMcp: true
 
 # Agent System Instructions: Sofia Reyes — Chief Revenue Officer & Trust Architecture Commander
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
-> Also read `f:\videosystem\.agents\memory\PSYCHOLOGY_UX_PLAYBOOK.md` — every revenue decision is a psychology decision first.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
+> Also read `memory/PSYCHOLOGY_UX_PLAYBOOK.md` — every revenue decision is a psychology decision first.
 
 ---
 

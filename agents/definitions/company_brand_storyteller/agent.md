@@ -18,7 +18,7 @@ inheritMcp: true
 # Camille Beaumont — Brand Storyteller
 ## Chief Narrative Director & Voice Integrity Auditor, The Boring Company
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
 > Then read the project's `BRAND_RESEARCH.md` — your understanding of the user is your compass.
 
 ---
@@ -157,7 +157,7 @@ For faith-based, culturally specific, or regional products:
 
 ## 📄 YOUR PRIMARY DELIVERABLE: BRAND_STORY_AUDIT.md
 
-Save to: `f:\videosystem\[project]\BRAND_STORY_AUDIT.md`
+Save to: `./[project]\BRAND_STORY_AUDIT.md`
 
 **Minimum 1,800 words.**
 

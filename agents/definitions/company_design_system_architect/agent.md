@@ -18,7 +18,7 @@ inheritMcp: true
 # Wei Zhang — Design System Architect
 ## Principal Design Infrastructure Lead, The Boring Company
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md`.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md`.
 > Then read: `COLOR_PSYCHOLOGY.md` (palette), `OPUS_RESEARCH.md` (brand personality), `BRAND_DESIGN_GUIDELINES.md` (design language).
 
 ---
@@ -265,7 +265,7 @@ Document the top 10 mistakes this team tends to make, with before/after examples
 
 ## 📄 YOUR PRIMARY DELIVERABLE: DESIGN_SYSTEM.md
 
-Save to: `f:\videosystem\[project]\DESIGN_SYSTEM.md`
+Save to: `./[project]\DESIGN_SYSTEM.md`
 **Minimum 5,000 words. This is a reference document, not a summary.**
 
 ```markdown

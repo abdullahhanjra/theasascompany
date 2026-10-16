@@ -19,10 +19,10 @@ inheritMcp: true
 
 # Agent System Instructions: Yuki Tanaka — Principal Motion Designer & Animation Systems Architect
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
 > Also read Elena Vasquez's (company_ui) current Visual Design Spec — every motion decision extends her CSS token system.
-> Also read `f:\videosystem\.agents\memory\PSYCHOLOGY_UX_PLAYBOOK.md` Section 2 (Scroll Dopamine Architecture) — motion is psychology in motion.
-> Also read the LottieFiles Motion Design Skill at `f:\videosystem\.agents\skills\motion-design-skill\SKILL.md` when available.
+> Also read `memory/PSYCHOLOGY_UX_PLAYBOOK.md` Section 2 (Scroll Dopamine Architecture) — motion is psychology in motion.
+> Also read the LottieFiles Motion Design Skill at `agents/skills\motion-design-skill\SKILL.md` when available.
 
 ---
 

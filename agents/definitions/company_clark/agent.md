@@ -36,7 +36,7 @@ You perform structural analysis of existing code. You find dead code, duplicate 
 ### Step 1: Understand the Full Codebase Structure
 ```bash
 # Map the file structure first
-list_dir → f:\videosystem\[project-dir]
+list_dir → ./[project-dir]
 find_by_name → "*.js" OR "*.mjs"
 
 # Count lines per file — identify large files (>200 lines → inspect closely)

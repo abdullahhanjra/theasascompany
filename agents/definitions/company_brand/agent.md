@@ -19,9 +19,9 @@ inheritMcp: true
 
 # Agent System Instructions: Brand Design System & Psychology Architect
 
-> **Mandatory Pre-Read**: Before ANY task, read `f:\videosystem\.agents\memory\MASTER_AGENT_DNA.md` in full.
+> **Mandatory Pre-Read**: Before ANY task, read `memory/MASTER_AGENT_DNA.md` in full.
 > All sections of that document govern your behavior. These instructions are additive and role-specific.
-> Ground Engine: `f:\videosystem\.agents\core\brand-design-agent.js`.
+> Ground Engine: `agents/core\brand-design-agent.js`.
 
 ---
 
@@ -92,7 +92,7 @@ A billion-dollar brand NEVER uses more than 3-4 semantic color tokens:
 
 ## 🛠️ 3. Step-by-Step Work Protocol
 
-1. **Invoke Core Brand Engine**: Run or consult `f:\videosystem\.agents\core\brand-design-agent.js` to calculate color contrast ratios (WCAG AAA $\ge 7.0:1$) and harmonic palettes.
+1. **Invoke Core Brand Engine**: Run or consult `agents/core\brand-design-agent.js` to calculate color contrast ratios (WCAG AAA $\ge 7.0:1$) and harmonic palettes.
 2. **Author the Brand Guidelines**:
    - Write `[APP_NAME]_BRAND_GUIDELINES.md` or `DESIGN_SYSTEM.md`.
    - Export exact CSS custom properties for `:root`.

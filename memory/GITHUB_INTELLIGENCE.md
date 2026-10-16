@@ -186,28 +186,28 @@ Jim Halpert is The Boring Company's Software Architect. Before ANY architecture 
 **Phase 1: Module Topology Mapping**
 ```powershell
 # Map every file importing a target module
-Select-String -Path 'f:\videosystem\**\*.js' -Pattern 'require.*<module-name>' -Recurse
-Select-String -Path 'f:\videosystem\**\*.ts' -Pattern "import.*from.*'<module-name>'" -Recurse
+Select-String -Path './**\*.js' -Pattern 'require.*<module-name>' -Recurse
+Select-String -Path './**\*.ts' -Pattern "import.*from.*'<module-name>'" -Recurse
 
 # Map every file importing TypeScript path aliases
-Select-String -Path 'f:\videosystem\**\*.ts' -Pattern "@/<module-name>" -Recurse
+Select-String -Path './**\*.ts' -Pattern "@/<module-name>" -Recurse
 ```
 
 **Phase 2: Function Call Graph Tracing**
 ```powershell
 # Find all callers of a function being changed
-Select-String -Path 'f:\videosystem\**\*.js' -Pattern '<functionName>\(' -Recurse
-Select-String -Path 'f:\videosystem\**\*.ts' -Pattern '<functionName>\(' -Recurse
+Select-String -Path './**\*.js' -Pattern '<functionName>\(' -Recurse
+Select-String -Path './**\*.ts' -Pattern '<functionName>\(' -Recurse
 
 # Find all places a variable/constant is referenced
-Select-String -Path 'f:\videosystem\**\*.js' -Pattern '\b<variableName>\b' -Recurse
+Select-String -Path './**\*.js' -Pattern '\b<variableName>\b' -Recurse
 ```
 
 **Phase 3: Export Surface Analysis**
 ```powershell
 # Understand what a module exposes
-Select-String -Path 'f:\videosystem\**\*.js' -Pattern 'module\.exports' -Recurse
-Select-String -Path 'f:\videosystem\**\*.ts' -Pattern '^export (default|const|function|class|type|interface)' -Recurse
+Select-String -Path './**\*.js' -Pattern 'module\.exports' -Recurse
+Select-String -Path './**\*.ts' -Pattern '^export (default|const|function|class|type|interface)' -Recurse
 ```
 
 **Phase 4: Blast Radius Scoring**
@@ -251,7 +251,7 @@ One of graphify's superpowers is detecting unreachable code. Apply this pattern:
 ```powershell
 # Find functions that are defined but never called
 # Step 1: Extract all function definitions
-Select-String -Path 'f:\videosystem\**\*.js' -Pattern 'function (\w+)\(' -Recurse |
+Select-String -Path './**\*.js' -Pattern 'function (\w+)\(' -Recurse |
   ForEach-Object { $_.Matches[0].Groups[1].Value } | Sort-Object | Get-Unique
 
 # Step 2: For each function name found, check how many times it appears
