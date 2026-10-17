@@ -1,244 +1,268 @@
-# 🏢 The Boring Company — Autonomous AI Software Enterprise OS
+<div align="center">
 
-[![Reality Gate CI](https://github.com/youtubrabdullah1626/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/youtubrabdullah1626/theboringcompany/actions)
-[![Tests](https://img.shields.io/badge/Reality%20Gate-32%20passing-brightgreen.svg)](test/)
-[![p99 Latency](https://img.shields.io/badge/p99%20Latency-%3C15ms-blue.svg)](BENCHMARKS.md)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node: >=22.5](https://img.shields.io/badge/Node->=22.5.0-green.svg)](https://nodejs.org/)
-[![Platform: Win | Mac | Linux](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue.svg)]()
+# 🏢 The Boring Company
 
-> **"Build and operate software as a production engineering system, not a code generation tool."**
+### **The Autonomous Software Engineering Runtime with a Mathematically Verified Reality Gate**
 
-An enterprise multi-agent operating system and runtime framework designed to coordinate, dispatch, verify, and govern autonomous AI agents working as a structured software company.
+*Stop being your AI's bug-fixer. Build software with an autonomous engineering system that writes code, executes real tests in a sandbox, self-heals failures, and delivers verified, production-ready pull requests.*
 
-Developed by **[Abdullah Hanjra](https://www.linkedin.com/in/abdullahhanjracodes/)**.
+<br/>
 
-[**Quickstart**](docs/quickstart.md) • [**Architecture**](docs/architecture.md) • [**Reality Gate**](docs/reality-gate.md) • [**Benchmarks**](BENCHMARKS.md) • [**Agent Catalog**](docs/agents-catalog.md) • [**Contributing**](CONTRIBUTING.md) • [**Security**](SECURITY.md) • [**Roadmap**](ROADMAP.md) • [**Changelog**](CHANGELOG.md)
+[![Reality Gate CI](https://github.com/abdullahhanjra153/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjra153/theboringcompany/actions)
+[![Reality Gate Tests](https://img.shields.io/badge/Reality%20Gate-32%20passing-22c55e.svg?style=flat-square)](test/)
+[![Dependencies](https://img.shields.io/badge/Dependencies-0%20external-3b82f6.svg?style=flat-square)](package.json)
+[![Node Runtime](https://img.shields.io/badge/Node.js->=22.5.0-green.svg?style=flat-square)](https://nodejs.org/)
+[![p99 Latency](https://img.shields.io/badge/p99%20Latency-<15ms-8b5cf6.svg?style=flat-square)](BENCHMARKS.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-f59e0b.svg?style=flat-square)](LICENSE)
 
-> [!NOTE]
-> **Trademark Disclaimer**: *"The Boring Company OS"* is an independent, open-source multi-agent engineering framework. The name is a tribute to the engineering philosophy of building **"boring software"** — software that is simple, resilient, well-tested, and works reliably in production without drama. It is not affiliated with, endorsed by, or related to The Boring Company (tunnel construction).
+<br/>
 
----
+[**Quickstart (60s)**](#-quickstart-under-60-seconds) • [**Why This Exists**](#-why-the-boring-company) • [**How It Works**](#-how-it-works-separation-of-powers) • [**Superpowers**](#-the-5-engineering-superpowers) • [**Benchmarks**](#-empirical-benchmarks) • [**Documentation**](docs/)
 
-## ⚡ Executive Summary
-
-Most agentic workflows fail because LLMs report success without machine verification, drift outside task boundaries, and iterate infinitely on failure.
-
-**The Boring Company OS** solves this by establishing a disciplined engineering framework:
-1. **Reality Gate Interlock**: Tasks are certified complete **ONLY** when native test runners exit cleanly with machine proof (`$? === 0`).
-2. **Adversarial Sparring Arena (Claudex Loop)**: Software Architects pitch designs; Adversarial Inquisitors attack them with chaos and concurrency probes before a single line of code is written.
-3. **3-Track Velocity Engine**: Dynamically routes incoming tasks to prevent small fixes from triggering heavy processes.
-4. **Relational Operating Ledger (SQLite)**: 45+ tables in [`database/schema.sql`](database/schema.sql) tracking tasks, execution leases, token budgets, and tamper-proof governance audit events.
-5. **Context-Optimized Memory Indexer**: Slices 400KB+ institutional memory into tagged, <50-line bite-sized cards searchable in <15ms (`npm run search-memory`).
-6. **Actor-Based Hive IPC**: File-based single-writer queues (`inbox/`, `outbox/`, `.done/`) and native socket hooks (`agy-hook.cjs`, `hive-proxy.cjs`) with multi-stage token circuit breakers (`steer` ➔ `constrain` ➔ `stop`).
+</div>
 
 ---
 
-## 🚀 Quickstart: Run Your First Mission in 30 Seconds
+## ⚡ The Problem: The AI "Review Fatigue" Crisis
 
-Zero external dependencies required. Built on native Node.js:
+Every software engineer and tech lead has experienced this exact frustration:
 
+1. You prompt an AI coding assistant to implement a feature or fix an elusive bug.
+2. The AI generates 300 lines of confident, beautiful-looking code and announces:  
+   > *"I have fixed the issue! Everything is working perfectly."*
+3. You copy the code into your repository, run your tests, and **the build fails with 7 errors, broken imports, and subtle regressions**.
+4. You spend the next 45 minutes manually debugging the AI's hallucinations.
+
+**The result? You didn't save time. You just became an underpaid code reviewer for an AI.**
+
+Worse, standard multi-agent frameworks often cheat: they delete failing test assertions, add `// @ts-ignore` comments, or enter infinite apology loops that burn \$30 in API credits without fixing anything.
+
+---
+
+## 💡 The Solution: Software Engineering as an Autonomous System
+
+**The Boring Company OS** fundamentally flips the trust model. 
+
+We treat AI models like **untrusted contractors**. The agent is never allowed to certify its own success. A task is considered complete **only when your real machine test runner exits cleanly with exit code 0 (`$? === 0`)**, positive assertion counts are captured, and cryptographic hashes prove no test files were tampered with.
+
+```
+       User Objective
+             │
+             ▼
+   ┌───────────────────┐
+   │ 1. Align & Scope  │ ──► Compute blast radius & enforce hard token caps
+   └───────────────────┘
+             │
+             ▼
+   ┌───────────────────┐
+   │ 2. Isolated Edit  │ ──► Sandbox workspace (zero path traversal, minimal diffs)
+   └───────────────────┘
+             │
+             ▼
+   ┌───────────────────┐
+   │  3. REALITY GATE  │ ──► Native OS execution ($? === 0 + anti-tamper hash check)
+   └───────────────────┘
+        │            │
+     [FAILS]      [PASSES]
+        │            │
+        ▼            ▼
+┌──────────────┐  ┌──────────────────────────────────────────────┐
+│  Self-Heal   │  │  Persist to SQLite Ledger & Deliver Verified │
+│  Diagnostic  │  │  Clean Pull Request                         │
+│  Retry Loop  │  └──────────────────────────────────────────────┘
+└──────────────┘
+```
+
+---
+
+## 🚀 Quickstart: Under 60 Seconds
+
+The entire engine is built using **pure native Node.js 22+ standard library**. Zero `npm install` bloat. Zero fragile dependencies.
+
+### 1. Clone the repository
 ```bash
-# 1. Clone repository
-git clone https://github.com/youtubrabdullah1626/theboringcompany.git
+git clone https://github.com/abdullahhanjra153/theboringcompany.git
 cd theboringcompany
+```
 
-# 2. Run the Reality Gate Test Suite (12 Native Test Suites)
+### 2. Run the verified Reality Gate test suite
+```bash
 npm test
+```
+*Output: 32 / 32 native test suites pass in ~3.5 seconds with zero external packages.*
 
-# 3. Dispatch a sample engineering mission through the full loop
+### 3. Run the autonomous self-healing demo
+```bash
 npm run demo
 ```
-
-You can also dispatch custom tasks, run empirical benchmarks, or query memory directly:
-
-```bash
-# Run custom mission
-node cli.js --task "Implement idempotent webhook receiver"
-
-# Run empirical latency benchmark (10,000 iterations)
-npm run benchmark
-
-# Search institutional memory cards (<15ms)
-npm run search-memory -- "sqlite transaction"
-```
+*Watch the autonomous engine accept a broken task, isolate the failure in a sandbox, write the minimal fix, prove it against the test runner, and commit the verified result.*
 
 ---
 
-## 📋 Proof of Output: Executive 1-Minute Clarity Card
+## ✨ The 5 Engineering Superpowers
 
-When any mission passes through the 6-phase loop and clears the Reality Gate, the system emits an unmanipulated, terminal-grounded clarity card:
+### 1. 🛡️ The Reality Gate (Mathematically Verified Truth)
+No AI narrative claims are accepted. The engine spawns the actual native test runner (`node:test`, Jest, Vitest, or Pytest) directly into an OS-level sub-process. Success requires:
+- Raw terminal exit code `0`.
+- At least one positive passing assertion (`passed > 0`).
+- Zero unhandled rejections or runtime exceptions.
 
-<p align="center">
-  <img src="docs/assets/clarity-card-preview.svg" alt="Executive 1-Minute Clarity Card" width="100%" />
-</p>
+### 2. 🔒 Cryptographic Anti-Tamper Security
+When models get stuck on failing tests, standard agents often cheat by deleting tests or weakening assertions.  
+The Reality Gate computes **SHA-256 fingerprints** of all workspace test files before code execution. If the model modifies, comments out, or weakens any test without explicit permission, the patch is **immediately rejected and rolled back**.
 
-> *View full raw execution logs and machine signatures in [`examples/runs/`](examples/runs/).*
+### 3. ⚡ Zero External Dependencies (Zero Supply-Chain Risk)
+Enterprise codebases cannot afford 200 random npm dependencies with supply-chain vulnerabilities.  
+The Boring Company runs on **100% standard library features**:
+- **`node:sqlite`** — High-speed, ACID-compliant relational persistence with WAL mode.
+- **`node:test`** — Built-in native test runner.
+- **`node:crypto`** — Hardware-accelerated cryptographic fingerprinting.
+
+### 4. 🤖 Universal Model-Agnostic Engine
+Never get locked into a single AI provider. Switch models with a single environment flag:
+- **Anthropic Claude** (`claude-3-7-sonnet`, `claude-3-5-sonnet`)
+- **OpenAI** (`gpt-4o`, `o3-mini`)
+- **Google Gemini** (`gemini-2.5-pro`, `gemini-2.5-flash`)
+- **Local Offline Ollama** (`deepseek-coder`, `llama3`) for air-gapped, privacy-first environments.
+- **Hermetic Test Provider** for deterministic offline CI runs.
+
+### 5. 📊 Tamper-Proof SQLite Audit Ledger
+Every single objective, reasoning step, code diff, token spend, and test output is recorded into an ACID relational SQLite database (`database/schema.sql`). 
+- Full compliance and post-mortem traceability.
+- Crash resilience: If power is cut mid-task, the engine recovers state safely without duplicating destructive actions.
 
 ---
 
-## 📊 Empirical Benchmarks (`[MEASURED]`)
+## 🏛️ How It Works: Separation of Powers
 
-All metrics measured on physical machine hardware using `npm run benchmark` with nanosecond-resolution `process.hrtime.bigint()` timing:
-
-| Benchmark Metric | Iterations | Median (p50) | 99th Percentile (p99) | Status |
-| :--- | :---: | :---: | :---: | :---: |
-| **Hive IPC Actor Contract Validation** | 10,000 | **0.0003 ms** | **0.0015 ms** | ✔ OPTIMAL |
-| **Reality Gate Fail-Closed Decision** | 10,000 | **0.0001 ms** | **0.0017 ms** | ✔ OPTIMAL |
-| **Schema DDL Table Integrity (45+ tables)** | 200 | **0.2290 ms** | **0.7110 ms** | ✔ OPTIMAL |
-| **Memory Index Card Query (<50 lines)** | 100 | **8.6670 ms** | **12.1720 ms** | ✔ OPTIMAL |
-
-*See [`BENCHMARKS.md`](BENCHMARKS.md) for complete hardware environment specifications and methodology.*
-
----
-
-
-## 🏛️ System Architecture
+Most multi-agent systems fail because agents argue in endless loops. The Boring Company enforces strict **Separation of Powers**:
 
 ```mermaid
 flowchart TD
-    Founder["Founder / Visionary"] -->|"/boss &lt;task&gt;"| CEO["CEO & Supreme Floor Conductor<br/>(Marcus Chen / Michael)"]
+    Founder["Founder / Lead Developer"] -->|Objective| CEO["1. Executive Planner<br/>(Scope, Blast Radius & Budget)"]
     
-    subgraph VelocityEngine["3-Track Velocity Engine"]
-        CEO --> TrackA["Track A: Surgical Strike (&lt;60s)"]
-        CEO --> TrackB["Track B: Feature Sprint (2-3m)"]
-        CEO --> TrackC["Track C: Enterprise Core (5-8m)"]
+    subgraph ExecutionPlane["Autonomous Execution Pipeline"]
+        CEO --> Builder["2. Surgical Builder<br/>(Minimal Diffs / Karpathy Razor)"]
+        Builder --> Sandbox["3. Sandboxed Workspace<br/>(Strict Path Boundary & Secret Redaction)"]
+        Sandbox --> RealityGate{"4. REALITY GATE<br/>Native OS Test Verification"}
     end
 
-    subgraph AdversarialArena["Claudex Loop & Adversarial Sparring"]
-        Architect["Stanley (Software Architect)<br/>Domain Modeling & 5-Bullet Pitch"] 
-        Inquisitor["Dwight (Adversarial Inquisitor)<br/>3-Probe Chaos & Concurrency Attack"]
-        Architect <-->|5-Vector Fragility Scorecard &le; 2/10| Inquisitor
+    subgraph LedgerStorage["Enterprise Compliance Ledger"]
+        RealityGate -->|Machine Proof $? === 0| DB[(Local SQLite Ledger<br/>WAL Mode & Audit Triggers)]
     end
 
-    TrackB --> AdversarialArena
-    TrackC --> AdversarialArena
-
-    subgraph SpecialistFleet["Specialist Delivery Squads"]
-        Jim["Jim: Minimal Change Lead Coder<br/>(Karpathy 50-Line Razor)"]
-        Ryan["Ryan: TDD Engine (RED ➔ GREEN)"]
-        Oscar["Oscar: DBRE (SQLite WAL & Indexes)"]
-        Toby["Toby: AgentShield AppSec (CWE Defense)"]
-        JanPam["Jan & Pam: Executive UI & Design Guild"]
-    end
-
-    AdversarialArena --> SpecialistFleet
-    TrackA --> Jim
-
-    subgraph GovernanceGate["Reality Gate & Ledger Interlock"]
-        Angela["Angela: Reality Gate Auditor<br/>Machine Proof ($? === 0)"]
-        Creed["Creed: Fresh Review Inspector<br/>Zero Author Bias Context"]
-        DB[(company.db SQLite Ledger<br/>Tamper-Proof Audit Triggers)]
-    end
-
-    SpecialistFleet --> Angela
-    Angela --> Creed
-    Creed --> DB
-    DB --> Output["Certified Production Release"]
+    RealityGate -->|Failing Assertions| Triage["Diagnostic Feedback Loop<br/>(Bounded Retries & Auto-Rollback)"]
+    Triage --> Builder
+    DB --> VerifiedPR["5. Certified Production Release"]
 ```
 
----
-
-## 👥 The 67 Specialist Agent Fleet
-
-The company operates with 67 modular agent configurations located in [`agents/definitions/`](agents/definitions/):
-
-| Division | Leadership / Key Roles | Responsibilities |
-| :--- | :--- | :--- |
-| **Executive Board** | `company_michael` (CEO), `company_cpo` (CPO), `company_cto` (CTO), `company_vpeng` (VPEng), `company_vpops` (VPOps), `company_cro` (CRO) | Requirement elaboration, technology governance, SLA monitoring, and strategic triage. |
-| **Engineering & Coder Guild** | `company_jim` (Lead Coder), `company_stanley` (Architect), `company_backend_platform`, `company_frontend_platform`, `company_coder` | Surgical diffs, bounded contexts, API contract preservation, sub-100ms dispatch runtime. |
-| **Quality & Reality Gate** | `company_angela` (Reality Gate), `company_ryan` (TDD Engine), `company_creed` (Cold Review), `company_qa` (Empathy Tester) | Strict RED ➔ GREEN TDD authoring, terminal exit code verification, epistemic isolation. |
-| **Security, DBA & SRE** | `company_toby` (AgentShield), `company_oscar` (DBRE), `company_hank` (Anti-Breakage Sentinel), `company_sre` | CWE defense (CWE-22, 78, 798), SQLite WAL optimization, pre-change contract freeze. |
-| **Creative & Design Squad** | `company_jan` (Design Director), `company_pam` (Emil UI), `company_brand_architect`, `company_motion`, `company_physics` | Apple-grade typography, tactile 60fps spring transitions, anti-slop visual consistency. |
+1. **Executive Planner**: Decomposes user requests, sets token budgets (default 15,000 tokens), and sets hard timeouts (default 180s) to prevent runaway costs.
+2. **Surgical Builder**: Enforces the *Karpathy 50-Line Razor* — small, single-purpose code changes instead of sweeping rewrites.
+3. **Sandboxed Workspace**: Protects your system with path traversal rejection (`../../`), memory buffer caps, and automatic secret redaction (`sk-ant-*`, `sk-*`, `AIza*`).
+4. **Reality Gate**: Challenges all claims against the physical machine test runner.
+5. **Release Interlock**: Produces an unalterable audit trail and verified Git diff.
 
 ---
 
-## 📂 Repository Structure
+## 📊 Empirical Benchmarks
+
+All metrics measured on physical hardware using nanosecond-resolution `process.hrtime.bigint()`:
+
+| Benchmark Probe | Iterations | Median (p50) | 99th Percentile (p99) | Verification Status |
+| :--- | :---: | :---: | :---: | :---: |
+| **Fail-Closed Reality Gate Decision** | 10,000 | **0.0001 ms** | **0.0017 ms** | ✔ PASS (Deterministic) |
+| **Actor IPC Contract Validation** | 10,000 | **0.0003 ms** | **0.0015 ms** | ✔ PASS (Zero Overhead) |
+| **Schema DDL Integrity (45+ tables)** | 200 | **0.2290 ms** | **0.7110 ms** | ✔ PASS (ACID Validated) |
+| **Memory Index Card Query (<50 lines)**| 100 | **8.6670 ms** | **12.1720 ms** | ✔ PASS (Sub-15ms Target) |
+
+*Full methodology, hardware specs, and reproducibility commands in [`BENCHMARKS.md`](BENCHMARKS.md).*
+
+---
+
+## 📂 Architecture & Directory Structure
 
 ```
 theboringcompany/
-├── src/                    # Core Autonomous Engineering Engine
+├── src/                    # Core Autonomous Execution Runtime
 │   ├── engine/
-│   │   ├── pipeline.js     # Multi-turn execution pipeline & bounded self-correction
-│   │   └── reality-gate.js # Machine proof verifier (anti-tamper, $? === 0, positive asserts)
-│   ├── providers/          # Model provider abstraction layer
-│   │   ├── anthropic.js    # Anthropic Claude Messages API integration
-│   │   ├── openai.js       # OpenAI GPT-4o integration with tool calling
-│   │   ├── gemini.js       # Google Gemini generateContent integration
-│   │   ├── ollama.js       # Local offline Ollama chat integration
-│   │   ├── deterministic-test.js # Hermetic offline test provider
-│   │   └── index.js        # Provider factory & credentials validator
+│   │   ├── pipeline.js     # Multi-turn execution loop & diagnostic self-healing
+│   │   └── reality-gate.js # Machine proof verifier (exit code 0, positive asserts, anti-tamper)
+│   ├── providers/          # Model provider abstraction (Anthropic, OpenAI, Gemini, Ollama)
 │   ├── storage/
 │   │   └── db.js           # Native SQLite relational ledger adapter (node:sqlite)
 │   └── tools/
 │       ├── workspace.js    # Sandboxed workspace (path security, diff, timeout runner)
-│       └── redact.js       # Secret redactor (sanitizes API keys and tokens)
-├── agents/
-│   ├── definitions/        # 67 Specialist agent configurations + JSON schema
-│   ├── roster.json         # Complete corporate roster & station mapping
-│   └── MASTER_AGENT_DNA.md # Founder's engineering laws & agent reasoning principles
-├── docs/                   # In-depth architectural & developer guides
-│   ├── audits/             # Evidence-based forensic audit reports
-│   ├── architecture.md     # 6-Phase loop, SQLite ledger, & Claudex Loop
-│   ├── reality-gate.md     # Verification engine & fail-closed interlock
-│   ├── agents-catalog.md   # Fleet breakdown of all 67 agent roles
-│   └── quickstart.md       # Step-by-step setup and mission guide
-├── hive/
-│   ├── bin/
-│   │   ├── agy-hook.cjs    # Socket IPC bridge for agent tool call interception
-│   │   ├── cth-hook.cjs    # Hook handler for Claude harness
-│   │   ├── hive-node.cmd   # Windows node shim
-│   │   ├── hive-node.sh    # macOS & Linux bash runner
-│   │   └── hive-proxy.cjs  # Streaming reverse proxy with token budget throttling
-│   ├── PROTOCOL.md         # Single-writer mailbox protocol (inbox/outbox/.done)
-│   ├── COMMANDS.md         # Fleet orchestration command reference
-│   └── registry.json       # Live fleet tracking registry
+│       └── redact.js       # Secret redactor (sanitizes API keys & tokens)
 ├── database/
 │   └── schema.sql          # 45+ relational SQLite tables, indices & audit triggers
-├── memory/
-│   ├── anti-patterns.md    # Documented failure modes & anti-patterns
-│   ├── learnings.md        # Verified empirical engineering solutions
-│   ├── 10X_DECISION_ENGINE.md
-│   ├── FOUNDER_LEARNING_ENGINE.md
-│   └── MEETING_SYSTEM.md   # Autonomous cross-agent synchronous meeting protocol
 ├── test/
-│   ├── adversarial-suite.test.js # Mandatory 12-probe adversarial attack suite
-│   ├── reality-gate.test.js# Organizational fleet & schema integrity tests
-│   ├── unit-reality-gate.test.js # Reality Gate anti-tamper & assertion unit tests
-│   ├── pipeline.test.js    # Autonomous execution pipeline integration tests
-│   └── benchmark.js        # Latency & throughput empirical benchmark suite
-├── .github/
-│   ├── workflows/ci.yml    # GitHub Actions cross-platform matrix CI
-│   ├── ISSUE_TEMPLATE/     # Structured bug report, feature & agent templates
-│   └── PULL_REQUEST_TEMPLATE.md
-├── cli.js                  # Standalone runnable dispatch CLI
-├── CONTRIBUTING.md         # Community contribution guidelines & agent authoring
-├── SECURITY.md             # Fail-closed security policy & disclosure
-├── ROADMAP.md              # Engineering roadmap (v1.0 -> v1.1 -> v2.0)
-├── CHANGELOG.md            # Semantic release history
-├── package.json            # Scripts: start, test, demo, benchmark
+│   ├── adversarial-suite.test.js # 12-probe hostile security & resilience suite
+│   ├── reality-gate.test.js      # Core verification test suite
+│   └── benchmark.js              # High-precision nanosecond benchmark suite
+├── scripts/
+│   └── hostile_acceptance_test.js # 10-step adversarial acceptance test harness
+├── docs/                   # Architectural guides, quickstart & forensic audits
+├── cli.js                  # Standalone CLI interface
+├── package.json            # Scripts: start, test, demo, benchmark, hostile-test
 └── LICENSE                 # MIT License (Abdullah Hanjra)
 ```
 
 ---
 
-## 🛡️ Grounded Engineering Principles
+## 🛠️ CLI Usage & Advanced Commands
 
-1. **Pre-Change Contract Freezing**: Core interfaces and schemas are locked before code changes begin to prevent orthogonal drift.
-2. **Karpathy 50-Line Razor**: Builders prioritize three similar lines over a speculative abstraction and keep diffs under 50 lines per atomic unit.
-3. **Fail-Closed Security**: Any tool call violating security policies or missing permissions is terminated immediately.
-4. **Token Budget Caps**: Circuit breakers throttle runaway loops (`steer` ➔ `constrain` ➔ `stop`) to avoid wasted context.
+You can run missions directly from your terminal:
+
+```bash
+# Run a specific coding task
+node cli.js --task "Fix integer overflow in payment calculator"
+
+# Run with a specific AI model provider
+node cli.js --provider anthropic --task "Implement OAuth2 token refresher"
+
+# Run hostile end-to-end acceptance tests in disposable git repository
+npm run hostile-test
+
+# Run high-precision performance benchmarks
+npm run benchmark
+
+# Search institutional memory cards in <15ms
+npm run search-memory -- "sqlite transaction deadlock"
+```
 
 ---
 
-## 📜 License
+## 🛡️ Enterprise Security & Safety Boundaries
 
-MIT License. Copyright (c) 2026 Abdullah Hanjra. See [LICENSE](LICENSE) for details.
+- **Zero Arbitrary Execution**: Tools cannot write outside the authorized target workspace.
+- **Secret Redaction**: Multi-pass regex sanitizes credentials before writing to logs, terminal output, or SQLite.
+- **Fail-Closed Defaults**: Any timeout, budget overrun, or untracked file modification aborts the execution cleanly.
+- **No Self-Certification**: The agent's generated text is discarded during testing; only the OS exit code counts.
 
 ---
 
-## 👤 Author
+## 🤝 Contributing
 
-* **Abdullah Hanjra** — Software Builder
-* **GitHub**: [@youtubrabdullah1626](https://github.com/youtubrabdullah1626)
+We welcome contributions from engineers who care about software reliability, autonomous systems, and rigorous testing. Please read our [**Contributing Guide**](CONTRIBUTING.md) and [**Security Policy**](SECURITY.md).
+
+1. Fork the repository: `https://github.com/abdullahhanjra153/theboringcompany`
+2. Create your feature branch: `git checkout -b feat/my-feature`
+3. Verify all 32 tests pass: `npm test`
+4. Submit a Pull Request with attached Reality Gate proof.
+
+---
+
+## 📜 License & Author
+
+Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
+
+### Author
+* **Abdullah Hanjra** — Software Architect & Systems Builder
+* **GitHub**: [@abdullahhanjra153](https://github.com/abdullahhanjra153)
 * **LinkedIn**: [linkedin.com/in/abdullahhanjracodes](https://www.linkedin.com/in/abdullahhanjracodes/)
+
+---
+
+<div align="center">
+<sub>Built with precision and zero drama by The Boring Company engineering guild.</sub>
+</div>

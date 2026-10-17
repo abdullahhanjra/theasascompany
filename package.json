@@ -2,7 +2,7 @@
   "name": "theboringcompany",
   "version": "1.1.0",
 
-  "description": "Autonomous AI Software Enterprise OS & Multi-Agent Runtime Framework",
+  "description": "Autonomous AI software engineering runtime with a mathematically verified Reality Gate. Pure Node.js 22+, zero external dependencies.",
   "main": "cli.js",
   "bin": {
     "boring-company": "./cli.js",
@@ -24,19 +24,23 @@
     "node": ">=22.5.0"
   },
   "keywords": [
-    "multi-agent",
-    "autonomous-agents",
-    "ai-software-company",
-    "the-boring-company",
+    "autonomous-coding",
+    "ai-software-engineer",
     "reality-gate",
-    "adversarial-sparring",
-    "claudex-loop",
-    "ai-orchestration"
+    "anti-tamper",
+    "sqlite-ledger",
+    "zero-dependencies",
+    "nodejs",
+    "claude",
+    "gemini",
+    "openai",
+    "multi-agent"
   ],
-  "author": "Abdullah Hanjra <youtubrabdullah1626@gmail.com>",
+  "author": "Abdullah Hanjra (https://github.com/abdullahhanjra153)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/youtubrabdullah1626/theboringcompany.git"
+    "url": "https://github.com/abdullahhanjra153/theboringcompany.git"
   },
+  "homepage": "https://github.com/abdullahhanjra153/theboringcompany#readme",
   "license": "MIT"
 }
