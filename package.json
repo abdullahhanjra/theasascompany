@@ -10,8 +10,8 @@
   },
   "scripts": {
     "start": "node cli.js",
-    "test": "node --test test/reality-gate.test.js",
-    "demo": "node cli.js --task \"Optimize transaction throughput and prevent deadlock\"",
+    "test": "node --test test/*.test.js",
+    "demo": "node cli.js --demo",
     "benchmark": "node test/benchmark.js",
     "index-memory": "node memory/indexer.js",
     "search-memory": "node memory/search.js",
@@ -20,7 +20,7 @@
     "mcp": "node scripts/design-mcp-server.js"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=22.5.0"
   },
   "keywords": [
     "multi-agent",

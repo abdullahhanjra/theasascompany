@@ -4,7 +4,7 @@
 /**
  * @file test/benchmark.js
  * @description Empirical Performance Benchmark Harness for The Boring Company OS.
- * Quantitatively measures runtime latencies (p50, p95, p99) under simulated load
+ * Quantitatively measures runtime latencies (p50, p95, p99) under load
  * to provide [MEASURED] empirical evidence instead of uncalibrated claims.
  */
 
@@ -12,6 +12,9 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const { searchMemory, loadIndex } = require('../memory/search');
+const { RealityGate } = require('../src/engine/reality-gate');
+const { ControlledWorkspace } = require('../src/tools/workspace');
+const { CompanyDatabase } = require('../src/storage/db');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 const SCHEMA_FILE = path.join(ROOT_DIR, 'database', 'schema.sql');
@@ -39,65 +42,28 @@ function runBenchmark() {
 
   const results = [];
 
-  // Benchmark 1: Hive Actor Message Validation
+  // Benchmark 1: Reality Gate Metric Parser & Tap Evaluation
   {
-    const validActs = new Set(['request', 'inform', 'propose', 'query', 'agree', 'refuse', 'done']);
-    function validateHiveMessage(msg) {
-      if (!msg || typeof msg !== 'object') return false;
-      if (!msg.to || typeof msg.to !== 'string') return false;
-      if (!msg.act || !validActs.has(msg.act)) return false;
-      if (!msg.subject || typeof msg.subject !== 'string') return false;
-      if (typeof msg.body !== 'string') return false;
-      return true;
-    }
-
-    const testMsg = {
-      to: 'emp_dwight',
-      act: 'request',
-      subject: 'Adversarial 3-probe stress test on auth token refresh',
-      body: 'Please test race condition on simultaneous refresh requests.'
-    };
-
-    const iterations = 10000;
+    const gate = new RealityGate();
+    const tapSample = `TAP version 13
+# Subtest: Performance Benchmark
+ok 1 - Test passes
+1..1
+# tests 15
+# pass 15
+# fail 0
+`;
+    const iterations = 5000;
     const times = [];
     for (let i = 0; i < iterations; i++) {
       const t0 = process.hrtime.bigint();
-      validateHiveMessage(testMsg);
-      const t1 = process.hrtime.bigint();
-      times.push(Number(t1 - t0) / 1000000); // ms
-    }
-
-    results.push({
-      benchmark: 'Hive IPC Contract Validation',
-      iterations,
-      unit: 'ms',
-      min: Math.min(...times).toFixed(4),
-      p50: percentile(times, 50).toFixed(4),
-      p95: percentile(times, 95).toFixed(4),
-      p99: percentile(times, 99).toFixed(4)
-    });
-  }
-
-  // Benchmark 2: Reality Gate Decision Logic
-  {
-    function realityGateCheck(exitCode, testAssertionsPassed, unhandledErrors) {
-      if (exitCode !== 0) return { certified: false, reason: 'Non-zero exit code' };
-      if (testAssertionsPassed < 1) return { certified: false, reason: 'Zero assertions' };
-      if (unhandledErrors > 0) return { certified: false, reason: 'Unhandled errors' };
-      return { certified: true, reason: 'Clean proof' };
-    }
-
-    const iterations = 10000;
-    const times = [];
-    for (let i = 0; i < iterations; i++) {
-      const t0 = process.hrtime.bigint();
-      realityGateCheck(0, 15, 0);
+      gate.parseTestMetrics(tapSample);
       const t1 = process.hrtime.bigint();
       times.push(Number(t1 - t0) / 1000000);
     }
 
     results.push({
-      benchmark: 'Reality Gate Interlock Check',
+      benchmark: 'Reality Gate Metric Parsing (TAP/Jest/Pytest)',
       iterations,
       unit: 'ms',
       min: Math.min(...times).toFixed(4),
@@ -107,9 +73,62 @@ function runBenchmark() {
     });
   }
 
-  // Benchmark 3: Context-Optimized Memory Card Search
+  // Benchmark 2: Controlled Workspace Path Traversal Boundary Check
   {
-    loadIndex(); // Warmup
+    const ws = new ControlledWorkspace(ROOT_DIR);
+    const testPaths = ['src/tools/workspace.js', 'package.json', 'database/schema.sql', 'cli.js'];
+    const iterations = 5000;
+    const times = [];
+
+    for (let i = 0; i < iterations; i++) {
+      const p = testPaths[i % testPaths.length];
+      const t0 = process.hrtime.bigint();
+      ws.resolveSafePath(p);
+      const t1 = process.hrtime.bigint();
+      times.push(Number(t1 - t0) / 1000000);
+    }
+
+    results.push({
+      benchmark: 'Workspace Path Security & Traversal Boundary Check',
+      iterations,
+      unit: 'ms',
+      min: Math.min(...times).toFixed(4),
+      p50: percentile(times, 50).toFixed(4),
+      p95: percentile(times, 95).toFixed(4),
+      p99: percentile(times, 99).toFixed(4)
+    });
+  }
+
+  // Benchmark 3: SQLite Ledger Transaction Latency (In-Memory WAL)
+  {
+    const db = new CompanyDatabase(':memory:');
+    const iterations = 500;
+    const times = [];
+
+    for (let i = 0; i < iterations; i++) {
+      const t0 = process.hrtime.bigint();
+      const task = db.createTask({ title: `Benchmark Task ${i}` });
+      const execId = db.recordExecution({ taskId: task.id, taskInstructions: 'Run benchmark' });
+      db.updateTaskStatus(task.id, 'completed');
+      const t1 = process.hrtime.bigint();
+      times.push(Number(t1 - t0) / 1000000);
+    }
+    db.close();
+
+    results.push({
+      benchmark: 'SQLite Ledger Transaction (Task + Exec + State)',
+      iterations,
+      unit: 'ms',
+      min: Math.min(...times).toFixed(3),
+      p50: percentile(times, 50).toFixed(3),
+      p95: percentile(times, 95).toFixed(3),
+      p99: percentile(times, 99).toFixed(3)
+    });
+  }
+
+  // Benchmark 4: Context-Optimized Memory Card Search
+  {
+    loadIndex();
     const queries = ['sqlite', 'windows', 'testing', 'intent', 'concurrency', 'frontend', 'security'];
     const iterations = 100;
     const times = [];
@@ -123,7 +142,7 @@ function runBenchmark() {
     }
 
     results.push({
-      benchmark: 'Memory Index Query (<50-line card)',
+      benchmark: 'Institutional Memory Card Search (<50-line slices)',
       iterations,
       unit: 'ms',
       min: Math.min(...times).toFixed(3),
@@ -133,13 +152,13 @@ function runBenchmark() {
     });
   }
 
-  // Benchmark 4: Database Schema DDL Integrity Verification
+  // Benchmark 5: Database Schema DDL Table Verification
   {
     const sql = fs.readFileSync(SCHEMA_FILE, 'utf8');
     const requiredTables = [
       'companies', 'departments', 'positions', 'teams', 'employees',
       'tasks', 'executions', 'token_budgets', 'governance_policies',
-      'verification_runs', 'quality_certifications'
+      'verification_runs', 'acceptance_criteria'
     ];
 
     const iterations = 200;
@@ -155,7 +174,7 @@ function runBenchmark() {
     }
 
     results.push({
-      benchmark: 'Schema DDL Table Verification (45+ tables)',
+      benchmark: 'Schema DDL Integrity Check (Core Enterprise Tables)',
       iterations,
       unit: 'ms',
       min: Math.min(...times).toFixed(3),
@@ -172,7 +191,7 @@ function runBenchmark() {
     const passed = parseFloat(r.p99) < 25.0 ? '✔ OPTIMAL' : 'PASS';
     console.log(`| ${r.benchmark} | ${r.iterations.toLocaleString()} | ${r.min} | ${r.p50} | ${r.p95} | ${r.p99} | ${passed} |`);
   }
-  console.log('\n✔ [MEASURED] All benchmarks executed within sub-10ms p99 SLA.');
+  console.log('\n✔ [MEASURED] All benchmarks executed with real machine measurements.');
   return results;
 }
 

@@ -3,22 +3,42 @@
 
 /**
  * 🏢 The Boring Company — Autonomous Multi-Agent Dispatch CLI
- * Demonstrates the 6-Phase Engineering Loop, Velocity Tracks, Adversarial Sparring,
- * and the Reality Gate Interlock in a clean, reproducible terminal interface.
+ * Real Autonomous Engineering Enterprise OS & Multi-Agent Runtime Framework.
+ * Dispatches missions through the 6-Phase Engineering Loop, Controlled Workspace,
+ * Model Providers, SQLite Relational Ledger, and the Trustworthy Reality Gate.
  */
 
 const fs = require('fs');
 const path = require('path');
+const os = require('os');
+const { ExecutionPipeline } = require('./src/engine/pipeline');
+const { getProvider } = require('./src/providers');
+const { DeterministicTestProvider } = require('./src/providers/deterministic-test');
 
 const args = process.argv.slice(2);
-let task = 'Optimize SQLite transaction throughput and prevent deadlock';
+let task = null;
 let track = 'auto';
+let providerName = process.env.BORING_PROVIDER || null;
+let modelName = process.env.BORING_MODEL || null;
+let targetDir = process.cwd();
+let testCmd = null;
+let isDemo = false;
 
 for (let i = 0; i < args.length; i++) {
   if (args[i] === '--task' && args[i + 1]) {
     task = args[++i];
   } else if (args[i] === '--track' && args[i + 1]) {
     track = args[++i].toUpperCase();
+  } else if (args[i] === '--provider' && args[i + 1]) {
+    providerName = args[++i].toLowerCase();
+  } else if (args[i] === '--model' && args[i + 1]) {
+    modelName = args[++i];
+  } else if (args[i] === '--target' || args[i] === '--target-dir') {
+    targetDir = path.resolve(args[++i]);
+  } else if (args[i] === '--test-cmd') {
+    testCmd = args[++i];
+  } else if (args[i] === '--demo') {
+    isDemo = true;
   } else if (args[i] === '--benchmark' || args[i] === '-b') {
     const { runBenchmark } = require('./test/benchmark');
     runBenchmark();
@@ -49,18 +69,17 @@ Usage:
   npm start -- --task "Your engineering mission"
 
 Options:
-  --task <string>     Specify the engineering mission to dispatch (default: SQLite throughput)
-  --track <A|B|C>     Force a velocity track (Track A: Surgical, B: Sprint, C: Enterprise Core)
-  --benchmark, -b     Run empirical latency benchmark matrix (p50, p95, p99)
-  --memory, -m <q>    Search indexed institutional memory cards (<50 lines)
-  --help, -h          Show this help screen
+  --task <string>         Specify the engineering mission to dispatch
+  --provider <name>       AI provider: anthropic, openai, gemini, ollama, test (default: auto)
+  --model <name>          Specific model name (e.g. claude-3-7-sonnet, gpt-4o, gemini-2.5-pro)
+  --target <dir>          Target repository directory (default: current directory)
+  --test-cmd <cmd>        Command to run for Reality Gate verification (e.g. "npm test")
+  --track <A|B|C>         Velocity track (A: Surgical, B: Sprint, C: Enterprise Core)
+  --demo                  Run hermetic end-to-end demonstration mission with real tools
+  --benchmark, -b         Run empirical latency benchmark matrix (p50, p95, p99)
+  --memory, -m <q>        Search indexed institutional memory cards (<50 lines)
+  --help, -h              Show this help screen
 `);
-}
-
-
-function sleep(ms) {
-  const start = Date.now();
-  while (Date.now() - start < ms) {}
 }
 
 function printBanner() {
@@ -72,76 +91,135 @@ function printBanner() {
 `);
 }
 
-async function runMission() {
+async function runDemoMission() {
   printBanner();
-  console.log(`\x1b[90m[DISPATCH]\x1b[0m Mission received from Founder: \x1b[1m"${task}"\x1b[0m\n`);
-  sleep(200);
+  console.log(`\x1b[90m[MODE]\x1b[0m Launching Hermetic End-to-End Demonstration Mission`);
+  console.log(`\x1b[90m[DISPATCH]\x1b[0m Mission: \x1b[1m"Implement thread-safe connection pool with exponential backoff"\x1b[0m\n`);
 
-  // 1. Anti-Confusion Gate & Velocity Track Routing
-  console.log(`\x1b[1m[PHASE 1: ALIGN & CLASSIFY]\x1b[0m Activating Anti-Confusion Gate...`);
-  let selectedTrack = track;
-  if (selectedTrack === 'auto') {
-    const isCritical = /schema|auth|database|security|core|payment/i.test(task);
-    const isSurgical = /typo|fix|tweak|1-file|minor/i.test(task);
-    selectedTrack = isCritical ? 'TRACK C (Enterprise Core)' : (isSurgical ? 'TRACK A (Surgical Strike)' : 'TRACK B (Feature Sprint)');
+  // Create isolated sandbox
+  const demoDir = fs.mkdtempSync(path.join(os.tmpdir(), 'boring-demo-'));
+  fs.writeFileSync(path.join(demoDir, 'package.json'), JSON.stringify({ name: 'demo-pool', scripts: { test: 'node test.js' } }, null, 2));
+  fs.writeFileSync(path.join(demoDir, 'pool.js'), 'module.exports = { acquire: () => null };');
+  fs.writeFileSync(
+    path.join(demoDir, 'test.js'),
+    `
+const assert = require('assert');
+const pool = require('./pool');
+const conn = pool.acquire();
+assert.ok(conn !== null, 'Connection must not be null');
+assert.strictEqual(conn.active, true, 'Connection must be active');
+console.log('# tests 2\\n# pass 2\\n# fail 0\\nok 1 - connection acquired\\nok 2 - active status verified');
+`
+  );
+
+  const demoProvider = new DeterministicTestProvider({
+    responses: [
+      {
+        content: 'Inspecting existing pool implementation and test specification.',
+        toolCalls: [
+          { id: 'c1', name: 'readFile', args: { path: 'pool.js' } },
+          { id: 'c2', name: 'readFile', args: { path: 'test.js' } }
+        ]
+      },
+      {
+        content: 'Applying Karpathy 50-line razor: implementing minimal thread-safe connection pool.',
+        toolCalls: [
+          {
+            id: 'c3',
+            name: 'writeFile',
+            args: {
+              path: 'pool.js',
+              content: `'use strict';
+class ConnectionPool {
+  acquire() {
+    return { id: 'conn_1', active: true, acquiredAt: Date.now() };
   }
-  console.log(`  ✔ Risk Floor: \x1b[33m${selectedTrack.includes('C') ? 'CRITICAL' : 'STANDARD'}\x1b[0m`);
-  console.log(`  ✔ Velocity Track: \x1b[32m${selectedTrack}\x1b[0m\n`);
-  sleep(250);
+}
+module.exports = new ConnectionPool();`
+            }
+          }
+        ]
+      },
+      {
+        content: 'Implementation complete. Submitting to Reality Gate for automated verification.',
+        toolCalls: []
+      }
+    ]
+  });
 
-  // 2. Recon & 6-Question Strategic Interrogation
-  console.log(`\x1b[1m[PHASE 2: RECON & STRATEGIC INTERROGATION]\x1b[0m CEO (Marcus Chen) reviewing mission...`);
-  console.log(`  • Q1 (User Reality): Solves critical latency bottleneck and eliminates concurrency locks.`);
-  console.log(`  • Q2 (Highest Leverage): Immediate unblocker for high-throughput write workloads.`);
-  console.log(`  • Q3 (Unfair Moat): Serialized BEGIN IMMEDIATE + WAL mode guarantees zero dirty reads.`);
-  console.log(`  • Q4 (Success Metric): p99 latency < 12ms under 50 concurrent transactions.\n`);
-  sleep(250);
+  const pipeline = new ExecutionPipeline({
+    workspaceRoot: demoDir,
+    provider: demoProvider,
+    testCommand: 'node test.js',
+    verbose: true
+  });
 
-  // 3. Adversarial Sparring Arena
-  console.log(`\x1b[1m[PHASE 3: ADVERSARIAL SPARRING ARENA]\x1b[0m Blue Team vs Red Team`);
-  console.log(`  \x1b[34m[Blue Team: Stanley (Software Architect)]\x1b[0m`);
-  console.log(`    ↳ Pitch: Enforce SQLite WAL checkpointing, wrap writes in explicit BEGIN IMMEDIATE.`);
-  sleep(200);
-  console.log(`  \x1b[31m[Red Team: Dwight (Adversarial Inquisitor)]\x1b[0m`);
-  console.log(`    ↳ Probe 1 (Chaos): Simulating SQLite busy timeout under write collision.`);
-  console.log(`    ↳ Probe 2 (Concurrency): Stressing 50 parallel connections.`);
-  console.log(`    ↳ Probe 3 (Bloat): Checking for unnecessary ORM or abstraction layers.`);
-  console.log(`  ✔ \x1b[1m5-Vector Fragility Scorecard:\x1b[0m`);
-  console.log(`    Network: 0/10 | Concurrency: 1/10 | Atomicity: 0/10 | Drift: 0/10 | Complexity: 1/10`);
-  console.log(`    \x1b[32m✔ PASSED: All vectors <= 2/10. Architecture approved for build.\x1b[0m\n`);
-  sleep(250);
+  const result = await pipeline.runTask({
+    title: 'Implement thread-safe connection pool with exponential backoff',
+    description: 'Ensure acquire() returns a valid active connection object and satisfies test.js'
+  });
 
-  // 4. Surgical Builder (TDD)
-  console.log(`\x1b[1m[PHASE 4: SURGICAL BUILDER]\x1b[0m Jim (Lead Minimal Coder) & Ryan (TDD Engine)`);
-  console.log(`  • Ryan authored boundary test: test/sqlite-wal.test.js (\x1b[31mRED - Fails as expected\x1b[0m)`);
-  console.log(`  • Jim applied minimal diff: +14 lines (Karpathy 50-line razor respected)`);
-  console.log(`  • Test re-executed: (\x1b[32mGREEN - All 8 assertions passing\x1b[0m)\n`);
-  sleep(250);
+  // Clean up sandbox
+  try {
+    fs.rmSync(demoDir, { recursive: true, force: true });
+  } catch {}
 
-  // 5. Reality Gate Verification
-  console.log(`\x1b[1m[PHASE 5: REALITY GATE INTERLOCK]\x1b[0m Angela (Head of Quality) inspecting machine proof...`);
-  console.log(`  • Command: \x1b[90mnode --test test/reality-gate.test.js\x1b[0m`);
-  console.log(`  • Exit Code: \x1b[1m\x1b[32m0 (CLEAN MACHINE PROOF)\x1b[0m`);
-  console.log(`  • Unmanipulated Output: 8 test suites passed, 0 failures, duration: 554ms`);
-  console.log(`  • Cold Fresh Audit (Creed): Zero author bias detected in diff.\n`);
-
-  sleep(200);
-
-  // 6. Executive 1-Minute Clarity Card
-  console.log(`\x1b[1m\x1b[32m╔══════════════════════════════════════════════════════════════════════════════════╗
-║                    EXECUTIVE 1-MINUTE CLARITY CARD (CERTIFIED)                   ║
-╠══════════════════════════════════════════════════════════════════════════════════╣\x1b[0m
-║ \x1b[1mMission:\x1b[0m   ${task.padEnd(68)}║
-║ \x1b[1mStatus:\x1b[0m    \x1b[32mCERTIFIED & DEPLOYABLE\x1b[0m (${selectedTrack})                                     ║
-║                                                                                  ║
-║ \x1b[1mKey Highlights:\x1b[0m                                                                  ║
-║ • Bounded Context: Touched only connection pool layer (14 lines modified).       ║
-║ • Reliability: Concurrency deadlock structurally eliminated via BEGIN IMMEDIATE. ║
-║ • Reality Gate: Native test suite executed cleanly with exit code 0.             ║
-║                                                                                  ║
-║ \x1b[1mSign-Offs:\x1b[0m CEO ✔ | CTO ✔ | VPEng ✔ | Inquisitor ✔ | Reality Gate (Angela) ✔        ║
-\x1b[1m\x1b[32m╚══════════════════════════════════════════════════════════════════════════════════╝\x1b[0m
-`);
+  process.exit(result.status === 'VERIFIED' ? 0 : 1);
 }
 
-runMission();
+async function runLiveMission(missionTask) {
+  printBanner();
+  console.log(`\x1b[90m[DISPATCH]\x1b[0m Mission received from Founder: \x1b[1m"${missionTask}"\x1b[0m\n`);
+
+  // Determine provider
+  let provider;
+  try {
+    provider = getProvider(providerName, { model: modelName });
+  } catch (err) {
+    console.error(`\x1b[31m[PROVIDER ERROR]\x1b[0m ${err.message}`);
+    process.exit(1);
+  }
+
+  console.log(`\x1b[90m[RUNTIME]\x1b[0m Provider: \x1b[32m${provider.name}\x1b[0m | Model: \x1b[32m${provider.model}\x1b[0m`);
+  console.log(`\x1b[90m[TARGET]\x1b[0m Workspace: \x1b[33m${targetDir}\x1b[0m\n`);
+
+  // Detect verification test command if not provided
+  let effectiveTestCmd = testCmd;
+  if (!effectiveTestCmd) {
+    const pkgPath = path.join(targetDir, 'package.json');
+    if (fs.existsSync(pkgPath)) {
+      try {
+        const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
+        if (pkg.scripts && pkg.scripts.test) {
+          effectiveTestCmd = 'npm test';
+        }
+      } catch {}
+    }
+  }
+
+  if (!effectiveTestCmd) {
+    effectiveTestCmd = 'node --test test/*.test.js';
+  }
+
+  const pipeline = new ExecutionPipeline({
+    workspaceRoot: targetDir,
+    provider,
+    testCommand: effectiveTestCmd,
+    verbose: true
+  });
+
+  const result = await pipeline.runTask({
+    title: missionTask,
+    description: missionTask,
+    priority: track === 'A' ? 'urgent' : (track === 'C' ? 'high' : 'medium')
+  });
+
+  process.exit(result.status === 'VERIFIED' ? 0 : 1);
+}
+
+// Main entry
+if (isDemo || (!task && !args.includes('--benchmark') && !args.includes('--memory') && !args.includes('--help'))) {
+  runDemoMission();
+} else if (task) {
+  runLiveMission(task);
+}

@@ -3,229 +3,6 @@
 -- Autonomous Multi-Agent Engineering Enterprise Engine
 -- ================================================================
 
-CREATE INDEX idx_acc_crit_spec ON acceptance_criteria(specification_id);
-
-CREATE INDEX idx_acc_spec_task ON acceptance_specifications(task_id, status);
-
-CREATE INDEX idx_agent_definitions_division ON agent_definitions(division);
-
-CREATE INDEX idx_assignments_agent_def ON work_assignments(agent_definition_id);
-
-CREATE INDEX idx_assignments_assigned_by ON work_assignments(assigned_by_employee_id);
-
-CREATE INDEX idx_assignments_employee ON work_assignments(employee_id);
-
-CREATE UNIQUE INDEX idx_assignments_idempotency 
-      ON work_assignments(company_id, idempotency_key) 
-      WHERE idempotency_key IS NOT NULL;
-
-CREATE INDEX idx_assignments_project ON work_assignments(project_id);
-
-CREATE INDEX idx_assignments_status ON work_assignments(status);
-
-CREATE INDEX idx_cae_task ON certification_audit_events(task_id, created_at);
-
-CREATE INDEX idx_cap_gaps_plan ON capability_gaps(management_plan_id);
-
-CREATE INDEX idx_cl_company_status ON candidate_lessons(company_id, review_status);
-
-CREATE UNIQUE INDEX idx_cl_originating_execution ON candidate_lessons(originating_execution_id) WHERE originating_execution_id IS NOT NULL;
-
-CREATE INDEX idx_collab_from_emp ON collaboration_requests(from_employee_id);
-
-CREATE UNIQUE INDEX idx_collab_idempotency 
-      ON collaboration_requests(company_id, idempotency_key) 
-      WHERE idempotency_key IS NOT NULL;
-
-CREATE INDEX idx_collab_status ON collaboration_requests(status);
-
-CREATE INDEX idx_collab_to_emp ON collaboration_requests(to_employee_id);
-
-CREATE INDEX idx_cr_cert ON certification_revocations(certification_id);
-
-CREATE INDEX idx_delegations_child_assignment ON delegations(child_assignment_id);
-
-CREATE INDEX idx_delegations_company ON delegations(company_id);
-
-CREATE INDEX idx_delegations_delegatee ON delegations(delegatee_employee_id);
-
-CREATE INDEX idx_delegations_delegator ON delegations(delegator_employee_id);
-
-CREATE INDEX idx_delegations_parent_assignment ON delegations(parent_assignment_id);
-
-CREATE INDEX idx_delegations_status ON delegations(status);
-
-CREATE INDEX idx_departments_company ON departments(company_id);
-
-CREATE INDEX idx_ece_lookup ON emergency_control_events(company_id, freeze_tier);
-
-CREATE INDEX idx_employees_company ON employees(company_id);
-
-CREATE INDEX idx_employees_dept ON employees(department_id);
-
-CREATE INDEX idx_employees_manager ON employees(manager_employee_id);
-
-CREATE INDEX idx_employees_team ON employees(team_id);
-
-CREATE INDEX idx_er_exec ON evidence_records(execution_id);
-
-CREATE INDEX idx_er_run ON evidence_records(verification_run_id);
-
-CREATE INDEX idx_exec_dec_obj ON executive_decisions(related_objective_id);
-
-CREATE INDEX idx_exec_dec_role ON executive_decisions(source_role);
-
-CREATE INDEX idx_exec_events_exec ON execution_events(execution_id);
-
-CREATE INDEX idx_executions_employee ON executions(employee_id);
-
-CREATE UNIQUE INDEX idx_executions_idempotency
-      ON executions(company_id, task_id, idempotency_key)
-      WHERE idempotency_key IS NOT NULL;
-
-CREATE INDEX idx_executions_identity ON executions(identity_id);
-
-CREATE INDEX idx_executions_lease ON executions(launch_lease_token);
-
-CREATE INDEX idx_executions_priority_queue ON executions(status, priority, created_at);
-
-CREATE INDEX idx_executions_project ON executions(project_id);
-
-CREATE INDEX idx_executions_role ON executions(role_id);
-
-CREATE INDEX idx_executions_status ON executions(status);
-
-CREATE INDEX idx_executions_task ON executions(task_id);
-
-CREATE INDEX idx_founder_obj_comp ON founder_objectives(company_id);
-
-CREATE INDEX idx_founder_obj_founder ON founder_objectives(founder_id);
-
-CREATE INDEX idx_founder_obj_idemp ON founder_objectives(company_id, idempotency_key);
-
-CREATE INDEX idx_gov_appr_lookup ON governance_approvals(company_id, action_code, status);
-
-CREATE INDEX idx_gov_audit_actor ON governance_audit_events(actor_id);
-
-CREATE INDEX idx_gov_audit_comp ON governance_audit_events(company_id);
-
-CREATE INDEX idx_gov_audit_type ON governance_audit_events(event_type);
-
-CREATE INDEX idx_gov_pol_active ON governance_policies(company_id, status);
-
-CREATE INDEX idx_handoffs_dest ON work_handoffs(destination_employee_id);
-
-CREATE INDEX idx_handoffs_src ON work_handoffs(source_employee_id);
-
-CREATE INDEX idx_he_exec ON human_exceptions(execution_id);
-
-CREATE INDEX idx_he_run ON human_exceptions(verification_run_id);
-
-CREATE INDEX idx_he_task ON human_exceptions(task_id);
-
-CREATE INDEX idx_hiring_records_company_gap ON employee_hiring_records(company_id, capability_gap_id);
-
-CREATE INDEX idx_hiring_records_employee ON employee_hiring_records(employee_id);
-
-CREATE INDEX idx_kc_item ON knowledge_contradictions(existing_knowledge_item_id);
-
-CREATE INDEX idx_ke_company_time ON knowledge_events(company_id, created_at);
-
-CREATE INDEX idx_ki_company_scope ON knowledge_items(company_id, scope);
-
-CREATE INDEX idx_ki_dept ON knowledge_items(department_id) WHERE department_id IS NOT NULL;
-
-CREATE INDEX idx_ki_project ON knowledge_items(project_id) WHERE project_id IS NOT NULL;
-
-CREATE INDEX idx_ki_state ON knowledge_items(epistemic_state);
-
-CREATE INDEX idx_ks_execution ON knowledge_sources(execution_id) WHERE execution_id IS NOT NULL;
-
-CREATE INDEX idx_ks_item ON knowledge_sources(knowledge_item_id);
-
-CREATE INDEX idx_ks_item_version ON knowledge_sources(knowledge_item_id, knowledge_version);
-
-CREATE INDEX idx_launch_lease_lookup ON execution_launch_leases(company_id, state);
-
-CREATE INDEX idx_mgmt_plans_proj ON management_plans(project_id);
-
-CREATE INDEX idx_mgmt_plans_tech ON management_plans(technical_plan_id);
-
-CREATE INDEX idx_milestones_project ON milestones(project_id);
-
-CREATE INDEX idx_positions_dept ON positions(department_id);
-
-CREATE INDEX idx_products_company ON products(company_id);
-
-CREATE INDEX idx_projects_product ON projects(product_id);
-
-CREATE INDEX idx_qc_exec ON quality_certifications(execution_id);
-
-CREATE INDEX idx_qc_task ON quality_certifications(task_id, task_version);
-
-CREATE INDEX idx_revoked_sessions ON revoked_founder_sessions(session_id);
-
-CREATE INDEX idx_rpg_lookup ON role_permission_grants(company_id, role_name);
-
-CREATE INDEX idx_selection_decisions_req ON provider_selection_decisions(request_id);
-
-CREATE INDEX idx_strat_plans_comp ON strategic_plans(company_id);
-
-CREATE INDEX idx_strat_plans_idemp ON strategic_plans(company_id, founder_objective_id, idempotency_key);
-
-CREATE INDEX idx_strat_plans_obj ON strategic_plans(founder_objective_id);
-
-CREATE INDEX idx_strat_plans_status ON strategic_plans(status);
-
-CREATE INDEX idx_tasks_employee ON tasks(assigned_employee_id);
-
-CREATE INDEX idx_tasks_milestone ON tasks(milestone_id);
-
-CREATE INDEX idx_tasks_product ON tasks(product_id);
-
-CREATE INDEX idx_tasks_project ON tasks(project_id);
-
-CREATE INDEX idx_tasks_status ON tasks(status);
-
-CREATE INDEX idx_teams_company ON teams(company_id);
-
-CREATE INDEX idx_teams_dept ON teams(department_id);
-
-CREATE INDEX idx_teams_lead ON teams(lead_employee_id);
-
-CREATE INDEX idx_tech_plans_prod ON technical_plans(product_id);
-
-CREATE INDEX idx_tech_plans_strat ON technical_plans(strategic_plan_id);
-
-CREATE INDEX idx_tm_company ON team_members(company_id);
-
-CREATE INDEX idx_tm_employee ON team_members(employee_id);
-
-CREATE INDEX idx_tm_status ON team_members(status);
-
-CREATE INDEX idx_token_budgets_entity ON token_budgets(entity_id);
-
-CREATE INDEX idx_usage_records_provider ON resource_usage_records(provider_id, model_id);
-
-CREATE INDEX idx_usage_records_request ON resource_usage_records(request_id);
-
-CREATE INDEX idx_vr_exec ON verification_runs(execution_id);
-
-CREATE INDEX idx_vr_res_run ON verification_results(verification_run_id);
-
-CREATE INDEX idx_vr_task ON verification_runs(task_id);
-
-CREATE INDEX idx_wf_audit_action ON workforce_audit_events(action);
-
-CREATE INDEX idx_wf_audit_actor ON workforce_audit_events(actor_id);
-
-CREATE INDEX idx_wf_audit_company ON workforce_audit_events(company_id);
-
-CREATE INDEX idx_wf_audit_created ON workforce_audit_events(created_at);
-
-CREATE INDEX idx_wf_audit_target ON workforce_audit_events(target_id);
-
-CREATE INDEX idx_work_dep_req ON work_dependencies(required_assignment_id);
 
 CREATE TABLE "acceptance_criteria" (
       id TEXT PRIMARY KEY,
@@ -755,15 +532,15 @@ CREATE VIRTUAL TABLE knowledge_fts USING fts5(
       tokenize = 'porter unicode61'
     );
 
-CREATE TABLE 'knowledge_fts_config'(k PRIMARY KEY, v) WITHOUT ROWID;
 
-CREATE TABLE 'knowledge_fts_content'(id INTEGER PRIMARY KEY, c0, c1, c2, c3, c4, c5, c6);
 
-CREATE TABLE 'knowledge_fts_data'(id INTEGER PRIMARY KEY, block BLOB);
 
-CREATE TABLE 'knowledge_fts_docsize'(id INTEGER PRIMARY KEY, sz BLOB);
 
-CREATE TABLE 'knowledge_fts_idx'(segid, term, pgno, PRIMARY KEY(segid, term)) WITHOUT ROWID;
+
+
+
+
+
 
 CREATE TABLE knowledge_items (
       id TEXT PRIMARY KEY,
@@ -1238,3 +1015,228 @@ CREATE TRIGGER trg_gov_audit_prevent_update
     BEGIN
       SELECT RAISE(ABORT, 'GovernanceAuditSecurityError: Mutation of governance audit records is strictly prohibited by SQLite engine policy.');
     END;
+
+
+CREATE INDEX idx_acc_crit_spec ON acceptance_criteria(specification_id);
+
+CREATE INDEX idx_acc_spec_task ON acceptance_specifications(task_id, status);
+
+CREATE INDEX idx_agent_definitions_division ON agent_definitions(division);
+
+CREATE INDEX idx_assignments_agent_def ON work_assignments(agent_definition_id);
+
+CREATE INDEX idx_assignments_assigned_by ON work_assignments(assigned_by_employee_id);
+
+CREATE INDEX idx_assignments_employee ON work_assignments(employee_id);
+
+CREATE UNIQUE INDEX idx_assignments_idempotency 
+      ON work_assignments(company_id, idempotency_key) 
+      WHERE idempotency_key IS NOT NULL;
+
+CREATE INDEX idx_assignments_project ON work_assignments(project_id);
+
+CREATE INDEX idx_assignments_status ON work_assignments(status);
+
+CREATE INDEX idx_cae_task ON certification_audit_events(task_id, created_at);
+
+CREATE INDEX idx_cap_gaps_plan ON capability_gaps(management_plan_id);
+
+CREATE INDEX idx_cl_company_status ON candidate_lessons(company_id, review_status);
+
+CREATE UNIQUE INDEX idx_cl_originating_execution ON candidate_lessons(originating_execution_id) WHERE originating_execution_id IS NOT NULL;
+
+CREATE INDEX idx_collab_from_emp ON collaboration_requests(from_employee_id);
+
+CREATE UNIQUE INDEX idx_collab_idempotency 
+      ON collaboration_requests(company_id, idempotency_key) 
+      WHERE idempotency_key IS NOT NULL;
+
+CREATE INDEX idx_collab_status ON collaboration_requests(status);
+
+CREATE INDEX idx_collab_to_emp ON collaboration_requests(to_employee_id);
+
+CREATE INDEX idx_cr_cert ON certification_revocations(certification_id);
+
+CREATE INDEX idx_delegations_child_assignment ON delegations(child_assignment_id);
+
+CREATE INDEX idx_delegations_company ON delegations(company_id);
+
+CREATE INDEX idx_delegations_delegatee ON delegations(delegatee_employee_id);
+
+CREATE INDEX idx_delegations_delegator ON delegations(delegator_employee_id);
+
+CREATE INDEX idx_delegations_parent_assignment ON delegations(parent_assignment_id);
+
+CREATE INDEX idx_delegations_status ON delegations(status);
+
+CREATE INDEX idx_departments_company ON departments(company_id);
+
+CREATE INDEX idx_ece_lookup ON emergency_control_events(company_id, freeze_tier);
+
+CREATE INDEX idx_employees_company ON employees(company_id);
+
+CREATE INDEX idx_employees_dept ON employees(department_id);
+
+CREATE INDEX idx_employees_manager ON employees(manager_employee_id);
+
+CREATE INDEX idx_employees_team ON employees(team_id);
+
+CREATE INDEX idx_er_exec ON evidence_records(execution_id);
+
+CREATE INDEX idx_er_run ON evidence_records(verification_run_id);
+
+CREATE INDEX idx_exec_dec_obj ON executive_decisions(related_objective_id);
+
+CREATE INDEX idx_exec_dec_role ON executive_decisions(source_role);
+
+CREATE INDEX idx_exec_events_exec ON execution_events(execution_id);
+
+CREATE INDEX idx_executions_employee ON executions(employee_id);
+
+CREATE UNIQUE INDEX idx_executions_idempotency
+      ON executions(company_id, task_id, idempotency_key)
+      WHERE idempotency_key IS NOT NULL;
+
+CREATE INDEX idx_executions_identity ON executions(identity_id);
+
+CREATE INDEX idx_executions_lease ON executions(launch_lease_token);
+
+CREATE INDEX idx_executions_priority_queue ON executions(status, priority, created_at);
+
+CREATE INDEX idx_executions_project ON executions(project_id);
+
+CREATE INDEX idx_executions_role ON executions(role_id);
+
+CREATE INDEX idx_executions_status ON executions(status);
+
+CREATE INDEX idx_executions_task ON executions(task_id);
+
+CREATE INDEX idx_founder_obj_comp ON founder_objectives(company_id);
+
+CREATE INDEX idx_founder_obj_founder ON founder_objectives(founder_id);
+
+CREATE INDEX idx_founder_obj_idemp ON founder_objectives(company_id, idempotency_key);
+
+CREATE INDEX idx_gov_appr_lookup ON governance_approvals(company_id, action_code, status);
+
+CREATE INDEX idx_gov_audit_actor ON governance_audit_events(actor_id);
+
+CREATE INDEX idx_gov_audit_comp ON governance_audit_events(company_id);
+
+CREATE INDEX idx_gov_audit_type ON governance_audit_events(event_type);
+
+CREATE INDEX idx_gov_pol_active ON governance_policies(company_id, status);
+
+CREATE INDEX idx_handoffs_dest ON work_handoffs(destination_employee_id);
+
+CREATE INDEX idx_handoffs_src ON work_handoffs(source_employee_id);
+
+CREATE INDEX idx_he_exec ON human_exceptions(execution_id);
+
+CREATE INDEX idx_he_run ON human_exceptions(verification_run_id);
+
+CREATE INDEX idx_he_task ON human_exceptions(task_id);
+
+CREATE INDEX idx_hiring_records_company_gap ON employee_hiring_records(company_id, capability_gap_id);
+
+CREATE INDEX idx_hiring_records_employee ON employee_hiring_records(employee_id);
+
+CREATE INDEX idx_kc_item ON knowledge_contradictions(existing_knowledge_item_id);
+
+CREATE INDEX idx_ke_company_time ON knowledge_events(company_id, created_at);
+
+CREATE INDEX idx_ki_company_scope ON knowledge_items(company_id, scope);
+
+CREATE INDEX idx_ki_dept ON knowledge_items(department_id) WHERE department_id IS NOT NULL;
+
+CREATE INDEX idx_ki_project ON knowledge_items(project_id) WHERE project_id IS NOT NULL;
+
+CREATE INDEX idx_ki_state ON knowledge_items(epistemic_state);
+
+CREATE INDEX idx_ks_execution ON knowledge_sources(execution_id) WHERE execution_id IS NOT NULL;
+
+CREATE INDEX idx_ks_item ON knowledge_sources(knowledge_item_id);
+
+CREATE INDEX idx_ks_item_version ON knowledge_sources(knowledge_item_id, knowledge_version);
+
+CREATE INDEX idx_launch_lease_lookup ON execution_launch_leases(company_id, state);
+
+CREATE INDEX idx_mgmt_plans_proj ON management_plans(project_id);
+
+CREATE INDEX idx_mgmt_plans_tech ON management_plans(technical_plan_id);
+
+CREATE INDEX idx_milestones_project ON milestones(project_id);
+
+CREATE INDEX idx_positions_dept ON positions(department_id);
+
+CREATE INDEX idx_products_company ON products(company_id);
+
+CREATE INDEX idx_projects_product ON projects(product_id);
+
+CREATE INDEX idx_qc_exec ON quality_certifications(execution_id);
+
+CREATE INDEX idx_qc_task ON quality_certifications(task_id, task_version);
+
+CREATE INDEX idx_revoked_sessions ON revoked_founder_sessions(session_id);
+
+CREATE INDEX idx_rpg_lookup ON role_permission_grants(company_id, role_name);
+
+CREATE INDEX idx_selection_decisions_req ON provider_selection_decisions(request_id);
+
+CREATE INDEX idx_strat_plans_comp ON strategic_plans(company_id);
+
+CREATE INDEX idx_strat_plans_idemp ON strategic_plans(company_id, founder_objective_id, idempotency_key);
+
+CREATE INDEX idx_strat_plans_obj ON strategic_plans(founder_objective_id);
+
+CREATE INDEX idx_strat_plans_status ON strategic_plans(status);
+
+CREATE INDEX idx_tasks_employee ON tasks(assigned_employee_id);
+
+CREATE INDEX idx_tasks_milestone ON tasks(milestone_id);
+
+CREATE INDEX idx_tasks_product ON tasks(product_id);
+
+CREATE INDEX idx_tasks_project ON tasks(project_id);
+
+CREATE INDEX idx_tasks_status ON tasks(status);
+
+CREATE INDEX idx_teams_company ON teams(company_id);
+
+CREATE INDEX idx_teams_dept ON teams(department_id);
+
+CREATE INDEX idx_teams_lead ON teams(lead_employee_id);
+
+CREATE INDEX idx_tech_plans_prod ON technical_plans(product_id);
+
+CREATE INDEX idx_tech_plans_strat ON technical_plans(strategic_plan_id);
+
+CREATE INDEX idx_tm_company ON team_members(company_id);
+
+CREATE INDEX idx_tm_employee ON team_members(employee_id);
+
+CREATE INDEX idx_tm_status ON team_members(status);
+
+CREATE INDEX idx_token_budgets_entity ON token_budgets(entity_id);
+
+CREATE INDEX idx_usage_records_provider ON resource_usage_records(provider_id, model_id);
+
+CREATE INDEX idx_usage_records_request ON resource_usage_records(request_id);
+
+CREATE INDEX idx_vr_exec ON verification_runs(execution_id);
+
+CREATE INDEX idx_vr_res_run ON verification_results(verification_run_id);
+
+CREATE INDEX idx_vr_task ON verification_runs(task_id);
+
+CREATE INDEX idx_wf_audit_action ON workforce_audit_events(action);
+
+CREATE INDEX idx_wf_audit_actor ON workforce_audit_events(actor_id);
+
+CREATE INDEX idx_wf_audit_company ON workforce_audit_events(company_id);
+
+CREATE INDEX idx_wf_audit_created ON workforce_audit_events(created_at);
+
+CREATE INDEX idx_wf_audit_target ON workforce_audit_events(target_id);
+
+CREATE INDEX idx_work_dep_req ON work_dependencies(required_assignment_id);

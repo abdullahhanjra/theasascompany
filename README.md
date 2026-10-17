@@ -1,10 +1,10 @@
 # 🏢 The Boring Company — Autonomous AI Software Enterprise OS
 
 [![Reality Gate CI](https://github.com/youtubrabdullah1626/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/youtubrabdullah1626/theboringcompany/actions)
-[![Tests](https://img.shields.io/badge/Reality%20Gate-12%20passing-brightgreen.svg)](test/reality-gate.test.js)
+[![Tests](https://img.shields.io/badge/Reality%20Gate-20%20passing-brightgreen.svg)](test/)
 [![p99 Latency](https://img.shields.io/badge/p99%20Latency-%3C15ms-blue.svg)](BENCHMARKS.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Node: >=18](https://img.shields.io/badge/Node->=18.0.0-green.svg)](https://nodejs.org/)
+[![Node: >=22.5](https://img.shields.io/badge/Node->=22.5.0-green.svg)](https://nodejs.org/)
 [![Platform: Win | Mac | Linux](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS%20%7C%20Linux-blue.svg)]()
 
 > **"Build and operate software as a production engineering system, not a code generation tool."**
@@ -157,11 +157,27 @@ The company operates with 67 modular agent configurations located in [`agents/de
 
 ```
 theboringcompany/
+├── src/                    # Core Autonomous Engineering Engine
+│   ├── engine/
+│   │   ├── pipeline.js     # Multi-turn execution pipeline & bounded self-correction
+│   │   └── reality-gate.js # Machine proof verifier (anti-tamper, $? === 0, positive asserts)
+│   ├── providers/          # Model provider abstraction layer
+│   │   ├── anthropic.js    # Anthropic Claude Messages API integration
+│   │   ├── openai.js       # OpenAI GPT-4o integration with tool calling
+│   │   ├── gemini.js       # Google Gemini generateContent integration
+│   │   ├── ollama.js       # Local offline Ollama chat integration
+│   │   ├── deterministic-test.js # Hermetic offline test provider
+│   │   └── index.js        # Provider factory & credentials validator
+│   ├── storage/
+│   │   └── db.js           # Native SQLite relational ledger adapter (node:sqlite)
+│   └── tools/
+│       └── workspace.js    # Sandboxed workspace (path security, diff, timeout runner)
 ├── agents/
 │   ├── definitions/        # 67 Specialist agent configurations + JSON schema
 │   ├── roster.json         # Complete corporate roster & station mapping
 │   └── MASTER_AGENT_DNA.md # Founder's engineering laws & agent reasoning principles
 ├── docs/                   # In-depth architectural & developer guides
+│   ├── audits/             # Evidence-based forensic audit reports
 │   ├── architecture.md     # 6-Phase loop, SQLite ledger, & Claudex Loop
 │   ├── reality-gate.md     # Verification engine & fail-closed interlock
 │   ├── agents-catalog.md   # Fleet breakdown of all 67 agent roles
@@ -185,7 +201,10 @@ theboringcompany/
 │   ├── FOUNDER_LEARNING_ENGINE.md
 │   └── MEETING_SYSTEM.md   # Autonomous cross-agent synchronous meeting protocol
 ├── test/
-│   └── reality-gate.test.js# 8 Native test suites verifying the Reality Gate
+│   ├── reality-gate.test.js# Organizational fleet & schema integrity tests
+│   ├── unit-reality-gate.test.js # Reality Gate anti-tamper & assertion unit tests
+│   ├── pipeline.test.js    # Autonomous execution pipeline integration tests
+│   └── benchmark.js        # Latency & throughput empirical benchmark suite
 ├── .github/
 │   ├── workflows/ci.yml    # GitHub Actions cross-platform matrix CI
 │   ├── ISSUE_TEMPLATE/     # Structured bug report, feature & agent templates
@@ -195,7 +214,7 @@ theboringcompany/
 ├── SECURITY.md             # Fail-closed security policy & disclosure
 ├── ROADMAP.md              # Engineering roadmap (v1.0 -> v1.1 -> v2.0)
 ├── CHANGELOG.md            # Semantic release history
-├── package.json            # Scripts: start, test, demo, train
+├── package.json            # Scripts: start, test, demo, benchmark
 └── LICENSE                 # MIT License (Abdullah Hanjra)
 ```
 

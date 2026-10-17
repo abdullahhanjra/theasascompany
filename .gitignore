@@ -17,7 +17,8 @@ coverage/
 Thumbs.db
 *.tmp
 
-# SQLite live journals
+# SQLite live databases and journals
+*.db
 *.db-journal
 *.db-wal
 *.db-shm

@@ -6,7 +6,7 @@ This guide walks you through cloning, configuring, and executing missions with *
 
 ## 📋 Prerequisites
 
-- **Node.js**: `v18.0.0` or higher (`node --version`)
+- **Node.js**: `v22.5.0` or higher (`node --version`) — requires native `node:sqlite`
 - **Git**: (`git --version`)
 - *Optional*: Python 3.10+ (for semantic memory and vector indexing)
 
@@ -23,54 +23,98 @@ git clone https://github.com/youtubrabdullah1626/theboringcompany.git
 # 2. Enter workspace
 cd theboringcompany
 
-# 3. Verify the system against the Reality Gate
+# 3. Verify the system against the Reality Gate (20 Automated Tests)
 npm test
 ```
 
 You should see output similar to:
 ```
-# tests 6
+# tests 20
 # suites 0
-# pass 6
+# pass 20
 # fail 0
-# duration_ms 950
+# duration_ms 1740
 ```
 
 ---
 
 ## 🏃 Running Your First Mission
 
-### Interactive Demonstration Run
-Run the built-in demo mission:
+### Hermetic Demonstration Run
+Run the built-in end-to-end demonstration mission with real tool execution, sandbox creation, and Reality Gate machine proof:
 
 ```bash
 npm run demo
 ```
 
-This dispatches the synthetic mission:
+This dispatches the engineering mission:
 ```
-"Optimize transaction throughput and prevent deadlock"
+"Implement thread-safe connection pool with exponential backoff"
 ```
-It runs through all 6 phases:
-1. `ALIGN & CLASSIFY` ➔ Classifies as **Track B: Feature Sprint**
-2. `RECON & MODEL` ➔ Analyzes database transaction boundaries
-3. `PLAN & GATE` ➔ Stanley pitches design; Dwight runs 3-probe chaos attack
-4. `EXECUTE & OBSERVE` ➔ Jim applies atomic transaction wrapping
-5. `VERIFY & PROVE` ➔ Reality Gate executes automated test suite ($? === 0)
-6. `COMPLETE` ➔ Emits the **Executive 1-Minute Clarity Card**
+It runs through the real engineering pipeline:
+1. `LEDGER ADMISSION` ➔ Persists task and execution lease into SQLite
+2. `RECON & INSPECTION` ➔ Analyzes sandbox file boundaries
+3. `EXECUTION TURNS` ➔ Agent inspects files, authors minimal code change via `writeFile`
+4. `REALITY GATE` ➔ Runs `node test.js` subprocess, verifies exit code 0, positive assertions, and anti-tamper check
+5. `LEDGER CERTIFICATION` ➔ Records cryptographic SHA-256 evidence record and prints the **Executive 1-Minute Clarity Card**
 
 ---
 
-## 🎯 Dispatching Custom Missions
+## 🤖 Configuring Real AI Providers
 
-You can dispatch arbitrary missions using the command-line interface:
+The system features clean model provider abstractions. You can use your preferred provider or run locally:
+
+### 1. Anthropic Claude (Default: `claude-3-7-sonnet-20250219`)
+```bash
+export ANTHROPIC_API_KEY="sk-ant-..."
+node cli.js --provider anthropic --task "Add rate limiting middleware"
+```
+
+### 2. OpenAI (Default: `gpt-4o`)
+```bash
+export OPENAI_API_KEY="sk-..."
+node cli.js --provider openai --task "Refactor transaction pool"
+```
+
+### 3. Google Gemini (Default: `gemini-2.5-pro`)
+```bash
+export GEMINI_API_KEY="AIzaSy..."
+node cli.js --provider gemini --task "Optimize query planner"
+```
+
+### 4. Local Ollama (Offline & Private)
+```bash
+# Ensure ollama is running locally: ollama run llama3
+node cli.js --provider ollama --model llama3 --task "Fix input validation"
+```
+
+### 5. Deterministic Test Provider (Zero API Keys Required)
+```bash
+node cli.js --provider test --task "Run offline hermetic verification"
+```
+
+---
+
+## 🎯 Dispatching Custom Missions on Target Repositories
+
+You can point The Boring Company OS at any existing repository on your machine:
 
 ```bash
-# General task dispatch
-node cli.js --task "Refactor authentication middleware to use constant-time token comparison"
+# Dispatch against an external codebase
+node cli.js --target /path/to/my-repo --task "Fix broken jest tests in auth module" --test-cmd "npm test"
 
-# Run with verbose telemetry
-node cli.js --task "Add rate limiting to /api/v1/checkout" --verbose
+# Force a specific velocity track
+node cli.js --track A --task "Fix typo in api documentation"
+```
+
+---
+
+## ⚡ Running Empirical Latency Benchmarks
+
+Quantitatively measure runtime latencies (p50, p95, p99) under load with nanosecond resolution:
+
+```bash
+npm run benchmark
 ```
 
 ---
@@ -79,9 +123,13 @@ node cli.js --task "Add rate limiting to /api/v1/checkout" --verbose
 
 | Variable | Description | Default |
 |---|---|---|
+| `BORING_PROVIDER` | Default AI provider (`anthropic`, `openai`, `gemini`, `ollama`, `test`) | `auto` |
+| `BORING_MODEL` | Default model identifier | Provider default |
+| `ANTHROPIC_API_KEY` | Anthropic API key | None |
+| `OPENAI_API_KEY` | OpenAI API key | None |
+| `GEMINI_API_KEY` | Google Gemini API key | None |
+| `OLLAMA_BASE_URL` | Ollama local endpoint | `http://127.0.0.1:11434` |
 | `BORING_COMPANY_DB` | Path to the SQLite operating ledger | `./database/company.db` |
-| `BORING_TOKEN_LIMIT` | Global token cap per mission | `100000` |
-| `BORING_LOG_LEVEL` | Logging verbosity (`info`, `debug`, `silent`) | `info` |
 
 ---
 
