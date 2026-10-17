@@ -40,11 +40,24 @@ function resolveProvider(options = {}) {
   }
 
   // Fallback: No provider keys detected
-  return null;
+  return {
+    name: 'unconfigured',
+    model: 'none',
+    validateConfig: () => ({
+      valid: false,
+      reason: 'No model provider credentials configured in environment',
+      setupInstructions:
+        'Export ANTHROPIC_API_KEY, OPENAI_API_KEY, or GEMINI_API_KEY, or run with --provider ollama or --provider test.'
+    }),
+    generate: async () => {
+      throw new Error('Cannot invoke unconfigured model provider.');
+    }
+  };
 }
 
 module.exports = {
   resolveProvider,
+  getProvider: resolveProvider,
   AnthropicProvider,
   OpenAIProvider,
   GeminiProvider,

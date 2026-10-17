@@ -11,6 +11,7 @@
   "scripts": {
     "start": "node cli.js",
     "test": "node --test test/*.test.js",
+    "hostile-test": "node scripts/hostile_acceptance_test.js",
     "demo": "node cli.js --demo",
     "benchmark": "node test/benchmark.js",
     "index-memory": "node memory/indexer.js",

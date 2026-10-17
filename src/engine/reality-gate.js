@@ -122,11 +122,11 @@ class RealityGate {
         if (fileType !== 'file' || !filePath) continue;
 
         const norm = filePath.replace(/\\/g, '/');
-        if (norm.startsWith('test/') || norm.startsWith('tests/') || norm.includes('.test.') || norm.includes('.spec.') || norm === 'package.json') {
-          const content = workspace.readFile(filePath);
-          const hash = crypto.createHash('sha256').update(content).digest('hex');
-          fingerprint.set(norm, hash);
-        }
+        if (norm.startsWith('.git') || norm.includes('node_modules') || norm.endsWith('.log') || norm.includes('.tmp')) continue;
+
+        const content = workspace.readFile(filePath);
+        const hash = crypto.createHash('sha256').update(content).digest('hex');
+        fingerprint.set(norm, hash);
       }
     } catch {
       // Non-fatal
