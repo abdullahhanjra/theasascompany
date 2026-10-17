@@ -140,13 +140,17 @@ class ExecutionPipeline {
       acceptanceCriteria: [{ type: 'TEST_SUITE_PASS', command: testCommand }]
     });
 
+    const normPriority = ['CRITICAL', 'HIGH', 'NORMAL', 'LOW'].includes((priority || '').toUpperCase())
+      ? priority.toUpperCase()
+      : (priority === 'urgent' ? 'HIGH' : 'NORMAL');
+
     const executionId = this.db.recordExecution({
       taskId: taskRecord.id,
       providerId: this.provider.name,
       taskInstructions: description,
       idempotencyKey,
       policyTier: 'CONTROLLED',
-      priority: priority.toUpperCase()
+      priority: normPriority
     });
 
     const specId = this.db.createAcceptanceSpecification({

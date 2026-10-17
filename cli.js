@@ -52,6 +52,12 @@ for (let i = 0; i < args.length; i++) {
       console.log(`\n--- [${r.id}] ${r.title} ---\n${r.content}\n`);
     }
     process.exit(0);
+  } else if (!args[i].startsWith('-')) {
+    if ((args[i] === '/boss' || args[i] === 'boss') && args[i + 1] && !args[i + 1].startsWith('-')) {
+      task = args[++i];
+    } else if (!task) {
+      task = args[i];
+    }
   } else if (args[i] === '--help' || args[i] === '-h') {
     printHelp();
     process.exit(0);
@@ -174,9 +180,20 @@ async function runLiveMission(missionTask) {
   // Determine provider
   let provider;
   try {
-    provider = getProvider(providerName, { model: modelName });
+    provider = getProvider({ provider: providerName, model: modelName });
   } catch (err) {
     console.error(`\x1b[31m[PROVIDER ERROR]\x1b[0m ${err.message}`);
+    process.exit(1);
+  }
+
+  if (provider.name === 'unconfigured') {
+    console.log(`\x1b[33m[SETUP REQUIRED]\x1b[0m No AI API key detected in your environment.`);
+    console.log(`To run live AI tasks, simply set your API key:\n`);
+    console.log(`  \x1b[36m$env:ANTHROPIC_API_KEY="sk-ant-..."\x1b[0m   (for Claude 3.7)`);
+    console.log(`  \x1b[36m$env:OPENAI_API_KEY="sk-..."\x1b[0m           (for GPT-4o)`);
+    console.log(`  \x1b[36m$env:GEMINI_API_KEY="AIza..."\x1b[0m          (for Google Gemini)`);
+    console.log(`  \x1b[36m--provider ollama\x1b[0m                      (for free local models)`);
+    console.log(`\n👉 Or try the instant offline demo right now: \x1b[1m\x1b[32mnode cli.js --demo\x1b[0m\n`);
     process.exit(1);
   }
 
@@ -211,7 +228,7 @@ async function runLiveMission(missionTask) {
   const result = await pipeline.runTask({
     title: missionTask,
     description: missionTask,
-    priority: track === 'A' ? 'urgent' : (track === 'C' ? 'high' : 'medium')
+    priority: track === 'A' ? 'HIGH' : (track === 'C' ? 'CRITICAL' : 'NORMAL')
   });
 
   process.exit(result.status === 'VERIFIED' ? 0 : 1);
