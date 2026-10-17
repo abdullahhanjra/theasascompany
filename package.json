@@ -36,11 +36,11 @@
     "openai",
     "multi-agent"
   ],
-  "author": "Abdullah Hanjra (https://github.com/abdullahhanjra153)",
+  "author": "Abdullah Hanjra (https://github.com/abdullahhanjraa)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/abdullahhanjra153/theboringcompany.git"
+    "url": "https://github.com/abdullahhanjraa/theboringcompany.git"
   },
-  "homepage": "https://github.com/abdullahhanjra153/theboringcompany#readme",
+  "homepage": "https://github.com/abdullahhanjraa/theboringcompany#readme",
   "license": "MIT"
 }

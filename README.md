@@ -8,7 +8,7 @@
 
 <br/>
 
-[![Reality Gate CI](https://github.com/abdullahhanjra153/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjra153/theboringcompany/actions)
+[![Reality Gate CI](https://github.com/abdullahhanjraa/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjraa/theboringcompany/actions)
 [![Tests Passing](https://img.shields.io/badge/Tests-32%20passing-22c55e.svg?style=flat-square)](test/)
 [![One Command Run](https://img.shields.io/badge/Zero%20Setup-1--Command%20Run-blue.svg?style=flat-square)](#-how-to-use-in-1-command)
 [![Node Runtime](https://img.shields.io/badge/Node.js->=22.5-green.svg?style=flat-square)](https://nodejs.org/)
@@ -54,7 +54,7 @@ You don't even need to clone the repo! Just run:
 ```bash
 npx theboringcompany
 ```
-*(Or clone it: `git clone https://github.com/abdullahhanjra153/theboringcompany.git && cd theboringcompany && npm run demo`)*
+*(Or clone it: `git clone https://github.com/abdullahhanjraa/theboringcompany.git && cd theboringcompany && npm run demo`)*
 
 Watch the autonomous team accept a broken codebase, catch the bug, write the fix, prove that all tests pass, and present a certified release in 3 seconds!
 
@@ -202,8 +202,8 @@ Switch between your favorite AI models anytime:
 ## 📜 Open Source & Community
 
 - **License:** MIT License (100% Free and Open Source)
-- **Built by:** **[Abdullah Hanjra](https://github.com/abdullahhanjra153)**
-- **Connect:** [LinkedIn](https://www.linkedin.com/in/abdullahhanjracodes/) • [GitHub](https://github.com/abdullahhanjra153)
+- **Built by:** **[Abdullah Hanjra](https://github.com/abdullahhanjraa)**
+- **Connect:** [LinkedIn](https://www.linkedin.com/in/abdullahhanjracodes/) • [GitHub](https://github.com/abdullahhanjraa)
 
 <br/>
 
