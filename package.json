@@ -18,7 +18,9 @@
     "search-memory": "node memory/search.js",
     "vector-memory": "python scripts/vector_memory.py",
     "train": "node scripts/train-agents.js --dry-run",
-    "mcp": "node scripts/design-mcp-server.js"
+    "mcp": "node scripts/design-mcp-server.js",
+    "install-tools": "node scripts/install-tools.js",
+    "sync-accounts": "node scripts/sync-accounts.js"
   },
   "engines": {
     "node": ">=22.5.0"
