@@ -34,7 +34,6 @@ class RealityGate {
     let detected = false;
 
     // 1. TAP 13/14 standard (Node test runner, tape, etc.)
-    // '# tests 12', '# pass 12', '# fail 0'
     const tapTestsMatch = output.match(/#\s+tests\s+(\d+)/i);
     const tapPassMatch = output.match(/#\s+pass\s+(\d+)/i);
     const tapFailMatch = output.match(/#\s+fail\s+(\d+)/i);
@@ -123,7 +122,6 @@ class RealityGate {
         if (fileType !== 'file' || !filePath) continue;
 
         const norm = filePath.replace(/\\/g, '/');
-        // Focus anti-tamper checking on test directories, reality gate configs, package.json
         if (norm.startsWith('test/') || norm.startsWith('tests/') || norm.includes('.test.') || norm.includes('.spec.') || norm === 'package.json') {
           const content = workspace.readFile(filePath);
           const hash = crypto.createHash('sha256').update(content).digest('hex');
@@ -131,9 +129,67 @@ class RealityGate {
         }
       }
     } catch {
-      // Non-fatal if listFiles fails
+      // Non-fatal
     }
     return fingerprint;
+  }
+
+  /**
+   * Creates an immutable integrity snapshot of all files in workspace.
+   * @param {object} workspace ControlledWorkspace
+   * @returns {Record<string, string>} map of relative path to sha256
+   */
+  createWorkspaceSnapshot(workspace) {
+    const snapshot = {};
+    try {
+      const items = workspace.listFiles('.', true);
+      for (const it of items) {
+        const filePath = typeof it === 'string' ? it : (it && it.path);
+        const fileType = typeof it === 'string' ? 'file' : (it && it.type);
+        if (fileType === 'file' && filePath && !filePath.startsWith('.git') && !filePath.includes('node_modules')) {
+          try {
+            const content = workspace.readFile(filePath);
+            const norm = filePath.replace(/\\/g, '/');
+            snapshot[norm] = crypto.createHash('sha256').update(content).digest('hex');
+          } catch {}
+        }
+      }
+    } catch {}
+    return snapshot;
+  }
+
+  /**
+   * Asserts workspace matches the snapshot taken at verification time.
+   * Proves no files were altered or added post-verification.
+   * @param {object} workspace
+   * @param {Record<string, string>} expectedSnapshot
+   * @returns {{ intact: boolean, reason?: string }}
+   */
+  verifySnapshotIntegrity(workspace, expectedSnapshot) {
+    if (!expectedSnapshot || typeof expectedSnapshot !== 'object') {
+      return { intact: false, reason: 'INVALID_SNAPSHOT: No baseline snapshot provided' };
+    }
+    const current = this.createWorkspaceSnapshot(workspace);
+    const expectedKeys = Object.keys(expectedSnapshot);
+    const currentKeys = Object.keys(current);
+
+    if (expectedKeys.length !== currentKeys.length) {
+      return {
+        intact: false,
+        reason: `MUTATION_DETECTED: File count changed after verification (expected ${expectedKeys.length}, found ${currentKeys.length})`
+      };
+    }
+
+    for (const file of expectedKeys) {
+      if (current[file] !== expectedSnapshot[file]) {
+        return {
+          intact: false,
+          reason: `MUTATION_DETECTED: File '${file}' was modified after Reality Gate verification`
+        };
+      }
+    }
+
+    return { intact: true };
   }
 
   /**
@@ -166,7 +222,6 @@ class RealityGate {
       const diffObj = await workspace.getGitDiff();
       gitDiff = typeof diffObj === 'object' ? (diffObj.diff || '') : String(diffObj);
       if (allowedPaths && Array.isArray(allowedPaths) && allowedPaths.length > 0) {
-        // Parse changed files from git diff
         const changedFiles = [];
         const diffLines = gitDiff.split('\n');
         for (const line of diffLines) {
@@ -188,12 +243,14 @@ class RealityGate {
         }
       }
     } catch {
-      // Git diff may be unavailable if not a git repo, proceed with warning
+      // Git diff may be unavailable if not a git repo
     }
 
     if (scopeViolation) {
       return {
         passed: false,
+        outcome: 'FAILED',
+        failureCategory: 'SCOPE_VIOLATION',
         reason: `SCOPE_VIOLATION: ${scopeViolation}`,
         exitCode: 1,
         durationMs: Date.now() - startTime,
@@ -204,6 +261,7 @@ class RealityGate {
         evidenceDigest: null,
         tamperDetected: false,
         scopeViolation,
+        snapshot: null,
         stdoutTail: '',
         stderrTail: scopeViolation,
         timestamp: new Date().toISOString()
@@ -214,6 +272,8 @@ class RealityGate {
     if (!testCommand || typeof testCommand !== 'string' || !testCommand.trim()) {
       return {
         passed: false,
+        outcome: 'BLOCKED',
+        failureCategory: 'CONFIGURATION_ERROR',
         reason: 'CONFIGURATION_ERROR: testCommand is required and cannot be empty',
         exitCode: 1,
         durationMs: Date.now() - startTime,
@@ -224,6 +284,7 @@ class RealityGate {
         evidenceDigest: null,
         tamperDetected: false,
         scopeViolation: null,
+        snapshot: null,
         stdoutTail: '',
         stderrTail: 'No test command specified',
         timestamp: new Date().toISOString()
@@ -233,6 +294,28 @@ class RealityGate {
     const execResult = await workspace.runCommand(testCommand, { timeoutMs: effectiveTimeout });
     const durationMs = Date.now() - startTime;
     const combinedOutput = `${execResult.stdout}\n${execResult.stderr}`;
+
+    if (execResult.timedOut) {
+      return {
+        passed: false,
+        outcome: 'BLOCKED',
+        failureCategory: 'TIMEOUT',
+        reason: `TIMEOUT: Test runner exceeded execution limit (${effectiveTimeout}ms)`,
+        exitCode: 124,
+        durationMs,
+        assertionsFound: 0,
+        testsPassed: 0,
+        testsFailed: 0,
+        gitDiff,
+        evidenceDigest: null,
+        tamperDetected: false,
+        scopeViolation: null,
+        snapshot: null,
+        stdoutTail: execResult.stdout.slice(-1000),
+        stderrTail: 'Process terminated due to timeout',
+        timestamp: new Date().toISOString()
+      };
+    }
 
     // Phase 4: Anti-Tamper Post-Execution Verification
     const postFingerprint = this.computeTestFilesFingerprint(workspace);
@@ -251,6 +334,8 @@ class RealityGate {
     if (tamperDetected) {
       return {
         passed: false,
+        outcome: 'FAILED',
+        failureCategory: 'ANTI_TAMPER_VIOLATION',
         reason: `ANTI_TAMPER_VIOLATION: ${tamperDetails}`,
         exitCode: execResult.exitCode,
         durationMs,
@@ -261,6 +346,7 @@ class RealityGate {
         evidenceDigest: null,
         tamperDetected: true,
         scopeViolation: null,
+        snapshot: null,
         stdoutTail: execResult.stdout.slice(-1000),
         stderrTail: execResult.stderr.slice(-1000),
         timestamp: new Date().toISOString()
@@ -271,6 +357,8 @@ class RealityGate {
     if (execResult.exitCode !== 0) {
       return {
         passed: false,
+        outcome: 'FAILED',
+        failureCategory: 'EXIT_CODE_FAILED',
         reason: `EXIT_CODE_FAILED: Test runner exited with non-zero code ${execResult.exitCode}`,
         exitCode: execResult.exitCode,
         durationMs,
@@ -281,6 +369,7 @@ class RealityGate {
         evidenceDigest: null,
         tamperDetected: false,
         scopeViolation: null,
+        snapshot: null,
         stdoutTail: execResult.stdout.slice(-1500),
         stderrTail: execResult.stderr.slice(-1500),
         timestamp: new Date().toISOString()
@@ -294,6 +383,8 @@ class RealityGate {
       if (metrics.detected && metrics.total === 0) {
         return {
           passed: false,
+          outcome: 'FAILED',
+          failureCategory: 'ZERO_ASSERTIONS_FAILED',
           reason: 'ZERO_ASSERTIONS_FAILED: Test runner exited 0 but 0 tests or assertions were executed',
           exitCode: 0,
           durationMs,
@@ -304,6 +395,7 @@ class RealityGate {
           evidenceDigest: null,
           tamperDetected: false,
           scopeViolation: null,
+          snapshot: null,
           stdoutTail: execResult.stdout.slice(-1500),
           stderrTail: execResult.stderr.slice(-1500),
           timestamp: new Date().toISOString()
@@ -313,6 +405,8 @@ class RealityGate {
       if (metrics.detected && metrics.failed > 0) {
         return {
           passed: false,
+          outcome: 'FAILED',
+          failureCategory: 'FAILED_ASSERTIONS',
           reason: `FAILED_ASSERTIONS: Test runner reported ${metrics.failed} failing tests despite exit code 0`,
           exitCode: 0,
           durationMs,
@@ -323,6 +417,7 @@ class RealityGate {
           evidenceDigest: null,
           tamperDetected: false,
           scopeViolation: null,
+          snapshot: null,
           stdoutTail: execResult.stdout.slice(-1500),
           stderrTail: execResult.stderr.slice(-1500),
           timestamp: new Date().toISOString()
@@ -330,18 +425,22 @@ class RealityGate {
       }
     }
 
-    // Phase 7: Compute Immutable Cryptographic Evidence Digest
+    // Phase 7: Compute Immutable Cryptographic Evidence Digest & Integrity Snapshot
+    const snapshot = this.createWorkspaceSnapshot(workspace);
     const evidencePayload = JSON.stringify({
       testCommand,
       exitCode: execResult.exitCode,
       metrics,
       gitDiffLength: gitDiff.length,
+      snapshotFileCount: Object.keys(snapshot).length,
       timestamp: new Date().toISOString()
     });
     const evidenceDigest = crypto.createHash('sha256').update(evidencePayload).digest('hex');
 
     return {
       passed: true,
+      outcome: 'VERIFIED',
+      failureCategory: null,
       reason: 'REALITY_GATE_VERIFIED: Exit code 0, positive assertions confirmed, blast radius verified, zero tampering',
       exitCode: 0,
       durationMs,
@@ -352,6 +451,7 @@ class RealityGate {
       evidenceDigest,
       tamperDetected: false,
       scopeViolation: null,
+      snapshot,
       stdoutTail: execResult.stdout.slice(-1500),
       stderrTail: execResult.stderr.slice(-1500),
       timestamp: new Date().toISOString()

@@ -1,7 +1,7 @@
 # 🏢 The Boring Company — Autonomous AI Software Enterprise OS
 
 [![Reality Gate CI](https://github.com/youtubrabdullah1626/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/youtubrabdullah1626/theboringcompany/actions)
-[![Tests](https://img.shields.io/badge/Reality%20Gate-20%20passing-brightgreen.svg)](test/)
+[![Tests](https://img.shields.io/badge/Reality%20Gate-32%20passing-brightgreen.svg)](test/)
 [![p99 Latency](https://img.shields.io/badge/p99%20Latency-%3C15ms-blue.svg)](BENCHMARKS.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node: >=22.5](https://img.shields.io/badge/Node->=22.5.0-green.svg)](https://nodejs.org/)
@@ -171,7 +171,8 @@ theboringcompany/
 │   ├── storage/
 │   │   └── db.js           # Native SQLite relational ledger adapter (node:sqlite)
 │   └── tools/
-│       └── workspace.js    # Sandboxed workspace (path security, diff, timeout runner)
+│       ├── workspace.js    # Sandboxed workspace (path security, diff, timeout runner)
+│       └── redact.js       # Secret redactor (sanitizes API keys and tokens)
 ├── agents/
 │   ├── definitions/        # 67 Specialist agent configurations + JSON schema
 │   ├── roster.json         # Complete corporate roster & station mapping
@@ -201,6 +202,7 @@ theboringcompany/
 │   ├── FOUNDER_LEARNING_ENGINE.md
 │   └── MEETING_SYSTEM.md   # Autonomous cross-agent synchronous meeting protocol
 ├── test/
+│   ├── adversarial-suite.test.js # Mandatory 12-probe adversarial attack suite
 │   ├── reality-gate.test.js# Organizational fleet & schema integrity tests
 │   ├── unit-reality-gate.test.js # Reality Gate anti-tamper & assertion unit tests
 │   ├── pipeline.test.js    # Autonomous execution pipeline integration tests

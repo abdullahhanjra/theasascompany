@@ -141,12 +141,19 @@ class CompanyDatabase {
     `);
     stmt.run(normalizedStatus, taskId);
 
-    if (metadata.error) {
-      const errStmt = this.db.prepare(`
-        INSERT INTO execution_events (id, company_id, event_type, payload, created_at)
-        VALUES (?, 'comp_boring', 'TASK_ERROR', ?, datetime('now'));
-      `);
-      errStmt.run(`evt_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`, JSON.stringify({ taskId, error: metadata.error }));
+    if (metadata.error && metadata.executionId) {
+      try {
+        const errStmt = this.db.prepare(`
+          INSERT INTO execution_events (
+            id, execution_id, company_id, event_type, from_status, to_status,
+            actor_employee_id, payload_json, timestamp
+          ) VALUES (
+            ?, ?, 'comp_boring', 'TASK_ERROR', 'RUNNING', 'FAILED',
+            'emp_jim', ?, datetime('now')
+          );
+        `);
+        errStmt.run(`evt_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`, metadata.executionId, JSON.stringify({ taskId, error: metadata.error }));
+      } catch {}
     }
 
     return this.getTask(taskId);
@@ -163,8 +170,75 @@ class CompanyDatabase {
     return this.db.prepare('SELECT * FROM tasks ORDER BY created_at DESC;').all();
   }
 
+  findExecutionByIdempotencyKey(key) {
+    if (!key) return null;
+    return this.db.prepare('SELECT * FROM executions WHERE idempotency_key = ?;').get(key);
+  }
+
+  saveCheckpoint(taskId, executionId, stepName, payload = {}) {
+    const id = `chk_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`;
+    const stmt = this.db.prepare(`
+      INSERT INTO execution_events (
+        id, execution_id, company_id, event_type, from_status, to_status,
+        actor_employee_id, payload_json, timestamp
+      ) VALUES (
+        ?, ?, 'comp_boring', 'CHECKPOINT', 'RUNNING', 'RUNNING',
+        'emp_jim', ?, datetime('now')
+      );
+    `);
+    const data = JSON.stringify({ taskId, executionId, stepName, payload, timestamp: new Date().toISOString() });
+    stmt.run(id, executionId, data);
+    return id;
+  }
+
+  getLatestCheckpoint(taskId) {
+    const events = this.db.prepare(`
+      SELECT * FROM execution_events
+      WHERE event_type = 'CHECKPOINT'
+      ORDER BY timestamp DESC;
+    `).all();
+
+    for (const ev of events) {
+      try {
+        const parsed = JSON.parse(ev.payload_json);
+        if (parsed.taskId === taskId) {
+          return parsed;
+        }
+      } catch {}
+    }
+    return null;
+  }
+
+  reconcileOrphanedExecutions() {
+    const orphaned = this.db.prepare(`
+      SELECT * FROM executions
+      WHERE status IN ('RUNNING', 'STARTING', 'ADMITTED', 'PROVISIONING')
+    `).all();
+
+    for (const exec of orphaned) {
+      this.updateExecution(exec.id, {
+        status: 'FAILED',
+        outputTail: 'INTERRUPTED: Process restarted while execution was in active flight'
+      });
+      const task = this.getTask(exec.task_id);
+      if (task && (task.status === 'in_progress' || task.status === 'ready')) {
+        this.updateTaskStatus(task.id, 'blocked', { error: 'Interrupted by process termination or restart' });
+      }
+    }
+    return orphaned;
+  }
+
   recordExecution(exec) {
     const id = exec.id || `exec_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`;
+    const idempotencyKey = exec.idempotencyKey || null;
+
+    if (idempotencyKey) {
+      const existing = this.findExecutionByIdempotencyKey(idempotencyKey);
+      if (existing) {
+        return existing.id;
+      }
+    }
+
     const employeeId = exec.employeeId || 'emp_jim';
     const providerId = exec.providerId || 'native_engine';
     const policyTier = exec.policyTier || 'CONTROLLED';
@@ -177,12 +251,12 @@ class CompanyDatabase {
       INSERT INTO executions (
         id, company_id, task_id, employee_id, provider_id,
         policy_tier, priority, status, timeout_ms, task_instructions,
-        requested_at, launch_lease_token, input_tokens, output_tokens,
+        idempotency_key, requested_at, launch_lease_token, input_tokens, output_tokens,
         created_at, updated_at
       ) VALUES (
         ?, 'comp_boring', ?, ?, ?,
         ?, ?, ?, ?, ?,
-        datetime('now'), ?, ?, ?,
+        ?, datetime('now'), ?, ?, ?,
         datetime('now'), datetime('now')
       );
     `);
@@ -197,6 +271,7 @@ class CompanyDatabase {
       status,
       timeoutMs,
       taskInstructions,
+      idempotencyKey,
       exec.leaseToken || `lease_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
       exec.inputTokens || 0,
       exec.outputTokens || 0

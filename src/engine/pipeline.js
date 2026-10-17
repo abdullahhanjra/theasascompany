@@ -4,12 +4,14 @@
  * @file src/engine/pipeline.js
  * @description Autonomous Task Execution Pipeline for The Boring Company OS.
  * Orchestrates the full lifecycle:
- * 1. Plan & Gate (Task creation, relational ledger persistence)
+ * 1. Plan & Gate (Task creation, idempotency check, relational ledger persistence)
  * 2. Recon & Context Modeling (Workspace file & rule inspection)
- * 3. Multi-Turn Model-Tool Loop (Bounded turns, real tool dispatch)
- * 4. Reality Gate Verification (Anti-tamper, positive assertions, clean exit code)
- * 5. Diagnostic Feedback & Self-Correction (Feedback loop on failed verification)
- * 6. Cryptographic Certification & Auditable Executive Clarity Card
+ * 3. Multi-Turn Model-Tool Loop (Bounded turns, real tool dispatch, checkpointing)
+ * 4. Resource & Security Governance (Token budget caps, timeouts, secret redaction)
+ * 5. Reality Gate Verification (Anti-tamper, positive assertions, clean exit code)
+ * 6. Post-Verification Snapshot Integrity (Proves no file mutations after verification)
+ * 7. Diagnostic Feedback & Self-Correction (Bounded retry loop)
+ * 8. Cryptographic Certification & Auditable Executive Clarity Card
  */
 
 const path = require('path');
@@ -18,6 +20,7 @@ const { ControlledWorkspace } = require('../tools/workspace');
 const { CompanyDatabase } = require('../storage/db');
 const { RealityGate } = require('./reality-gate');
 const { getProvider } = require('../providers');
+const { redactSecrets } = require('../tools/redact');
 
 class ExecutionPipeline {
   constructor(options = {}) {
@@ -30,6 +33,8 @@ class ExecutionPipeline {
     this.realityGate = options.realityGate || new RealityGate();
     this.maxTurns = options.maxTurns || 10;
     this.maxRetries = options.maxRetries || 3;
+    this.maxTokenBudget = options.maxTokenBudget || 100000;
+    this.maxTaskDurationMs = options.maxTaskDurationMs || 300000; // 5 min default
     this.testCommand = options.testCommand || 'npm test';
     this.allowedPaths = options.allowedPaths || null;
     this.verbose = options.verbose ?? true;
@@ -37,14 +42,27 @@ class ExecutionPipeline {
 
   log(phase, message) {
     if (this.verbose) {
-      console.log(`\x1b[1m\x1b[36m[${phase}]\x1b[0m ${message}`);
+      const sanitized = redactSecrets(message);
+      console.log(`\x1b[1m\x1b[36m[${phase}]\x1b[0m ${sanitized}`);
     }
   }
 
   logSub(bullet, message) {
     if (this.verbose) {
-      console.log(`  ${bullet} ${message}`);
+      const sanitized = redactSecrets(message);
+      console.log(`  ${bullet} ${sanitized}`);
     }
+  }
+
+  /**
+   * Reconciles orphaned executions from previous process crashes on startup.
+   */
+  reconcile() {
+    const orphaned = this.db.reconcileOrphanedExecutions();
+    if (orphaned.length > 0) {
+      this.log('RECONCILIATION', `Reconciled ${orphaned.length} orphaned execution(s) from prior session.`);
+    }
+    return orphaned;
   }
 
   /**
@@ -53,6 +71,7 @@ class ExecutionPipeline {
    * @param {string} taskInput.title Task summary
    * @param {string} [taskInput.description] Detailed instructions
    * @param {string} [taskInput.priority='high'] 'urgent'|'high'|'medium'|'low'
+   * @param {string} [taskInput.idempotencyKey] Unique key to prevent duplicate runs
    * @param {string} [taskInput.testCommand] Custom verification command
    * @param {string[]} [taskInput.allowedPaths] Scoped file boundaries
    * @returns {Promise<object>} Complete mission result with machine proof
@@ -63,11 +82,39 @@ class ExecutionPipeline {
     const priority = taskInput.priority || 'high';
     const testCommand = taskInput.testCommand || this.testCommand;
     const allowedPaths = taskInput.allowedPaths || this.allowedPaths;
+    const idempotencyKey = taskInput.idempotencyKey || null;
 
     const missionStartTime = Date.now();
     this.log('PIPELINE START', `Initiating mission: "${title}"`);
 
-    // Validate provider credentials first
+    // Step 0: Check idempotency to prevent duplicate worker execution
+    if (idempotencyKey) {
+      const existing = this.db.findExecutionByIdempotencyKey(idempotencyKey);
+      if (existing) {
+        if (existing.status === 'COMPLETED') {
+          this.logSub('✔', `Idempotent replay: Execution '${existing.id}' already completed successfully.`);
+          return {
+            status: 'VERIFIED',
+            taskId: existing.task_id,
+            executionId: existing.id,
+            isReplay: true,
+            durationMs: 0
+          };
+        }
+        if (existing.status === 'RUNNING' || existing.status === 'STARTING') {
+          this.logSub('✖', `Duplicate submission rejected: Task with key '${idempotencyKey}' is already actively running.`);
+          return {
+            status: 'BLOCKED',
+            reason: `DUPLICATE_EXECUTION: Active execution already exists for key '${idempotencyKey}'`,
+            taskId: existing.task_id,
+            executionId: existing.id,
+            durationMs: 0
+          };
+        }
+      }
+    }
+
+    // Step 1: Validate provider credentials
     const configCheck = this.provider.validateConfig();
     if (!configCheck.valid) {
       this.log('CONFIG ERROR', `Model provider '${this.provider.name}' cannot run: ${configCheck.reason}`);
@@ -76,13 +123,15 @@ class ExecutionPipeline {
       }
       return {
         status: 'FAILED',
+        outcome: 'BLOCKED',
+        failureCategory: 'CONFIGURATION_ERROR',
         reason: `PROVIDER_CREDENTIALS_MISSING: ${configCheck.reason}`,
         setupInstructions: configCheck.setupInstructions,
         durationMs: Date.now() - missionStartTime
       };
     }
 
-    // Step 1: Ledger Persistence & Acceptance Specification
+    // Step 2: Ledger Persistence & Acceptance Specification
     this.log('PHASE 1: LEDGER ADMISSION', 'Enrolling task into SQLite ledger...');
     const taskRecord = this.db.createTask({
       title,
@@ -95,6 +144,7 @@ class ExecutionPipeline {
       taskId: taskRecord.id,
       providerId: this.provider.name,
       taskInstructions: description,
+      idempotencyKey,
       policyTier: 'CONTROLLED',
       priority: priority.toUpperCase()
     });
@@ -110,9 +160,10 @@ class ExecutionPipeline {
       description: `Execute "${testCommand}" with exit code 0 and non-zero passing assertions`
     });
 
-    this.logSub('✔', `Task ID: \x1b[32m${taskRecord.id}\x1b[0m | Execution ID: \x1b[32m${executionId}\x1b[0m`);
+    this.logSub('✔', `Task ID: \x1b[32${taskRecord.id}\x1b[0m | Execution ID: \x1b[32m${executionId}\x1b[0m`);
+    this.db.saveCheckpoint(taskRecord.id, executionId, 'INIT', { title, priority, testCommand });
 
-    // Step 2: Recon & Workspace Inspection
+    // Step 3: Recon & Workspace Inspection
     this.log('PHASE 2: RECON & INSPECTION', `Inspecting workspace at ${this.workspaceRoot}...`);
     let initialFiles = [];
     try {
@@ -122,7 +173,6 @@ class ExecutionPipeline {
       this.logSub('⚠', `Recon file list warning: ${err.message}`);
     }
 
-    // Read package.json or key manifest if available
     let manifestContext = '';
     try {
       const pkg = this.workspace.readFile('package.json');
@@ -131,7 +181,7 @@ class ExecutionPipeline {
       // Non-fatal if package.json does not exist
     }
 
-    // Step 3: Multi-turn Agent Loop with Tool Dispatch
+    // Step 4: Multi-turn Agent Loop with Tool Dispatch
     const systemPrompt = `You are the Lead Software Engineer at The Boring Company autonomous engineering system.
 You are tasked with executing an autonomous engineering mission against a real codebase.
 You have access to safe tools within the workspace:
@@ -162,6 +212,42 @@ RULES:
     let turnCount = 0;
 
     while (turnCount < this.maxTurns && attemptsRemaining > 0) {
+      // Check total task duration limit
+      if (Date.now() - missionStartTime > this.maxTaskDurationMs) {
+        this.logSub('✖', `Task exceeded maximum permitted duration (${this.maxTaskDurationMs}ms). Halting.`);
+        this.db.updateExecution(executionId, {
+          status: 'TIMED_OUT',
+          outputTail: 'RESOURCE_EXHAUSTED: Task exceeded max duration'
+        });
+        return {
+          status: 'FAILED',
+          outcome: 'BLOCKED',
+          failureCategory: 'RESOURCE_EXHAUSTED',
+          reason: `TASK_TIMEOUT: Exceeded duration limit of ${this.maxTaskDurationMs}ms`,
+          taskId: taskRecord.id,
+          executionId,
+          durationMs: Date.now() - missionStartTime
+        };
+      }
+
+      // Check token budget limit
+      if (totalInputTokens + totalOutputTokens > this.maxTokenBudget) {
+        this.logSub('✖', `Token budget cap exceeded (${this.maxTokenBudget} tokens). Halting.`);
+        this.db.updateExecution(executionId, {
+          status: 'FAILED',
+          outputTail: 'RESOURCE_EXHAUSTED: Token budget exhausted'
+        });
+        return {
+          status: 'FAILED',
+          outcome: 'BLOCKED',
+          failureCategory: 'RESOURCE_EXHAUSTED',
+          reason: `TOKEN_BUDGET_EXCEEDED: Exceeded limit of ${this.maxTokenBudget} tokens`,
+          taskId: taskRecord.id,
+          executionId,
+          durationMs: Date.now() - missionStartTime
+        };
+      }
+
       turnCount++;
       this.log('PHASE 3: EXECUTION TURN', `Agent Turn ${turnCount}/${this.maxTurns} (Attempts left: ${attemptsRemaining})`);
 
@@ -180,6 +266,8 @@ RULES:
         });
         return {
           status: 'FAILED',
+          outcome: 'FAILED',
+          failureCategory: 'MODEL_INVOCATION_ERROR',
           reason: `MODEL_INVOCATION_ERROR: ${err.message}`,
           durationMs: Date.now() - missionStartTime
         };
@@ -188,7 +276,6 @@ RULES:
       totalInputTokens += response.usage?.inputTokens || 0;
       totalOutputTokens += response.usage?.outputTokens || 0;
 
-      // Append assistant message
       messages.push({
         role: 'assistant',
         content: response.content || '',
@@ -218,14 +305,22 @@ RULES:
             this.logSub('⚠', `Tool error: ${toolErr.message}`);
           }
 
+          const sanitizedOutput = redactSecrets(toolOutput);
           messages.push({
             role: 'tool',
             toolCallId: tc.id,
             name: toolName,
-            content: typeof toolOutput === 'string' ? toolOutput : JSON.stringify(toolOutput)
+            content: typeof sanitizedOutput === 'string' ? sanitizedOutput : JSON.stringify(sanitizedOutput)
           });
         }
       }
+
+      // Save execution checkpoint after each turn
+      this.db.saveCheckpoint(taskRecord.id, executionId, `TURN_${turnCount}`, {
+        turnCount,
+        inputTokens: totalInputTokens,
+        outputTokens: totalOutputTokens
+      });
 
       // If model provided text response without tool calls, or if changes are ready, evaluate Reality Gate
       const hasToolCalls = response.toolCalls && response.toolCalls.length > 0;
@@ -240,6 +335,22 @@ RULES:
         });
 
         if (realityResult.passed) {
+          // Verify snapshot integrity post-verification: assert zero file mutations after pass
+          const integrityCheck = this.realityGate.verifySnapshotIntegrity(this.workspace, realityResult.snapshot);
+          if (!integrityCheck.intact) {
+            this.logSub('✖', `\x1b[31mPOST-VERIFICATION MUTATION DETECTED:\x1b[0m ${integrityCheck.reason}`);
+            realityResult = {
+              passed: false,
+              outcome: 'FAILED',
+              failureCategory: 'ANTI_TAMPER_VIOLATION',
+              reason: `POST_VERIFICATION_MUTATION: ${integrityCheck.reason}`,
+              exitCode: 1,
+              durationMs: realityResult.durationMs,
+              testsPassed: 0
+            };
+            break;
+          }
+
           this.logSub('✔', `\x1b[32mREALITY GATE PASSED!\x1b[0m Exit code: 0 | Assertions passed: ${realityResult.testsPassed} | Duration: ${realityResult.durationMs}ms`);
           break; // Task verified successfully!
         } else {
@@ -268,7 +379,7 @@ Please diagnose the defect, inspect the affected files, and apply a minimal fix.
 
     const totalDurationMs = Date.now() - missionStartTime;
 
-    // Step 4: Finalize Ledger & Record Evidence
+    // Step 5: Finalize Ledger & Record Evidence
     if (realityResult && realityResult.passed) {
       const verifRecord = this.db.recordVerification({
         taskId: taskRecord.id,
@@ -322,6 +433,7 @@ Please diagnose the defect, inspect the affected files, and apply a minimal fix.
 
       return {
         status: 'VERIFIED',
+        outcome: 'VERIFIED',
         taskId: taskRecord.id,
         executionId,
         evidenceDigest: realityResult.evidenceDigest,
@@ -333,7 +445,9 @@ Please diagnose the defect, inspect the affected files, and apply a minimal fix.
       };
     } else {
       const failureReason = realityResult ? realityResult.reason : 'Exceeded maximum turns without reaching verification';
-      
+      const outcome = realityResult ? (realityResult.outcome || 'FAILED') : 'FAILED';
+      const failureCategory = realityResult ? (realityResult.failureCategory || 'VERIFICATION_FAILED') : 'VERIFICATION_FAILED';
+
       const verifRecord = this.db.recordVerification({
         taskId: taskRecord.id,
         executionId,
@@ -370,6 +484,8 @@ Please diagnose the defect, inspect the affected files, and apply a minimal fix.
 
       return {
         status: 'FAILED',
+        outcome,
+        failureCategory,
         reason: failureReason,
         taskId: taskRecord.id,
         executionId,
