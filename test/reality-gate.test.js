@@ -10,11 +10,11 @@ const AGENTS_DIR = path.join(ROOT_DIR, 'agents', 'definitions');
 const SCHEMA_FILE = path.join(ROOT_DIR, 'database', 'schema.sql');
 const ROSTER_FILE = path.join(ROOT_DIR, 'agents', 'roster.json');
 
-test('🏛️ Organizational Fleet: All 67 agent definitions exist and are well-formed', () => {
+test('🏛️ Organizational Fleet: All 72 agent definitions exist and are well-formed', () => {
   assert.ok(fs.existsSync(AGENTS_DIR), 'agents/definitions directory must exist');
   const agentFolders = fs.readdirSync(AGENTS_DIR).filter(f => fs.statSync(path.join(AGENTS_DIR, f)).isDirectory());
   
-  assert.ok(agentFolders.length >= 20, `Expected at least 20 specialist agents, found ${agentFolders.length}`);
+  assert.strictEqual(agentFolders.length, 72, `Expected exactly 72 specialist agents, found ${agentFolders.length}`);
   
   for (const folder of agentFolders) {
     const agentMd = path.join(AGENTS_DIR, folder, 'agent.md');

@@ -43,7 +43,7 @@ Every developer and founder has experienced this frustration:
 
 ## 💡 The Solution: A Real Software Company Inside Your Terminal
 
-**The Boring Company** fixes this by giving you a complete, organized software studio. Instead of an isolated chatbot hallucinating code, you get **67 specialized AI teammates** arranged across **6 collaborative departments**.
+**The Boring Company** fixes this by giving you a complete, organized software studio. Instead of an isolated chatbot hallucinating code, you get **72 specialized AI teammates** arranged across **6 collaborative departments**.
 
 They challenge weak ideas, keep code changes tiny, and **never declare a task complete without real machine proof** from your computer's native test runner.
 
@@ -204,7 +204,7 @@ In ordinary AI tools, there is no organization. One chatbot attempts to write re
 <a id="protocols"></a>
 ## 🤝 How The Team Collaborates: The 5 Operating Protocols
 
-How do 67 AI specialists work together like a cohesive software studio without talking over each other or overwriting each other's code? They follow **5 clear rules of collaboration**:
+How do 72 AI specialists work together like a cohesive software studio without talking over each other or overwriting each other's code? They follow **5 clear rules of collaboration**:
 
 ### ☕ 1. Standups & Work Leases (No Overwritten Files)
 * **The everyday problem:** When multiple AI tools or developers work on the same folder, they often edit the same file at the same time, overwriting each other's changes and creating messy Git conflicts.
@@ -244,7 +244,7 @@ No code is ever shipped just because an AI promised it works. It must pass three
 <a id="departments"></a>
 ## 🏢 Meet The 6 Departments & Who Does What
 
-Our 67 specialists are organized into 6 real-world departments. Here is who they are, what they care about, and the everyday headaches they save you from:
+Our 72 specialists are organized into 6 real-world departments. Here is who they are, what they care about, and the everyday headaches they save you from:
 
 ### 👑 Department 1: Executive Board & Strategy
 *Turns your short, everyday ideas into clear technical requirements and keeps the team aligned.*
@@ -375,7 +375,7 @@ Most AI coding tools lock your history inside proprietary cloud servers where yo
 
 ### ⚡ 6. Universal 1-Click Export to Cursor, Claude Code & Antigravity
 You shouldn't have to abandon your favorite code editor to get the benefits of an organized multi-agent team.  
-**How we do it:** With a single command (`node scripts/install-tools.js`), all 67 specialist prompts can be exported directly into Cursor (`.cursor/rules/`), Claude Code (`~/.claude/agents/`), or Antigravity (`.agents/`).
+**How we do it:** With a single command (`npx theboringcompany install`), all 72 specialist prompts can be exported directly into Cursor (`.cursor/rules/`), Claude Code (`~/.claude/agents/`), or Antigravity (`.agents/`).
 
 ---
 

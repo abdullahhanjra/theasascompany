@@ -3,7 +3,7 @@
 
 /**
  * 🏢 The Boring Company — Universal Multi-Tool Agent Installer
- * Zero-dependency installer that exports all 67 specialist agents into
+ * Zero-dependency installer that exports all 72 specialist agents into
  * Claude Code, Cursor (.cursor/rules/), Antigravity, and Windsurf.
  */
 
@@ -42,8 +42,8 @@ Usage:
 
 Options:
   --tool <name>    Target tool: cursor, claude, antigravity, windsurf, all (default: cursor)
-  --dry-run        Validate all 67 agent manifests without writing to disk
-  --list, -l       List all 67 specialist agents and their divisions
+  --dry-run        Validate all 72 agent manifests without writing to disk
+  --list, -l       List all 72 specialist agents and their divisions
   --help, -h       Show this help screen
 
 Examples:
@@ -169,7 +169,7 @@ function main() {
   const agents = loadAllAgents();
 
   if (listOnly) {
-    console.log(`\n\x1b[1m\x1b[32m🏢 The Boring Company — 67 Specialist Fleet Roster\x1b[0m\n`);
+    console.log(`\n\x1b[1m\x1b[32m🏢 The Boring Company — 72 Specialist Fleet Roster\x1b[0m\n`);
     console.log(`Total active agents discovered: \x1b[1m${agents.length}\x1b[0m\n`);
     agents.forEach((a, idx) => {
       console.log(`  ${(idx + 1).toString().padStart(2, ' ')}. \x1b[36m${a.id.padEnd(30, ' ')}\x1b[0m ${a.description}`);

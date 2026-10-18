@@ -1,6 +1,6 @@
 # 🏢 THE BORING COMPANY — OFFICIAL ORG CHART & HIERARCHY (V6.0)
 
-> **Last Updated:** 2026-09-27 — Fully Synchronized 67-Agent Enterprise Structure (Tier 4.5 Brand Council + Tier 4.6 Opus 5.5 Specialists added)
+> **Last Updated:** 2026-09-27 — Fully Synchronized 72-Agent Enterprise Structure (Tier 4.5 Brand Council + Tier 4.6 Opus 5.5 Specialists added)
 > **Authority:** Supreme Governance Document. Every agent knows their reporting chain, escalation line, and execution tier.
 
 ---

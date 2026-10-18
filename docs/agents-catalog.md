@@ -1,6 +1,6 @@
 # 👥 Agent Fleet Catalog
 
-The Boring Company OS operates as a coordinated virtual software enterprise with **67 specialist agent roles** divided into core functional squads.
+The Boring Company OS operates as a coordinated virtual software enterprise with **72 specialist agent roles** divided into core functional squads.
 
 ---
 
@@ -69,5 +69,5 @@ agents/definitions/
 ├── company_jim/agent.md
 ├── company_pam/agent.md
 ├── company_ryan/agent.md
-└── ... (67 total agent definitions)
+└── ... (72 total agent definitions)
 ```
