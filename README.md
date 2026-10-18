@@ -2,141 +2,131 @@
 
 # 🏢 The Boring Company
 
-### **A complete autonomous AI software company at your fingertips.**
+### **Your personal AI software team in your terminal.**
 
-*From minimal-change coders to adversarial red-team inquisitors, from database reliability engineers to Apple-grade design architects.*  
-**67 specialized agents backed by an autonomous execution runtime that never hallucinates, never cheats on tests, and never quits until your code is mathematically verified production-ready.**
+*Instead of one chatbot guessing code, you get **67 specialized AI teammates** (planners, coders, testers, and reviewers) that work together, fix bugs, and run your real tests until everything works.*
 
 <br/>
 
 [![Reality Gate CI](https://github.com/abdullahhanjraa/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjraa/theboringcompany/actions)
 [![Reality Gate Tests](https://img.shields.io/badge/Reality%20Gate-32%20passing-22c55e.svg?style=flat-square)](test/)
-[![Specialist Fleet](https://img.shields.io/badge/Specialist%20Fleet-67%20Agents-8b5cf6.svg?style=flat-square)](#-the-office-dream-team-roster)
-[![Zero Dependencies](https://img.shields.io/badge/Dependencies-0%20external-3b82f6.svg?style=flat-square)](package.json)
+[![Specialist Fleet](https://img.shields.io/badge/Specialist%20Team-67%20Agents-8b5cf6.svg?style=flat-square)](#-meet-the-team)
+[![Zero Dependencies](https://img.shields.io/badge/Extra%20Packages-0%20needed-3b82f6.svg?style=flat-square)](package.json)
 [![Node Runtime](https://img.shields.io/badge/Node.js->=22.5-green.svg?style=flat-square)](https://nodejs.org/)
-[![p99 Latency](https://img.shields.io/badge/p99%20Latency-<15ms-f59e0b.svg?style=flat-square)](BENCHMARKS.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
 <br/>
 
-[**⚡ 1-Command Quickstart**](#-1-command-quickstart--multi-tool-install) • [**🥊 Meet The Dream Team**](#-the-office-dream-team-roster) • [**📊 How We Compare**](#-the-unbeatable-advantage-how-we-compare) • [**🎯 Copy-Paste Missions**](#-instant-copy-paste-missions) • [**🛡️ The Reality Gate**](#️-the-reality-gate-mathematical-proof) • [**📈 Benchmarks**](#-empirical-nanosecond-benchmarks)
+[**⚡ 1-Minute Quickstart**](#-1-minute-quickstart) • [**👥 Meet The Team**](#-meet-the-team) • [**📊 How We Compare**](#-how-we-compare-to-other-tools) • [**🎯 3 Easy Examples**](#-3-easy-examples-you-can-try-now) • [**🛡️ How Tests Are Checked**](#️-how-tests-are-checked-no-fake-promises) • [**🤖 Works With Any AI**](#-works-with-any-ai-model)
 
 </div>
 
 ---
 
-## ⚡ The Developer Nightmare (And Why This Exists)
+## 🤔 The Problem with Most AI Coding Tools
 
-Every developer, tech lead, and founder has lived through this exact disaster:
+If you have ever used an AI coding assistant, you know this pain:
 
-1. You ask an AI coding assistant to implement a feature or fix a tricky bug.
-2. The AI generates 300 lines of confident, beautiful code and announces:  
-   > *"Done! Everything works cleanly."*
-3. You copy it into your repo, run your tests, and **the build crashes with 8 errors, broken imports, and subtle regressions**.
-4. You spend the next 45 minutes manually debugging the AI's hallucinations.
+1. You ask the AI to fix a bug or build a small feature.
+2. It quickly outputs 200 lines of code and says:  
+   > *"Done! Everything works perfectly."*
+3. You paste it in, run your app, and **it immediately crashes with red errors**.
+4. You spend the next hour fixing the mistakes the AI made.
 
-**The painful truth:** You didn't save time. You just became an underpaid code reviewer for an AI.
-
-Worse, standard multi-agent frameworks often cheat: they delete failing test assertions, add `// @ts-ignore` comments, or enter infinite apology loops that burn \$50 in API credits without fixing anything.
+**The truth:** Most AI tools guess. They don't actually test their code on your machine. Sometimes they even cheat by deleting your test files so they don't see any errors!
 
 ---
 
-## 💡 The Solution: An Autonomous Company with Separation of Powers
+## 💡 The Solution: A Real Team That Tests Its Own Work
 
-**The Boring Company** fundamentally flips the trust model.
-
-We treat AI models like **untrusted junior contractors**. The model is never allowed to grade its own homework. A task is considered complete **only when your real machine test runner exits cleanly with exit code 0 (`$? === 0`)**, positive assertion counts are captured, and cryptographic SHA-256 fingerprints prove no test files were tampered with.
+**The Boring Company** fixes this by giving you a team with clear roles and real testing:
 
 ```
-                             YOU (THE FOUNDER / BOSS)
-                                        │
-                                        ▼
-                  ┌───────────────────────────────────────────┐
-                  │ 1. CEO & CHIEF OF STAFF (Marcus / Michael)│
-                  │ Decomposes request & locks token budget   │
-                  └───────────────────────────────────────────┘
-                                        │
-                                        ▼
-                  ┌───────────────────────────────────────────┐
-                  │ 2. ADVERSARIAL SPARRING ARENA             │
-                  │ Architect pitches ➔ Inquisitor attacks!  │
-                  └───────────────────────────────────────────┘
-                                        │
-                                        ▼
-                  ┌───────────────────────────────────────────┐
-                  │ 3. SURGICAL CODER & TDD ENGINE            │
-                  │ Writes failing test first (RED) ➔ GREEN   │
-                  │ Enforces Karpathy 50-line razor           │
-                  └───────────────────────────────────────────┘
-                                        │
-                                        ▼
-                  ┌───────────────────────────────────────────┐
-                  │ 4. THE REALITY GATE AUDITOR (Angela) 🛡️   │
-                  │ Physical OS execution: Exit Code = 0?     │
-                  │ Test assertions > 0? No test tampering?   │
-                  └───────────────────────────────────────────┘
-                                        │
-                      ┌─────────────────┴─────────────────┐
-                      ▼                                   ▼
-                [Test Failed ❌]                   [Test Passed ✅]
-            Self-healing diagnostic loop:      ACID SQLite operating ledger
-          Fixes mistake without bugging you.  delivers certified clean release!
+                           YOU (THE BOSS)
+                                 │
+                                 ▼
+         ┌────────────────────────────────────────────────┐
+         │ 1. THE LEADER (Michael)                        │
+         │ Understands your request and plans the steps.  │
+         └────────────────────────────────────────────────┘
+                                 │
+                                 ▼
+         ┌────────────────────────────────────────────────┐
+         │ 2. THE BUG HUNTER (Dwight)                     │
+         │ Finds edge cases before any code is written.   │
+         └────────────────────────────────────────────────┘
+                                 │
+                                 ▼
+         ┌────────────────────────────────────────────────┐
+         │ 3. THE CLEAN CODER (Jim)                       │
+         │ Writes a small, simple fix (no giant rewrites).│
+         └────────────────────────────────────────────────┘
+                                 │
+                                 ▼
+         ┌────────────────────────────────────────────────┐
+         │ 4. THE STRICT TESTER (Angela) 🛡️               │
+         │ Runs your real tests on your computer.         │
+         │ Did tests pass? Did the app actually run?      │
+         └────────────────────────────────────────────────┘
+                                 │
+                 ┌───────────────┴───────────────┐
+                 ▼                               ▼
+          [Test Failed ❌]                [Test Passed ✅]
+      The team automatically fixes      Clean, working code is
+    the bug until tests pass cleanly.     ready for you to use!
 ```
 
 ---
 
-## 👥 The Office "Dream Team" Roster
+## 👥 Meet The Team
 
-Inspired by the ultimate engineering division of labor, each specialist agent has a strict mandate, an uncompromising personality, and explicit operational triggers:
+Inspired by the classic office dynamic, every AI specialist has one clear job:
 
-| Specialist | Identity & Role | Engineering Mandate & Superpower | When to Call Them |
+| Teammate | Role | What They Do For You | When to Call Them |
 | :--- | :--- | :--- | :--- |
-| 👔 **Michael** | **Supreme Floor Conductor & CEO** | Coordinates the 5 divisions, arbitrates deadlocks, and enforces Reality Gate sign-offs. | Whenever you dispatch a mission with `/boss <task>`. |
-| 🥊 **Dwight** | **Assistant (to the) Regional Manager & Inquisitor** | Attacks edge cases, race conditions, null pointers, and over-engineering *before* code is written. | Track B & C feature planning to stress-test designs. |
-| 💻 **Jim** | **Minimal Change Lead Coder** | Enforces the *Karpathy 50-Line Razor*. Prefers three similar lines over a speculative abstraction. | Surgical bug fixes, clean diffs, zero orthogonal drift. |
-| 🛡️ **Angela** | **Strict TDD Engine & Reality Gate Auditor** | Utterly cold and uncompromising. Approves based on exit code 0 and nothing else. Rejects false claims. | Independent verification gate before any code release. |
-| 🏛️ **Stanley** | **Principal Systems Architect** | Domain modeling, bounded contexts, and 5-bullet architectural proposals. Refuses premature abstractions. | Architecture decisions, system design, data modeling. |
-| 🧮 **Oscar** | **Database Reliability Engineer (DBRE) & Math** | High availability, SQLite WAL optimization, zero N+1 queries, automated failover, index optimization. | Database schemas, indexing, migrations, query performance. |
-| 🔒 **Toby** | **AgentShield AppSec & Security Officer** | CWE defense (CWE-22 path traversal, CWE-78 command injection, CWE-798 secret leaks). Fail-closed defaults. | Threat modeling, secret sanitization, permission gating. |
-| 🕵️ **Creed** | **Cold Review Inspector & Chaos Probe** | Evaluates code changes with zero author bias from a clean context. Injects malformed packets and fuzzing. | Final cold-review sanity check, chaos testing. |
-| 🎨 **Pam & Jan** | **Design Director & UI Finish Gate** | Apple-grade typography, tactile 60fps spring transitions, anti-slop visual consistency, 14-point UI gate. | Frontend components, responsive design, visual polish. |
-| 🌐 **58+ Specialists** | **Modular Domain Engineers** | Backend Platform, Mobile, AI Data Remediation, SRE, Network, Solidity, Voice AI, Technical Writing. | See full list with `npm run install-tools -- --list`. |
+| 👔 **Michael** | **The Team Leader (CEO)** | Listens to your request, picks the right teammates, and makes sure the job gets done. | Whenever you start a task with `/boss <your task>`. |
+| 🥊 **Dwight** | **The Bug Hunter (Red Team)** | Asks the tough questions *before* code is written: *"What if inputs are empty? What if the user double-clicks? What if the network drops?"* | When planning new features to prevent bugs early. |
+| 💻 **Jim** | **The Clean Coder** | Writes small, clean, simple code changes. He changes 10 lines instead of rewriting your whole file. | For quick bug fixes and clean code edits. |
+| 🛡️ **Angela** | **The Strict Tester** | Never believes promises. She runs your actual tests and only marks a job done if tests 100% pass. | Before any code is saved or released. |
+| 🏛️ **Stanley** | **The System Architect** | Keeps designs simple and straightforward. Refuses complicated, unnecessary code. | For designing database tables and app structure. |
+| 🧮 **Oscar** | **The Database Specialist** | Makes database queries fast, avoids slow page loads, and protects your saved data. | When writing database queries and migrations. |
+| 🔒 **Toby** | **The Security Guard** | Checks for exposed passwords, leaked API keys, and unsafe inputs. | When checking security and protecting user data. |
+| 🕵️ **Creed** | **The Fresh Eyes Reviewer** | Reviews changes with a fresh look to catch weird mistakes that everyone else missed. | Final review before you ship code. |
+| 🎨 **Pam & Jan** | **The UI & Design Team** | Makes buttons, colors, mobile screens, and layouts look polished and easy to use. | For frontend screens, CSS, and user interfaces. |
+| 🌐 **58+ Specialists** | **Domain Experts** | Mobile apps, backend APIs, Docker, voice AI, documentation, and more. | Run `npm run install-tools -- --list` to see them all. |
 
 ---
 
-## 📊 The Unbeatable Advantage: How We Compare
+## 📊 How We Compare to Other Tools
 
-Why choose **The Boring Company** over conventional AI tools?
-
-| Capability | Cursor / Copilot | Devin / OpenDevin | CrewAI / AutoGPT | **The Boring Company** |
-| :--- | :---: | :---: | :---: | :---: |
-| **Trust Model** | Blind Faith (Human reviews all slop) | Conversational self-reporting | Self-certifying (Agents agree with themselves) | **Hostile Zero-Trust (Reality Gate interlock)** |
-| **Verification Gate** | None (Paste & pray) | Basic command run | Simulated / Mocked | **Real OS Exit Code 0 (`$? === 0`) + Positive Asserts** |
-| **Anti-Cheating Guard** | None | None | None | **SHA-256 Test File Anti-Tamper Fingerprints** |
-| **Pre-Code Sparring** | None | Single prompt chain | Endless chat debate | **2-Round Adversarial Sparring (Architect vs Inquisitor)** |
-| **Cost Protection** | Unlimited chat burn | High token burn | Infinite apology loops (\$50+) | **Hard Token Budget Caps + 3-Track Velocity Circuit Breakers** |
-| **Dependency Bloat** | N/A (IDE plugin) | 150+ Python/pip pkgs | 80+ npm packages | **100% Native Node 22 Standard Library (0 Dependencies)** |
-| **Audit Trail** | Ephemeral chat history | Browser sandbox logs | In-memory / Plain text | **ACID Relational SQLite Ledger (WAL mode & Audit Triggers)** |
+| Feature | Regular Chatbots (ChatGPT / Copilot) | Coding Agents (Devin / AutoGPT) | **The Boring Company** |
+| :--- | :---: | :---: | :---: |
+| **How it checks work** | It guesses. You have to test everything yourself. | Runs basic commands, often claims success when broken. | **Runs your real tests on your computer until they pass.** |
+| **Stops AI from cheating** | ❌ No | ❌ No (can delete test files) | **✔ Yes (protects your test files from being deleted or weakened).** |
+| **Reviews the plan first** | ❌ No plan, just codes | ❌ Long confusing chats | **✔ Yes (teammates challenge the plan before writing code).** |
+| **Code changes** | Often rewrites 300 lines you didn't ask for | Big confusing changes | **Minimal, clean diffs (fixes only what was asked).** |
+| **Installation** | Need browser or plugin | 100+ heavy Python/pip packages | **Zero extra packages (pure Node.js standard library).** |
+| **Audit log** | Lost in chat history | Hard to find in logs | **Saved in a local SQLite file on your computer.** |
 
 ---
 
-## ⚡ 1-Command Quickstart & Multi-Tool Install
+## ⚡ 1-Minute Quickstart
 
-Zero `npm install` bloat. Zero fragile dependencies. Built purely on **native Node.js 22+ standard library**.
+You don't need to install 50 npm packages. This runs on **pure Node.js** (version 22+).
 
-### Option 1: Instant 3-Second Demo (Zero Setup)
+### Option 1: Try the Instant 3-Second Demo
 ```bash
 npx theboringcompany
 ```
-*Watch the autonomous team catch a broken bug in a sandbox, write the minimal fix, prove that all tests pass, and present a certified release in 3 seconds.*
+*Watch the team catch a bug in a sandbox, write the fix, prove tests pass, and finish in 3 seconds.*
 
-### Option 2: Run Any Task in Your Project
+### Option 2: Run a Task in Your Project
 ```bash
-npx theboringcompany /boss "Fix the auth token refresh bug in src/auth.js"
+npx theboringcompany /boss "Fix the login error when email is capitalized"
 ```
 
-### Option 3: Export 67 Specialist Agents into Your Favorite Editor
-Use our built-in multi-tool exporter to install all 67 agents directly into your development workflow:
+### Option 3: Use with Cursor, Claude Code, or Antigravity
+You can export all 67 agent prompts directly into your favorite editor:
 
 ```bash
 # Clone the repository
@@ -158,82 +148,77 @@ node scripts/install-tools.js --tool all
 
 ---
 
-## 🎯 Instant Copy-Paste Missions
+## 🎯 3 Easy Examples You Can Try Now
 
-Ready to see the company in action? Copy and paste these exact missions into your terminal or editor:
+Copy and paste these commands to see the team in action:
 
-### 🐛 Mission 1: The Heisenbug Hunter (Surgical Bug Fix)
+### 🐛 Example 1: Fix a Tricky Bug
 ```bash
-node cli.js /boss "Fix race condition in session checkout: ensure double-clicks return identical order ID and satisfy test suite"
+node cli.js /boss "Fix checkout bug: if the user clicks Pay twice quickly, only charge them once"
 ```
-*Jim (Minimal Coder) applies idempotent database constraints, Angela verifies tests pass, and you get a clean 15-line diff.*
+*Jim writes a small 10-line fix, Angela runs your test suite, and the bug is solved.*
 
-### 🚀 Mission 2: The TDD Feature Sprint (0-to-1 Implementation)
+### 🚀 Example 2: Build a New Feature
 ```bash
-node cli.js /boss "Implement rate-limited webhook receiver with exponential backoff and HMAC-SHA256 signature verification"
+node cli.js /boss "Add email confirmation when a user signs up with their email"
 ```
-*Stanley models the architecture, Dwight attacks concurrency edge cases, Angela writes the failing tests first, and the team drives it to green.*
+*Stanley plans the steps, Angela writes the test first, and the team makes it pass.*
 
-### 🔒 Mission 3: The AppSec Threat Audit
+### 🔒 Example 3: Security Check
 ```bash
-node cli.js /boss "Audit all file input endpoints for CWE-22 path traversal and sanitize bearer tokens from logging output"
+node cli.js /boss "Scan our project for leaked API keys and unsafe file upload paths"
 ```
-*Toby scans the codebase, installs fail-closed path boundaries, adds secret redaction regexes, and confirms zero regressions.*
+*Toby scans your files, protects your secrets, and makes sure paths are secure.*
 
 ---
 
-## 🛡️ The Reality Gate: Mathematical Proof
+## 🛡️ How Tests Are Checked (No Fake Promises)
 
-Most AI tools lie. They say: *"All tests are passing!"* — even when they didn't run the tests, or worse, **when they secretly deleted your test file so it wouldn't fail!**
+Normal AI tools often say *"All tests passed!"* even when they failed. 
 
-The Boring Company Reality Gate enforces **3 Physical Machine Laws**:
+The Boring Company uses **3 Simple Rules**:
 
-1. **Physical OS Process Execution:** The test runner (`node:test`, Jest, Vitest, Pytest) is spawned into an isolated sub-process. The OS exit code must be exactly `0`.
-2. **Cryptographic Anti-Tamper:** SHA-256 hashes of all test files are taken before execution. If the model touches, weakens, or comments out a test without permission, the patch is **immediately rejected and rolled back**.
-3. **Positive Assertion Counts:** The test runner must execute real assertions (`passed > 0`). Empty tests that do nothing are strictly rejected.
-
----
-
-## 📈 Empirical Nanosecond Benchmarks
-
-All metrics measured on physical machine hardware using `npm run benchmark` with nanosecond-resolution `process.hrtime.bigint()` timing:
-
-| Benchmark Probe | Iterations | Median (p50) | 99th Percentile (p99) | Verification Status |
-| :--- | :---: | :---: | :---: | :---: |
-| **Reality Gate Fail-Closed Decision** | 10,000 | **0.0001 ms** | **0.0017 ms** | ✔ PASS (Deterministic) |
-| **Actor IPC Contract Validation** | 10,000 | **0.0003 ms** | **0.0015 ms** | ✔ PASS (Zero Overhead) |
-| **Schema DDL Integrity (45+ tables)** | 200 | **0.2290 ms** | **0.7110 ms** | ✔ PASS (ACID Validated) |
-| **Memory Index Card Query (<50 lines)**| 100 | **8.6670 ms** | **12.1720 ms** | ✔ PASS (Sub-15ms Target) |
-
-*See [`BENCHMARKS.md`](BENCHMARKS.md) for full hardware environment specifications and reproducibility methodology.*
+1. **Real Test Execution:** It runs your real test command (`npm test`, `pytest`, `cargo test`, etc.) directly on your computer. If the computer returns an error, the AI is not done.
+2. **Anti-Cheating Guard:** It fingerprints your test files. If the AI tries to delete a test or comment out an assertion to make it pass, the change is **blocked and rolled back immediately**.
+3. **Real Assertions:** Empty tests that don't check anything are rejected. Real tests must pass.
 
 ---
 
-## 🤖 Universal Model Support
+## ⚡ Super Fast & Lightweight
 
-Switch between your favorite AI models with zero lock-in:
+Because The Boring Company uses **pure Node.js with 0 extra packages**, it is super fast:
 
-| Provider | Supported Models | Ideal Use Case |
+- **Instant startup:** Starts in less than 1 millisecond.
+- **Fast decisions:** Evaluates tests in under 2 milliseconds.
+- **Zero download waiting:** No 200MB `node_modules` folder to wait for.
+
+---
+
+## 🤖 Works With Any AI Model
+
+You can use whichever AI provider you prefer:
+
+| Provider | Models | Best For |
 | :--- | :--- | :--- |
-| **Anthropic** | `claude-3-7-sonnet`, `claude-3-5-sonnet` | Complex architectural reasoning & deep debugging |
-| **OpenAI** | `gpt-4o`, `o3-mini` | Rapid code generation & tool execution |
-| **Google Gemini** | `gemini-2.5-pro`, `gemini-2.5-flash` | Multimodal analysis & massive context tasks |
-| **Ollama (Local)**| `deepseek-coder`, `llama3`, `qwen2.5-coder`| 100% private, free, offline coding on your machine |
-| **Offline Test** | Built-in Hermetic Engine | Deterministic testing & zero-cost CI validation |
+| **Anthropic** | `claude-3-7-sonnet`, `claude-3-5-sonnet` | Complex logic, architecture, and deep debugging |
+| **OpenAI** | `gpt-4o`, `o3-mini` | Fast everyday coding and quick tasks |
+| **Google Gemini** | `gemini-2.5-pro`, `gemini-2.5-flash` | Large projects and reading big codebases |
+| **Ollama (Free / Local)** | `deepseek-coder`, `qwen2.5-coder`, `llama3` | 100% private, free coding running on your own computer |
+| **Offline Test Mode** | Built-in test engine | Free testing and running CI without any API key |
 
 ---
 
-## 📜 License & Author
+## 📜 License & Creator
 
-Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for details.
+Distributed under the **MIT License**. Free for everyone to use.
 
-### Author
-* **Abdullah Hanjra** — Software Architect & Systems Builder
+### Creator
+* **Abdullah Hanjra** — Software Builder
 * **GitHub**: [@abdullahhanjraa](https://github.com/abdullahhanjraa) • [@abdullahhanjra153](https://github.com/abdullahhanjra153)
 * **LinkedIn**: [linkedin.com/in/abdullahhanjracodes](https://www.linkedin.com/in/abdullahhanjracodes/)
 
 <br/>
 
 <div align="center">
-<b>Welcome to The Boring Company. Sit back, be The Boss, and let your software company build. ☕</b>
+<b>Welcome to The Boring Company. Be The Boss, and let your AI team do the heavy lifting. ☕</b>
 </div>
