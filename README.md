@@ -17,7 +17,7 @@
 
 <br/>
 
-[**⚡ 1-Minute Quickstart**](#-1-minute-quickstart) • [**👥 Meet The Team**](#-meet-the-team) • [**📊 How We Compare**](#-how-we-compare-to-other-tools) • [**🎯 3 Easy Examples**](#-3-easy-examples-you-can-try-now) • [**🛡️ How Tests Are Checked**](#️-how-tests-are-checked-no-fake-promises) • [**🤖 Works With Any AI**](#-works-with-any-ai-model)
+[**🏢 6 Departments**](#-the-6-company-departments-67-smart-specialists) • [**🔄 How We Collaborate**](#-how-the-departments-collaborate-the-6-step-mission-workflow) • [**🪝 6 Core Hooks**](#-6-core-hooks--unfair-advantages) • [**⚡ 1-Minute Quickstart**](#-1-minute-quickstart) • [**📊 Comparison**](#-how-we-compare-to-other-tools) • [**🛡️ Reality Gate**](#️-how-tests-are-checked-no-fake-promises)
 
 </div>
 
@@ -37,63 +37,164 @@ If you have ever used an AI coding assistant, you know this pain:
 
 ---
 
-## 💡 The Solution: A Real Team That Tests Its Own Work
+## 💡 The Solution: A Real Company Working For You
 
-**The Boring Company** fixes this by giving you a team with clear roles and real testing:
+Instead of one lone AI chatbot that guesses and hallucinates, **The Boring Company** gives you an organized virtual software company. Your project moves through specialized departments that collaborate, challenge bad ideas, write clean code, and run real tests on your computer.
 
 ```
-                           YOU (THE BOSS)
-                                 │
-                                 ▼
-         ┌────────────────────────────────────────────────┐
-         │ 1. THE LEADER (Michael)                        │
-         │ Understands your request and plans the steps.  │
-         └────────────────────────────────────────────────┘
-                                 │
-                                 ▼
-         ┌────────────────────────────────────────────────┐
-         │ 2. THE BUG HUNTER (Dwight)                     │
-         │ Finds edge cases before any code is written.   │
-         └────────────────────────────────────────────────┘
-                                 │
-                                 ▼
-         ┌────────────────────────────────────────────────┐
-         │ 3. THE CLEAN CODER (Jim)                       │
-         │ Writes a small, simple fix (no giant rewrites).│
-         └────────────────────────────────────────────────┘
-                                 │
-                                 ▼
-         ┌────────────────────────────────────────────────┐
-         │ 4. THE STRICT TESTER (Angela) 🛡️               │
-         │ Runs your real tests on your computer.         │
-         │ Did tests pass? Did the app actually run?      │
-         └────────────────────────────────────────────────┘
-                                 │
-                 ┌───────────────┴───────────────┐
-                 ▼                               ▼
-          [Test Failed ❌]                [Test Passed ✅]
-      The team automatically fixes      Clean, working code is
-    the bug until tests pass cleanly.     ready for you to use!
+                             YOU (THE FOUNDER / BOSS)
+                                       │
+                                       ▼
+  ┌────────────────────────────────────────────────────────────────────────┐
+  │ 1. EXECUTIVE BOARD (Michael, Marcus, Stanley)                          │
+  │    Listens to your request, clarifies requirements, and plans steps.   │
+  └───────────────────────────────────┬────────────────────────────────────┘
+                                      │
+                                      ▼
+  ┌────────────────────────────────────────────────────────────────────────┐
+  │ 2. THE RED TEAM ARENA (Dwight, Toby, Creed)                            │
+  │    Attacks the plan for edge cases, race conditions, and leaked keys.  │
+  └───────────────────────────────────┬────────────────────────────────────┘
+                                      │
+                                      ▼
+  ┌────────────────────────────────────────────────────────────────────────┐
+  │ 3. CORE ENGINEERING (Jim, Oscar, Andy, Nate)                           │
+  │    Writes surgical, minimal code diffs and optimizes database queries. │
+  └───────────────────────────────────┬────────────────────────────────────┘
+                                      │
+                                      ▼
+  ┌────────────────────────────────────────────────────────────────────────┐
+  │ 4. REALITY GATE QA (Angela, Ryan, Kevin)                               │
+  │    Runs your machine's real test runner. Zero fake passes allowed!     │
+  └───────────────────────────────────┬────────────────────────────────────┘
+                                      │
+                     ┌────────────────┴────────────────┐
+                     ▼                                 ▼
+              [Tests Fail ❌]                   [Tests Pass ✅]
+         Jim & Ryan diagnose and            Angela certifies exit code 0.
+        fix the bug automatically.         Logged in company.db & shipped!
 ```
 
 ---
 
-## 👥 Meet The Team
+## 🏢 The 6 Company Departments (67 Smart Specialists)
 
-Inspired by the classic office dynamic, every AI specialist has one clear job:
+Just like a real high-performance software company, our 67 AI specialists are organized into **6 dedicated departments**. Each department has one clear focus and works to protect your codebase:
 
-| Teammate | Role | What They Do For You | When to Call Them |
+### 🏛️ 1. Executive Board & Leadership
+*Sets direction, turns vague requests into clear plans, and keeps the team aligned.*
+
+| Teammate | Persona & Title | What They Do For You | When They Step In |
 | :--- | :--- | :--- | :--- |
-| 👔 **Michael** | **The Team Leader (CEO)** | Listens to your request, picks the right teammates, and makes sure the job gets done. | Whenever you start a task with `/boss <your task>`. |
-| 🥊 **Dwight** | **The Bug Hunter (Red Team)** | Asks the tough questions *before* code is written: *"What if inputs are empty? What if the user double-clicks? What if the network drops?"* | When planning new features to prevent bugs early. |
-| 💻 **Jim** | **The Clean Coder** | Writes small, clean, simple code changes. He changes 10 lines instead of rewriting your whole file. | For quick bug fixes and clean code edits. |
-| 🛡️ **Angela** | **The Strict Tester** | Never believes promises. She runs your actual tests and only marks a job done if tests 100% pass. | Before any code is saved or released. |
-| 🏛️ **Stanley** | **The System Architect** | Keeps designs simple and straightforward. Refuses complicated, unnecessary code. | For designing database tables and app structure. |
-| 🧮 **Oscar** | **The Database Specialist** | Makes database queries fast, avoids slow page loads, and protects your saved data. | When writing database queries and migrations. |
-| 🔒 **Toby** | **The Security Guard** | Checks for exposed passwords, leaked API keys, and unsafe inputs. | When checking security and protecting user data. |
-| 🕵️ **Creed** | **The Fresh Eyes Reviewer** | Reviews changes with a fresh look to catch weird mistakes that everyone else missed. | Final review before you ship code. |
-| 🎨 **Pam & Jan** | **The UI & Design Team** | Makes buttons, colors, mobile screens, and layouts look polished and easy to use. | For frontend screens, CSS, and user interfaces. |
-| 🌐 **58+ Specialists** | **Domain Experts** | Mobile apps, backend APIs, Docker, voice AI, documentation, and more. | Run `npm run install-tools -- --list` to see them all. |
+| 👔 **Michael** | **Supreme Conductor & CEO** | Listens to your prompt, leads the team morning standup, assigns tasks, and signs off on deliveries. | Whenever you run `/boss <task>`. |
+| 📋 **Marcus** | **Chief Product Officer (CPO)** | Turns short 1-line ideas into clear specifications, user stories, and acceptance checklists. | At the start of any new feature or task. |
+| 📐 **Stanley** | **Chief Technology Officer (CTO)** | Picks the simplest, cleanest architectural design. Refuses over-complicated abstractions. | Before any code is drafted. |
+| ⚡ **David** | **VP of Engineering** | Manages execution pace, keeps diffs small, and enforces strict testing rigor across the team. | During sprint execution. |
+| 💼 **Jan** | **Chief Revenue Officer (CRO)** | Ensures every feature brings real value to your users and aligns with your product goals. | When planning user-facing features. |
+| 📊 **Darryl** | **VP of Operations** | Monitors token budgets, runtime speed, and local database ledger health. | Continuously in the background. |
+
+<br/>
+
+### 🛡️ 2. The Red Team & Security Guard (Defensive Auditing)
+*Stops bugs and security holes BEFORE a single line of code touches your computer.*
+
+| Teammate | Persona & Title | What They Do For You | When They Step In |
+| :--- | :--- | :--- | :--- |
+| 🥊 **Dwight** | **Adversarial Inquisitor (Red Team)** | Attacks the plan before coding begins. Questions: *"What if network drops? What if user clicks twice? What if database is empty?"* | Before any coding begins (Sparring Arena). |
+| 🔒 **Toby** | **Security Guard (AppSec Lead)** | Scans code for leaked API keys, exposed passwords, SQL injection, and path traversal security risks. | Before any code is committed. |
+| 🕵️ **Creed** | **Fresh Eyes Reviewer** | Inspects code changes in total isolation with zero author bias to catch weird mistakes everyone else missed. | Final sanity check before delivery. |
+
+<br/>
+
+### 💻 3. Core Engineering & Architecture
+*Writes clean, surgical code that touches only what is needed.*
+
+| Teammate | Persona & Title | What They Do For You | When They Step In |
+| :--- | :--- | :--- | :--- |
+| 💻 **Jim** | **Lead Coder (Minimal Change)** | Enforces the 50-line razor: writes small, clean code that fixes only what was asked without touching unrelated files. | For bug fixes and feature code. |
+| 🧮 **Oscar** | **Database Specialist (DBRE)** | Writes clean SQLite & PostgreSQL queries, prevents slow page loads, and ensures safe database migrations. | Whenever working with database schemas and data. |
+| 🔌 **Andy** | **API Platform Architect** | Builds clean REST and OpenAPI endpoints with clear error messages and input validation. | When designing backend endpoints and APIs. |
+| 🏎️ **Nate** | **Speed & Latency Optimizer** | Hunts down slow database queries, memory leaks, and loops to keep your app fast and responsive. | Performance tuning and profiling. |
+
+<br/>
+
+### 🧪 4. Quality Assurance & Reality Gate (Real Machine Proof)
+*Never believes claims or promises. Demands real proof from your machine's test runner.*
+
+| Teammate | Persona & Title | What They Do For You | When They Step In |
+| :--- | :--- | :--- | :--- |
+| 🛡️ **Angela** | **Reality Gate Auditor (Head of QA)** | Demands raw machine proof (`exit code 0`). Blocks completion if tests fail or if test files were tampered with. | The final gate before any task is marked done. |
+| 🔴 **Ryan** | **TDD Test Engineer (RED ➔ GREEN)** | Writes failing tests first to confirm the bug exists, then verifies that Jim's code turns them green. | At the start of bug fixes and features. |
+| 📋 **Kevin** | **Definition of Done Auditor** | Cross-checks the finished work against Marcus's original acceptance checklist. Defaults to "NEEDS WORK" until proven. | Verification phase. |
+| 🔍 **Erin** | **User Empathy Tester** | Tests edge cases from a beginner's perspective: confusing button labels, broken error alerts, and mobile quirks. | User interface and usability testing. |
+
+<br/>
+
+### 🎨 5. Product Design & User Experience
+*Ensures your product looks premium, feels fluid, and is easy to use.*
+
+| Teammate | Persona & Title | What They Do For You | When They Step In |
+| :--- | :--- | :--- | :--- |
+| 🎨 **Pam** | **Executive UI Designer** | Crafts clean layouts, Apple-grade typography, thoughtful spacing, and responsive screens. | For web and mobile interfaces. |
+| 💎 **Jan** | **Brand & Visual Director** | Maintains color consistency, professional design tokens, and a clean modern aesthetic. | Visual design and brand polish. |
+| ♿ **Val** | **Accessibility & Ergonomics Guide** | Ensures high contrast ratios, readable font sizes, keyboard accessibility, and screen-reader support. | Frontend review and polish. |
+
+<br/>
+
+### 🚀 6. Operations, Systems & Release
+*Automates deployment, protects your local files, and tracks team memory.*
+
+| Teammate | Persona & Title | What They Do For You | When They Step In |
+| :--- | :--- | :--- | :--- |
+| 📦 **Darryl** | **Release & Packaging Master** | Packages code cleanly, generates changelogs, tags git releases, and ensures zero broken dependencies. | Release and deployment time. |
+| 🛡️ **Hank** | **System Guardian** | Prevents unauthorized file overwrites and keeps execution isolated to the designated project folder. | Continuous safety enforcement. |
+| 🧠 **Phyllis** | **Knowledge & Team Coordinator** | Logs lessons learned into institutional memory so the team never makes the same mistake twice. | Post-task debrief and logging. |
+| 🌐 **+ 45 Specialists** | **Domain Experts** | Mobile apps, Docker, cloud deployment, WebSockets, Python vector memory, and more. | Run `npm run install-tools -- --list` to see all 67! |
+
+---
+
+## 🔄 How The Departments Collaborate (The 6-Step Mission Workflow)
+
+When you give a task to the company, your request follows a disciplined, step-by-step collaboration cycle:
+
+```
+Step 1: ALIGN & PLAN          Step 2: RED TEAM SPARRING       Step 3: SURGICAL CODING
+Marcus (CPO) breaks down       Dwight (Red Team) attacks      Jim (Lead Coder) writes
+your request into clear        the plan for race conditions   small, clean code. Oscar
+acceptance criteria.           and edge cases.                verifies database queries.
+        │                               │                              │
+        ▼                               ▼                              ▼
+Step 4: TDD & REALITY GATE    Step 5: SECURITY & FRESH REVIEW Step 6: LOGGED & SHIPPED
+Ryan writes tests first.      Toby scans for leaked keys.     Recorded in SQLite ledger
+Angela runs your test         Creed inspects the diff with    (company.db) with 100%
+runner: exit code 0 required! fresh, unbiased eyes.           machine proof. Done!
+```
+
+1. **Step 1: Understand & Plan:** Michael calls the Executive Board. Marcus (CPO) turns your prompt into a clear 3-bullet checklist. Stanley (CTO) outlines the smallest simple design needed.
+2. **Step 2: Adversarial Sparring:** Before touching any files, Dwight (Bug Hunter) questions the plan: *"What if the user clicks back? What if data is null?"* Weak plans are rejected and fixed early.
+3. **Step 3: Surgical Coding:** Jim writes a minimal, clean code change. He changes 10 lines instead of rewriting 300 lines. Oscar checks database queries for speed and safety.
+4. **Step 4: Real Testing (The Reality Gate):** Angela runs your computer's native test runner (`npm test`, `pytest`, etc.). If anything fails, Jim and Ryan fix it automatically. No fake "it works" claims allowed.
+5. **Step 5: Security & Fresh Review:** Toby scans for exposed API keys or dangerous inputs. Creed inspects the code in isolation to catch any remaining blind spots.
+6. **Step 6: Verified Delivery:** Once all 6 departments sign off and tests pass with exit code 0, the task is saved into your local SQLite audit ledger (`company.db`).
+
+---
+
+## 🪝 6 Core Hooks & Unfair Advantages
+
+Why do developers and founders choose **The Boring Company** over solo AI chatbots or basic coding agents?
+
+* **🪝 Hook 1: The Reality Gate Interlock (`$? === 0`)**  
+  Other AI tools claim *"I fixed it!"* even when your app is completely broken. Angela Martin will **refuse to finish** until your computer's real test runner exits cleanly with exit code 0.
+* **🪝 Hook 2: The 50-Line Minimal Change Razor**  
+  Tired of AI rewriting 500 lines of your code and breaking other features? Jim Halpert touches only the exact lines in the direct call chain. Zero unnecessary refactoring.
+* **🪝 Hook 3: Pre-Code Adversarial Sparring**  
+  Solo chatbots jump directly into writing bad code. Dwight Schrute stress-tests the design with 3 chaos probes *before* a single file is touched, killing bugs in the planning room.
+* **🪝 Hook 4: Zero Dependency Footprint (Pure Node.js 22+)**  
+  No Python venv headaches, no pip version conflicts, and no 200MB `node_modules` downloads. Runs instantaneously out of the box using Node.js built-in standard library.
+* **🪝 Hook 5: Tamper-Proof Local Database Ledger (`company.db`)**  
+  Every task, execution lease, test verification, and file diff is recorded in a local SQLite database on your computer. You own 100% of your data and maintain a permanent audit trail.
+* **🪝 Hook 6: Works Across All Your Favorite AI Tools**  
+  Export all 67 agent prompts with 1 command (`node scripts/install-tools.js`) directly into **Cursor** (`.cursor/rules/`), **Claude Code** (`~/.claude/agents/`), **Antigravity**, or terminal!
 
 ---
 
