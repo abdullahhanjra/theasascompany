@@ -9,8 +9,8 @@
 <br/>
 
 [![Reality Gate CI](https://github.com/abdullahhanjraa/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjraa/theboringcompany/actions)
-[![Reality Gate Tests](https://img.shields.io/badge/Reality%20Gate-32%20passing-22c55e.svg?style=flat-square)](test/)
-[![Specialist Fleet](https://img.shields.io/badge/Specialist%20Team-67%20Agents-8b5cf6.svg?style=flat-square)](#-meet-the-team)
+[![Reality Gate Tests](https://img.shields.io/badge/Reality%20Gate-33%20passing-22c55e.svg?style=flat-square)](test/)
+[![Specialist Fleet](https://img.shields.io/badge/Specialist%20Team-72%20Agents-8b5cf6.svg?style=flat-square)](#-meet-the-team)
 [![Zero Dependencies](https://img.shields.io/badge/Extra%20Packages-0%20needed-3b82f6.svg?style=flat-square)](package.json)
 [![Node Runtime](https://img.shields.io/badge/Node.js->=22.5-green.svg?style=flat-square)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
@@ -390,41 +390,41 @@ You shouldn't have to abandon your favorite code editor to get the benefits of a
 ---
 
 <a id="quickstart"></a>
-## ⚡ 1-Minute Quickstart
+## ⚡ The 1-Minute Quickstart (Ultra-Simple)
 
-You don't need to install 50 npm packages. This runs on **pure Node.js** (version 22+).
+You don't need to install 50 npm packages. This runs on **pure Node.js** (version 22+) with zero external dependencies.
 
-### Option 1: Try the Instant 3-Second Demo
-```bash
-npx theboringcompany
-```
-*Watch the team catch a bug in a sandbox, write the fix, prove tests pass, and finish in 3 seconds.*
-
-### Option 2: Run a Task in Your Project
+### 🚀 Method 1: Instant Run with Zero Installation (`npx`)
+Open your terminal inside **any project on your computer** and tell The Boss what to do:
 ```bash
 npx theboringcompany /boss "Fix the login error when email is capitalized"
 ```
+*Michael Scott plans the sprint, Jim writes the minimal code, and Angela runs your tests until they exit 0.*
 
-### Option 3: Use with Cursor, Claude Code, or Antigravity
-You can export all 67 agent prompts directly into your favorite editor:
-
+### 👑 Method 2: Install Once, Call `boss` from Anywhere
+Install globally on your computer:
 ```bash
-# Clone the repository
-git clone https://github.com/abdullahhanjraa/theboringcompany.git
-cd theboringcompany
+npm install -g theboringcompany
+```
+Now, in **any folder anywhere on your computer**, just type:
+```bash
+boss "Add a dark mode toggle to the navbar"
+```
+*(Or type `boss` alone anytime to see the team status!)*
 
-# Install all 67 agents into Cursor (.cursor/rules/)
-node scripts/install-tools.js --tool cursor
+### 🎨 Method 3: Use Inside Cursor, Claude Code, or Antigravity
+Export all 72 specialist agent definitions into your favorite editor with one simple command:
+```bash
+# Install directly into Cursor (.cursor/rules/)
+npx theboringcompany install --tool cursor
 
-# Install all 67 agents into Claude Code (~/.claude/agents/)
-node scripts/install-tools.js --tool claude
+# Install directly into Claude Code (~/.claude/agents/)
+npx theboringcompany install --tool claude
 
 # Install into Antigravity (.agents/)
-node scripts/install-tools.js --tool antigravity
-
-# Or install everywhere at once
-node scripts/install-tools.js --tool all
+npx theboringcompany install --tool antigravity
 ```
+Once installed, you can simply type `/boss "your task"` right in your editor's chat window!
 
 ---
 

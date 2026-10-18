@@ -42,6 +42,9 @@ for (let i = 0; i < args.length; i++) {
   } else if (args[i] === '--departments' || args[i] === '-d') {
     printDepartments();
     process.exit(0);
+  } else if (args[i] === 'install' || args[i] === '--install') {
+    require('./scripts/install-tools');
+    return;
   } else if (args[i] === '--benchmark' || args[i] === '-b') {
     const { runBenchmark } = require('./test/benchmark');
     runBenchmark();
