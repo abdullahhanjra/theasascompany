@@ -23,7 +23,8 @@
     "train": "node scripts/train-agents.js --dry-run",
     "mcp": "node scripts/design-mcp-server.js",
     "install-tools": "node scripts/install-tools.js",
-    "sync-accounts": "node scripts/sync-accounts.js"
+    "sync-accounts": "node scripts/sync-accounts.js",
+    "release": "node scripts/publish-release.js"
   },
   "engines": {
     "node": ">=22.5.0"
