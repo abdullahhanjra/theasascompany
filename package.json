@@ -5,6 +5,7 @@
   "description": "Autonomous AI software engineering runtime with a mathematically verified Reality Gate. Pure Node.js 22+, zero external dependencies.",
   "main": "cli.js",
   "bin": {
+    "boss": "./cli.js",
     "boring-company": "./cli.js",
     "theboringcompany": "./cli.js"
   },

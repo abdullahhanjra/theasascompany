@@ -165,6 +165,26 @@ function printBanner() {
 `);
 }
 
+function printWelcome() {
+  printBanner();
+  console.log(`\x1b[1m\x1b[32m⭐ The Boss is ready for your orders.\x1b[0m
+
+To give the AI team a mission, just type:
+  \x1b[36mboss "Your task here"\x1b[0m
+  \x1b[36mnpx theboringcompany /boss "Your task here"\x1b[0m
+
+Examples:
+  boss "Fix the broken login button in index.html"
+  boss "Add a dark mode toggle to the navbar"
+  boss "Write tests for payment gateway"
+
+Quick options:
+  boss --demo            Run a 1-second test to see the team build code
+  boss --departments     See the 6 departments and team leaders
+  boss --help            See advanced options
+`);
+}
+
 async function runDemoMission() {
   printBanner();
   console.log(`\x1b[90m[MODE]\x1b[0m Launching Hermetic End-to-End Demonstration Mission`);
@@ -303,8 +323,10 @@ async function runLiveMission(missionTask) {
 }
 
 // Main entry
-if (isDemo || (!task && !args.includes('--benchmark') && !args.includes('--memory') && !args.includes('--help'))) {
+if (isDemo) {
   runDemoMission();
 } else if (task) {
   runLiveMission(task);
+} else if (!args.includes('--benchmark') && !args.includes('--memory') && !args.includes('--help') && !args.includes('--departments') && !args.includes('-d')) {
+  printWelcome();
 }
