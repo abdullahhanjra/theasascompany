@@ -15,7 +15,7 @@
 [![Node Runtime](https://img.shields.io/badge/Node.js->=22.5-green.svg?style=flat-square)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-[**💬 Live Demo**](#-see-it-in-action-the-office-tackles-a-real-bug) • [**🏢 6 Departments**](#-the-6-dedicated-departments--their-superpowers) • [**🔥 6 Core Hooks**](#-6-core-hooks-that-change-everything) • [**⚡ 1-Minute Quickstart**](#-1-minute-quickstart) • [**📊 Comparison**](#-how-we-compare-to-other-tools)
+[**💬 Live Demo**](#-see-it-in-action-the-office-tackles-a-real-bug) • [**🏛️ Org Chart**](#️-company-org-chart-who-reports-to-whom) • [**🤝 Team Protocols**](#-how-the-team-collaborates-the-5-company-protocols) • [**🏢 6 Departments**](#-the-6-dedicated-departments--their-superpowers) • [**🔥 6 Core Hooks**](#-6-core-hooks-that-change-everything) • [**⚡ 1-Minute Quickstart**](#-1-minute-quickstart) • [**📊 Comparison**](#-how-we-compare-to-other-tools)
 
 </div>
 
@@ -112,6 +112,123 @@ Here is how the departments talk to each other when you hand them a real problem
 > 
 > 📦 **Darryl (Release Master):**  
 > *"Recorded to local SQLite ledger `company.db`. Bug permanently resolved."*
+
+---
+
+## 🏛️ Company Org Chart: Who Reports to Whom?
+
+In ordinary AI tools, there is no organization. One chatbot attempts to write requirements, write code, review itself, and run tests all at once — which causes hallucinations, messy code, and crashes.
+
+**The Boring Company** operates like a real, disciplined software engineering firm. Every agent has a clear manager, a clear squad, and a strictly bounded responsibility:
+
+```
+                                 ┌─────────────────────────┐
+                                 │   YOU (THE FOUNDER)     │
+                                 │    Visionary & Boss     │
+                                 └────────────┬────────────┘
+                                              │
+                                              ▼
+                                 ┌─────────────────────────┐
+                                 │   MICHAEL SCOTT (CEO)   │
+                                 │   Supreme Conductor     │
+                                 └──────┬───────────┬──────┘
+                                        │           │
+       ┌────────────────────────────────┘           └────────────────────────────────┐
+       ▼                                                                             ▼
+┌───────────────────────────────┐                                     ┌───────────────────────────────┐
+│ 🛡️ INDEPENDENT QA BRANCH      │                                     │ 🏛️ EXECUTIVE DIRECTORS        │
+│ Angela Martin (Head of QA)    │                                     │ Stanley (CTO) • Marcus (CPO)  │
+│ Independent Veto Power!       │                                     │ David (VP Eng) • Darryl (Ops) │
+│ Reports directly to Founder & │                                     │ Jan (CRO & Brand)             │
+│ CEO. CANNOT be pressured by   │                                     │                               │
+│ coders. Enforces Reality Gate!│                                     └──────────────┬────────────────┘
+└──────────────┬────────────────┘                                                    │
+               │                                                                     │
+               │                                   ┌─────────────────────────────────┼─────────────────────────────────┐
+               ▼                                   ▼                                 ▼                                 ▼
+┌──────────────────────────────┐    ┌──────────────────────────────┐  ┌──────────────────────────────┐  ┌──────────────────────────────┐
+│ 🧪 REALITY GATE SQUAD        │    │ 🛡️ RED TEAM & SECURITY SQUAD │  │ ⚙️ CORE ENGINEERING SQUAD    │  │ 🎨 PRODUCT & DESIGN SQUAD    │
+│ (Under Angela Martin)        │    │ (Under Stanley & Dwight)     │  │ (Under David Wallace)        │  │ (Under Marcus & Jan)         │
+│ • Ryan (TDD Test Writer)     │    │ • Dwight (Red Team Lead)     │  │ • Jim (Minimalist Coder)     │  │ • Pam (Executive UI Designer)│
+│ • Kevin (Done-Criteria Check)│    │ • Toby (AppSec Security)     │  │ • Oscar (Database DBRE)      │  │ • Val (Accessibility Guard)  │
+│ • Isabela (E2E Automation)   │    │ • Creed (Isolated Review)    │  │ • Andy (API Architect)       │  │ • Zara (UX Workflow Lead)    │
+│ • Erin (User Empathy Tester) │    │                              │  │ • Nate (Speed & Latency)     │  │ • Elena (Design System Tokens│
+└──────────────────────────────┘    └──────────────────────────────┘  │ • +45 Specialist Coders      │  └──────────────────────────────┘
+                                                                      └──────────────┬───────────────┘
+                                                                                     │
+                                                                                     ▼
+                                                                      ┌──────────────────────────────┐
+                                                                      │ 📦 OPERATIONS & MEMORY SQUAD │
+                                                                      │ (Under Darryl Philbin)       │
+                                                                      │ • Hank (Sandbox File Guard)  │
+                                                                      │ • Phyllis (Company Memory)   │
+                                                                      │ • Amira (SRE & Uptime)       │
+                                                                      └──────────────────────────────┘
+```
+
+### 📋 The Chain of Command Breakdown
+
+1. **Level 0: The Founder (YOU)**  
+   * **Role:** The Owner and Final Decision Maker.  
+   * **What you do:** You give the high-level goal (e.g. `npx theboringcompany /boss "Fix payment timeout"`). You never have to micromanage individual files, write prompt chains, or babysit code reviews.
+
+2. **Level 1: Executive C-Suite Leadership**  
+   * **👔 Michael Scott (CEO):** Reports directly to YOU. He is the master conductor. He listens to your goal, picks the exact right specialists from the fleet, assigns work leases, arbitrates debates, and oversees final delivery.
+   * **📋 Marcus (Chief Product Officer):** Reports to Michael. Translates your 1-line prompt into detailed, unambiguous user stories, acceptance criteria, and edge-case boundaries.
+   * **📐 Stanley Hudson (Chief Technology Officer):** Reports to Michael. Enforces architectural simplicity. Rejects unnecessary libraries and guarantees clean, maintainable system designs.
+   * **⚡ David Wallace (VP of Engineering):** Reports to Stanley & Michael. Manages the developer sprint, allocates file leases, and enforces code quality standards.
+   * **💼 Jan Levinson (Chief Revenue Officer & Brand Director):** Reports to Michael. Guarantees that what gets built looks beautiful, aligns with your business goals, and delivers real user value.
+   * **📊 Darryl Philbin (VP of Operations):** Reports to Michael. Manages system resources, monitors local memory, tracks token quotas, and guarantees safe deployments.
+
+3. **⭐ The Independent Branch: Angela Martin (Head of Quality Assurance)**  
+   * **Why this is critical:** In broken engineering teams and standard AI tools, the developer checks their own work. Developers are biased — they always claim their code works!  
+   * **The Boring Company Rule:** Angela Martin **does NOT report to Engineering or Product**. She reports directly to Michael and the Founder. Engineering cannot overrule her, bribe her, or bypass her tests. If your computer's native test runner does not exit with code 0 (`$? === 0`), Angela vetoes the release immediately.
+
+4. **Level 2: The Working Squads & Direct Reports**  
+   * **🎨 Product & Design Squad (Under Marcus & Jan):** Pam Beesly (UI Design), Val Johnson (Accessibility), Zara (UX Journeys), Elena (Design Systems).
+   * **🛡️ Red Team & Security Squad (Under Stanley & Dwight):** Dwight Schrute (Adversarial Inquisitor), Toby Flenderson (AppSec & Secret Guard), Creed Bratton (Fresh-Eye Isolated Reviewer).
+   * **⚙️ Core Engineering Squad (Under David Wallace):** Jim Halpert (Lead Minimal Coder), Oscar Martinez (Database Reliability), Andy Bernard (API Platform), Nate (Speed & Latency), plus 45 domain specialist coders.
+   * **🧪 Reality Gate QA Squad (Under Angela Martin):** Ryan Howard (TDD Test Writer), Kevin Malone (Definition of Done Auditor), Isabela Santos (E2E Test Automation), Erin Hannon (User Empathy Tester).
+   * **📦 Operations & Systems Squad (Under Darryl Philbin):** Hank Tate (Workspace File Sandbox Guard), Phyllis Vance (Institutional Memory & Post-Mortem Coordinator), Amira (SRE & Uptime).
+
+---
+
+## 🤝 How The Team Collaborates: The 5 Company Protocols
+
+How do 67 AI specialists work together like a cohesive software company without talking over each other or overwriting each other's code? They follow **5 strict operational protocols**:
+
+### ☕ Protocol 1: The Daily Standup & Exclusive Task Leases (Zero File Collisions)
+* **The Problem in other AI tools:** If two agents work on the same project, they often edit the same file simultaneously, overwrite each other's changes, and create messy merge conflicts.
+* **How our team works:** When you start a task, Michael calls an instant 1-second automated standup. He reviews Marcus's specification and issues an **Exclusive Task Lease** in `company.db`. Only the assigned specialist (e.g. Jim Halpert) receives write access to the targeted files. All other agents are strictly read-only until Jim's work is submitted.
+* **Result:** Zero git conflicts, zero accidental file overwrites, and 100% clean diffs.
+
+### 📬 Protocol 2: Department Mailboxes & Asynchronous Messaging (The Hive Protocol)
+* **The Problem in other AI tools:** Agents get dumped into one giant, chaotic chat window. Instructions get buried, details get hallucinated, and context windows blow up.
+* **How our team works:** Every department communicates through structured file-system mailboxes using clean, single-writer message queues:
+  * `tasks/inbox/` ➔ Marcus posts the initial feature specification and requirements.
+  * `tasks/review/` ➔ Dwight and Toby receive the proposed design to stress-test for bugs and security holes.
+  * `tasks/verification/` ➔ Jim passes his code diff to Angela for physical test execution.
+  * `tasks/done/` ➔ Angela and Darryl record the verified cryptographic receipt.
+* **Result:** Every message contains clear metadata (sender, recipient, purpose, diff, and test output). No lost instructions, no noisy cross-talk.
+
+### 🚦 Protocol 3: The 3 Formal Quality Gates (Zero Blind Approvals)
+Work never moves from one stage to another without explicit sign-off from the responsible director:
+1. **Gate 1 — Architecture Sign-Off:** Marcus defines the requirements ➔ Dwight attacks edge cases with 3 chaos probes ➔ Stanley approves the minimal design. Only then can code be written.
+2. **Gate 2 — Implementation & Security Audit:** Jim writes surgical code (<50 lines) ➔ Toby scans diffs for leaked secrets, path traversals, or injections ➔ Oscar verifies database query indexing.
+3. **Gate 3 — The Reality Gate Certification:** Angela runs your machine's real test runner (`npm test`, `pytest`, `cargo test`). If exit code is 0 (`$? === 0`), Kevin checks off every user story in the Definition of Done. If any test fails, code is automatically returned to Jim with diagnostic logs for instant fixing.
+
+### 🗄️ Protocol 4: The Shared Company Ledger (`company.db` with SHA-256 Receipts)
+* **The Problem in other AI tools:** Once your chat session closes, all memory of what was done, why it was done, and how it was tested disappears into the void.
+* **How our team works:** Every decision, inter-department message, code diff, and test execution is logged into a local SQLite database (`company.db`) stored on your computer.
+* **Tamper-Proof Receipts:** When Angela executes your test suite, the standard output, duration, and exit code are hashed with SHA-256. This cryptographic receipt is permanently stored in `company.db`. You have an immutable, verifiable audit trail of every fix your team has ever shipped.
+
+### 🛑 Protocol 5: Token Quotas & Circuit Breakers (Cost & Runaway Protection)
+* **The Problem in other AI tools:** An AI gets stuck in an infinite loop while trying to fix a bug, burning through $50 of API credits while you step away for lunch.
+* **How our team works:** Darryl Philbin acts as the financial controller and runtime monitor. He tracks token consumption and execution steps in real time:
+  * **At 75% budget:** Darryl issues a throttle warning and orders Jim to stick to the minimal viable diff.
+  * **At 90% budget:** Darryl halts new exploratory changes and forces focus on passing the existing test runner.
+  * **At 100% budget:** The emergency circuit breaker trips. The process safely aborts, cleanly rolls back to the last clean Git snapshot, and reports the exact blocker to you.
+* **Result:** You are completely protected from runaway costs, frozen processes, and infinite AI loops.
 
 ---
 
