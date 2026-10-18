@@ -12,6 +12,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const { ExecutionPipeline } = require('./src/engine/pipeline');
+const { TaskBreaker } = require('./src/engine/task-breaker');
 const { getProvider } = require('./src/providers');
 const { DeterministicTestProvider } = require('./src/providers/deterministic-test');
 
@@ -48,6 +49,14 @@ for (let i = 0; i < args.length; i++) {
   } else if (args[i] === '--benchmark' || args[i] === '-b') {
     const { runBenchmark } = require('./test/benchmark');
     runBenchmark();
+    process.exit(0);
+  } else if (args[i] === '--break' || args[i] === '--plan') {
+    const planTask = args[++i] || task || 'Build feature with SQL database and responsive UI';
+    const breaker = new TaskBreaker();
+    const subtasks = breaker.decompose(planTask);
+    const stages = breaker.organizeStages(subtasks);
+    printBanner();
+    console.log(breaker.renderFlightBoard(planTask, stages));
     process.exit(0);
   } else if (args[i] === '--memory' || args[i] === '-m') {
     const query = args[++i] || 'sqlite';
@@ -152,6 +161,7 @@ Options:
   --test-cmd <cmd>        Command to run for Reality Gate verification (e.g. "npm test")
   --track <A|B|C>         Velocity track (A: Surgical, B: Sprint, C: Enterprise Core)
   --departments, -d       Display the 6 operational departments, leadership, and team roster
+  --break, --plan         Preview staged task breakdown and department assignments without running
   --demo                  Run hermetic end-to-end demonstration mission with real tools
   --benchmark, -b         Run empirical latency benchmark matrix (p50, p95, p99)
   --memory, -m <q>        Search indexed institutional memory cards (<50 lines)
@@ -267,6 +277,12 @@ module.exports = new ConnectionPool();`
 async function runLiveMission(missionTask) {
   printBanner();
   console.log(`\x1b[90m[DISPATCH]\x1b[0m Mission received from Founder: \x1b[1m"${missionTask}"\x1b[0m\n`);
+
+  // Decompose mission and display staged flight board
+  const breaker = new TaskBreaker();
+  const subtasks = breaker.decompose(missionTask);
+  const stages = breaker.organizeStages(subtasks);
+  console.log(breaker.renderFlightBoard(missionTask, stages));
 
   // Determine provider
   let provider;
