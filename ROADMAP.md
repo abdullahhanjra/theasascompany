@@ -9,15 +9,15 @@ This roadmap outlines the milestones, capabilities, and architectural trajectory
 - [x] **Organizational Fleet**: 67 specialist agent definitions structured across Executive, Engineering, QA, Security, and Operations.
 - [x] **Reality Gate Interlock**: Machine-grounded proof engine enforcing zero fabricated task completions.
 - [x] **Relational Operating Ledger**: SQLite enterprise relational schema (45+ tables) tracking leases, tokens, and audit events.
-- [x] **3-Track Velocity Engine**: Dynamic task routing for Surgical Strikes (<60s), Feature Sprints (2-3m), and Enterprise Core (5-8m).
-- [x] **Adversarial Sparring Arena (Claudex Loop)**: Architect vs Inquisitor design stress-testing.
-- [x] **Actor-Based Hive IPC**: File-based single-writer mailboxes with token circuit breakers (`steer`, `constrain`, `stop`).
+- [x] **3-Track Velocity Engine**: Dynamic task routing for Rapid Fixes (<60s), Feature Sprints (2-3m), and Core Architecture (5-8m).
+- [x] **Pre-Code Design Review**: Structured architect vs edge-case reviewer design stress-testing.
+- [x] **Inter-Agent Messaging**: Clean departmental mailboxes with token circuit breakers (`steer`, `constrain`, `stop`).
 - [x] **Cross-Platform Parity**: First-class support and CI matrices across Linux, macOS, and Windows.
 - [x] **Zero-Dependency CLI Demo**: Interactive mission runner (`npm run demo`) with formatted Executive Clarity Cards.
 
 ---
 
-## 🚀 Version 1.1.0 — Pluggable Extensibility & Local Vector Palace (Q1 2027)
+## 🚀 Version 1.1.0 — Pluggable Extensibility & Local Vector Memory (Q1 2027)
 
 - [ ] **Agent Manifest JSON Schema (`agent.schema.json`)**: Automated schema validation in CI and IDE autocomplete.
 - [ ] **Pluggable Agent Directory**: Ability to load external custom agents via `BORING_AGENTS_DIR` without modifying core files.

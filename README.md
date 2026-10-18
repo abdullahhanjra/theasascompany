@@ -21,7 +21,7 @@
 
 ---
 
-## 🤔 The Real Problem: The 2 AM AI Nightmare
+## 🤔 The Problem: Why Most AI Coding Tools Break Down
 
 Every developer and founder has experienced this frustration:
 
@@ -61,7 +61,7 @@ They challenge weak ideas, keep code changes tiny, and **never declare a task co
                                       ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │ 3. ⚙️ CORE ENGINEERING & DATABASE                                            │
-│    Jim writes surgical minimal code (under 50 lines). Oscar tunes queries.  │
+│    Jim writes clean, focused code (under 50 lines). Oscar tunes queries.    │
 └─────────────────────────────────────┬───────────────────────────────────────┘
                                       │
                                       ▼
@@ -144,7 +144,7 @@ In ordinary AI tools, there is no organization. One chatbot attempts to write re
 │ Angela Martin (Head of QA)    │                                     │ Stanley (CTO) • Marcus (CPO)  │
 │ Independent Veto Power!       │                                     │ David (VP Eng) • Darryl (Ops) │
 │ Reports directly to Founder & │                                     │ Jan (CRO & Brand)             │
-│ CEO. CANNOT be pressured by   │                                     │                               │
+│ CEO. Cannot be overruled by   │                                     │                               │
 │ coders. Enforces Reality Gate!│                                     └──────────────┬────────────────┘
 └──────────────┬────────────────┘                                                    │
                │                                                                     │
@@ -186,11 +186,11 @@ In ordinary AI tools, there is no organization. One chatbot attempts to write re
 
 3. **⭐ The Independent Branch: Angela Martin (Head of Quality Assurance)**  
    * **Why this is critical:** In broken engineering teams and standard AI tools, the developer checks their own work. Developers are biased — they always claim their code works!  
-   * **The Boring Company Rule:** Angela Martin **does NOT report to Engineering or Product**. She reports directly to Michael and the Founder. Engineering cannot overrule her, bribe her, or bypass her tests. If your computer's native test runner does not exit with code 0 (`$? === 0`), Angela vetoes the release immediately.
+   * **The Boring Company Rule:** Angela Martin **does NOT report to Engineering or Product**. She reports directly to Michael and the Founder. Engineering cannot overrule or bypass her checks. If your computer's native test runner does not exit with code 0 (`$? === 0`), Angela vetoes the release immediately.
 
 4. **Level 2: The Working Squads & Direct Reports**  
    * **🎨 Product & Design Squad (Under Marcus & Jan):** Pam Beesly (UI Design), Val Johnson (Accessibility), Zara (UX Journeys), Elena (Design Systems).
-   * **🛡️ Red Team & Security Squad (Under Stanley & Dwight):** Dwight Schrute (Adversarial Inquisitor), Toby Flenderson (AppSec & Secret Guard), Creed Bratton (Fresh-Eye Isolated Reviewer).
+   * **🛡️ Red Team & Security Squad (Under Stanley & Dwight):** Dwight Schrute (Red Team Lead — Edge-Case Specialist), Toby Flenderson (Security & AppSec Lead), Creed Bratton (Fresh-Eyes Independent Reviewer).
    * **⚙️ Core Engineering Squad (Under David Wallace):** Jim Halpert (Lead Minimal Coder), Oscar Martinez (Database Reliability), Andy Bernard (API Platform), Nate (Speed & Latency), plus 45 domain specialist coders.
    * **🧪 Reality Gate QA Squad (Under Angela Martin):** Ryan Howard (TDD Test Writer), Kevin Malone (Definition of Done Auditor), Isabela Santos (E2E Test Automation), Erin Hannon (User Empathy Tester).
    * **📦 Operations & Systems Squad (Under Darryl Philbin):** Hank Tate (Workspace File Sandbox Guard), Phyllis Vance (Institutional Memory & Post-Mortem Coordinator), Amira (SRE & Uptime).
