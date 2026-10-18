@@ -13,7 +13,7 @@
 <br/>
 
 [![Reality Gate CI](https://github.com/abdullahhanjraa/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjraa/theboringcompany/actions)
-[![Reality Gate Tests](https://img.shields.io/badge/Reality%20Gate-33%20passing-22c55e.svg?style=flat-square)](test/)
+[![Reality Gate Tests](https://img.shields.io/badge/Reality%20Gate-37%20passing-22c55e.svg?style=flat-square)](test/)
 [![Specialist Fleet](https://img.shields.io/badge/Specialist%20Team-72%20Agents-8b5cf6.svg?style=flat-square)](#departments)
 [![Zero Dependencies](https://img.shields.io/badge/Extra%20Packages-0%20needed-3b82f6.svg?style=flat-square)](package.json)
 [![Node Runtime](https://img.shields.io/badge/Node.js->=22.5-green.svg?style=flat-square)](https://nodejs.org/)
@@ -115,7 +115,7 @@ Here is how the team actually talks and collaborates:
   *"Ran the security scan on Jim's diff. No leaked API keys, no SQL injection risks."*
 
 * 🧪 **Angela (Head of QA):**  
-  *"Hold your horses. I'm running your machine's real test suite right now... `npm test` exited cleanly with code 0. All 32 tests passed. No skipped assertions. It's verified."*
+  *"Hold your horses. I'm running your machine's real test suite right now... `npm test` exited cleanly with code 0. All 37 tests passed. No skipped assertions. It's verified."*
 
 * 📦 **Darryl (Operations):**  
   *"Recorded the fix and the test proof into local SQLite (`company.db`). Clean, verified, and ready to ship."*
@@ -429,6 +429,13 @@ npx theboringcompany install --tool claude
 npx theboringcompany install --tool antigravity
 ```
 Once installed, you can simply type `/boss "your task"` right in your editor's chat window!
+
+### 🧩 Method 4: Preview the Assembly Line (`--break`)
+Want to see how the company breaks down your mission and assigns departments before touching a single file?
+```bash
+boss --break "Build User Authentication with SQL database and responsive Login Form"
+```
+The **Task Breaker** analyzes dependencies, executes Kahn's DAG algorithm, and displays the exact stage-by-stage assembly line, assigned specialist agents, and Micro-Reality-Gates directly in your terminal.
 
 ---
 

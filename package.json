@@ -1,7 +1,6 @@
 {
   "name": "theboringcompany",
-  "version": "1.1.0",
-
+  "version": "1.2.0",
   "description": "Stop babysitting chatbots. Run a real AI software company in your terminal. 72 specialists that plan, write, and prove code passes your tests before shipping. Pure Node.js.",
   "main": "cli.js",
   "bin": {
@@ -12,6 +11,8 @@
   "scripts": {
     "start": "node cli.js",
     "departments": "node cli.js --departments",
+    "break": "node cli.js --break",
+    "plan": "node cli.js --plan",
     "test": "node --test test/*.test.js",
     "hostile-test": "node scripts/hostile_acceptance_test.js",
     "demo": "node cli.js --demo",
