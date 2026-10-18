@@ -17,7 +17,7 @@ const { execSync } = require('child_process');
 const TOKEN_A = process.env.GITHUB_TOKEN_A || process.env.GITHUB_PERSONAL_ACCESS_TOKEN || '';
 const TOKEN_B = process.env.GITHUB_TOKEN_B || '';
 
-const DESCRIPTION = 'A complete autonomous AI software company at your fingertips. 67 specialized agents backed by an autonomous execution runtime with a mathematically verified Reality Gate. Pure Node.js 22+, zero external dependencies.';
+const DESCRIPTION = 'Stop babysitting chatbots. Run a real AI software company in your terminal — 72 specialists that plan, write, and prove code passes your real tests before shipping. Pure Node.js.';
 const TOPICS = [
   'autonomous-agent',
   'ai-software-company',

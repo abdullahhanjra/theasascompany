@@ -2,7 +2,7 @@
   "name": "theboringcompany",
   "version": "1.1.0",
 
-  "description": "Autonomous AI software engineering runtime with a mathematically verified Reality Gate. Pure Node.js 22+, zero external dependencies.",
+  "description": "Stop babysitting chatbots. Run a real AI software company in your terminal. 72 specialists that plan, write, and prove code passes your tests before shipping. Pure Node.js.",
   "main": "cli.js",
   "bin": {
     "boss": "./cli.js",

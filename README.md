@@ -1,21 +1,25 @@
 <div align="center">
 
-# 🏢 The Boring Company
+<a href="https://github.com/abdullahhanjraa/theboringcompany">
+  <img src="docs/assets/banner.svg" alt="The Boring Company Banner" width="100%">
+</a>
 
-### **Your personal AI software team in your terminal.**
+<br/><br/>
 
-*Instead of one chatbot guessing code, you get **67 specialized AI teammates** (planners, coders, testers, and reviewers) that work together, fix bugs, and run your real tests until everything works.*
+### **Stop babysitting chatbots. Run a real AI software company in your terminal.**
+
+*72 autonomous specialists across 6 collaborative departments that plan features, write clean code, and mathematically prove every fix passes your real tests before shipping. Pure Node.js 22+, zero extra packages.*
 
 <br/>
 
 [![Reality Gate CI](https://github.com/abdullahhanjraa/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjraa/theboringcompany/actions)
 [![Reality Gate Tests](https://img.shields.io/badge/Reality%20Gate-33%20passing-22c55e.svg?style=flat-square)](test/)
-[![Specialist Fleet](https://img.shields.io/badge/Specialist%20Team-72%20Agents-8b5cf6.svg?style=flat-square)](#-meet-the-team)
+[![Specialist Fleet](https://img.shields.io/badge/Specialist%20Team-72%20Agents-8b5cf6.svg?style=flat-square)](#departments)
 [![Zero Dependencies](https://img.shields.io/badge/Extra%20Packages-0%20needed-3b82f6.svg?style=flat-square)](package.json)
 [![Node Runtime](https://img.shields.io/badge/Node.js->=22.5-green.svg?style=flat-square)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-[**💬 Live Demo**](#demo) • [**🏛️ Org Chart**](#org-chart) • [**🤝 Team Protocols**](#protocols) • [**🏢 6 Departments**](#departments) • [**🔥 6 Highlights**](#highlights) • [**⚡ Quickstart**](#quickstart) • [**📊 Comparison**](#comparison)
+[**👑 Quickstart**](#quickstart) • [**💬 Live Demo**](#demo) • [**🏛️ Org Chart**](#org-chart) • [**🏢 6 Departments**](#departments) • [**🤝 Team Protocols**](#protocols) • [**📊 Comparison**](#comparison)
 
 </div>
 
