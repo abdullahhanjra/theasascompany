@@ -15,186 +15,291 @@
 [![Node Runtime](https://img.shields.io/badge/Node.js->=22.5-green.svg?style=flat-square)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-<br/>
-
-[**🏢 6 Departments**](#-the-6-company-departments-67-smart-specialists) • [**🔄 How We Collaborate**](#-how-the-departments-collaborate-the-6-step-mission-workflow) • [**🪝 6 Core Hooks**](#-6-core-hooks--unfair-advantages) • [**⚡ 1-Minute Quickstart**](#-1-minute-quickstart) • [**📊 Comparison**](#-how-we-compare-to-other-tools) • [**🛡️ Reality Gate**](#️-how-tests-are-checked-no-fake-promises)
+[**💬 Live Demo**](#-see-it-in-action-the-office-tackles-a-real-bug) • [**🏢 6 Departments**](#-the-6-dedicated-departments--their-superpowers) • [**🔥 6 Core Hooks**](#-6-core-hooks-that-change-everything) • [**⚡ 1-Minute Quickstart**](#-1-minute-quickstart) • [**📊 Comparison**](#-how-we-compare-to-other-tools)
 
 </div>
 
 ---
 
-## 🤔 The Problem with Most AI Coding Tools
+## 🤔 The Real Problem: The 2 AM AI Nightmare
 
-If you have ever used an AI coding assistant, you know this pain:
+Every developer and founder has experienced this frustration:
 
-1. You ask the AI to fix a bug or build a small feature.
-2. It quickly outputs 200 lines of code and says:  
-   > *"Done! Everything works perfectly."*
-3. You paste it in, run your app, and **it immediately crashes with red errors**.
-4. You spend the next hour fixing the mistakes the AI made.
+1. You ask an AI chatbot to fix a tricky bug or add a button to your app.
+2. The AI generates 300 lines of complex code and boldly promises:  
+   > *"I have fixed everything! Your app is now production-ready."*
+3. You paste the code into your project, start your server, and **it immediately crashes with red console errors**.
+4. Even worse, the AI rewrote 4 other files you never asked it to touch, broke existing features, and deleted your test files to hide its mistakes.
+5. You spend the next 3 hours cleaning up the mess the AI made.
 
-**The truth:** Most AI tools guess. They don't actually test their code on your machine. Sometimes they even cheat by deleting your test files so they don't see any errors!
+> [!CAUTION]
+> **Why this happens:** Solo AI chatbots don't have a team. They don't have an architect to keep designs simple. They don't have a security guard to check for leaks. And they don't have a strict tester to actually run the code on your computer before claiming victory.
 
 ---
 
-## 💡 The Solution: A Real Company Working For You
+## 💡 The Solution: A Real Software Company Inside Your Terminal
 
-Instead of one lone AI chatbot that guesses and hallucinates, **The Boring Company** gives you an organized virtual software company. Your project moves through specialized departments that collaborate, challenge bad ideas, write clean code, and run real tests on your computer.
+**The Boring Company** fixes this by giving you a complete, organized software studio. Instead of an isolated chatbot hallucinating code, you get **67 specialized AI teammates** arranged across **6 collaborative departments**.
+
+They challenge weak ideas, keep code changes tiny, and **never declare a task complete without real machine proof** from your computer's native test runner.
 
 ```
-                             YOU (THE FOUNDER / BOSS)
-                                       │
-                                       ▼
-  ┌────────────────────────────────────────────────────────────────────────┐
-  │ 1. EXECUTIVE BOARD (Michael, Marcus, Stanley)                          │
-  │    Listens to your request, clarifies requirements, and plans steps.   │
-  └───────────────────────────────────┬────────────────────────────────────┘
+                           YOU (THE FOUNDER & BOSS)
                                       │
                                       ▼
-  ┌────────────────────────────────────────────────────────────────────────┐
-  │ 2. THE RED TEAM ARENA (Dwight, Toby, Creed)                            │
-  │    Attacks the plan for edge cases, race conditions, and leaked keys.  │
-  └───────────────────────────────────┬────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 1. 👑 THE EXECUTIVE BOARD                                                   │
+│    Michael (CEO), Marcus (CPO) & Stanley (CTO) plan your task with precision.│
+└─────────────────────────────────────┬───────────────────────────────────────┘
                                       │
                                       ▼
-  ┌────────────────────────────────────────────────────────────────────────┐
-  │ 3. CORE ENGINEERING (Jim, Oscar, Andy, Nate)                           │
-  │    Writes surgical, minimal code diffs and optimizes database queries. │
-  └───────────────────────────────────┬────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 2. 🛡️ THE RED TEAM DEFENSE                                                  │
+│    Dwight & Toby aggressively stress-test the plan BEFORE coding begins.    │
+└─────────────────────────────────────┬───────────────────────────────────────┘
                                       │
                                       ▼
-  ┌────────────────────────────────────────────────────────────────────────┐
-  │ 4. REALITY GATE QA (Angela, Ryan, Kevin)                               │
-  │    Runs your machine's real test runner. Zero fake passes allowed!     │
-  └───────────────────────────────────┬────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 3. ⚙️ CORE ENGINEERING & DATABASE                                            │
+│    Jim writes surgical minimal code (under 50 lines). Oscar tunes queries.  │
+└─────────────────────────────────────┬───────────────────────────────────────┘
+                                      │
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ 4. 🧪 REALITY GATE QUALITY ASSURANCE                                        │
+│    Angela runs your machine's real test runner. Exit code 0 ($? === 0) only!│
+└─────────────────────────────────────┬───────────────────────────────────────┘
                                       │
                      ┌────────────────┴────────────────┐
                      ▼                                 ▼
               [Tests Fail ❌]                   [Tests Pass ✅]
-         Jim & Ryan diagnose and            Angela certifies exit code 0.
-        fix the bug automatically.         Logged in company.db & shipped!
+        Jim & Ryan diagnose and            Angela certifies with proof.
+       fix the bug automatically.         Logged in company.db & shipped!
 ```
 
 ---
 
-## 🏢 The 6 Company Departments (67 Smart Specialists)
+## 💬 See It in Action: The Office Tackles a Real Bug
 
-Just like a real high-performance software company, our 67 AI specialists are organized into **6 dedicated departments**. Each department has one clear focus and works to protect your codebase:
+Here is how the departments talk to each other when you hand them a real problem:
 
-### 🏛️ 1. Executive Board & Leadership
-*Sets direction, turns vague requests into clear plans, and keeps the team aligned.*
-
-| Teammate | Persona & Title | What They Do For You | When They Step In |
-| :--- | :--- | :--- | :--- |
-| 👔 **Michael** | **Supreme Conductor & CEO** | Listens to your prompt, leads the team morning standup, assigns tasks, and signs off on deliveries. | Whenever you run `/boss <task>`. |
-| 📋 **Marcus** | **Chief Product Officer (CPO)** | Turns short 1-line ideas into clear specifications, user stories, and acceptance checklists. | At the start of any new feature or task. |
-| 📐 **Stanley** | **Chief Technology Officer (CTO)** | Picks the simplest, cleanest architectural design. Refuses over-complicated abstractions. | Before any code is drafted. |
-| ⚡ **David** | **VP of Engineering** | Manages execution pace, keeps diffs small, and enforces strict testing rigor across the team. | During sprint execution. |
-| 💼 **Jan** | **Chief Revenue Officer (CRO)** | Ensures every feature brings real value to your users and aligns with your product goals. | When planning user-facing features. |
-| 📊 **Darryl** | **VP of Operations** | Monitors token budgets, runtime speed, and local database ledger health. | Continuously in the background. |
-
-<br/>
-
-### 🛡️ 2. The Red Team & Security Guard (Defensive Auditing)
-*Stops bugs and security holes BEFORE a single line of code touches your computer.*
-
-| Teammate | Persona & Title | What They Do For You | When They Step In |
-| :--- | :--- | :--- | :--- |
-| 🥊 **Dwight** | **Adversarial Inquisitor (Red Team)** | Attacks the plan before coding begins. Questions: *"What if network drops? What if user clicks twice? What if database is empty?"* | Before any coding begins (Sparring Arena). |
-| 🔒 **Toby** | **Security Guard (AppSec Lead)** | Scans code for leaked API keys, exposed passwords, SQL injection, and path traversal security risks. | Before any code is committed. |
-| 🕵️ **Creed** | **Fresh Eyes Reviewer** | Inspects code changes in total isolation with zero author bias to catch weird mistakes everyone else missed. | Final sanity check before delivery. |
-
-<br/>
-
-### 💻 3. Core Engineering & Architecture
-*Writes clean, surgical code that touches only what is needed.*
-
-| Teammate | Persona & Title | What They Do For You | When They Step In |
-| :--- | :--- | :--- | :--- |
-| 💻 **Jim** | **Lead Coder (Minimal Change)** | Enforces the 50-line razor: writes small, clean code that fixes only what was asked without touching unrelated files. | For bug fixes and feature code. |
-| 🧮 **Oscar** | **Database Specialist (DBRE)** | Writes clean SQLite & PostgreSQL queries, prevents slow page loads, and ensures safe database migrations. | Whenever working with database schemas and data. |
-| 🔌 **Andy** | **API Platform Architect** | Builds clean REST and OpenAPI endpoints with clear error messages and input validation. | When designing backend endpoints and APIs. |
-| 🏎️ **Nate** | **Speed & Latency Optimizer** | Hunts down slow database queries, memory leaks, and loops to keep your app fast and responsive. | Performance tuning and profiling. |
-
-<br/>
-
-### 🧪 4. Quality Assurance & Reality Gate (Real Machine Proof)
-*Never believes claims or promises. Demands real proof from your machine's test runner.*
-
-| Teammate | Persona & Title | What They Do For You | When They Step In |
-| :--- | :--- | :--- | :--- |
-| 🛡️ **Angela** | **Reality Gate Auditor (Head of QA)** | Demands raw machine proof (`exit code 0`). Blocks completion if tests fail or if test files were tampered with. | The final gate before any task is marked done. |
-| 🔴 **Ryan** | **TDD Test Engineer (RED ➔ GREEN)** | Writes failing tests first to confirm the bug exists, then verifies that Jim's code turns them green. | At the start of bug fixes and features. |
-| 📋 **Kevin** | **Definition of Done Auditor** | Cross-checks the finished work against Marcus's original acceptance checklist. Defaults to "NEEDS WORK" until proven. | Verification phase. |
-| 🔍 **Erin** | **User Empathy Tester** | Tests edge cases from a beginner's perspective: confusing button labels, broken error alerts, and mobile quirks. | User interface and usability testing. |
-
-<br/>
-
-### 🎨 5. Product Design & User Experience
-*Ensures your product looks premium, feels fluid, and is easy to use.*
-
-| Teammate | Persona & Title | What They Do For You | When They Step In |
-| :--- | :--- | :--- | :--- |
-| 🎨 **Pam** | **Executive UI Designer** | Crafts clean layouts, Apple-grade typography, thoughtful spacing, and responsive screens. | For web and mobile interfaces. |
-| 💎 **Jan** | **Brand & Visual Director** | Maintains color consistency, professional design tokens, and a clean modern aesthetic. | Visual design and brand polish. |
-| ♿ **Val** | **Accessibility & Ergonomics Guide** | Ensures high contrast ratios, readable font sizes, keyboard accessibility, and screen-reader support. | Frontend review and polish. |
-
-<br/>
-
-### 🚀 6. Operations, Systems & Release
-*Automates deployment, protects your local files, and tracks team memory.*
-
-| Teammate | Persona & Title | What They Do For You | When They Step In |
-| :--- | :--- | :--- | :--- |
-| 📦 **Darryl** | **Release & Packaging Master** | Packages code cleanly, generates changelogs, tags git releases, and ensures zero broken dependencies. | Release and deployment time. |
-| 🛡️ **Hank** | **System Guardian** | Prevents unauthorized file overwrites and keeps execution isolated to the designated project folder. | Continuous safety enforcement. |
-| 🧠 **Phyllis** | **Knowledge & Team Coordinator** | Logs lessons learned into institutional memory so the team never makes the same mistake twice. | Post-task debrief and logging. |
-| 🌐 **+ 45 Specialists** | **Domain Experts** | Mobile apps, Docker, cloud deployment, WebSockets, Python vector memory, and more. | Run `npm run install-tools -- --list` to see all 67! |
+> **You (The Boss):**  
+> `"Fix checkout: if a customer clicks the Pay button twice quickly, it charges them twice."`
+> 
+> 👑 **Michael (CEO):**  
+> *"Alright team, we have a double-charging bug in checkout! Marcus, define the requirements."*
+> 
+> 📋 **Marcus (CPO):**  
+> *"Requirement spec ready: 1) Disable button on first click, 2) Attach an idempotency key to each transaction, 3) Block duplicate submissions."*
+> 
+> 🥊 **Dwight (Red Team Inquisitor):**  
+> *"Hold on! What if the user refreshes the page mid-payment? What if the network times out? We must enforce a unique transaction lock at the database level too!"*
+> 
+> 📐 **Stanley (CTO):**  
+> *"Good catch Dwight. Jim, write a surgical 14-line fix with a database lock. Oscar, verify the query index."*
+> 
+> ⚙️ **Jim (Clean Coder):**  
+> *"Done. Exactly 14 lines added to checkout.js. Zero unrelated files touched."*
+> 
+> 🧮 **Oscar (Database DBRE):**  
+> *"Transaction index verified. No slow table locks or race conditions."*
+> 
+> 🔒 **Toby (Security Guard):**  
+> *"Scanned the diff: zero leaked API secrets, zero SQL injection vectors."*
+> 
+> 🧪 **Angela (QA & Reality Gate):**  
+> *"Running real test suite: `npm test` on your computer... Exit code 0! 32/32 tests passed. 0 hallucinations allowed. Task approved!"*
+> 
+> 📦 **Darryl (Release Master):**  
+> *"Recorded to local SQLite ledger `company.db`. Bug permanently resolved."*
 
 ---
 
-## 🔄 How The Departments Collaborate (The 6-Step Mission Workflow)
+## 🏢 The 6 Dedicated Departments & Their Superpowers
 
-When you give a task to the company, your request follows a disciplined, step-by-step collaboration cycle:
+Every specialist in our 67-agent fleet has one clear responsibility, one special superpower, and eliminates a specific everyday headache for you:
 
-```
-Step 1: ALIGN & PLAN          Step 2: RED TEAM SPARRING       Step 3: SURGICAL CODING
-Marcus (CPO) breaks down       Dwight (Red Team) attacks      Jim (Lead Coder) writes
-your request into clear        the plan for race conditions   small, clean code. Oscar
-acceptance criteria.           and edge cases.                verifies database queries.
-        │                               │                              │
-        ▼                               ▼                              ▼
-Step 4: TDD & REALITY GATE    Step 5: SECURITY & FRESH REVIEW Step 6: LOGGED & SHIPPED
-Ryan writes tests first.      Toby scans for leaked keys.     Recorded in SQLite ledger
-Angela runs your test         Creed inspects the diff with    (company.db) with 100%
-runner: exit code 0 required! fresh, unbiased eyes.           machine proof. Done!
-```
+### 👑 Department 1: Executive Board & Strategic Direction
+*Translates your quick 1-line ideas into clear specifications and keeps everyone aligned.*
 
-1. **Step 1: Understand & Plan:** Michael calls the Executive Board. Marcus (CPO) turns your prompt into a clear 3-bullet checklist. Stanley (CTO) outlines the smallest simple design needed.
-2. **Step 2: Adversarial Sparring:** Before touching any files, Dwight (Bug Hunter) questions the plan: *"What if the user clicks back? What if data is null?"* Weak plans are rejected and fixed early.
-3. **Step 3: Surgical Coding:** Jim writes a minimal, clean code change. He changes 10 lines instead of rewriting 300 lines. Oscar checks database queries for speed and safety.
-4. **Step 4: Real Testing (The Reality Gate):** Angela runs your computer's native test runner (`npm test`, `pytest`, etc.). If anything fails, Jim and Ryan fix it automatically. No fake "it works" claims allowed.
-5. **Step 5: Security & Fresh Review:** Toby scans for exposed API keys or dangerous inputs. Creed inspects the code in isolation to catch any remaining blind spots.
-6. **Step 6: Verified Delivery:** Once all 6 departments sign off and tests pass with exit code 0, the task is saved into your local SQLite audit ledger (`company.db`).
+* **👔 Michael Scott — Supreme Conductor & CEO**
+  * **The Headache He Kills:** Having to micromanage multiple AI tools and prompt them individually.
+  * **His Superpower:** Listens to your `/boss` command, organizes the team morning standup, picks the exact right specialists from the fleet, arbitrates debates, and signs off on final delivery.
+  * **Your Direct Benefit:** You give one instruction, and Michael ensures the entire company executes it cleanly without you having to guide every single keystroke.
+
+* **📋 Marcus — Chief Product Officer (CPO)**
+  * **The Headache He Kills:** AI tools building the completely wrong feature because they guessed what you meant.
+  * **His Superpower:** Automatically elaborates vague founder prompts into professional user stories, boundary conditions, and acceptance checklists.
+  * **Your Direct Benefit:** Nobody writes a line of code until the goal is 100% clear.
+
+* **📐 Stanley — Chief Technology Officer (CTO)**
+  * **The Headache He Kills:** Over-engineered code, unnecessary new dependencies, and bloated architectures.
+  * **His Superpower:** Enforces the *Smallest Justified Design*. If a feature can be solved with 15 lines of vanilla code, he refuses any 500-line framework addition.
+  * **Your Direct Benefit:** Your codebase stays light, clean, and blazingly fast.
+
+* **⚡ David — VP of Engineering**
+  * **The Headache He Kills:** Slow progress, messy Git branches, and untracked code modifications.
+  * **His Superpower:** Allocates work leases, monitors sprint throughput, and enforces 100% test coverage standards.
+  * **Your Direct Benefit:** Tasks finish in minutes, not hours.
+
+* **💼 Jan — Chief Revenue Officer (CRO)**
+  * **The Headache He Kills:** Building features that users don't actually care about or that don't make business sense.
+  * **His Superpower:** Evaluates customer-facing clarity, user value, and pricing/conversion alignment.
+  * **Your Direct Benefit:** Everything you build feels intuitive and delivers real customer value.
+
+* **📊 Darryl — VP of Operations**
+  * **The Headache He Kills:** Runaway token costs, crashed background processes, and unmonitored systems.
+  * **His Superpower:** Tracks token quotas, circuit-breakers, and database health in real time.
+  * **Your Direct Benefit:** Predictable costs and stable, crash-free execution.
 
 ---
 
-## 🪝 6 Core Hooks & Unfair Advantages
+### 🛡️ Department 2: The Red Team & Security Guard (Defensive Auditing)
+*Stops bugs, security holes, and race conditions BEFORE code is written.*
 
-Why do developers and founders choose **The Boring Company** over solo AI chatbots or basic coding agents?
+* **🥊 Dwight Schrute — Adversarial Inquisitor (Red Team Lead)**
+  * **The Headache He Kills:** Bugs that only show up after you deploy to production when hundreds of users hit your app.
+  * **His Superpower:** Runs 3 aggressive chaos probes on the design before coding begins: *"What if inputs are null? What happens under heavy concurrency? What if an external API crashes?"*
+  * **Your Direct Benefit:** Edge cases are solved in the planning phase, so your production code is bulletproof from day one.
 
-* **🪝 Hook 1: The Reality Gate Interlock (`$? === 0`)**  
-  Other AI tools claim *"I fixed it!"* even when your app is completely broken. Angela Martin will **refuse to finish** until your computer's real test runner exits cleanly with exit code 0.
-* **🪝 Hook 2: The 50-Line Minimal Change Razor**  
-  Tired of AI rewriting 500 lines of your code and breaking other features? Jim Halpert touches only the exact lines in the direct call chain. Zero unnecessary refactoring.
-* **🪝 Hook 3: Pre-Code Adversarial Sparring**  
-  Solo chatbots jump directly into writing bad code. Dwight Schrute stress-tests the design with 3 chaos probes *before* a single file is touched, killing bugs in the planning room.
-* **🪝 Hook 4: Zero Dependency Footprint (Pure Node.js 22+)**  
-  No Python venv headaches, no pip version conflicts, and no 200MB `node_modules` downloads. Runs instantaneously out of the box using Node.js built-in standard library.
-* **🪝 Hook 5: Tamper-Proof Local Database Ledger (`company.db`)**  
-  Every task, execution lease, test verification, and file diff is recorded in a local SQLite database on your computer. You own 100% of your data and maintain a permanent audit trail.
-* **🪝 Hook 6: Works Across All Your Favorite AI Tools**  
-  Export all 67 agent prompts with 1 command (`node scripts/install-tools.js`) directly into **Cursor** (`.cursor/rules/`), **Claude Code** (`~/.claude/agents/`), **Antigravity**, or terminal!
+* **🔒 Toby Flenderson — Security Guard (AppSec Lead)**
+  * **The Headache He Kills:** Accidental API key leaks, hardcoded credentials, and dangerous hacker exploits.
+  * **His Superpower:** Automated pre-commit security audits. Scans diffs for exposed secrets, SQL injections, Cross-Site Scripting (XSS), and directory traversal attempts.
+  * **Your Direct Benefit:** You never accidentally push a private OpenAI key or database password to a public repository.
+
+* **🕵️ Creed Bratton — Fresh Eyes Reviewer**
+  * **The Headache He Kills:** The "author blindness" where an AI assumes its own broken code works because it remembers its own thought process.
+  * **His Superpower:** Inspects code diffs in total epistemic isolation with zero prior context or author bias.
+  * **Your Direct Benefit:** Catches subtle logic oversights and weird edge-case mistakes that everyone else on the team missed.
+
+---
+
+### ⚙️ Department 3: Core Engineering & Database
+*Writes minimal, surgical code changes and guards database performance.*
+
+* **💻 Jim Halpert — Lead Coder (Minimal Change Specialist)**
+  * **The Headache He Kills:** AI rewriting 500 lines of your code when you only asked for a 2-line bug fix.
+  * **His Superpower:** Enforces the strict 50-line razor: surgical, bounded edits that touch only the direct call chain with zero orthogonal drift.
+  * **Your Direct Benefit:** Your Git commit history stays clean, pull requests are easy to review, and existing features never break.
+
+* **🧮 Oscar Martinez — Database Reliability Engineer (DBRE)**
+  * **The Headache He Kills:** Slow queries that freeze your app, corrupted database schemas, and data loss.
+  * **His Superpower:** Crafts high-speed SQLite and PostgreSQL schemas, WAL mode concurrency, zero-downtime migrations, and optimal index trees.
+  * **Your Direct Benefit:** Instant search speeds and bulletproof data integrity, even under heavy loads.
+
+* **🔌 Andy Bernard — API Platform Architect**
+  * **The Headache He Kills:** Confusing APIs with bad status codes and cryptic error messages that break the frontend.
+  * **His Superpower:** Designs contract-first OpenAPI and REST endpoints with standardized HTTP response codes, friendly error objects, and input validation.
+  * **Your Direct Benefit:** Frontends and backends communicate seamlessly with zero integration friction.
+
+* **🏎️ Nate — Speed & Latency Optimizer**
+  * **The Headache He Kills:** Sluggish apps, high CPU usage, and mysterious memory leaks.
+  * **His Superpower:** Profiles V8 memory heaps, eliminates redundant renders, and optimizes execution loops to run under 100 milliseconds.
+  * **Your Direct Benefit:** Your app feels snappy, lightweight, and responsive to every click.
+
+---
+
+### 🧪 Department 4: Quality Assurance & Reality Gate
+*Refuses promises and claims. Demands real machine verification from your terminal.*
+
+* **🛡️ Angela Martin — Reality Gate Auditor (Head of QA)**
+  * **The Headache He Kills:** AI chatbots saying *"Done!"* when the code doesn't even compile or run.
+  * **Her Superpower:** Enforces the unforgeable Reality Gate. She runs your computer's native test runner (`npm test`, `pytest`, `cargo test`, etc.). Unless the process exits with status code 0 (`$? === 0`), the task is rejected.
+  * **Your Direct Benefit:** Zero hallucinations. If The Boring Company says a task is complete, it has physically passed real tests on your machine.
+
+* **🔴 Ryan Howard — TDD Test Engineer (RED ➔ GREEN)**
+  * **The Headache He Kills:** Bugs getting fixed temporarily only to break again next week.
+  * **His Superpower:** Writes failing automated tests first (RED) to prove the bug exists, then verifies that Jim's code turns them completely green (GREEN).
+  * **Your Direct Benefit:** Every bug fix permanently protects your codebase from future regressions.
+
+* **📋 Kevin Malone — Definition of Done Auditor**
+  * **The Headache He Kills:** Developers claiming a feature is ready when half the requirements were forgotten.
+  * **His Superpower:** Checks off every single acceptance criterion from Marcus's original specification. Defaults to "NEEDS WORK" until overwhelming evidence is presented.
+  * **Your Direct Benefit:** You get complete, finished features — never partial drafts.
+
+* **🔍 Erin Hannon — User Empathy Tester**
+  * **The Headache He Kills:** Clunky user experiences, confusing button labels, and hidden error states.
+  * **Her Superpower:** Tests user journeys from the perspective of a beginner. Clicks buttons out of order, enters unexpected inputs, and checks mobile viewports.
+  * **Your Direct Benefit:** Your software is a pleasure for real humans to use.
+
+---
+
+### 🎨 Department 5: Product Design & User Experience
+*Ensures your product looks world-class, feels tactile, and is accessible to everyone.*
+
+* **🎨 Pam Beesly — Executive UI Designer**
+  * **The Headache He Kills:** Bland, cookie-cutter AI websites that look generic and robotic.
+  * **Her Superpower:** Apple-grade typographic rhythm, generous whitespace, warm editorial color palettes, CSS grid choreography, and fluid micro-interactions.
+  * **Your Direct Benefit:** Interfaces that look bespoke, premium, and designed by a senior product designer.
+
+* **💎 Jan Levinson — Brand & Visual Director**
+  * **The Headache He Kills:** Inconsistent colors, misaligned buttons, and clashing font styles across different pages.
+  * **Her Superpower:** Enforces design tokens, unified component libraries, and strict visual brand cohesion.
+  * **Your Direct Benefit:** Your product looks polished, cohesive, and instantly trustworthy to users and investors.
+
+* **♿ Val Johnson — Accessibility & Ergonomics Guardian**
+  * **The Headache He Kills:** Apps that are impossible to navigate with a keyboard or unreadable in dark mode.
+  * **Her Superpower:** Audits WCAG contrast ratios, aria labels, keyboard focus rings, and screen-reader accessibility.
+  * **Your Direct Benefit:** Accessible to everyone, compliant with international standards, and pleasant for keyboard power users.
+
+---
+
+### 📦 Department 6: Operations, Systems & Release
+*Automates packaging, protects your local files, and builds company memory.*
+
+* **📦 Darryl Philbin — Release & Packaging Master**
+  * **The Headache He Kills:** Broken dependencies, messy release notes, and broken deployment scripts.
+  * **His Superpower:** Generates clean semantic version tags, automated changelogs, and verifies that zero dependencies are missing before shipping.
+  * **Your Direct Benefit:** One-command painless releases that work every single time.
+
+* **🛡️ Hank Tate — System Guardian**
+  * **The Headache He Kills:** AI tools accidentally deleting files outside the project or altering sensitive system directories.
+  * **His Superpower:** Enforces strict boundary sandboxes. Intercepts file system calls to ensure agents never modify files outside your project workspace.
+  * **Your Direct Benefit:** Total safety and peace of mind when running autonomous tasks.
+
+* **🧠 Phyllis Vance — Knowledge & Team Coordinator**
+  * **The Headache He Kills:** Having to explain the same codebase quirks and rules to your AI over and over again.
+  * **Her Superpower:** Compiles verified learnings and bug post-mortems into local SQLite memory (`company.db`).
+  * **Your Direct Benefit:** Your team compounds experience over time, getting smarter and faster with every task.
+
+* **🌐 + 45 Domain Specialists**  
+  Mobile app developers, Docker containerizers, WebSocket streaming experts, voice AI specialists, and documentation authors. Run `node scripts/install-tools.js --list` to see the full roster!
+
+---
+
+## 🔥 6 Core Hooks That Change Everything
+
+Why do developers, hiring managers, and founders choose **The Boring Company** over regular AI tools?
+
+### ⚡ Hook 1: The Reality Gate Interlock (`$? === 0`) — Zero Hallucinations Guaranteed
+* **The Nightmare:** Chatbots love to say *"I fixed your code!"* even when the app won't even compile. You waste hours testing their broken suggestions.
+* **The Solution:** The Reality Gate is an unforgeable machine interlock. Angela Martin executes your real test runner on your computer. If the process does not return exit code 0 (`$? === 0`), the task is marked as failed and Jim is ordered to fix it.
+* **The Proof:** You never get broken code handed back to you. Period.
+
+### ⚡ Hook 2: The 50-Line Minimal Change Rule — No More Code Carnage
+* **The Nightmare:** You ask an AI to fix a small layout bug, and it rewrites 400 lines of code across 6 files, introducing 3 new bugs in the process.
+* **The Solution:** Jim Halpert enforces the strict 50-line razor. He modifies only the exact lines in the direct call chain, with zero speculative refactoring.
+* **The Proof:** Clean git diffs that take 30 seconds to review, with zero risk of breaking unrelated features.
+
+### ⚡ Hook 3: Pre-Code Adversarial Sparring — Dwight Kills Bugs Early
+* **The Nightmare:** Solo AI tools write code first and think later, producing fragile implementations that collapse under edge cases.
+* **The Solution:** Dwight Schrute stress-tests the plan with 3 chaos probes *before* a single file is touched on disk.
+* **The Proof:** Concurrency deadlocks, empty states, and network timeouts are identified and handled in the design phase.
+
+### ⚡ Hook 4: Zero External Dependencies (Pure Node.js 22+) — Instant Setup
+* **The Nightmare:** Other multi-agent frameworks force you to install 100+ pip packages, Python virtual environments, and 500MB of dependencies that constantly break.
+* **The Solution:** The Boring Company is engineered in pure vanilla Node.js using only standard library modules. 0 extra npm packages needed.
+* **The Proof:** Starts up in under 1 millisecond. Runs on Windows, macOS, and Linux out of the box.
+
+### ⚡ Hook 5: Tamper-Proof Local Database Ledger (`company.db`) — You Own Everything
+* **The Nightmare:** Your prompts, tasks, and project history are locked inside closed cloud databases that charge you subscription fees.
+* **The Solution:** Everything is recorded into a local SQLite database (`company.db`) stored on your computer, with immutable audit triggers.
+* **The Proof:** 100% offline-ready, 100% private, and completely free forever.
+
+### ⚡ Hook 6: Universal 1-Click Export to Cursor, Claude Code & Antigravity
+* **The Nightmare:** You have to copy-paste prompts manually between different editors and tools.
+* **The Solution:** With one command (`node scripts/install-tools.js`), all 67 agent personas are automatically exported into `.cursor/rules/`, `~/.claude/agents/`, or Antigravity!
+* **The Proof:** Use your favorite AI editor while enjoying the full power of all 67 specialists.
 
 ---
 
