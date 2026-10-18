@@ -1,65 +1,102 @@
-# 👥 Agent Fleet Catalog
+# 👥 Meet Your 72 Specialist AI Teammates
 
-The Boring Company OS operates as a coordinated virtual software enterprise with **72 specialist agent roles** divided into core functional squads.
+> **"An organized software company inside your terminal. Clear roles, zero chaos."**
 
----
-
-## 🏛️ Executive Board & Governance
-
-| Agent Role | Codename / Persona | Primary Focus | Authority & Responsibilities |
-|---|---|---|---|
-| **CEO / Supreme Conductor** | Michael | Floor Operations & Arbitration | Ingests `/boss` prompts, orchestrates division leads, resolves deadlocks, conducts final delivery sign-offs. |
-| **Chief Product Officer (CPO)** | Marcus | Requirement Elaboration | Translates ambiguous founder prompts into bulletproof user stories, invariants, and acceptance criteria. |
-| **Chief Technology Officer (CTO)** | Stanley | Systems Architecture | Evaluates architectural tradeoffs, determines Track A/B/C routing, sets non-negotiable tech invariants. |
-| **VP of Engineering** | David | Delivery & Execution Pace | Assigns specialist squads, manages execution leases, monitors sprint throughput. |
-| **Chief Revenue Officer (CRO)** | Jan | Product Commercialization | Evaluates customer-facing value, pricing models, and business alignment of features. |
-| **VP of Operations** | Darryl | Systems Reliability & Infrastructure | Monitors token consumption, database ledger health, and process runtime health. |
+The Boring Company operates as a complete, disciplined software development company. Instead of one lonely chatbot trying to guess everything, you get **72 specialized AI teammates** organized into 6 focused departments.
 
 ---
 
-## ⚔️ The Adversarial Sparring Arena (Claudex Loop)
+## 👑 1. Executive Leadership & Planning
+*Turns your ideas into clear, step-by-step plans before any code is written.*
 
-| Agent Role | Persona | Weapon / Methodology | Role Description |
-|---|---|---|---|
-| **Software Architect** | Stanley | Domain-Driven Design & Bounded Contexts | Authors the 5-bullet Smallest Justified Design. Proves why zero extra abstraction is introduced. |
-| **Adversarial Inquisitor** | Dwight | 3-Probe Chaos, Concurrency & Fragility Scorecard | Aggressively attacks proposed designs looking for race conditions, edge cases, and memory leaks before coding begins. |
-| **Fresh Reviewer** | Creed | Zero-Author-Bias Code Inspection | Evaluates diffs in total isolation from the writing agent to prevent cognitive blind spots and assumed context. |
-
----
-
-## 💻 Engineering & Implementation Specialists
-
-| Agent Role | Persona | Core Discipline | Operating Constraints |
-|---|---|---|---|
-| **Lead Coder (Minimal Change)** | Jim | Surgical Bounded Diffs | Enforces the Karpathy 50-Line Razor: touches only direct call chains, zero orthogonal refactoring. |
-| **TDD Automation Engineer** | Ryan | Test-Driven Development (RED ➔ GREEN) | Writes failing boundary tests first; writes minimal code to pass; verifies 100% assertion green. |
-| **Database Reliability Engineer (DBRE)** | Oscar | SQLite / PostgreSQL Schema & Migrations | Index optimization, zero-downtime schema evolution, deadlock elimination, query plan profiling. |
-| **Application Security (AppSec)** | Toby | CWE Elimination & Secret Scanning | Pre-commit security scanning, threat modeling, injection prevention, token circuit-breaker enforcement. |
-| **API Platform Architect** | Andy | Contract-First API Design | OpenAPI specifications, idempotent endpoints, versioning policies, rate-limiting headers. |
+| Teammate | Role | Everyday Job | What They Protect You From |
+| :--- | :--- | :--- | :--- |
+| **Michael Scott** | CEO & Conductor | Listens to your goal, picks the right team, and oversees delivery. | Saves you from having to prompt 5 different chatbots by hand. |
+| **Marcus** | Chief Product Officer (CPO) | Turns your prompt into a clear requirements checklist and user stories. | Stops coders from guessing what you want and building the wrong thing. |
+| **Stanley Hudson** | Chief Technology Officer (CTO) | Chooses the simplest architecture. Rejects heavy, bloated packages. | Keeps your codebase clean, lightweight, and easy to maintain. |
+| **David Wallace** | VP of Engineering | Manages developer sprints and makes sure teammates don't overwrite each other. | Prevents messy Git merge conflicts and sloppy code. |
+| **Jan Levinson** | Chief Revenue Officer (CRO) | Makes sure the product looks professional, makes sense, and delights users. | Stops you from shipping awkward, confusing user flows. |
+| **Darryl Philbin** | VP of Operations | Monitors token usage, speeds, and database health. | Protects your wallet from runaway loops and runaway API costs. |
 
 ---
 
-## 🎨 Design, Brand & User Interface
+## 🛡️ 2. Bug Prevention & Red Team
+*Catches tricky edge cases and security risks BEFORE anyone touches a single file.*
 
-| Agent Role | Persona | Aesthetic & Standards | Deliverables |
-|---|---|---|---|
-| **Executive UI Designer** | Pam | Apple-Grade Interfaces & Spatial Rhythm | High typographic contrast, warm monochrome palettes, CSS grid choreography, micro-interactions. |
-| **Brand & Design Architect** | Kelly | Visual Identity & Component Systems | Consistent design tokens, typography scales, accessibility (WCAG AA), responsive breakpoints. |
-
----
-
-## 🛡️ Delivery & Verification (The Reality Gate)
-
-| Agent Role | Persona | Enforcement Gate | Verification Standard |
-|---|---|---|---|
-| **Reality Gate Auditor** | Angela | Exit-Code Machine Interlock | Refuses completion unless native test runners report clean exit status `0`. Enforces triple-evidence logging. |
-| **Deadline & Acceptance Auditor** | Kevin | Definition of Done Enforcer | Cross-checks implementation deliverables against CPO acceptance criteria. Defaults to `NEEDS WORK`. |
+| Teammate | Role | Everyday Job | What They Protect You From |
+| :--- | :--- | :--- | :--- |
+| **Dwight Schrute** | Red Team Lead | Asks the tough questions: *"What if the user double-clicks? What if the network drops?"* | Saves you from embarrassing production bugs when real users arrive. |
+| **Toby Flenderson** | Security Guard | Scans code diffs for leaked passwords, API keys, and unsafe file paths. | Prevents sensitive credentials from accidentally being pushed to GitHub. |
+| **Creed Bratton** | Fresh-Eye Reviewer | Inspects every code change in complete isolation with zero author bias. | Catches blind spots and subtle logic errors that the author missed. |
 
 ---
 
-## 📁 Agent Manifest Directory Structure
+## ⚙️ 3. Core Engineering & Database
+*Writes small, surgical fixes and keeps your data fast, safe, and organized.*
 
-Every specialist agent in the fleet is defined as a portable markdown manifest:
+| Teammate | Role | Everyday Job | What They Protect You From |
+| :--- | :--- | :--- | :--- |
+| **Jim Halpert** | Lead Minimalist Coder | Writes small, focused patches (under 50 lines). Only touches targeted files. | Stops AI tools from rewriting 400 lines and breaking unrelated features. |
+| **Ryan Howard** | TDD Test Writer | Writes a failing test first (RED), then confirms the fix passes cleanly (GREEN). | Guarantees bugs are proven fixed and never return. |
+| **Oscar Martinez** | Database Reliability | Optimizes database queries, creates clean indexes, and manages migrations. | Prevents slow loading screens, database deadlocks, and corrupted data. |
+| **Andy Bernard** | API Platform Builder | Builds clean, predictable API endpoints with helpful error messages. | Stops frontend and backend from misunderstanding each other. |
+| **Nate** | Speed & Performance | Removes slow loops and optimizes memory so your app runs lightning fast. | Eliminates lag and sluggish responses. |
+
+---
+
+## 🎨 4. Product Design & User Experience
+*Makes sure your app looks beautiful, feels tactile, and is easy for everyone to use.*
+
+| Teammate | Role | Everyday Job | What They Protect You From |
+| :--- | :--- | :--- | :--- |
+| **Pam Beesly** | Executive UI Designer | Crafts bespoke interfaces with balanced typography, clean spacing, and warm colors. | Replaces ugly, generic, cookie-cutter AI websites with premium design. |
+| **Elena / Kelly** | Design Systems Lead | Organizes reusable color tokens, button styles, and consistent components. | Stops your app from having mismatched buttons, fonts, and colors. |
+| **Val Johnson** | Accessibility Guardian | Checks color contrast, keyboard navigation, and screen-reader support. | Ensures everyone, including power users, can easily navigate your app. |
+| **Zara** | User Experience (UX) Lead | Tests onboarding, checkout, and navigation flows from start to finish. | Prevents frustrating user bottlenecks and drop-offs. |
+
+---
+
+## 🧪 5. Quality Assurance & The Reality Gate
+*Refuses promises and claims. Demands real machine verification from your computer.*
+
+| Teammate | Role | Everyday Job | What They Protect You From |
+| :--- | :--- | :--- | :--- |
+| **Angela Martin** | Head of QA & Reality Gate | Runs your computer's real test runner (`npm test`, `pytest`, etc.). | Stops AI from lying about tests passing when code is actually broken. |
+| **Kevin Malone** | Checklist Auditor | Walks through Marcus's original requirements checklist item by item. | Ensures nothing from your original request was forgotten or skipped. |
+| **Isabela Santos** | Automated Testing Lead | Builds robust automated tests that verify buttons and forms work end-to-end. | Prevents manual testing fatigue. |
+| **Erin Hannon** | User Empathy Tester | Tests your app like a curious, everyday beginner who clicks in unexpected ways. | Catches confusing error messages and awkward mobile layouts. |
+
+---
+
+## 📦 6. Operations, Systems & Safety
+*Protects your local files, manages releases, and builds long-term company memory.*
+
+| Teammate | Role | Everyday Job | What They Protect You From |
+| :--- | :--- | :--- | :--- |
+| **Hank Tate** | Safe File Sandbox Guard | Ensures agents only modify files inside your project directory. | Protects your computer's sensitive system files from being touched. |
+| **Phyllis Vance** | Company Memory Lead | Logs tricky bugs and successful fixes into local SQLite memory (`company.db`). | Teaches the company so it never repeats the same mistake twice. |
+| **Amira** | System Uptime & SRE | Monitors background tasks and checks server health and reliability. | Keeps services stable and running smoothly. |
+
+---
+
+## 🌐 + 45 Specialist Coders
+Beyond the core leads above, The Boring Company includes specialized domain experts for:
+* **Mobile & Cross-Platform:** iOS, Android, React Native, Flutter
+* **Modern Web:** Next.js, React, Tailwind, Vue, Svelte, WebSockets
+* **Cloud & DevOps:** Docker, CI/CD pipelines, GitHub Actions, AWS, Vercel
+* **Security & Auth:** OAuth, JWT, Session hardening, rate limiting
+* **Documentation:** Clear guides, API docs, changelogs, onboarding
+
+To see the full roster of 72 agents on your computer, run:
+```bash
+node scripts/install-tools.js --list
+```
+
+---
+
+## 📁 Agent Definitions Directory Structure
+
+Every specialist agent in the fleet is defined as a clean, portable manifest:
 
 ```
 agents/definitions/
@@ -71,3 +108,5 @@ agents/definitions/
 ├── company_ryan/agent.md
 └── ... (72 total agent definitions)
 ```
+
+Each teammate has a strict job, clear manager, and bounded responsibilities — giving you a production software company right in your terminal. ☕

@@ -8,7 +8,7 @@
 
 ### **Stop babysitting chatbots. Run a real AI software company in your terminal.**
 
-*72 autonomous specialists across 6 collaborative departments that plan features, write clean code, and mathematically prove every fix passes your real tests before shipping. Pure Node.js 22+, zero extra packages.*
+*72 specialized AI teammates across 6 departments who plan features, write clean code, and prove every fix passes your real tests before shipping. Pure Node.js, zero extra packages.*
 
 <br/>
 
@@ -43,42 +43,42 @@ Every developer and founder has experienced this frustration:
 
 ## 💡 The Solution: A Real Software Company Inside Your Terminal
 
-**The Boring Company** fixes this by giving you a complete, organized software studio. Instead of an isolated chatbot hallucinating code, you get **72 specialized AI teammates** arranged across **6 collaborative departments**.
+**The Boring Company** fixes this by giving you a complete, organized software team. Instead of a lonely chatbot guessing code, you get **72 specialized AI teammates** arranged across **6 helpful departments**.
 
-They challenge weak ideas, keep code changes tiny, and **never declare a task complete without real machine proof** from your computer's native test runner.
+They catch bad ideas early, keep code changes tiny, and **never say a task is done until your computer's real tests pass with zero errors**.
 
 ```
-                           YOU (THE FOUNDER & BOSS)
+                           YOU (THE BOSS / FOUNDER)
                                       │
                                       ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ 1. 👑 THE EXECUTIVE BOARD                                                   │
-│    Michael (CEO), Marcus (CPO) & Stanley (CTO) plan your task with precision.│
+│ 1. 👑 LEADERSHIP TEAM                                                        │
+│    Michael (CEO), Marcus (Product) & Stanley (Architect) plan your feature. │
 └─────────────────────────────────────┬───────────────────────────────────────┘
                                       │
                                       ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ 2. 🛡️ THE RED TEAM DEFENSE                                                  │
-│    Dwight & Toby aggressively stress-test the plan BEFORE coding begins.    │
+│ 2. 🛡️ BUG PREVENTION & SECURITY                                             │
+│    Dwight & Toby find edge cases and security risks BEFORE writing code.    │
 └─────────────────────────────────────┬───────────────────────────────────────┘
                                       │
                                       ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ 3. ⚙️ CORE ENGINEERING & DATABASE                                            │
-│    Jim writes clean, focused code (under 50 lines). Oscar tunes queries.    │
+│ 3. ⚙️ CODE & DATABASE                                                        │
+│    Jim writes small, clean fixes (under 50 lines). Oscar tunes queries.     │
 └─────────────────────────────────────┬───────────────────────────────────────┘
                                       │
                                       ▼
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│ 4. 🧪 REALITY GATE QUALITY ASSURANCE                                        │
-│    Angela runs your machine's real test runner. Exit code 0 ($? === 0) only!│
+│ 4. 🧪 REALITY GATE TESTING                                                  │
+│    Angela runs your real test runner. All tests must pass with ZERO errors! │
 └─────────────────────────────────────┬───────────────────────────────────────┘
                                       │
                      ┌────────────────┴────────────────┐
                      ▼                                 ▼
               [Tests Fail ❌]                   [Tests Pass ✅]
-        Jim & Ryan diagnose and            Angela certifies with proof.
-       fix the bug automatically.         Logged in company.db & shipped!
+        Jim & Ryan see the exact           Angela approves the fix.
+        error and fix it automatically.    Saved to company.db & done!
 ```
 
 ---
@@ -103,22 +103,22 @@ Here is how the team actually talks and collaborates:
   *"Hold on. What if the user refreshes their browser mid-payment? What if their WiFi drops and their browser retries automatically? If we only disable the button on the frontend, customers will still get billed twice! We have to lock the transaction in the database too."*
 
 * 📐 **Stanley (CTO):**  
-  *"Good point, Dwight. Keep it simple. Jim, write a small patch with a database transaction lock. Don't rewrite the whole file. Oscar, double-check the index."*
+  *"Good point, Dwight. Keep it simple. Jim, write a small fix that prevents duplicate payments in the database. Don't rewrite the whole file. Oscar, make sure it stays fast."*
 
 * ⚙️ **Jim (Minimal Coder):**  
   *"On it. Done — 14 clean lines added to `checkout.js`. Didn't touch any unrelated files."*
 
 * 🧮 **Oscar (Database Engineer):**  
-  *"Checked the query. The unique lock stops race conditions cold without slowing down normal checkouts."*
+  *"Checked the query. The unique lock stops accidental double charges without slowing down checkouts."*
 
 * 🔒 **Toby (Security Guard):**  
-  *"Ran the security scan on Jim's diff. No leaked API keys, no SQL injection risks."*
+  *"Ran our security check on Jim's changes. No passwords or secret API keys leaked, and no safety risks found."*
 
 * 🧪 **Angela (Head of QA):**  
-  *"Hold your horses. I'm running your machine's real test suite right now... `npm test` exited cleanly with code 0. All 37 tests passed. No skipped assertions. It's verified."*
+  *"Hold on, team. I am running your computer's real test suite right now... `npm test` finished with zero errors (exit code 0). All 37 tests passed! No skipped checks. It is officially verified."*
 
 * 📦 **Darryl (Operations):**  
-  *"Recorded the fix and the test proof into local SQLite (`company.db`). Clean, verified, and ready to ship."*
+  *"Saved the fix and the test results into your local file (`company.db`). Clean, verified, and ready to ship."*
 
 ---
 
@@ -131,7 +131,7 @@ In ordinary AI tools, there is no organization. One chatbot attempts to write re
 
 ```
                                  ┌─────────────────────────┐
-                                 │   YOU (THE FOUNDER)     │
+                                 │    YOU (THE FOUNDER)    │
                                  │    Visionary & Boss     │
                                  └────────────┬────────────┘
                                               │
@@ -146,10 +146,10 @@ In ordinary AI tools, there is no organization. One chatbot attempts to write re
 ┌───────────────────────────────┐                                     ┌───────────────────────────────┐
 │ 🛡️ INDEPENDENT QA BRANCH      │                                     │ 🏛️ EXECUTIVE DIRECTORS        │
 │ Angela Martin (Head of QA)    │                                     │ Stanley (CTO) • Marcus (CPO)  │
-│ Independent Veto Power!       │                                     │ David (VP Eng) • Darryl (Ops) │
+│ Has final say on all code!    │                                     │ David (VP Eng) • Darryl (Ops) │
 │ Reports directly to Founder & │                                     │ Jan (CRO & Brand)             │
 │ CEO. Cannot be overruled by   │                                     │                               │
-│ coders. Enforces Reality Gate!│                                     └──────────────┬────────────────┘
+│ coders. Real tests only!      │                                     └──────────────┬────────────────┘
 └──────────────┬────────────────┘                                                    │
                │                                                                     │
                │                                   ┌─────────────────────────────────┼─────────────────────────────────┐
@@ -158,9 +158,9 @@ In ordinary AI tools, there is no organization. One chatbot attempts to write re
 │ 🧪 REALITY GATE SQUAD        │    │ 🛡️ RED TEAM & SECURITY SQUAD │  │ ⚙️ CORE ENGINEERING SQUAD    │  │ 🎨 PRODUCT & DESIGN SQUAD    │
 │ (Under Angela Martin)        │    │ (Under Stanley & Dwight)     │  │ (Under David Wallace)        │  │ (Under Marcus & Jan)         │
 │ • Ryan (TDD Test Writer)     │    │ • Dwight (Red Team Lead)     │  │ • Jim (Minimalist Coder)     │  │ • Pam (Executive UI Designer)│
-│ • Kevin (Done-Criteria Check)│    │ • Toby (AppSec Security)     │  │ • Oscar (Database DBRE)      │  │ • Val (Accessibility Guard)  │
-│ • Isabela (E2E Automation)   │    │ • Creed (Isolated Review)    │  │ • Andy (API Architect)       │  │ • Zara (UX Workflow Lead)    │
-│ • Erin (User Empathy Tester) │    │                              │  │ • Nate (Speed & Latency)     │  │ • Elena (Design System Tokens│
+│ • Kevin (Checks Acceptance)  │    │ • Toby (Security Guard)      │  │ • Oscar (Database Speed)     │  │ • Val (Accessibility Guard)  │
+│ • Isabela (E2E Automation)   │    │ • Creed (Fresh-Eye Review)   │  │ • Andy (API Builder)         │  │ • Zara (UX Workflow Lead)    │
+│ • Erin (User Empathy Tester) │    │                              │  │ • Nate (Speed & Performance) │  │ • Elena (Design Tokens)      │
 └──────────────────────────────┘    └──────────────────────────────┘  │ • +45 Specialist Coders      │  └──────────────────────────────┘
                                                                       └──────────────┬───────────────┘
                                                                                      │
@@ -168,9 +168,9 @@ In ordinary AI tools, there is no organization. One chatbot attempts to write re
                                                                       ┌──────────────────────────────┐
                                                                       │ 📦 OPERATIONS & MEMORY SQUAD │
                                                                       │ (Under Darryl Philbin)       │
-                                                                      │ • Hank (Sandbox File Guard)  │
+                                                                      │ • Hank (Safe File Guard)     │
                                                                       │ • Phyllis (Company Memory)   │
-                                                                      │ • Amira (SRE & Uptime)       │
+                                                                      │ • Amira (System Uptime)      │
                                                                       └──────────────────────────────┘
 ```
 
@@ -178,26 +178,26 @@ In ordinary AI tools, there is no organization. One chatbot attempts to write re
 
 1. **Level 0: The Founder (YOU)**  
    * **Role:** The Owner and Final Decision Maker.  
-   * **What you do:** You give the high-level goal (e.g. `npx theboringcompany /boss "Fix payment timeout"`). You never have to micromanage individual files, write prompt chains, or babysit code reviews.
+   * **What you do:** You give the high-level goal in plain English (for example: `npx theboringcompany /boss "Fix login button on mobile"`). You never have to micromanage individual files, write prompt chains, or babysit code reviews.
 
-2. **Level 1: Executive C-Suite Leadership**  
-   * **👔 Michael Scott (CEO):** Reports directly to YOU. He is the master conductor. He listens to your goal, picks the exact right specialists from the fleet, assigns work leases, arbitrates debates, and oversees final delivery.
-   * **📋 Marcus (Chief Product Officer):** Reports to Michael. Translates your 1-line prompt into detailed, unambiguous user stories, acceptance criteria, and edge-case boundaries.
-   * **📐 Stanley Hudson (Chief Technology Officer):** Reports to Michael. Enforces architectural simplicity. Rejects unnecessary libraries and guarantees clean, maintainable system designs.
-   * **⚡ David Wallace (VP of Engineering):** Reports to Stanley & Michael. Manages the developer sprint, allocates file leases, and enforces code quality standards.
-   * **💼 Jan Levinson (Chief Revenue Officer & Brand Director):** Reports to Michael. Guarantees that what gets built looks beautiful, aligns with your business goals, and delivers real user value.
-   * **📊 Darryl Philbin (VP of Operations):** Reports to Michael. Manages system resources, monitors local memory, tracks token quotas, and guarantees safe deployments.
+2. **Level 1: Executive Leadership Team**  
+   * **👔 Michael Scott (CEO):** Reports directly to YOU. He is your company's head conductor. He listens to your goal, picks the exact right specialists for the job, assigns tasks, solves disagreements, and oversees final delivery.
+   * **📋 Marcus (Chief Product Officer):** Reports to Michael. Translates your short prompt into a clear, step-by-step plan with exact requirements and edge cases so the team knows what to build.
+   * **📐 Stanley Hudson (Chief Technology Officer):** Reports to Michael. Guarantees simple, clean code. Rejects heavy, unnecessary packages and makes sure everything stays fast and easy to maintain.
+   * **⚡ David Wallace (VP of Engineering):** Reports to Stanley & Michael. Coordinates the coders, keeps work on track, and makes sure files are edited cleanly without conflicts.
+   * **💼 Jan Levinson (Chief Revenue Officer & Brand Lead):** Reports to Michael. Makes sure what gets built looks professional, makes sense for real users, and helps your project grow.
+   * **📊 Darryl Philbin (VP of Operations):** Reports to Michael. Monitors speed, protects your computer resources, tracks token usage, and keeps your local database safe.
 
 3. **⭐ The Independent Branch: Angela Martin (Head of Quality Assurance)**  
-   * **Why this is critical:** In broken engineering teams and standard AI tools, the developer checks their own work. Developers are biased — they always claim their code works!  
-   * **The Boring Company Rule:** Angela Martin **does NOT report to Engineering or Product**. She reports directly to Michael and the Founder. Engineering cannot overrule or bypass her checks. If your computer's native test runner does not exit with code 0 (`$? === 0`), Angela vetoes the release immediately.
+   * **Why this is critical:** In broken teams and standard AI tools, the developer checks their own work. Developers are biased — they always claim their code works!  
+   * **The Boring Company Rule:** Angela Martin **does NOT report to Engineering or Product**. She reports directly to Michael and the Founder. Coders cannot overrule or bypass her checks. If your computer's native test runner does not pass with zero errors (exit code 0), Angela blocks the release immediately. No excuses.
 
 4. **Level 2: The Working Squads & Direct Reports**  
-   * **🎨 Product & Design Squad (Under Marcus & Jan):** Pam Beesly (UI Design), Val Johnson (Accessibility), Zara (UX Journeys), Elena (Design Systems).
-   * **🛡️ Red Team & Security Squad (Under Stanley & Dwight):** Dwight Schrute (Red Team Lead — Edge-Case Specialist), Toby Flenderson (Security & AppSec Lead), Creed Bratton (Fresh-Eyes Independent Reviewer).
-   * **⚙️ Core Engineering Squad (Under David Wallace):** Jim Halpert (Lead Minimal Coder), Oscar Martinez (Database Reliability), Andy Bernard (API Platform), Nate (Speed & Latency), plus 45 domain specialist coders.
-   * **🧪 Reality Gate QA Squad (Under Angela Martin):** Ryan Howard (TDD Test Writer), Kevin Malone (Definition of Done Auditor), Isabela Santos (E2E Test Automation), Erin Hannon (User Empathy Tester).
-   * **📦 Operations & Systems Squad (Under Darryl Philbin):** Hank Tate (Workspace File Sandbox Guard), Phyllis Vance (Institutional Memory & Post-Mortem Coordinator), Amira (SRE & Uptime).
+   * **🎨 Product & Design Squad (Under Marcus & Jan):** Pam Beesly (UI Design), Val Johnson (Accessibility), Zara (User Experience), Elena (Design Systems).
+   * **🛡️ Red Team & Security Squad (Under Stanley & Dwight):** Dwight Schrute (Red Team Lead — Edge-Case Specialist), Toby Flenderson (Security Guard), Creed Bratton (Fresh-Eye Reviewer).
+   * **⚙️ Core Engineering Squad (Under David Wallace):** Jim Halpert (Lead Minimalist Coder), Oscar Martinez (Database Reliability), Andy Bernard (API Builder), Nate (Speed & Performance), plus 45 domain specialist coders.
+   * **🧪 Reality Gate QA Squad (Under Angela Martin):** Ryan Howard (TDD Test Writer), Kevin Malone (Checklist Auditor), Isabela Santos (Automated Testing), Erin Hannon (User Empathy Tester).
+   * **📦 Operations & Systems Squad (Under Darryl Philbin):** Hank Tate (Safe File Guard), Phyllis Vance (Company Memory & Learnings), Amira (System Uptime).
 
 ---
 
@@ -208,11 +208,11 @@ How do 72 AI specialists work together like a cohesive software studio without t
 
 ### ☕ 1. Standups & Work Leases (No Overwritten Files)
 * **The everyday problem:** When multiple AI tools or developers work on the same folder, they often edit the same file at the same time, overwriting each other's changes and creating messy Git conflicts.
-* **How our team handles it:** When you launch a task, Michael runs a 1-second standup and issues an exclusive work lease in `company.db`. Only the assigned specialist (like Jim) can edit the targeted files. Everyone else reads.
+* **How our team handles it:** When you launch a task, Michael runs a 1-second standup and gives an exclusive work lease in `company.db`. Only the assigned specialist (like Jim) can edit the targeted files. Everyone else reads.
 * **Why it matters:** Zero merge conflicts, zero deleted code, and clean, easy-to-read diffs.
 
 ### 📬 2. Clean Department Mailboxes (No Noisy Chat Rooms)
-* **The everyday problem:** Chatbots lose instructions when everything is dumped into one giant, scrollable chat window. Important context gets pushed out and forgotten.
+* **The everyday problem:** Chatbots lose instructions when everything is dumped into one giant, scrollable chat window. Important details get pushed out and forgotten.
 * **How our team handles it:** Each department has its own clean inbox and outbox:
   * `tasks/inbox/` ➔ Marcus posts the initial specification and checklist.
   * `tasks/review/` ➔ Dwight and Toby get the plan to check for edge cases and security risks.
@@ -222,13 +222,13 @@ How do 72 AI specialists work together like a cohesive software studio without t
 
 ### 🚦 3. The 3 Quality Gates (Zero Blind Approvals)
 No code is ever shipped just because an AI promised it works. It must pass three specific checks:
-1. **Gate 1 — Design Check:** Marcus defines the requirements ➔ Dwight stress-tests edge cases (timeouts, empty states, double-clicks) ➔ Stanley locks in the simplest possible design.
+1. **Gate 1 — Design Check:** Marcus defines the requirements ➔ Dwight stress-tests edge cases (timeouts, empty inputs, double-clicks) ➔ Stanley locks in the simplest possible design.
 2. **Gate 2 — Code & Security Review:** Jim writes a small, focused patch (under 50 lines) ➔ Toby scans for secret leaks or unsafe paths ➔ Oscar verifies database query indexing.
-3. **Gate 3 — Physical Machine Testing:** Angela runs your real test runner (`npm test`, `pytest`, `cargo test`). If it doesn't exit cleanly with code 0 (`$? === 0`), Kevin sends it right back to Jim with the error logs to fix immediately.
+3. **Gate 3 — Physical Machine Testing:** Angela runs your real test runner (`npm test`, `pytest`, `cargo test`). If tests fail or show any errors, Angela and Kevin reject the code immediately. Jim receives the exact error output and fixes it until your machine passes with zero errors (exit code 0).
 
 ### 🗄️ 4. The Local Team Log (`company.db` on Your Machine)
 * **The everyday problem:** Close a chatbot window, and everything that was decided and tested vanishes forever.
-* **How our team handles it:** Every decision, file diff, and test run is saved to a local SQLite database (`company.db`) directly on your computer.
+* **How our team handles it:** Every decision, file change, and test run is saved to a local SQLite database (`company.db`) directly on your computer.
 * **Why it matters:** You get a private, permanent record of every fix your team has ever made, complete with real terminal output and execution times. 100% offline and owned by you.
 
 ### 🛑 5. Spending Limits & Safety Brakes (No Runaway Costs or Loops)
@@ -236,7 +236,7 @@ No code is ever shipped just because an AI promised it works. It must pass three
 * **How our team handles it:** Darryl Philbin monitors resource consumption and step counts in real time:
   * **At 75% budget:** Darryl warns the coder to stick strictly to the smallest possible fix.
   * **At 90% budget:** Darryl stops new exploratory changes and focuses solely on passing existing tests.
-  * **At 100% budget:** The safety brake trips. The task safely pauses, rolls back to your last clean Git snapshot, and tells you exactly what went wrong.
+  * **At 100% budget:** The safety brake trips. The task safely pauses, rolls back to your last clean Git snapshot, and tells you exactly what happened.
 * **Why it matters:** You're completely protected against runaway bills, frozen terminal screens, and infinite loops.
 
 ---
@@ -304,7 +304,7 @@ Our 72 specialists are organized into 6 real-world departments. Here is who they
 *Refuses promises and claims. Demands real machine verification from your computer.*
 
 * **🛡️ Angela Martin (Head of QA & Reality Gate Auditor)**  
-  Angela is the most important member of the company. She refuses promises, apologies, and chatbot claims. She executes your machine's real test runner (`npm test`, `pytest`, etc.). Unless the process exits cleanly with code 0 (`$? === 0`), the task is rejected. She holds independent veto power — no developer can overrule her.
+  Angela is the most important member of the company. She never takes an AI's word for it. She runs your computer's real test command (`npm test`, `pytest`, etc.). If there is even one failure or error, the task is rejected. Code only ships when your computer confirms it passed with zero errors (exit code 0). No coder can overrule Angela.
 
 * **🔴 Ryan Howard (TDD Test Writer — RED ➔ GREEN)**  
   Ryan prevents bugs from returning. Before Jim writes the fix, Ryan writes a failing automated test that proves the bug exists (RED). Once Jim's code makes the test pass cleanly (GREEN), that test remains in your repository to guard against future regressions.
@@ -353,9 +353,9 @@ Our 72 specialists are organized into 6 real-world departments. Here is who they
 
 Here is why developers, founders, and hiring managers choose **The Boring Company** over conventional AI tools:
 
-### ⚡ 1. The Reality Gate: Real Tests, Zero Lies (`$? === 0`)
+### ⚡ 1. The Reality Gate: Real Tests, Zero Lies (Exit Code 0)
 Standard AI tools love to claim *"I fixed everything!"* even when the code won't even compile. You spend the next hour debugging their broken suggestions.  
-**How we do it:** Angela Martin runs your computer's real test runner (`npm test`, `pytest`, `cargo test`). If your computer returns an error, the AI isn't finished. The task is only complete when your native test suite exits cleanly with code 0. No fabricated claims, ever.
+**How we do it:** Angela Martin runs your computer's real test runner (`npm test`, `pytest`, `cargo test`). If your computer returns an error, the AI isn't finished. The task is only complete when your native test suite passes with zero errors (exit code 0). No fabricated claims, ever.
 
 ### ⚡ 2. The 50-Line Rule: Clean Diffs, No Code Carnage
 You ask an AI to fix a small button color, and it rewrites 400 lines across 5 files, breaking two existing features in the process.  
@@ -435,7 +435,7 @@ Want to see how the company breaks down your mission and assigns departments bef
 ```bash
 boss --break "Build User Authentication with SQL database and responsive Login Form"
 ```
-The **Task Breaker** analyzes dependencies, executes Kahn's DAG algorithm, and displays the exact stage-by-stage assembly line, assigned specialist agents, and Micro-Reality-Gates directly in your terminal.
+The **Task Breaker** automatically breaks your big goal into small, ordered stages. It assigns the right specialist team to each step and shows you the exact assembly line and safety checks right in your terminal.
 
 ---
 
