@@ -11,6 +11,36 @@ const fs = require('fs');
 const path = require('path');
 const { spawn } = require('child_process');
 
+/**
+ * High-Security Dangerous Command Guardrail.
+ * Blocks destructive system commands, disk formats, root removals,
+ * registry tampering, and unverified pipe-to-shell download scripts.
+ */
+const DANGEROUS_COMMAND_PATTERNS = [
+  // Root or high-level recursive deletions
+  /\brm\s+-[a-zA-Z]*[rf][a-zA-Z]*\s+(\/|~|\.\.|\*|[a-zA-Z]:\\)/i,
+  /\brmdir\s+.*\/s.*\/q.*([a-zA-Z]:\\|\/|\\\*)/i,
+  /\bdel\s+.*\/[fs]\s+.*([a-zA-Z]:\\|\/|\\\*)/i,
+  // Disk formatting and partitioning
+  /\bformat\s+[a-zA-Z]:/i,
+  /\b(mkfs|fdisk|diskpart)\b/i,
+  // System shutdown & reboot
+  /\b(shutdown|reboot)\b/i,
+  /\binit\s+0\b/i,
+  // System registry & boot configuration manipulation
+  /\breg\s+(delete|add)\b/i,
+  /\bbcdedit\b/i,
+  // Unverified remote execution pipelines
+  /(curl|wget)\s+.*\|\s*(bash|sh|cmd|powershell)/i,
+  /Invoke-Expression\s+.*Net\.WebClient/i,
+  /\biex\s+.*\(New-Object/i
+];
+
+function isDangerousCommand(command) {
+  if (!command || typeof command !== 'string') return false;
+  return DANGEROUS_COMMAND_PATTERNS.some(pattern => pattern.test(command));
+}
+
 class ControlledWorkspace {
   constructor(rootDir, options = {}) {
     if (!rootDir) {
@@ -144,6 +174,22 @@ class ControlledWorkspace {
 
     return new Promise((resolve) => {
       const fullCmd = args.length > 0 ? `${command} ${args.join(' ')}` : command;
+
+      // Intercept and block dangerous / destructive commands
+      if (isDangerousCommand(fullCmd)) {
+        const errorMsg = `Security Violation: Dangerous command blocked by system safety guardrail: "${fullCmd}"`;
+        const result = {
+          command: fullCmd,
+          exitCode: 126,
+          stdout: '',
+          stderr: errorMsg,
+          durationMs: 0,
+          blocked: true
+        };
+        this.auditLog.push({ action: 'runCommandBlocked', ...result, timestamp: new Date().toISOString() });
+        return resolve(result);
+      }
+
       const child = spawn(fullCmd, [], {
         cwd: this.rootDir,
         shell: true,
@@ -318,4 +364,4 @@ class ControlledWorkspace {
   }
 }
 
-module.exports = { ControlledWorkspace };
+module.exports = { ControlledWorkspace, isDangerousCommand };

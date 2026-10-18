@@ -10,6 +10,7 @@
   },
   "scripts": {
     "start": "node cli.js",
+    "departments": "node cli.js --departments",
     "test": "node --test test/*.test.js",
     "hostile-test": "node scripts/hostile_acceptance_test.js",
     "demo": "node cli.js --demo",

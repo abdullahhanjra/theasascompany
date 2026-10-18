@@ -1,0 +1,51 @@
+# ==============================================================================
+# 🏢 The Boring Company OS — NPM Publishing Exclusion Rules
+# Keeps the published npm package minimal, secure, and blazing fast.
+# ==============================================================================
+
+# Test suites, fixtures, and benchmarks
+test/
+coverage/
+*.lcov
+benchmarks/
+
+# Internal developer scripts
+scripts/hostile_acceptance_test.js
+scripts/sync-accounts.js
+scripts/vector_memory.py
+
+# Hive local runtime logs and crashes
+hive/crashes/
+hive/log.jsonl
+hive/fleet.json
+
+# Local SQLite databases and journals
+database/*.db
+database/*.db-*
+database/*.sqlite
+
+# Editor and OS metadata
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Git and CI workflows
+.git/
+.github/
+.gitignore
+.gitattributes
+
+# Environment and secrets
+.env
+.env.*
+*.tmp
+
+# Scratch & development logs
+scratch/
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*

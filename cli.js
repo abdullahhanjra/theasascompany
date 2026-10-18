@@ -39,6 +39,9 @@ for (let i = 0; i < args.length; i++) {
     testCmd = args[++i];
   } else if (args[i] === '--demo') {
     isDemo = true;
+  } else if (args[i] === '--departments' || args[i] === '-d') {
+    printDepartments();
+    process.exit(0);
   } else if (args[i] === '--benchmark' || args[i] === '-b') {
     const { runBenchmark } = require('./test/benchmark');
     runBenchmark();
@@ -64,6 +67,70 @@ for (let i = 0; i < args.length; i++) {
   }
 }
 
+function printDepartments() {
+  printBanner();
+  console.log(`\x1b[1m\x1b[32m🏛️  THE 6 OPERATIONAL DEPARTMENTS & SPECIALIST FLEET\x1b[0m\n`);
+
+  const depts = [
+    {
+      num: '1',
+      name: 'Executive Board & Strategy',
+      leader: 'Michael Scott (CEO) & David Wallace (Board Chair)',
+      members: 'Jan Levinson (CCO), Robert California (Taste Gate), CPO, CRO, CMO, COO',
+      mission: 'Translates high-level Founder requests into clear, scoped specifications. Enforces velocity tracks (Track A/B/C) and arbitrates technical tradeoffs.'
+    },
+    {
+      num: '2',
+      name: 'The Red Team & Security Guard',
+      leader: 'Dwight Schrute (Red Team Lead) & Hank Tate (Security Sentinel)',
+      members: 'Creed Bratton (Penetration Tester), Dr. Amira Hassan (Resilience)',
+      mission: 'Stress-tests code before it reaches the gate. Probes race conditions, boundary failures, edge cases, and freezes backend files against unintended modification.'
+    },
+    {
+      num: '3',
+      name: 'Core Engineering & Database',
+      leader: 'Jim Halpert (Lead Coder) & Stanley Hudson (Minimal Change)',
+      members: 'Dr. Kofi Mensah (DBA), Alex Rivera (Task Sequencer), Rafael Torres (Staff Eng)',
+      mission: 'Implements focused, minimal diffs using native Node.js 22+. Enforces the Karpathy 50-line razor and zero external runtime dependencies.'
+    },
+    {
+      num: '4',
+      name: 'Quality Assurance & Reality Gate',
+      leader: 'Angela Martin (Reality Gate Lead) & Isabela Carvalho (Principal QA)',
+      members: 'Oscar Martinez (Pre-Ship Auditor), Gabe Lewis (Release Gate), Erin Hannon',
+      mission: 'Strict mathematical verification. Demands clean exit codes ($? === 0), positive test assertions, and anti-tamper verification. Refuses all subjective claims.'
+    },
+    {
+      num: '5',
+      name: 'Product Design & User Experience',
+      leader: 'Pam Beesly (Frontend Architect) & Zara Ahmed (Principal UX)',
+      members: 'Elena Vasquez (UI Designer), Ryan Howard (Micro-Interactions), Dr. Priya Menon (Color Psych)',
+      mission: 'Crafts responsive interfaces, accessible navigation, and fluid 60fps animations. Enforces the 8px grid, WCAG AAA standards, and zero visual clutter.'
+    },
+    {
+      num: '6',
+      name: 'Operations, Systems & Release',
+      leader: 'Darryl Philbin (Operations Lead) & Dr. Amira Hassan (Principal SRE)',
+      members: 'Kevin Malone (Accounting & Token Budgets), Nick/Garth (Toolmaster), Val Johnson',
+      mission: 'Maintains system health, monitors token limits, packages 1-click launchers (start.bat), and ensures zero crashes during unattended runs.'
+    }
+  ];
+
+  for (const d of depts) {
+    console.log(`\x1b[1m\x1b[36m[DEPARTMENT ${d.num}: ${d.name.toUpperCase()}]\x1b[0m`);
+    console.log(`  • \x1b[1mLeadership:\x1b[0m ${d.leader}`);
+    console.log(`  • \x1b[1mTeam Specialists:\x1b[0m ${d.members}`);
+    console.log(`  • \x1b[1mCore Mission:\x1b[0m ${d.mission}\n`);
+  }
+
+  const agentsDir = path.join(__dirname, 'agents', 'definitions');
+  let agentCount = 0;
+  if (fs.existsSync(agentsDir)) {
+    agentCount = fs.readdirSync(agentsDir).filter(f => fs.statSync(path.join(agentsDir, f)).isDirectory()).length;
+  }
+  console.log(`\x1b[32m✔ Active Registered Fleet: ${agentCount} specialist agent manifests verified in agents/definitions/.\x1b[0m\n`);
+}
+
 function printHelp() {
   console.log(`
 \x1b[1m\x1b[32mThe Boring Company — Autonomous AI Enterprise Dispatch CLI\x1b[0m
@@ -81,6 +148,7 @@ Options:
   --target <dir>          Target repository directory (default: current directory)
   --test-cmd <cmd>        Command to run for Reality Gate verification (e.g. "npm test")
   --track <A|B|C>         Velocity track (A: Surgical, B: Sprint, C: Enterprise Core)
+  --departments, -d       Display the 6 operational departments, leadership, and team roster
   --demo                  Run hermetic end-to-end demonstration mission with real tools
   --benchmark, -b         Run empirical latency benchmark matrix (p50, p95, p99)
   --memory, -m <q>        Search indexed institutional memory cards (<50 lines)

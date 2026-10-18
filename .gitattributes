@@ -1,0 +1,35 @@
+# ==============================================================================
+# 🏢 The Boring Company OS — Git Attributes & Line Ending Normalization
+# Guarantees cross-platform parity across Windows, macOS, Linux, and CI runners.
+# ==============================================================================
+
+# Auto-detect text files and normalize line endings to LF
+* text=auto eol=lf
+
+# Explicit LF for shell scripts and Unix toolchains
+*.sh text eol=lf
+
+# Explicit CRLF for Windows native batch files
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Source code files
+*.js text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.sql text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Binary files - prevent any text conversion
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg text eol=lf
+*.db binary
+*.sqlite binary
+*.wasm binary
+*.pdf binary
