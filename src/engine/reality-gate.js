@@ -193,6 +193,45 @@ class RealityGate {
   }
 
   /**
+   * Counts added, deleted, and total modified lines from a unified git diff.
+   * @param {string} diffText
+   * @returns {{ added: number, deleted: number, total: number }}
+   */
+  countDiffLines(diffText) {
+    if (!diffText || typeof diffText !== 'string') {
+      return { added: 0, deleted: 0, total: 0 };
+    }
+    let added = 0;
+    let deleted = 0;
+    const lines = diffText.split('\n');
+    for (const rawLine of lines) {
+      const line = rawLine.trim();
+      if (line.startsWith('+++') || line.startsWith('---')) continue;
+      if (line.startsWith('+')) added++;
+      else if (line.startsWith('-')) deleted++;
+    }
+    return { added, deleted, total: added + deleted };
+  }
+
+  /**
+   * Validates git diff does not exceed maximum authorized changed lines (default: 50 lines).
+   * @param {string} diffText
+   * @param {number} maxLines
+   * @returns {{ pass: boolean, added: number, deleted: number, total: number, error?: string }}
+   */
+  verifyDiffSize(diffText, maxLines = 50) {
+    const counts = this.countDiffLines(diffText);
+    const pass = counts.total <= maxLines;
+    return {
+      pass,
+      added: counts.added,
+      deleted: counts.deleted,
+      total: counts.total,
+      error: pass ? undefined : `MAX_DIFF_EXCEEDED: Diff exceeds ${maxLines}-line limit (${counts.total} lines changed: +${counts.added}/-${counts.deleted})`
+    };
+  }
+
+  /**
    * Execute Reality Gate verification against a workspace.
    * @param {object} params
    * @param {object} params.workspace ControlledWorkspace
@@ -200,6 +239,7 @@ class RealityGate {
    * @param {string[]} [params.allowedPaths] Whitelisted path prefixes for file changes
    * @param {boolean} [params.strictAssertions=true] Enforce non-zero passing assertions
    * @param {number} [params.timeoutMs] Process execution timeout
+   * @param {number} [params.maxDiffLines=50] Maximum allowed diff line ceiling
    * @returns {Promise<object>}
    */
   async verify({
@@ -207,7 +247,8 @@ class RealityGate {
     testCommand,
     allowedPaths = null,
     strictAssertions = true,
-    timeoutMs = null
+    timeoutMs = null,
+    maxDiffLines = 50
   }) {
     const startTime = Date.now();
     const effectiveTimeout = timeoutMs || this.defaultTimeoutMs;
@@ -215,30 +256,33 @@ class RealityGate {
     // Phase 1: Pre-execution Anti-Tamper Snapshot
     const preFingerprint = this.computeTestFilesFingerprint(workspace);
 
-    // Phase 2: Check Blast Radius / Allowed Paths
+    // Phase 2: Check Blast Radius / Allowed Paths & Diff Size
     let scopeViolation = null;
     let gitDiff = '';
     try {
       const diffObj = await workspace.getGitDiff();
       gitDiff = typeof diffObj === 'object' ? (diffObj.diff || '') : String(diffObj);
-      if (allowedPaths && Array.isArray(allowedPaths) && allowedPaths.length > 0) {
-        const changedFiles = [];
+      if (gitDiff) {
         const diffLines = gitDiff.split('\n');
+        const changedFiles = [];
         for (const line of diffLines) {
-          const match = line.match(/^diff --git a\/(.+?) b\/(.+?)$/);
+          const cleanLine = line.trim();
+          const match = cleanLine.match(/^diff --git a\/(.+?) b\/(.+?)$/);
           if (match) {
             changedFiles.push(match[2].replace(/\\/g, '/'));
           }
         }
 
-        for (const file of changedFiles) {
-          const isAllowed = allowedPaths.some(p => {
-            const normP = p.replace(/\\/g, '/').replace(/\/$/, '');
-            return file === normP || file.startsWith(normP + '/');
-          });
-          if (!isAllowed) {
-            scopeViolation = `File '${file}' modified outside authorized scope [${allowedPaths.join(', ')}]`;
-            break;
+        if (allowedPaths && Array.isArray(allowedPaths) && allowedPaths.length > 0) {
+          for (const file of changedFiles) {
+            const isAllowed = allowedPaths.some(p => {
+              const normP = p.replace(/\\/g, '/').replace(/\/$/, '');
+              return file === normP || file.startsWith(normP + '/');
+            });
+            if (!isAllowed) {
+              scopeViolation = `File '${file}' modified outside authorized scope [${allowedPaths.join(', ')}]`;
+              break;
+            }
           }
         }
       }
@@ -264,6 +308,30 @@ class RealityGate {
         snapshot: null,
         stdoutTail: '',
         stderrTail: scopeViolation,
+        timestamp: new Date().toISOString()
+      };
+    }
+
+    const diffCounts = this.countDiffLines(gitDiff);
+    if (typeof maxDiffLines === 'number' && diffCounts.total > maxDiffLines) {
+      return {
+        passed: false,
+        outcome: 'FAILED',
+        failureCategory: 'MAX_DIFF_EXCEEDED',
+        reason: `MAX_DIFF_EXCEEDED: Diff exceeds ${maxDiffLines}-line limit (${diffCounts.total} lines changed: +${diffCounts.added}/-${diffCounts.deleted})`,
+        exitCode: 1,
+        durationMs: Date.now() - startTime,
+        assertionsFound: 0,
+        testsPassed: 0,
+        testsFailed: 0,
+        gitDiff,
+        diffCounts,
+        evidenceDigest: null,
+        tamperDetected: false,
+        scopeViolation: null,
+        snapshot: null,
+        stdoutTail: '',
+        stderrTail: `Diff exceeds ${maxDiffLines}-line limit`,
         timestamp: new Date().toISOString()
       };
     }
@@ -448,6 +516,7 @@ class RealityGate {
       testsPassed: metrics.passed,
       testsFailed: metrics.failed,
       gitDiff,
+      diffCounts,
       evidenceDigest,
       tamperDetected: false,
       scopeViolation: null,

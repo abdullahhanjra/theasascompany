@@ -1240,3 +1240,16 @@ CREATE INDEX idx_wf_audit_created ON workforce_audit_events(created_at);
 CREATE INDEX idx_wf_audit_target ON workforce_audit_events(target_id);
 
 CREATE INDEX idx_work_dep_req ON work_dependencies(required_assignment_id);
+
+CREATE TABLE IF NOT EXISTS "blocking_edges" (
+  ticket_id TEXT NOT NULL,
+  blocked_by_ticket_id TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  PRIMARY KEY (ticket_id, blocked_by_ticket_id),
+  FOREIGN KEY (ticket_id) REFERENCES tasks(id) ON DELETE CASCADE,
+  FOREIGN KEY (blocked_by_ticket_id) REFERENCES tasks(id) ON DELETE CASCADE,
+  UNIQUE(ticket_id, blocked_by_ticket_id)
+);
+
+CREATE INDEX IF NOT EXISTS idx_blocking_edges_ticket ON blocking_edges(ticket_id);
+CREATE INDEX IF NOT EXISTS idx_blocking_edges_blocker ON blocking_edges(blocked_by_ticket_id);

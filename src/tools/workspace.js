@@ -161,6 +161,9 @@ class ControlledWorkspace {
    * Supports runCommand(command, argsArray, options) or runCommand(command, options)
    */
   async runCommand(command, args = [], options = {}) {
+    if (!fs.existsSync(this.rootDir)) {
+      throw new Error(`Workspace root does not exist: ${this.rootDir}`);
+    }
     if (args && !Array.isArray(args) && typeof args === 'object') {
       options = args;
       args = [];
@@ -361,6 +364,29 @@ class ControlledWorkspace {
       default:
         throw new Error(`Unknown tool requested: ${name}`);
     }
+  }
+
+  /**
+   * Resets the workspace working tree using Git, safely preserving agent coordination metadata.
+   */
+  async rollback(db = null) {
+    if (!fs.existsSync(this.rootDir)) {
+      throw new Error(`Workspace root does not exist: ${this.rootDir}`);
+    }
+    const checkoutResult = await this.runCommand('git checkout -- .');
+    const cleanResult = await this.runCommand('git clean -fd -e .agents/teamwork/ -e .agents/scratch/');
+
+    if (db && db.db && typeof db.db.exec === 'function') {
+      try {
+        db.db.exec('ROLLBACK;');
+      } catch {}
+    }
+
+    return {
+      success: checkoutResult.exitCode === 0 && cleanResult.exitCode === 0,
+      checkoutResult,
+      cleanResult
+    };
   }
 }
 

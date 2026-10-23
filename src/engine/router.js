@@ -85,11 +85,38 @@ const ROUTE_DOMAINS = {
   }
 };
 
+const TASK_SCALES = {
+  SMALL: {
+    id: 'SMALL',
+    name: 'Surgical Fix (<50 Lines)',
+    handler: 'company_jim',
+    maxDiffLines: 50,
+    requiresDAG: false,
+    description: 'Direct execution by Jim Halpert (Lead Minimal Coder) with 50-line diff guard'
+  },
+  MEDIUM: {
+    id: 'MEDIUM',
+    name: 'Feature Sprint / Subsystem',
+    handler: 'task_dag',
+    maxDiffLines: 50,
+    requiresDAG: true,
+    description: 'Topological DAG execution via TaskBreaker and SQLite relational frontier'
+  },
+  COMPLEX: {
+    id: 'COMPLEX',
+    name: 'Socratic Architecture & Exploration',
+    handler: 'socratic_interview',
+    maxDiffLines: null,
+    requiresDAG: false,
+    description: 'Interactive Socratic interview resolving ambiguities into ADR and GLOSSARY'
+  }
+};
+
 class EnterpriseRouter {
   constructor() {
     this.patterns = [
       {
-        regex: /\b(bug|crash|error|exception|fail|failed|failure|broken|flake|reproduce|regression|stacktrace|double[\s-]charge)\b/i,
+        regex: /\b(fix|bug|crash|error|exception|fail|failed|failure|broken|flake|reproduce|regression|stacktrace|double[\s-]charge|typo|patch|hotfix|tweak)\b/i,
         domain: 'BUG_FIX'
       },
       {
@@ -123,31 +150,45 @@ class EnterpriseRouter {
     if (!cleanQuery) {
       return {
         matched: false,
+        domainKey: 'WAYFINDER_AMBIGUOUS',
         domain: ROUTE_DOMAINS.WAYFINDER_AMBIGUOUS,
+        scale: TASK_SCALES.COMPLEX.id,
+        handler: TASK_SCALES.COMPLEX.handler,
         query: cleanQuery,
         latencyMs: +(performance.now() - t0).toFixed(2),
         tokensUsed: 0
       };
     }
 
+    let matchedPattern = null;
     for (const p of this.patterns) {
       if (p.regex.test(cleanQuery)) {
-        const domain = ROUTE_DOMAINS[p.domain];
-        return {
-          matched: true,
-          domainKey: p.domain,
-          domain,
-          query: cleanQuery,
-          latencyMs: +(performance.now() - t0).toFixed(2),
-          tokensUsed: 0
-        };
+        matchedPattern = p;
+        break;
       }
     }
 
+    const matched = Boolean(matchedPattern);
+    const domainKey = matched ? matchedPattern.domain : 'WAYFINDER_AMBIGUOUS';
+    const domain = ROUTE_DOMAINS[domainKey];
+
+    let scale = TASK_SCALES.MEDIUM.id;
+    let handler = TASK_SCALES.MEDIUM.handler;
+
+    if (domainKey === 'BUG_FIX' || /\b(fix|typo|patch|tweak|small|hotfix|surgical)\b/i.test(cleanQuery)) {
+      scale = TASK_SCALES.SMALL.id;
+      handler = TASK_SCALES.SMALL.handler;
+    } else if (domainKey === 'WAYFINDER_AMBIGUOUS' || !matched) {
+      scale = TASK_SCALES.COMPLEX.id;
+      handler = TASK_SCALES.COMPLEX.handler;
+    }
+
     return {
-      matched: false,
-      domainKey: 'WAYFINDER_AMBIGUOUS',
-      domain: ROUTE_DOMAINS.WAYFINDER_AMBIGUOUS,
+      matched,
+      domainKey,
+      domain,
+      scale,
+      handler,
       query: cleanQuery,
       latencyMs: +(performance.now() - t0).toFixed(2),
       tokensUsed: 0
@@ -220,5 +261,6 @@ class EnterpriseRouter {
 
 module.exports = {
   EnterpriseRouter,
-  ROUTE_DOMAINS
+  ROUTE_DOMAINS,
+  TASK_SCALES
 };

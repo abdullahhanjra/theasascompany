@@ -106,10 +106,28 @@ function loadAllSkills() {
       const skillFile = path.join(SKILLS_DIR, entry.name, 'SKILL.md');
       if (fs.existsSync(skillFile)) {
         const content = fs.readFileSync(skillFile, 'utf8');
+        // Extract frontmatter
+        const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+        let name = entry.name;
+        let description = 'Matt Pocock Engineering Skill';
+        let body = content;
+
+        if (match) {
+          const fm = match[1];
+          body = match[2];
+          const nameMatch = fm.match(/name:\s*(.+)/);
+          const descMatch = fm.match(/description:\s*(.+)/);
+          if (nameMatch) name = nameMatch[1].trim();
+          if (descMatch) description = descMatch[1].trim();
+        }
+
         skills.push({
           id: entry.name,
+          name,
+          description,
           file: skillFile,
-          content
+          content,
+          instructions: body.trim()
         });
       }
     }

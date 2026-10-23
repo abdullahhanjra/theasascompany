@@ -246,6 +246,37 @@ class TaskBreaker {
   }
 
   /**
+   * Validates DAG with Kahn's algorithm and persists tasks and blocking edges in an atomic transaction.
+   * @param {object} db - CompanyDatabase instance.
+   * @param {Array<object>} subtasks - Subtasks to persist.
+   * @returns {object} Summary of persisted DAG.
+   */
+  persistDAG(db, subtasks) {
+    const stages = this.organizeStages(subtasks);
+    return db.executeInTransaction(() => {
+      for (const st of subtasks) {
+        db.createTask({
+          id: st.id,
+          title: st.title,
+          description: st.goal || st.description || '',
+          milestoneId: st.milestoneId || 'ms_default',
+          projectId: st.projectId || 'proj_default',
+          status: 'ready',
+          priority: 'high',
+          dependencies: st.dependsOn || [],
+          acceptanceCriteria: st.microGate ? [st.microGate] : []
+        });
+      }
+      for (const st of subtasks) {
+        for (const depId of (st.dependsOn || [])) {
+          db.insertBlockingEdge(st.id, depId);
+        }
+      }
+      return { success: true, subtasksCount: subtasks.length, stagesCount: stages.length, stages };
+    });
+  }
+
+  /**
    * Generates a clean, readable ASCII flight-control board of the execution plan.
    * @param {string} missionTitle - Mission title.
    * @param {Array<object>} stages - Staged execution plan.

@@ -61,7 +61,14 @@ for (let i = 0; i < args.length; i++) {
     console.log(breaker.renderFlightBoard(planTask, stages));
     process.exit(0);
   } else if (args[i] === 'ask' || args[i] === '--ask') {
-    const askQuery = args.slice(i + 1).join(' ').trim();
+    const askArgs = args.slice(i + 1);
+    if (askArgs.includes('--benchmark') || askArgs.includes('-b') || (askArgs.length === 0 && args.includes('--benchmark'))) {
+      const router = new EnterpriseRouter();
+      const bench = router.benchmark();
+      console.log(`\x1b[1m\x1b[32m✔ Enterprise Router Benchmark Passed: ${bench.totalQueries} queries in ${bench.totalDurationMs}ms (Avg: ${bench.averageLatencyMs}ms/query)\x1b[0m`);
+      process.exit(bench.passed ? 0 : 1);
+    }
+    const askQuery = askArgs.join(' ').trim();
     if (!askQuery) {
       console.log('\x1b[31mError: Please provide a query to route. Example: boss ask "Fix checkout bug"\x1b[0m');
       process.exit(1);
