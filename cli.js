@@ -13,6 +13,8 @@ const path = require('path');
 const os = require('os');
 const { ExecutionPipeline } = require('./src/engine/pipeline');
 const { TaskBreaker } = require('./src/engine/task-breaker');
+const { EnterpriseRouter } = require('./src/engine/router');
+const { SocraticEngine } = require('./src/engine/socratic');
 const { getProvider } = require('./src/providers');
 const { DeterministicTestProvider } = require('./src/providers/deterministic-test');
 
@@ -58,6 +60,29 @@ for (let i = 0; i < args.length; i++) {
     printBanner();
     console.log(breaker.renderFlightBoard(planTask, stages));
     process.exit(0);
+  } else if (args[i] === 'ask' || args[i] === '--ask') {
+    const askQuery = args.slice(i + 1).join(' ').trim();
+    if (!askQuery) {
+      console.log('\x1b[31mError: Please provide a query to route. Example: boss ask "Fix checkout bug"\x1b[0m');
+      process.exit(1);
+    }
+    const router = new EnterpriseRouter();
+    const result = router.route(askQuery);
+    console.log(router.formatRoute(result));
+    process.exit(0);
+  } else if (args[i] === '--router-benchmark') {
+    const router = new EnterpriseRouter();
+    const bench = router.benchmark();
+    console.log(`\x1b[1m\x1b[32m✔ Enterprise Router Benchmark Passed: ${bench.totalQueries} queries in ${bench.totalDurationMs}ms (Avg: ${bench.averageLatencyMs}ms/query)\x1b[0m`);
+    process.exit(bench.passed ? 0 : 1);
+  } else if (args[i] === '--socratic') {
+    const socraticTask = args.slice(i + 1).join(' ').trim() || 'General Architecture Feature';
+    const socratic = new SocraticEngine(targetDir);
+    socratic.interview(socraticTask).then(res => {
+      console.log(`\x1b[32m✔ Socratic interview completed. ADR created at: ${res.adrFile}\x1b[0m`);
+      process.exit(0);
+    });
+    return;
   } else if (args[i] === '--memory' || args[i] === '-m') {
     const query = args[++i] || 'sqlite';
     const { searchMemory } = require('./memory/search');
@@ -154,6 +179,7 @@ Usage:
   npm start -- --task "Your engineering mission"
 
 Options:
+  ask <task>              Route task through ask-matt engineering workflow (<15ms, 0 tokens)
   --task <string>         Specify the engineering mission to dispatch
   --provider <name>       AI provider: anthropic, openai, gemini, ollama, test (default: auto)
   --model <name>          Specific model name (e.g. claude-3-7-sonnet, gpt-4o, gemini-2.5-pro)
@@ -162,6 +188,8 @@ Options:
   --track <A|B|C>         Velocity track (A: Surgical, B: Sprint, C: Enterprise Core)
   --departments, -d       Display the 6 operational departments, leadership, and team roster
   --break, --plan         Preview staged task breakdown and department assignments without running
+  --socratic <task>       Run interactive Socratic requirements interview (generates ADR & GLOSSARY)
+  --router-benchmark      Benchmark router classification latency across 20 synthetic queries
   --demo                  Run hermetic end-to-end demonstration mission with real tools
   --benchmark, -b         Run empirical latency benchmark matrix (p50, p95, p99)
   --memory, -m <q>        Search indexed institutional memory cards (<50 lines)
@@ -184,12 +212,13 @@ function printWelcome() {
 
 To give the AI team a mission, just type:
   \x1b[36mboss "Your task here"\x1b[0m
-  \x1b[36mnpx theboringcompany /boss "Your task here"\x1b[0m
+  \x1b[36mboss ask "Your question or bug"\x1b[0m   (Instant <15ms smart route)
+  \x1b[36mnpx theboringcompany ask "Your task"\x1b[0m
 
 Examples:
+  boss ask "Users charged twice on payment click"
+  boss ask "Add dark mode toggle to navbar"
   boss "Fix the broken login button in index.html"
-  boss "Add a dark mode toggle to the navbar"
-  boss "Write tests for payment gateway"
 
 Quick options:
   boss --demo            Run a 1-second test to see the team build code

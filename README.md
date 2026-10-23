@@ -398,6 +398,34 @@ You shouldn't have to abandon your favorite code editor to get the benefits of a
 
 You don't need to install 50 npm packages. This runs on **pure Node.js** (version 22+) with zero external dependencies.
 
+### ⚡ The Instant Engineering Router (`ask` & `ask-matt`)
+Don't know which specialist or department to call? Don't memorize 72 agents. Just **ask**:
+```bash
+npx theboringcompany ask "Users charged twice when clicking checkout button"
+```
+In **less than 15 milliseconds** (with **0 LLM tokens burned**), it immediately returns the exact disciplined path:
+```text
+🏢 THE BORING COMPANY — ENGINEERING ROUTER (ask-matt Engine)
+Task: "Users charged twice when clicking checkout button"
+Classification: Defect Diagnosis & Surgical Bugfix (0.23ms, 0 LLM tokens)
+Assigned Leadership: Dwight Schrute (Red Team) & Jim Halpert (Minimal Coder)
+
+Disciplined Execution Path:
+  1. Diagnose Bug             [Dwight Schrute]  ↳ Establish reproduction feedback loop before code
+  2. Adversarial Check        [Hank Tate]        ↳ Stress-test race conditions & network drops
+  3. 50-Line Minimal Fix      [Jim Halpert]      ↳ Surgical fix strictly under 50 lines
+  4. Reality Gate Pass        [Angela Martin]    ↳ Native test suite exit code 0 ($? === 0)
+  5. Kaizen Retro             [Kaizen Coach]     ↳ Log regression into anti-patterns ledger
+```
+
+```bash
+# Socratic requirements interview (generates docs/adr/ and docs/GLOSSARY.md without token bloat)
+npx theboringcompany --socratic "Idempotent payment tokens"
+
+# Run empirical benchmark (sub-1ms per query)
+npx theboringcompany --router-benchmark
+```
+
 ### 🚀 Method 1: Instant Run with Zero Installation (`npx`)
 Open your terminal inside **any project on your computer** and tell The Boss what to do:
 ```bash

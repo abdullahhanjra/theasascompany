@@ -13,6 +13,7 @@ const os = require('os');
 
 const ROOT_DIR = path.resolve(__dirname, '..');
 const AGENTS_DIR = path.join(ROOT_DIR, 'agents', 'definitions');
+const SKILLS_DIR = path.join(ROOT_DIR, '.agents', 'skills');
 const ROSTER_PATH = path.join(ROOT_DIR, 'agents', 'roster.json');
 
 const args = process.argv.slice(2);
@@ -96,9 +97,29 @@ function loadAllAgents() {
   return agents;
 }
 
-function installForCursor(agents, isDryRun) {
+function loadAllSkills() {
+  if (!fs.existsSync(SKILLS_DIR)) return [];
+  const entries = fs.readdirSync(SKILLS_DIR, { withFileTypes: true });
+  const skills = [];
+  for (const entry of entries) {
+    if (entry.isDirectory()) {
+      const skillFile = path.join(SKILLS_DIR, entry.name, 'SKILL.md');
+      if (fs.existsSync(skillFile)) {
+        const content = fs.readFileSync(skillFile, 'utf8');
+        skills.push({
+          id: entry.name,
+          file: skillFile,
+          content
+        });
+      }
+    }
+  }
+  return skills;
+}
+
+function installForCursor(agents, skills, isDryRun) {
   const targetDir = path.join(process.cwd(), '.cursor', 'rules');
-  console.log(`\n\x1b[36m[CURSOR INSTALL]\x1b[0m Exporting ${agents.length} agents to ${targetDir}...`);
+  console.log(`\n\x1b[36m[CURSOR INSTALL]\x1b[0m Exporting ${agents.length} agents and ${skills.length} skills to ${targetDir}...`);
 
   if (!isDryRun) {
     fs.mkdirSync(targetDir, { recursive: true });
@@ -121,13 +142,29 @@ ${agent.instructions}
     count++;
   }
 
-  console.log(`\x1b[32m✔ Successfully installed ${count} agent rules for Cursor!\x1b[0m`);
+  for (const skill of skills) {
+    const destFile = path.join(targetDir, `${skill.id}.mdc`);
+    const mdcContent = `---
+description: Master Engineering Router and Lifecycle
+globs: *
+alwaysApply: false
+---
+
+${skill.content}
+`;
+    if (!isDryRun) {
+      fs.writeFileSync(destFile, mdcContent, 'utf8');
+    }
+    count++;
+  }
+
+  console.log(`\x1b[32m✔ Successfully installed ${count} rules (agents + skills) for Cursor!\x1b[0m`);
 }
 
-function installForClaude(agents, isDryRun) {
+function installForClaude(agents, skills, isDryRun) {
   const home = os.homedir();
   const targetDir = path.join(home, '.claude', 'agents');
-  console.log(`\n\x1b[36m[CLAUDE CODE INSTALL]\x1b[0m Exporting ${agents.length} agents to ${targetDir}...`);
+  console.log(`\n\x1b[36m[CLAUDE CODE INSTALL]\x1b[0m Exporting ${agents.length} agents and ${skills.length} skills to ${targetDir}...`);
 
   if (!isDryRun) {
     fs.mkdirSync(targetDir, { recursive: true });
@@ -142,15 +179,25 @@ function installForClaude(agents, isDryRun) {
     count++;
   }
 
-  console.log(`\x1b[32m✔ Successfully installed ${count} agents into Claude Code (~/.claude/agents/)!\x1b[0m`);
+  for (const skill of skills) {
+    const destFile = path.join(targetDir, `${skill.id}.md`);
+    if (!isDryRun) {
+      fs.writeFileSync(destFile, skill.content, 'utf8');
+    }
+    count++;
+  }
+
+  console.log(`\x1b[32m✔ Successfully installed ${count} manifests into Claude Code (~/.claude/agents/)!\x1b[0m`);
 }
 
-function installForAntigravity(agents, isDryRun) {
+function installForAntigravity(agents, skills, isDryRun) {
   const targetDir = path.join(process.cwd(), '.agents');
-  console.log(`\n\x1b[36m[ANTIGRAVITY INSTALL]\x1b[0m Exporting ${agents.length} agents to ${targetDir}...`);
+  const targetSkillsDir = path.join(targetDir, 'skills');
+  console.log(`\n\x1b[36m[ANTIGRAVITY INSTALL]\x1b[0m Exporting ${agents.length} agents and ${skills.length} skills to ${targetDir}...`);
 
   if (!isDryRun) {
     fs.mkdirSync(targetDir, { recursive: true });
+    fs.mkdirSync(targetSkillsDir, { recursive: true });
   }
 
   let count = 0;
@@ -162,11 +209,22 @@ function installForAntigravity(agents, isDryRun) {
     count++;
   }
 
-  console.log(`\x1b[32m✔ Successfully installed ${count} agents into Antigravity (.agents/)!\x1b[0m`);
+  for (const skill of skills) {
+    const destFolder = path.join(targetSkillsDir, skill.id);
+    const destFile = path.join(destFolder, 'SKILL.md');
+    if (!isDryRun) {
+      fs.mkdirSync(destFolder, { recursive: true });
+      fs.writeFileSync(destFile, skill.content, 'utf8');
+    }
+    count++;
+  }
+
+  console.log(`\x1b[32m✔ Successfully installed ${count} components into Antigravity (.agents/)!\x1b[0m`);
 }
 
 function main() {
   const agents = loadAllAgents();
+  const skills = loadAllSkills();
 
   if (listOnly) {
     console.log(`\n\x1b[1m\x1b[32m🏢 The Boring Company — 72 Specialist Fleet Roster\x1b[0m\n`);
@@ -178,21 +236,21 @@ function main() {
   }
 
   console.log(`\x1b[1m\x1b[32m🏢 The Boring Company — Multi-Tool Agent Installer\x1b[0m`);
-  console.log(`Discovered \x1b[1m${agents.length}\x1b[0m valid specialist agents in definitions.`);
+  console.log(`Discovered \x1b[1m${agents.length}\x1b[0m valid specialist agents and \x1b[1m${skills.length}\x1b[0m skills.`);
 
   if (dryRun) {
-    console.log(`\x1b[33m[DRY RUN]\x1b[0m Validated all ${agents.length} agent definitions. Zero write operations executed.`);
+    console.log(`\x1b[33m[DRY RUN]\x1b[0m Validated all ${agents.length} agent definitions and ${skills.length} skills. Zero write operations executed.`);
     return;
   }
 
   if (targetTool === 'cursor' || targetTool === 'all') {
-    installForCursor(agents, dryRun);
+    installForCursor(agents, skills, dryRun);
   }
   if (targetTool === 'claude' || targetTool === 'claude-code' || targetTool === 'all') {
-    installForClaude(agents, dryRun);
+    installForClaude(agents, skills, dryRun);
   }
   if (targetTool === 'antigravity' || targetTool === 'all') {
-    installForAntigravity(agents, dryRun);
+    installForAntigravity(agents, skills, dryRun);
   }
 }
 
