@@ -340,11 +340,14 @@ async function runLiveMission(missionTask) {
   printBanner();
   console.log(`\x1b[90m[DISPATCH]\x1b[0m Mission received from Founder: \x1b[1m"${missionTask}"\x1b[0m\n`);
 
-  // Decompose mission and display staged flight board
-  const breaker = new TaskBreaker();
-  const subtasks = breaker.decompose(missionTask);
-  const stages = breaker.organizeStages(subtasks);
-  console.log(breaker.renderFlightBoard(missionTask, stages));
+  // Convene the Executive Council for autonomous board deliberation & sprint DAG planning
+  const council = new ExecutiveCouncil(targetDir);
+  const councilResult = await council.convene(missionTask);
+  console.log(council.formatTerminalSummary(councilResult));
+
+  const planner = new AutonomousPlanner();
+  const stages = planner.validateAcyclic(councilResult.sprintBacklog);
+  console.log(planner.renderFlightBoard(councilResult.goal, stages));
 
   // Determine provider
   let provider;

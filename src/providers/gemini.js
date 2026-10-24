@@ -6,7 +6,7 @@ class GeminiProvider extends BaseModelProvider {
   constructor(options = {}) {
     super({
       name: 'gemini',
-      model: options.model || process.env.GEMINI_MODEL || 'gemini-1.5-flash',
+      model: options.model || process.env.GEMINI_MODEL || 'gemini-2.5-flash',
       timeoutMs: options.timeoutMs || 90000
     });
     this.apiKey = options.apiKey || process.env.GEMINI_API_KEY;
