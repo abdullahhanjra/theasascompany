@@ -10,6 +10,9 @@
   },
   "scripts": {
     "start": "node cli.js",
+    "meet": "node cli.js meet",
+    "council": "node cli.js council",
+    "ask": "node cli.js ask",
     "departments": "node cli.js --departments",
     "break": "node cli.js --break",
     "plan": "node cli.js --plan",

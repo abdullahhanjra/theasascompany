@@ -13,7 +13,7 @@
 <br/>
 
 [![Reality Gate CI](https://github.com/abdullahhanjraa/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjraa/theboringcompany/actions)
-[![Reality Gate Tests](https://img.shields.io/badge/Reality%20Gate-37%20passing-22c55e.svg?style=flat-square)](test/)
+[![Reality Gate Tests](https://img.shields.io/badge/Reality%20Gate-97%20passing-22c55e.svg?style=flat-square)](test/)
 [![Specialist Fleet](https://img.shields.io/badge/Specialist%20Team-72%20Agents-8b5cf6.svg?style=flat-square)](#departments)
 [![Zero Dependencies](https://img.shields.io/badge/Extra%20Packages-0%20needed-3b82f6.svg?style=flat-square)](package.json)
 [![Node Runtime](https://img.shields.io/badge/Node.js->=22.5-green.svg?style=flat-square)](https://nodejs.org/)
@@ -115,7 +115,7 @@ Here is how the team actually talks and collaborates:
   *"Ran our security check on Jim's changes. No passwords or secret API keys leaked, and no safety risks found."*
 
 * 🧪 **Angela (Head of QA):**  
-  *"Hold on, team. I am running your computer's real test suite right now... `npm test` finished with zero errors (exit code 0). All 37 tests passed! No skipped checks. It is officially verified."*
+  *"Hold on, team. I am running your computer's real test suite right now... `npm test` finished with zero errors (exit code 0). All 97 tests passed across 6 test suites! No skipped checks. It is officially verified."*
 
 * 📦 **Darryl (Operations):**  
   *"Saved the fix and the test results into your local file (`company.db`). Clean, verified, and ready to ship."*
@@ -398,7 +398,18 @@ You shouldn't have to abandon your favorite code editor to get the benefits of a
 
 You don't need to install 50 npm packages. This runs on **pure Node.js** (version 22+) with zero external dependencies.
 
-### ⚡ The Instant Engineering Router (`ask` & `ask-matt`)
+### 🏛️ 1. The Autonomous Executive Council (`meet` & `council`)
+Need to plan an architecture, debate trade-offs, or scope a feature? Convene the 7 department heads (CEO Michael, CPO Marcus, CTO Rafael, Red Team Dwight, Lead Coder Jim, QA Angela, DBA Dr. Kofi) offline in **~37ms at 0 tokens**:
+```bash
+# Convene an autonomous board debate
+npx theboringcompany meet "Implement OAuth2 social authentication with Google and GitHub"
+
+# Interactive meeting (cast the Founder tie-breaker vote!)
+npx theboringcompany meet "Migrate session storage from Redis to SQLite" --interactive
+```
+*Outputs: 6 rounds of department head debate, executive risk scorecard, minutes saved in `docs/meetings/`, certified decision in `docs/DECISION_LOG.md`, and an acyclic Kahn's algorithm sprint flight board.*
+
+### ⚡ 2. The Instant Engineering Router (`ask` & `ask-matt`)
 Don't know which specialist or department to call? Don't memorize 72 agents. Just **ask**:
 ```bash
 npx theboringcompany ask "Users charged twice when clicking checkout button"

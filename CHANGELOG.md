@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.2.0] - 2026-10-24
+
+### Added
+- **Executive Council Board Meeting Engine (`src/engine/council.js`)**: 7 autonomous department head personas (Michael Scott CEO, Marcus Chen CPO, Rafael Torres CTO, Jim Halpert Minimal Coder, Dwight Schrute Red Team, Angela Martin Reality Gate, Dr. Kofi Mensah DBA) convening in ~37ms offline at 0 tokens to debate trade-offs, score risk, and cast consensus votes.
+- **Durable Meeting Minutes & Decision Register**: Automatically writes dated markdown meeting minutes to `docs/meetings/MEETING_*.md` and appends certified motions to `docs/DECISION_LOG.md`.
+- **Interactive Founder Voting (`--interactive`, `-i`)**: Added human-in-the-loop voting mode allowing the Founder to break ties or steer council deliberations interactively.
+- **Autonomous Sprint DAG Planner (`src/engine/planner.js`)**: Kahn's algorithm topological sorting with cycle detection (`A -> B -> A`) and orphan dependency rejection. Atomically commits tickets and `blocking_edges` to SQLite.
+- **Ask-Matt Meta-Routing Engine & Socratic Interview (`src/engine/router.js`, `src/engine/socratic.js`)**: Sub-15ms deterministic task classification mapping user prompts directly to specialized engineering workflows with zero LLM API costs.
+- **Exported 4 Core Matt Pocock Skills (`.agents/skills/`)**: Added `ask-matt`, `tdd`, `code-review`, and `grill-with-docs` lifecycle skills.
+- **Karpathy 50-Line Diff Razor**: Strictly enforced 50-line diff guard across all sprint tickets with automated rollback on violation.
+- **Reality Gate Expansion to 97 Native Tests**: Expanded test coverage across 6 comprehensive suites covering router benchmarks, socratic trees, task breaker DAGs, council deliberation, and adversarial tamper-resistance.
+
+### Changed
+- CLI entrypoint (`cli.js`): Added `meet`, `council`, `deliberate`, and `ask` commands with automatic executive council deliberation on direct `boss "<task>"` dispatches.
+- Updated default Gemini model provider to `gemini-2.5-flash`.
+
+---
+
 ## [1.1.0] - 2026-10-16
 
 ### Added
