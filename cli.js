@@ -15,6 +15,8 @@ const { ExecutionPipeline } = require('./src/engine/pipeline');
 const { TaskBreaker } = require('./src/engine/task-breaker');
 const { EnterpriseRouter } = require('./src/engine/router');
 const { SocraticEngine } = require('./src/engine/socratic');
+const { ExecutiveCouncil } = require('./src/engine/council');
+const { AutonomousPlanner } = require('./src/engine/planner');
 const { getProvider } = require('./src/providers');
 const { DeterministicTestProvider } = require('./src/providers/deterministic-test');
 
@@ -60,6 +62,25 @@ for (let i = 0; i < args.length; i++) {
     printBanner();
     console.log(breaker.renderFlightBoard(planTask, stages));
     process.exit(0);
+  } else if (args[i] === 'meet' || args[i] === '--meet' || args[i] === 'council' || args[i] === '--council' || args[i] === 'deliberate') {
+    const meetArgs = args.slice(i + 1);
+    const interactive = meetArgs.includes('--interactive') || meetArgs.includes('-i');
+    const filteredArgs = meetArgs.filter(a => a !== '--interactive' && a !== '-i');
+    const meetGoal = filteredArgs.join(' ').trim() || task || 'Architect enterprise system reliability and scalable modules';
+    
+    const council = new ExecutiveCouncil(targetDir);
+    council.convene(meetGoal, { interactive }).then(result => {
+      printBanner();
+      console.log(council.formatTerminalSummary(result));
+      const planner = new AutonomousPlanner();
+      const stages = planner.validateAcyclic(result.sprintBacklog);
+      console.log(planner.renderFlightBoard(result.goal, stages));
+      process.exit(0);
+    }).catch(err => {
+      console.error('\x1b[31mCouncil deliberation error:\x1b[0m', err.message);
+      process.exit(1);
+    });
+    return;
   } else if (args[i] === 'ask' || args[i] === '--ask') {
     const askArgs = args.slice(i + 1);
     if (askArgs.includes('--benchmark') || askArgs.includes('-b') || (askArgs.length === 0 && args.includes('--benchmark'))) {
@@ -186,7 +207,10 @@ Usage:
   npm start -- --task "Your engineering mission"
 
 Options:
+  meet <goal>             Convene Executive Council (CEO, CPO, CTO, Red Team, QA) for autonomous board debate
+  council <goal>          Alias for meet (deliberates trade-offs & outputs staged sprint DAG)
   ask <task>              Route task through ask-matt engineering workflow (<15ms, 0 tokens)
+  --interactive, -i       Cast Founder tie-breaker vote during Executive Council meetings
   --task <string>         Specify the engineering mission to dispatch
   --provider <name>       AI provider: anthropic, openai, gemini, ollama, test (default: auto)
   --model <name>          Specific model name (e.g. claude-3-7-sonnet, gpt-4o, gemini-2.5-pro)
@@ -219,10 +243,12 @@ function printWelcome() {
 
 To give the AI team a mission, just type:
   \x1b[36mboss "Your task here"\x1b[0m
-  \x1b[36mboss ask "Your question or bug"\x1b[0m   (Instant <15ms smart route)
-  \x1b[36mnpx theboringcompany ask "Your task"\x1b[0m
+  \x1b[36mboss meet "Your architecture or feature goal"\x1b[0m   (Autonomous Board Meeting)
+  \x1b[36mboss ask "Your question or bug"\x1b[0m                 (Instant <15ms smart route)
+  \x1b[36mnpx theboringcompany meet "Your goal"\x1b[0m
 
 Examples:
+  boss meet "Build OAuth2 login with Google and GitHub"
   boss ask "Users charged twice on payment click"
   boss ask "Add dark mode toggle to navbar"
   boss "Fix the broken login button in index.html"
