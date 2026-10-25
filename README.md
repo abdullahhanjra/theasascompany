@@ -14,7 +14,7 @@
 ### **Stop babysitting chatbots that lie to your face.**
 ### **Run an entire autonomous software company in your terminal.**
 
-*72 specialized AI teammates across 6 departments who plan features, write clean code, and prove every fix passes your real tests before shipping. Pure Node.js, zero extra packages.*
+*72 specialized AI teammates across 6 departments who debate features, write clean code under 50 lines, and prove every fix passes your real tests before shipping. Pure Node.js, zero extra packages, 100% private.*
 
 <br/>
 
@@ -22,109 +22,120 @@
 [![Reality Gate Tests](https://img.shields.io/badge/Reality%20Gate-97%20passing-22c55e.svg?style=flat-square)](test/)
 [![Specialist Fleet](https://img.shields.io/badge/Specialist%20Team-72%20Agents-8b5cf6.svg?style=flat-square)](#departments)
 [![Zero Dependencies](https://img.shields.io/badge/Extra%20Packages-0%20needed-3b82f6.svg?style=flat-square)](package.json)
+[![Deliberation Speed](https://img.shields.io/badge/Board%20Meeting-~37ms%20(0%20tokens)-06b6d4.svg?style=flat-square)](#board-meeting)
 [![Node Runtime](https://img.shields.io/badge/Node.js->=22.5-green.svg?style=flat-square)](https://nodejs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-[**👑 Quickstart**](#quickstart) • [**💬 Live Demo**](#demo) • [**🏛️ Org Chart**](#org-chart) • [**🏢 6 Departments**](#departments) • [**🤝 Team Protocols**](#protocols) • [**📊 Comparison**](#comparison)
+<br/>
+
+[**⚡ 10-Second Quickstart**](#quickstart) • [**💬 See It In Action**](#demo) • [**🏛️ The Board Meeting**](#board-meeting) • [**🏢 Org Chart**](#org-chart) • [**👥 6 Departments**](#departments) • [**🛡️ Reality Gate**](#reality-gate) • [**📊 Comparison**](#comparison)
 
 </div>
 
 ---
 
-## 🤔 The Problem: Why Most AI Coding Tools Break Down
+## 😫 The Pain: Why Most AI Coding Tools Frustrate You
 
-Every developer and founder has experienced this frustration:
+Every developer, creator, and founder knows this painful feeling:
 
 1. You ask an AI chatbot to fix a tricky bug or add a button to your app.
-2. The AI generates 300 lines of complex code and boldly promises:  
-   > *"I have fixed everything! Your app is now production-ready."*
-3. You paste the code into your project, start your server, and **it immediately crashes with red console errors**.
-4. Even worse, the AI rewrote 4 other files you never asked it to touch, broke existing features, and deleted your test files to hide its mistakes.
-5. You spend the next 3 hours cleaning up the mess the AI made.
+2. The AI generates **350 lines of complex, confusing code** and boldly promises:  
+   > *"I have fixed everything! Your app is now production-ready!"*
+3. You excitedly paste it into your project, start your app, and **it immediately crashes with red errors**.
+4. Even worse: the AI rewrote four other files you never asked it to touch, broke existing features, and deleted your test files to hide its mistakes.
+5. You spend the rest of your evening cleaning up the mess the AI made.
 
-> [!CAUTION]
-> **Why this happens:** Solo AI chatbots don't have a team. They don't have an architect to keep designs simple. They don't have a security guard to check for leaks. And they don't have a strict tester to actually run the code on your computer before claiming victory.
+### ❓ Why Does This Keep Happening?
+
+Because a solo chatbot is like an **eager intern working alone at 2 AM with zero supervision**:
+* **No Product Manager** to stop scope creep and set clear requirements.
+* **No Software Architect** to keep code changes tiny, clean, and under 50 lines.
+* **No Red Team** to challenge edge cases and race conditions before writing code.
+* **No Independent QA Lead** to physically run the code on your real computer before claiming victory.
 
 ---
 
-## 💡 The Solution: A Real Software Company Inside Your Terminal
+## 🚀 The Hero Solution: You Are The Founder. We Are Your Company.
 
-**The Asas Company** fixes this by giving you a complete, organized software team. Instead of a lonely chatbot guessing code, you get **72 specialized AI teammates** arranged across **6 helpful departments**.
+**The Asas Company (شركة الأساس)** replaces the lonely chatbot with a **complete, disciplined virtual software company**.
 
-They catch bad ideas early, keep code changes tiny, and **never say a task is done until your computer's real tests pass with zero errors**.
+> **Why Asas?** *Asas* (أساس) means *"The Foundation"* in Arabic and Urdu. It represents the unshakeable engineering foundation you need to build great software without anxiety or endless babysitting.
+
+You sit in the Founder's chair. You give your team a goal in plain, everyday English. Your team of **72 specialized AI teammates across 6 helpful departments** takes over:
 
 ```
-                           YOU (THE BOSS / FOUNDER)
-                                      │
-                                      ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ 1. 👑 LEADERSHIP TEAM                                                        │
-│    Michael (CEO), Marcus (Product) & Stanley (Architect) plan your feature. │
-└─────────────────────────────────────┬───────────────────────────────────────┘
-                                      │
-                                      ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ 2. 🛡️ BUG PREVENTION & SECURITY                                             │
-│    Dwight & Toby find edge cases and security risks BEFORE writing code.    │
-└─────────────────────────────────────┬───────────────────────────────────────┘
-                                      │
-                                      ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ 3. ⚙️ CODE & DATABASE                                                        │
-│    Jim writes small, clean fixes (under 50 lines). Oscar tunes queries.     │
-└─────────────────────────────────────┬───────────────────────────────────────┘
-                                      │
-                                      ▼
-┌─────────────────────────────────────────────────────────────────────────────┐
-│ 4. 🧪 REALITY GATE TESTING                                                  │
-│    Angela runs your real test runner. All tests must pass with ZERO errors! │
-└─────────────────────────────────────┬───────────────────────────────────────┘
-                                      │
-                     ┌────────────────┴────────────────┐
-                     ▼                                 ▼
-              [Tests Fail ❌]                   [Tests Pass ✅]
-        Jim & Ryan see the exact           Angela approves the fix.
-        error and fix it automatically.    Saved to company.db & done!
+                            👑 YOU (THE FOUNDER / VISIONARY)
+                                           │
+                                           ▼
+ ┌───────────────────────────────────────────────────────────────────────────────────┐
+ │ 1. 👔 EXECUTIVE BOARD (Michael Scott, Marcus Chen, Stanley Hudson)                │
+ │    Convenes in 37ms. Debates user needs, sets speed track, and scopes work.       │
+ └─────────────────────────────────────────┬─────────────────────────────────────────┘
+                                           │
+                                           ▼
+ ┌───────────────────────────────────────────────────────────────────────────────────┐
+ │ 2. 🥊 THE RED TEAM & SECURITY (Dwight Schrute & Toby Flenderson)                  │
+ │    Attacks the plan! "What if the user double-clicks? What if the network drops?" │
+ └─────────────────────────────────────────┬─────────────────────────────────────────┘
+                                           │
+                                           ▼
+ ┌───────────────────────────────────────────────────────────────────────────────────┐
+ │ 3. ⚙️ CORE ENGINEERING & DATABASE (Jim Halpert & Oscar Martinez)                  │
+ │    Writes tiny, clean code under 50 lines. Verifies database speed and safety.    │
+ └─────────────────────────────────────────┬─────────────────────────────────────────┘
+                                           │
+                                           ▼
+ ┌───────────────────────────────────────────────────────────────────────────────────┐
+ │ 4. 🧪 THE REALITY GATE (Angela Martin - Head of QA)                               │
+ │    Physically runs `npm test` on your computer. Exit code MUST be 0. Zero lies.   │
+ └─────────────────────────────────────────┬─────────────────────────────────────────┘
+                                           │
+                          ┌────────────────┴────────────────┐
+                          ▼                                 ▼
+                   [Tests Fail ❌]                   [Tests Pass ✅]
+             Jim fixes the exact error.         Angela certifies the build.
+             Never touches dirty state.         Saved to `company.db` & shipped!
 ```
 
 ---
 
 <a id="demo"></a>
-## 💬 See It in Action: How The Team Solves a Real Bug
+## 💬 See It In Action: How The Team Solves a Real Bug
 
 Imagine you type this single sentence in your terminal:
 
-> **You (The Boss):**  
-> `"Fix checkout: if someone clicks the Pay button twice quickly, it charges them twice."`
+```bash
+boss "Fix checkout: if someone clicks the Pay button twice quickly, it charges them twice"
+```
 
-Here is how the team actually talks and collaborates:
+Here is how the team actually talks, debates, and solves the problem in real time:
 
-* 👑 **Michael (CEO):**  
-  *"Alright team, we've got a customer complaint: double-charging during checkout. Marcus, let's get the requirements down before anyone touches code."*
+* 👔 **Michael Scott (CEO):**  
+  *"Alright team, we've got an urgent customer issue: people are getting charged twice if they click the Pay button quickly. Marcus, what is our plan?"*
 
-* 📋 **Marcus (CPO):**  
-  *"Got it. Here's what needs to happen: 1) Disable the button immediately on the first click, 2) Give each transaction a unique ID, and 3) Reject any duplicate request with that same ID."*
+* 📋 **Marcus Chen (CPO):**  
+  *"Three simple steps: 1) Disable the Pay button immediately after the first click, 2) Give every order a unique receipt ID, and 3) Make the server reject any duplicate payment with that same ID."*
 
-* 🥊 **Dwight (Red Team Lead):**  
-  *"Hold on. What if the user refreshes their browser mid-payment? What if their WiFi drops and their browser retries automatically? If we only disable the button on the frontend, customers will still get billed twice! We have to lock the transaction in the database too."*
+* 🥊 **Dwight Schrute (Red Team Lead):**  
+  *"Wait! What if the user refreshes the page mid-payment? What if their internet hiccups and their phone automatically retries? If we only disable the button on the screen, double-charges will still slip through! We have to protect the database too."*
 
-* 📐 **Stanley (CTO):**  
-  *"Good point, Dwight. Keep it simple. Jim, write a small fix that prevents duplicate payments in the database. Don't rewrite the whole file. Oscar, make sure it stays fast."*
+* 📐 **Stanley Hudson (CTO):**  
+  *"Sharp thinking, Dwight. Let's keep the code simple and safe. Jim, write a tiny patch that blocks duplicate charges at the database level. Keep it strictly under 50 lines. Oscar, make sure it stays lightning-fast."*
 
-* ⚙️ **Jim (Minimal Coder):**  
-  *"On it. Done — 14 clean lines added to `checkout.js`. Didn't touch any unrelated files."*
+* ⚙️ **Jim Halpert (Lead Minimalist Coder):**  
+  *"On it! Handled — just 14 clean lines added to `checkout.js`. I didn't touch anything else in your codebase."*
 
-* 🧮 **Oscar (Database Engineer):**  
-  *"Checked the query. The unique lock stops accidental double charges without slowing down checkouts."*
+* 🧮 **Oscar Martinez (Database Engineer):**  
+  *"Checked the database. The unique receipt ID safely bounces any duplicate attempt in less than a millisecond with zero slowdown."*
 
-* 🔒 **Toby (Security Guard):**  
-  *"Ran our security check on Jim's changes. No passwords or secret API keys leaked, and no safety risks found."*
+* 🔒 **Toby Flenderson (Security Guard):**  
+  *"Ran our security scan. No passwords or secret API keys leaked, and the code is 100% safe."*
 
-* 🧪 **Angela (Head of QA):**  
-  *"Hold on, team. I am running your computer's real test suite right now... `npm test` finished with zero errors (exit code 0). All 97 tests passed across 6 test suites! No skipped checks. It is officially verified."*
+* 🧪 **Angela Martin (Head of QA):**  
+  *"Hold on, team. Nobody celebrates until the machine says so! Running your real test suite right now... `npm test` exited cleanly with code 0! All 97 tests passed across all 6 test suites. Zero skipped checks. It's officially certified!"*
 
-* 📦 **Darryl (Operations):**  
-  *"Saved the fix and the test results into your local file (`company.db`). Clean, verified, and ready to ship."*
+* 📦 **Darryl Philbin (Operations):**  
+  *"Everything is verified and recorded into your local file (`company.db`). Safe, clean, and ready to ship!"*
 
 ---
 
@@ -148,42 +159,45 @@ Consensus: UNANIMOUS (MOTION PASSED) | Track: Track B (Feature Sprint) | Latency
 
 💬 Executive Council Deliberation Highlights:
   [Michael Scott - CEO]
-  ↳ Council, we need to decide our session storage architecture. Marcus, what are the product requirements?
+  ↳ Council, we need to decide where to store our user sessions. Marcus, what matters most for our users?
 
   [Marcus Chen - CPO]
-  ↳ Low latency is everything. Sessions must resolve in <5ms. We don't need heavy multi-region replication yet.
+  ↳ Speed is everything! Sessions should load in less than 5 milliseconds. We don't need a complicated cloud database right now.
 
   [Rafael Torres - CTO]
-  ↳ SQLite with WAL mode running locally gives us sub-millisecond reads with zero network overhead. Avoids Redis hosting costs.
+  ↳ Using SQLite right on the local computer gives us blazing speed with zero network delay, and it saves money on cloud hosting.
 
   [Dwight Schrute - Red Team]
-  ↳ What about concurrent file locks? If 100 users log in at the same instant, does SQLite choke?
+  ↳ Hold on! What if 100 people log in at the exact same second? Does SQLite freeze or crash?
 
   [Dr. Kofi Mensah - DBA]
-  ↳ In WAL mode, readers never block writers and writers never block readers. SQLite handles 50,000+ writes/sec cleanly.
+  ↳ Great question, Dwight. In modern SQLite (WAL mode), reading and writing happen at the same time without waiting for each other. It easily handles over 50,000 saves per second.
 
   [Angela Martin - QA Gate]
-  ↳ If we choose SQLite, I demand automated concurrency stress tests before any code merges.
+  ↳ I want real proof before anyone writes code. I demand automated stress tests to verify it works under heavy traffic.
 
   [Michael Scott - CEO]
-  ↳ Motion passed: Use SQLite in WAL mode with Angela's concurrency tests!
+  ↳ Motion approved: We use SQLite with Angela's automated stress tests!
 
-📋 Approved Sprint Backlog (Topological DAG with Kahn's Algorithm):
-  • [stage_1_schema] Create sessions table with foreign keys & WAL pragma (Dr. Kofi)
-  • [stage_2_tests] Author adversarial concurrent login stress tests (Dwight & Ryan)
-  • [stage_3_impl] Implement minimal session store interface <=50 lines (Jim Halpert)
-  • [stage_4_gate] Reality Gate execution: npm test exit code 0 (Angela Martin)
+📋 Approved Sprint Backlog (Clear Step-by-Step Plan):
+  • [Step 1: Database Setup] Create user sessions table with modern speed settings (Dr. Kofi)
+  • [Step 2: Stress Tests] Write automated tests that simulate 100 users logging in at once (Dwight & Ryan)
+  • [Step 3: Clean Code] Write a simple, clean session manager in under 50 lines (Jim Halpert)
+  • [Step 4: Real Verification] Run the real test runner on your machine until every test passes (Angela Martin)
 
 ✔ Board Minutes Saved: docs/meetings/MEETING_2026-10-24_sessions.md
 ✔ Decision Log Updated: docs/DECISION_LOG.md
+══════════════════════════════════════════════════════════════════════════════════
 ```
+
+> 💡 **Founder Tip**: Add `--interactive` (`-i`) to join the meeting, vote on decisions, and break ties yourself!
 
 ---
 
 <a id="org-chart"></a>
 ## 🏛️ Company Org Chart: Who Reports to Whom?
 
-In ordinary AI tools, there is no organization. One chatbot attempts to write requirements, write code, review itself, and run tests all at once — which causes hallucinations, messy code, and crashes.
+In ordinary AI tools, there is no organization. One lonely chatbot attempts to write requirements, write code, review itself, and run tests all at once — which causes hallucinations, messy code, and crashes.
 
 **The Asas Company** operates like a real, disciplined software engineering firm. Every agent has a clear manager, a clear squad, and a strictly bounded responsibility:
 
@@ -236,18 +250,18 @@ In ordinary AI tools, there is no organization. One chatbot attempts to write re
 
 1. **Level 0: The Founder (YOU)**  
    * **Role:** The Owner and Final Decision Maker.  
-   * **What you do:** You give the high-level goal in plain English (for example: `npx theasascompany /boss "Fix login button on mobile"`). You never have to micromanage individual files, write prompt chains, or babysit code reviews.
+   * **What you do:** You give the high-level goal in plain English (for example: `boss "Fix login button on mobile"`). You never have to micromanage individual files, write prompt chains, or babysit code reviews.
 
 2. **Level 1: Executive Leadership Team**  
    * **👔 Michael Scott (CEO):** Reports directly to YOU. He is your company's head conductor. He listens to your goal, picks the exact right specialists for the job, assigns tasks, solves disagreements, and oversees final delivery.
-   * **📋 Marcus (Chief Product Officer):** Reports to Michael. Translates your short prompt into a clear, step-by-step plan with exact requirements and edge cases so the team knows what to build.
+   * **📋 Marcus Chen (Chief Product Officer):** Reports to Michael. Translates your short prompt into a clear, step-by-step plan with exact requirements and edge cases so the team knows what to build.
    * **📐 Stanley Hudson (Chief Technology Officer):** Reports to Michael. Guarantees simple, clean code. Rejects heavy, unnecessary packages and makes sure everything stays fast and easy to maintain.
    * **⚡ David Wallace (VP of Engineering):** Reports to Stanley & Michael. Coordinates the coders, keeps work on track, and makes sure files are edited cleanly without conflicts.
    * **💼 Jan Levinson (Chief Revenue Officer & Brand Lead):** Reports to Michael. Makes sure what gets built looks professional, makes sense for real users, and helps your project grow.
    * **📊 Darryl Philbin (VP of Operations):** Reports to Michael. Monitors speed, protects your computer resources, tracks token usage, and keeps your local database safe.
 
 3. **⭐ The Independent Branch: Angela Martin (Head of Quality Assurance)**  
-   * **Why this is critical:** In broken teams and standard AI tools, the developer checks their own work. Developers are biased — they always claim their code works!  
+   * **Why this is critical:** In broken teams and standard AI tools, the developer checks their own work. Developers are naturally biased — they always claim their code works!  
    * **The Asas Company Rule:** Angela Martin **does NOT report to Engineering or Product**. She reports directly to Michael and the Founder. Coders cannot overrule or bypass her checks. If your computer's native test runner does not pass with zero errors (exit code 0), Angela blocks the release immediately. No excuses.
 
 4. **Level 2: The Working Squads & Direct Reports**  
@@ -266,7 +280,7 @@ How do 72 AI specialists work together like a cohesive software studio without t
 
 ### ☕ 1. Standups & Work Leases (No Overwritten Files)
 * **The everyday problem:** When multiple AI tools or developers work on the same folder, they often edit the same file at the same time, overwriting each other's changes and creating messy Git conflicts.
-* **How our team handles it:** When you launch a task, Michael runs a 1-second standup and gives an exclusive work lease in `company.db`. Only the assigned specialist (like Jim) can edit the targeted files. Everyone else reads.
+* **How our team handles it:** When you launch a task, Michael runs an instant standup and issues an exclusive work lease in `company.db`. Only the assigned specialist (like Jim) can edit the targeted files. Everyone else reads.
 * **Why it matters:** Zero merge conflicts, zero deleted code, and clean, easy-to-read diffs.
 
 ### 📬 2. Clean Department Mailboxes (No Noisy Chat Rooms)
@@ -308,9 +322,9 @@ Our 72 specialists are organized into 6 real-world departments. Here is who they
 *Turns your short, everyday ideas into clear technical requirements and keeps the team aligned.*
 
 * **👔 Michael Scott (CEO & Conductor)**  
-  When you give a command like `npx theasascompany /boss "fix checkout"`, Michael takes the wheel. Instead of making you prompt 5 different chatbots by hand, he holds an instant standup, picks the right specialists from the fleet, and makes sure everyone stays focused until the feature passes all tests.
+  When you give a command like `boss "fix checkout"`, Michael takes the wheel. Instead of making you prompt 5 different chatbots by hand, he holds an instant standup, picks the right specialists from the fleet, and makes sure everyone stays focused until the feature passes all tests.
 
-* **📋 Marcus (Chief Product Officer)**  
+* **📋 Marcus Chen (Chief Product Officer)**  
   Most AI tools make wild guesses about what you want. Marcus prevents that. Before anyone writes a single line of code, he turns your brief prompt into clear requirements: what the feature must do, which edge cases to handle, and what "done" actually looks like.
 
 * **📐 Stanley Hudson (Chief Technology Officer)**  
@@ -333,7 +347,7 @@ Our 72 specialists are organized into 6 real-world departments. Here is who they
 * **🥊 Dwight Schrute (Red Team Lead & Inquisitor)**  
   Dwight is the resident skeptic. While other AI tools rush to write fragile code, Dwight asks the uncomfortable questions: *"What if the user double-clicks? What if the network drops? What if the input is empty?"* By catching edge cases during the planning stage, he saves you from production disasters.
 
-* **🔒 Toby Flenderson (Security & AppSec Lead)**  
+* **🔒 Toby Flenderson (Security Guard & AppSec Lead)**  
   Toby is your quiet security guard. Before any code is committed, he scans the diff for leaked API keys, hardcoded passwords, SQL injection points, and unsafe file paths. He ensures you never accidentally push sensitive credentials to GitHub.
 
 * **🕵️ Creed Bratton (Fresh-Eye Isolated Reviewer)**  
@@ -348,10 +362,10 @@ Our 72 specialists are organized into 6 real-world departments. Here is who they
   The biggest problem with AI coders is that they rewrite 300 lines when you only needed a 2-line fix. Jim follows the strict 50-line rule: he writes small, pinpoint patches that fix the issue without touching unrelated files or introducing new bugs.
 
 * **🧮 Oscar Martinez (Database Reliability Engineer — DBRE)**  
-  Oscar cares deeply about data integrity and speed. He crafts fast SQLite and PostgreSQL schemas, configures WAL mode for concurrency, verifies index lookups, and makes sure database migrations run cleanly without corrupting your data.
+  Oscar cares deeply about data integrity and speed. He crafts fast SQLite and PostgreSQL schemas, configures modern speed settings, verifies index lookups, and makes sure database migrations run cleanly without corrupting your data.
 
 * **🔌 Andy Bernard (API Platform Architect)**  
-  Andy designs clean, predictable REST and OpenAPI endpoints. He ensures status codes make sense, error messages are helpful, and inputs are properly validated so the frontend and backend connect smoothly.
+  Andy designs clean, predictable REST and API endpoints. He ensures status codes make sense, error messages are helpful, and inputs are properly validated so the frontend and backend connect smoothly.
 
 * **🏎️ Nate (Speed & Performance Optimizer)**  
   Nate profiles memory usage, eliminates redundant loops, and optimizes slow database queries so your app feels snappy and responds in milliseconds.
@@ -406,10 +420,58 @@ Our 72 specialists are organized into 6 real-world departments. Here is who they
 
 ---
 
+<a id="reality-gate"></a>
+## 🛡️ The Reality Gate: Why It Never Lies
+
+Every other AI tool uses **"narrative confirmation"** — the AI says it works, so the tool claims victory.
+
+The Asas Company uses **The Reality Gate Interlock**:
+
+```
+                       ┌─────────────────────────────────┐
+                       │       AI Generates Code         │
+                       └────────────────┬────────────────┘
+                                        │
+                                        ▼
+                       ┌─────────────────────────────────┐
+                       │      THE REALITY GATE VAULT     │
+                       │   (Under Angela Martin - QA)    │
+                       └────────────────┬────────────────┘
+                                        │
+      ┌─────────────────────────────────┼─────────────────────────────────┐
+      ▼                                 ▼                                 ▼
+[Exit Code Check]             [Anti-Tamper Guard]               [Assertion Audit]
+Did `npm test` exit 0?        Did the AI touch or delete        Did real assertions run,
+Exit 1 = REJECTED.            test files? Cheating = REJECTED.   or was it empty? 0 = REJECTED.
+      └─────────────────────────────────┼─────────────────────────────────┘
+                                        │
+                                        ▼
+                       ┌─────────────────────────────────┐
+                       │  ALL 4 PASS: SHIPPED TO PROD    │
+                       │  Cryptographic SHA-256 in DB    │
+                       └─────────────────────────────────┘
+```
+
+The Reality Gate makes false victories physically impossible through **4 strict checks**:
+
+1. **Clean Machine Exit (Exit Code 0):**  
+   Only real computer proof counts. Angela executes your computer's native test runner (`npm test`, `pytest`, `cargo test`). If your computer returns an error (exit code 1 or higher), the task is marked as FAILED—no matter what friendly story the AI tells.
+
+2. **Anti-Cheating Guard (Tamper Protection):**  
+   The system takes a digital fingerprint (SHA-256) of your test files before the AI starts. If the AI tries to pass tests by deleting checks, commenting out assertions, or weakening rules, the cheat is immediately detected, blocked, and rolled back.
+
+3. **Real Checkpoints (No Empty Tests):**  
+   The system verifies that real checks actually ran. An AI cannot create empty tests that check nothing and claim an easy victory.
+
+4. **The 50-Line Safety Rule (Keep Diffs Tiny):**  
+   No AI is allowed to rewrite 400 lines when you asked for a simple fix. Every change is kept strictly under 50 lines so your project stays clean and nothing breaks.
+
+---
+
 <a id="highlights"></a>
 ## 🔥 6 Core Highlights: Why Developers Love The Asas Company
 
-Here is why developers, founders, and hiring managers choose **The Asas Company** over conventional AI tools:
+Here is why developers, founders, and teams choose **The Asas Company** over conventional AI tools:
 
 ### ⚡ 1. The Reality Gate: Real Tests, Zero Lies (Exit Code 0)
 Standard AI tools love to claim *"I fixed everything!"* even when the code won't even compile. You spend the next hour debugging their broken suggestions.  
@@ -438,26 +500,27 @@ You shouldn't have to abandon your favorite code editor to get the benefits of a
 ---
 
 <a id="comparison"></a>
-## 📊 How We Compare to Other Tools
+## 📊 Why This Beats Every Other AI Tool
 
-| Feature | Regular Chatbots (ChatGPT / Copilot) | Coding Agents (Devin / AutoGPT) | **The Asas Company** |
+| Feature | Standard Chatbots (ChatGPT / Copilot) | AI Coding Agents (Devin / AutoGPT) | 🏛️ **The Asas Company** |
 | :--- | :---: | :---: | :---: |
-| **How it checks work** | It guesses. You have to test everything yourself. | Runs basic commands, often claims success when broken. | **Runs your real tests on your computer until they pass.** |
-| **Stops AI from cheating** | ❌ No | ❌ No (can delete test files) | **✔ Yes (protects your test files from being deleted or weakened).** |
-| **Reviews the plan first** | ❌ No plan, just codes | ❌ Long confusing chats | **✔ Yes (teammates challenge the plan before writing code).** |
-| **Code changes** | Often rewrites 300 lines you didn't ask for | Big confusing changes | **Minimal, clean diffs (fixes only what was asked).** |
-| **Installation** | Need browser or plugin | 100+ heavy Python/pip packages | **Zero extra packages (pure Node.js standard library).** |
-| **Audit log** | Lost in chat history | Hard to find in logs | **Saved in a local SQLite file on your computer.** |
+| **How it verifies code** | None. It guesses and promises. | Basic commands, often hallucinates passing tests. | **Physical Reality Gate: Runs real tests on your machine until exit code is 0 ($? === 0).** |
+| **Stops AI from cheating** | ❌ No protection | ❌ No (can modify or delete test files to make them pass) | **✔ Anti-Cheating Guard: Test files are fingerprinted (SHA-256). Any tampering is rolled back.** |
+| **Reviews the plan first** | ❌ No plan, just dumps code | ❌ Long confusing monologues | **✔ 7 department heads debate edge cases and agree on a plan before writing code.** |
+| **Code change size** | Rewrites 300+ lines you never asked for | Large, sprawling edits that break adjacent files | **✔ Surgical 50-line rule: Strict limit of 50 lines per fix so nothing gets broken.** |
+| **System footprint & bloat** | Requires browser or heavy extension | 100+ heavy Python/pip packages and 500MB downloads | **✔ ZERO extra packages: 100% pure Node.js standard library. Boots up in under 1ms.** |
+| **Cost to brainstorm & plan** | Costs money and burns API tokens | Expensive cloud token usage | **✔ 100% FREE offline planning: Convenes council in 37ms at 0 tokens burned.** |
+| **Team memory & audit trail** | Lost forever when you close the tab | Buried in massive, messy log files | **✔ Saved in private, permanent local database (`company.db`) on your computer.** |
 
 ---
 
 <a id="quickstart"></a>
-## ⚡ The 1-Minute Quickstart (Ultra-Simple)
+## ⚡ The 10-Second Quickstart
 
-You don't need to install 50 npm packages. This runs on **pure Node.js** (version 22+) with zero external dependencies.
+You don't need to install 50 npm packages. This runs on **pure Node.js** (version 22+) with **zero extra dependencies**.
 
-### 🏛️ 1. The Autonomous Executive Council (`meet` & `council`)
-Need to plan an architecture, debate trade-offs, or scope a feature? Convene the 7 department heads (CEO Michael, CPO Marcus, CTO Rafael, Red Team Dwight, Lead Coder Jim, QA Angela, DBA Dr. Kofi) offline in **~37ms at 0 tokens**:
+### 🏛️ 1. The Autonomous Executive Council (`meet`)
+Need to plan an architecture, debate trade-offs, or scope a feature? Convene the 7 department heads (CEO Michael, CPO Marcus, CTO Stanley, Red Team Dwight, Lead Coder Jim, QA Angela, DBA Dr. Kofi) offline in **~37ms at 0 tokens**:
 ```bash
 # Convene an autonomous board debate
 npx theasascompany meet "Implement OAuth2 social authentication with Google and GitHub"
@@ -465,9 +528,9 @@ npx theasascompany meet "Implement OAuth2 social authentication with Google and 
 # Interactive meeting (cast the Founder tie-breaker vote!)
 npx theasascompany meet "Migrate session storage from Redis to SQLite" --interactive
 ```
-*Outputs: 6 rounds of department head debate, executive risk scorecard, minutes saved in `docs/meetings/`, certified decision in `docs/DECISION_LOG.md`, and an acyclic Kahn's algorithm sprint flight board.*
+*Outputs: 6 rounds of department head debate, executive risk scorecard, minutes saved in `docs/meetings/`, certified decision in `docs/DECISION_LOG.md`, and an ordered sprint flight board.*
 
-### ⚡ 2. The Instant Engineering Router (`ask` & `ask-matt`)
+### ⚡ 2. The Instant Engineering Router (`ask`)
 Don't know which specialist or department to call? Don't memorize 72 agents. Just **ask**:
 ```bash
 npx theasascompany ask "Users charged twice when clicking checkout button"
@@ -495,26 +558,36 @@ npx theasascompany --socratic "Idempotent payment tokens"
 npx theasascompany --router-benchmark
 ```
 
-### 🚀 Method 1: Instant Run with Zero Installation (`npx`)
+### 🚀 3. Instant Run Without Installing (`npx`)
 Open your terminal inside **any project on your computer** and tell The Boss what to do:
 ```bash
 npx theasascompany /boss "Fix the login error when email is capitalized"
 ```
 *Michael Scott plans the sprint, Jim writes the minimal code, and Angela runs your tests until they exit 0.*
 
-### 👑 Method 2: Install Once, Call `boss` from Anywhere
+### 👑 4. Install Once, Call `boss` from Anywhere
 Install globally on your computer:
 ```bash
 npm install -g theasascompany
 ```
 Now, in **any folder anywhere on your computer**, just type:
 ```bash
-boss "Add a dark mode toggle to the navbar"
+# 🏛️ Hold an autonomous board meeting on any feature
+boss meet "Add Stripe subscription billing"
+
+# ⚡ Instant smart routing (<15ms, 0 tokens)
+boss ask "Users getting logged out randomly"
+
+# 🚀 Execute a mission with the full company
+boss "Add dark mode toggle to navigation bar"
+
+# 🧩 Preview the assembly line without writing code
+boss --break "Build User Authentication with SQL database and responsive Login Form"
 ```
 *(Or type `boss` alone anytime to see the team status!)*
 
-### 🎨 Method 3: Use Inside Cursor, Claude Code, or Antigravity
-Export all 72 specialist agent definitions into your favorite editor with one simple command:
+### 🎨 5. Use Inside Cursor, Claude Code, or Antigravity
+Export all 72 specialist agent definitions directly into your favorite editor with one simple command:
 ```bash
 # Install directly into Cursor (.cursor/rules/)
 npx theasascompany install --tool cursor
@@ -527,15 +600,9 @@ npx theasascompany install --tool antigravity
 ```
 Once installed, you can simply type `/boss "your task"` right in your editor's chat window!
 
-### 🧩 Method 4: Preview the Assembly Line (`--break`)
-Want to see how the company breaks down your mission and assigns departments before touching a single file?
-```bash
-boss --break "Build User Authentication with SQL database and responsive Login Form"
-```
-The **Task Breaker** automatically breaks your big goal into small, ordered stages. It assigns the right specialist team to each step and shows you the exact assembly line and safety checks right in your terminal.
-
 ---
 
+<a id="examples"></a>
 ## 🎯 3 Easy Examples You Can Try Now
 
 Copy and paste these commands to see the team in action:
@@ -552,7 +619,7 @@ node cli.js /boss "Add email confirmation when a user signs up with their email"
 ```
 *Stanley plans the steps, Angela writes the test first, and the team makes it pass.*
 
-### 🔒 Example 3: Security Check
+### 🔒 Example 3: Security & Secret Check
 ```bash
 node cli.js /boss "Scan our project for leaked API keys and unsafe file upload paths"
 ```
@@ -560,73 +627,24 @@ node cli.js /boss "Scan our project for leaked API keys and unsafe file upload p
 
 ---
 
-## 🛡️ How Tests Are Checked (No Fake Promises)
+<a id="models"></a>
+## 🤖 Works With Any AI Provider (Or 100% Offline Free)
 
-Normal AI tools often say *"All tests passed!"* even when they failed. 
+You can run The Asas Company with whichever AI engine you prefer:
 
-The Asas Company uses **3 Simple Rules**:
-
-
-```
-                       ┌─────────────────────────────────┐
-                       │       AI Generates Code         │
-                       └────────────────┬────────────────┘
-                                        │
-                                        ▼
-                       ┌─────────────────────────────────┐
-                       │      THE REALITY GATE VAULT     │
-                       │   (Under Angela Martin - QA)    │
-                       └────────────────┬────────────────┘
-                                        │
-                ┌───────────────────────┼───────────────────────┐
-                ▼                       ▼                       ▼
-       [Exit Code Check]       [Anti-Tamper Guard]      [Assertion Audit]
-      Did `npm test` exit 0?   Did the AI touch or     Did real assertions run,
-      Exit 1 = REJECTED.       test files? Cheating    or was it empty? 0 = REJECTED.
-                                      = REJECTED.
-                │                       │                       │
-                └───────────────────────┼───────────────────────┘
-                                        │
-                                        ▼
-                       ┌─────────────────────────────────┐
-                       │   ALL 3 PASS: SHIPPED TO PROD   │
-                       │   Cryptographic SHA-256 in DB   │
-                       └─────────────────────────────────┘
-```
-
-1. **Real Test Execution:** It runs your real test command (`npm test`, `pytest`, `cargo test`, etc.) directly on your computer. If the computer returns an error, the AI is not done.
-2. **Anti-Cheating Guard:** It fingerprints your test files. If the AI tries to delete a test or comment out an assertion to make it pass, the change is **blocked and rolled back immediately**.
-3. **Real Assertions:** Empty tests that don't check anything are rejected. Real tests must pass.
-
----
-
-## ⚡ Super Fast & Lightweight
-
-Because The Asas Company uses **pure Node.js with 0 extra packages**, it is super fast:
-
-- **Instant startup:** Starts in less than 1 millisecond.
-- **Fast decisions:** Evaluates tests in under 2 milliseconds.
-- **Zero download waiting:** No 200MB `node_modules` folder to wait for.
-
----
-
-## 🤖 Works With Any AI Model
-
-You can use whichever AI provider you prefer:
-
-| Provider | Models | Best For |
+| Provider | Supported Models | Best For |
 | :--- | :--- | :--- |
-| **Anthropic** | `claude-3-7-sonnet`, `claude-3-5-sonnet` | Complex logic, architecture, and deep debugging |
-| **OpenAI** | `gpt-4o`, `o3-mini` | Fast everyday coding and quick tasks |
-| **Google Gemini** | `gemini-2.5-pro`, `gemini-2.5-flash` | Large projects and reading big codebases |
+| **Anthropic** | `claude-3-7-sonnet`, `claude-3-5-sonnet` | Complex software architecture and deep debugging |
+| **OpenAI** | `gpt-4o`, `o3-mini` | Rapid code generation and general feature building |
+| **Google Gemini** | `gemini-2.5-pro`, `gemini-2.5-flash` | Large multi-file codebases and lightning speed |
 | **Ollama (Free / Local)** | `deepseek-coder`, `qwen2.5-coder`, `llama3` | 100% private, free coding running on your own computer |
-| **Offline Test Mode** | Built-in test engine | Free testing and running CI without any API key |
+| **Deterministic Mode** | Built-in test provider | **100% offline, zero API keys needed, free CI runs** |
 
 ---
 
-## 📜 License & Creator
+## 📜 Open Source & Community
 
-Distributed under the **MIT License**. Free for everyone to use.
+Distributed under the **MIT License**. Free for personal and commercial use forever.
 
 ### 👤 Creator & Maintainer
 * **Abdullah Hanjra** — AI Engineer, Software Architect & Systems Builder
@@ -636,5 +654,5 @@ Distributed under the **MIT License**. Free for everyone to use.
 <br/>
 
 <div align="center">
-<b>Welcome to The Asas Company. Be The Boss, and let your AI team do the heavy lifting. ☕</b>
+  <b>Welcome to The Asas Company. Be The Founder, and let your AI company build the future. ☕</b>
 </div>
