@@ -111,6 +111,24 @@ for (let i = 0; i < args.length; i++) {
       process.exit(0);
     });
     return;
+  } else if (args[i] === '--lazy' || args[i] === '--minimal') {
+    printBanner();
+    console.log(`\x1b[1m\x1b[36m⚡ THE ASAS MINIMALIST RAZOR (Jim Halpert & Stanley Hudson)\x1b[0m`);
+    console.log(`\x1b[90m"The best code is the code you never wrote."\x1b[0m\n`);
+    console.log(`\x1b[1m1. 6-Step Solution Hierarchy (The Lazy Order):\x1b[0m`);
+    console.log(`   ① Does it need to exist? Skip features/options nobody asked for.`);
+    console.log(`   ② Already in this codebase? Reuse existing helpers and patterns.`);
+    console.log(`   ③ Standard library? Native Node.js APIs beat custom boilerplate.`);
+    console.log(`   ④ Installed package? Never add a new npm package for a few lines.`);
+    console.log(`   ⑤ Can it be one line? If readable at a glance, make it one line.`);
+    console.log(`   ⑥ Otherwise: Surgical patch strictly under 50 lines.\n`);
+    console.log(`\x1b[1m2. The 4 Ironclad Invariants:\x1b[0m`);
+    console.log(`   • \x1b[33mGrep Callers First:\x1b[0m Grep every caller before touching shared code.`);
+    console.log(`   • \x1b[33mRisky Logic Test:\x1b[0m Branches, loops, parsers, or money MUST leave 1 test.`);
+    console.log(`   • \x1b[33mThe // shortcut: Tag:\x1b[0m Document pragmatic trade-offs with when to upgrade.`);
+    console.log(`   • \x1b[33mMandatory Sign-Off:\x1b[0m State what was skipped and remaining edge-case risks.\n`);
+    console.log(`\x1b[32m✔ The Asas Minimalist Razor active.\x1b[0m\n`);
+    process.exit(0);
   } else if (args[i] === '--memory' || args[i] === '-m') {
     const query = args[++i] || 'sqlite';
     const { searchMemory } = require('./memory/search');
@@ -209,7 +227,7 @@ Usage:
 Options:
   meet <goal>             Convene Executive Council (CEO, CPO, CTO, Red Team, QA) for autonomous board debate
   council <goal>          Alias for meet (deliberates trade-offs & outputs staged sprint DAG)
-  ask <task>              Route task through ask-matt engineering workflow (<15ms, 0 tokens)
+  ask <task>              Route task through Asas engineering workflow (<15ms, 0 tokens)
   --interactive, -i       Cast Founder tie-breaker vote during Executive Council meetings
   --task <string>         Specify the engineering mission to dispatch
   --provider <name>       AI provider: anthropic, openai, gemini, ollama, test (default: auto)
@@ -224,6 +242,7 @@ Options:
   --demo                  Run hermetic end-to-end demonstration mission with real tools
   --benchmark, -b         Run empirical latency benchmark matrix (p50, p95, p99)
   --memory, -m <q>        Search indexed institutional memory cards (<50 lines)
+  --lazy, --minimal       Display The Asas Minimalist Razor (strict rules for clean minimal code)
   --help, -h              Show this help screen
 `);
 }

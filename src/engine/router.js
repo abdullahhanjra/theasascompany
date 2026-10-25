@@ -2,7 +2,7 @@
 
 /**
  * @file src/engine/router.js
- * @description Enterprise Engineering Router (ask-matt Integration)
+ * @description Enterprise Engineering Router (Asas Wayfinder Engine)
  * for The Asas Company Autonomous Engineering Enterprise OS.
  *
  * Provides sub-15ms deterministic routing across the 6 operational departments,
@@ -202,7 +202,7 @@ class EnterpriseRouter {
     const { domain, query, latencyMs } = result;
     const lines = [];
 
-    lines.push('\x1b[1m\x1b[36m🏛️ THE ASAS COMPANY — ENGINEERING ROUTER (ask-matt Engine)\x1b[0m');
+    lines.push('\x1b[1m\x1b[36m🏛️ THE ASAS COMPANY — ENGINEERING ROUTER (Asas Wayfinder Engine)\x1b[0m');
     lines.push(`\x1b[90mTask:\x1b[0m "${query}"`);
     lines.push(`\x1b[90mClassification:\x1b[0m \x1b[1m\x1b[32m${domain.title}\x1b[0m (\x1b[33m${latencyMs}ms\x1b[0m, 0 LLM tokens)`);
     lines.push(`\x1b[90mAssigned Leadership:\x1b[0m ${domain.leadAgent}`);

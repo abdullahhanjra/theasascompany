@@ -296,7 +296,7 @@ Darryl watches resource usage live:
 ### Core Engineering & Database
 *Writes small, focused patches and keeps your database fast.*
 
-**Jim Halpert (Lead Minimalist Coder)** — Strict 50-line rule. He fixes the exact problem, touches nothing else, and keeps the diff easy to review.
+**Jim Halpert (Lead Minimalist Coder)** — Enforces The Asas Razor and the 50-line rule: *the best code is the code you never wrote.* He greps callers first, reuses existing code, deletes bloat, leaves a test for risky logic, and touches nothing else.
 
 **Oscar Martinez (Database Engineer)** — Crafts fast SQLite and PostgreSQL schemas, verifies indexes, and makes sure migrations run clean without corrupting data.
 
@@ -394,7 +394,7 @@ Exit 1 = REJECTED.        test files? Caught = REJECTED.  or was it empty? 0 = R
 
 **Real machine verification** — Angela runs `npm test` on your computer. The task isn't done until exit code is 0. Not when the AI says it's done.
 
-**Clean diffs** — Jim enforces the 50-line rule. He touches only the lines that need changing. Your Git history stays readable.
+**Clean diffs & The Asas Razor** — Jim enforces the 50-line rule and The Asas Razor: *the best code is the code you never wrote.* He greps callers first, avoids new npm packages, deletes dead code, and keeps diffs small and readable.
 
 **Edge cases caught before coding** — Dwight stress-tests the design first. "What if they double-click? What if the network drops?" Problems that would hit production get caught at the planning stage instead.
 
@@ -488,6 +488,9 @@ boss meet "Add Stripe subscription billing"
 
 # Smart routing (< 15ms, 0 tokens)
 boss ask "Users getting logged out randomly"
+
+# Display The Asas Razor minimal rules
+boss --lazy
 
 # Execute a full mission
 boss "Add dark mode toggle to the navigation bar"

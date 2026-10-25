@@ -102,9 +102,23 @@ Ask: "Can I undo this in under 5 minutes?"
 - Type 2 (reversible) → proceed
 - Type 1 (irreversible schema, auth, contracts) → STOP, document, get sign-off
 
-### Layer 4: Smallest Justified Change
+### Layer 4: Smallest Justified Change & The Asas Minimalist Razor
 Ask: "Is there a smaller change that achieves the same outcome?"
-Apply the Karpathy Razor: if a 10-line change solves it, never write 50 lines.
+Apply the Karpathy Razor and The Asas Invariant: *The best code is the code you never wrote.*
+
+**The 6-Step Solution Hierarchy (Take the first that works):**
+1. *Does it need to exist?* Skip speculative options, flags, and flexibility nobody asked for.
+2. *Already in this codebase?* Reuse existing project helpers, patterns, and services.
+3. *Standard Library?* Use native Node.js APIs (`node:fs`, `node:crypto`, `node:sqlite`, `node:http`).
+4. *Installed package?* Use what is already in `package.json`. **Never add an npm package for a few lines.**
+5. *Can it be one clear line?* Make it one line.
+6. *Otherwise:* The minimum code strictly under 50 lines.
+
+**The 4 Asas Minimalist Invariants:**
+- **Grep Callers First:** Grep every caller of a function before modifying it. Fix root cause once in shared code.
+- **Risky Logic Test Mandate:** Logic with branches (`if/else`), loops, parsers, money, or security MUST leave one test behind.
+- **The `// shortcut:` Contract:** Document intentional trade-offs: `// shortcut: <limit>, <when to upgrade>`.
+- **Never Cut:** Validation at trust boundaries, error handling, security, and accessibility are never on the chopping block.
 
 ### Layer 5: Evidence Requirement
 Ask: "What machine proof will I attach when I'm done?"
