@@ -33,7 +33,7 @@
   <circle cx="120" cy="120" r="82" fill="none" stroke="#1E293B" stroke-width="2.5" stroke-dasharray="8 6" />
   <circle cx="120" cy="120" r="82" fill="none" stroke="url(#neonCyan)" stroke-width="2.5" stroke-dasharray="32 180" stroke-linecap="round" />
 
-  <!-- Official Boring Company Logo Emblem -->
+  <!-- Official The Asas Company Logo Emblem -->
   <clipPath id="logoSquareClip">
     <circle cx="120" cy="120" r="74" />
   </clipPath>

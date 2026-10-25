@@ -3,7 +3,7 @@
 /**
  * @file src/engine/task-breaker.js
  * @description Professional Task Breaker & Staged Dependency Sequencer (DAG)
- * for The Boring Company Autonomous Engineering Enterprise OS.
+ * for The Asas Company Autonomous Engineering Enterprise OS.
  *
  * Responsibilities:
  * 1. Deep Task Understanding & Domain Decomposition (WBS).
@@ -285,7 +285,7 @@ class TaskBreaker {
   renderFlightBoard(missionTitle, stages) {
     let out = '\n';
     out += '╔══════════════════════════════════════════════════════════════════════════════════════╗\n';
-    out += '║               🏢 THE BORING COMPANY — STAGED MISSION FLIGHT BOARD                     ║\n';
+    out += '║                🏛️ THE ASAS COMPANY — STAGED MISSION FLIGHT BOARD                     ║\n';
     out += `║ Mission: ${missionTitle.padEnd(76).slice(0, 76)} ║\n`;
     out += '╠══════════════════════════════════════════════════════════════════════════════════════╣\n';
 

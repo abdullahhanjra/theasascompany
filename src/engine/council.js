@@ -3,7 +3,7 @@
 /**
  * @file src/engine/council.js
  * @description Executive Council & Department Head Deliberation Engine
- * for The Boring Company Autonomous Engineering Enterprise OS.
+ * for The Asas Company Autonomous Engineering Enterprise OS.
  *
  * Responsibilities:
  * 1. Convenes Department Heads into a structured, multi-perspective Executive Council meeting.
@@ -468,7 +468,7 @@ All tickets require raw exit code 0 (\`$? === 0\`) with positive assertion count
     if (!fs.existsSync(this.decisionLogFile)) {
       fs.writeFileSync(
         this.decisionLogFile,
-        '# 🏛️ The Boring Company: Executive Decision Log\n\nChronological register of architectural, product, and engineering decisions certified by the Executive Council.\n\n',
+        '# 🏛️ The Asas Company: Executive Decision Log\n\nChronological register of architectural, product, and engineering decisions certified by the Executive Council.\n\n',
         'utf8'
       );
     }
@@ -485,7 +485,7 @@ All tickets require raw exit code 0 (\`$? === 0\`) with positive assertion count
     const lines = [
       '',
       border,
-      `\x1b[1m\x1b[32m🏢  THE BORING COMPANY — EXECUTIVE COUNCIL CHAMBERS\x1b[0m`,
+      `\x1b[1m\x1b[32m🏛️  THE ASAS COMPANY — EXECUTIVE COUNCIL CHAMBERS\x1b[0m`,
       `\x1b[90mSession Objective:\x1b[0m \x1b[1m"${result.goal}"\x1b[0m`,
       `\x1b[90mConsensus:\x1b[0m \x1b[32mUNANIMOUS (MOTION PASSED)\x1b[0m | \x1b[90mTrack:\x1b[0m \x1b[33m${result.velocityTrack}\x1b[0m | \x1b[90mLatency:\x1b[0m ${result.durationMs}ms`,
       border,

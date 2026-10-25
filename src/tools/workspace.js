@@ -2,7 +2,7 @@
 
 /**
  * @file src/tools/workspace.js
- * @description Controlled Workspace & Subprocess Execution Layer for The Boring Company OS.
+ * @description Controlled Workspace & Subprocess Execution Layer for The Asas Company OS.
  * Restricts all file system and command operations to an authorized workspace root.
  * Captures real diffs, exit codes, execution times, and prevents directory traversal attacks.
  */

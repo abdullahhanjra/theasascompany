@@ -2,7 +2,7 @@
 
 /**
  * @file src/engine/reality-gate.js
- * @description Reality Gate Verifier for The Boring Company OS.
+ * @description Reality Gate Verifier for The Asas Company OS.
  * Enforces Constitutional Principle #10: Tasks are complete ONLY with raw evidence
  * (clean exit code $? === 0, un-manipulated test output, non-zero assertions,
  * blast radius boundary checks, and anti-tamper verification).

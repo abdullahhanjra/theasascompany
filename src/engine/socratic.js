@@ -3,7 +3,7 @@
 /**
  * @file src/engine/socratic.js
  * @description Interactive Socratic Terminal Frontier (Matt Pocock Grill Engine)
- * for The Boring Company Autonomous Engineering Enterprise OS.
+ * for The Asas Company Autonomous Engineering Enterprise OS.
  *
  * Runs interactive terminal interviews via pure Node.js readline,
  * settling design ambiguities into Architecture Decision Records (ADRs)
@@ -88,7 +88,7 @@ class SocraticEngine {
 
       const askQuestion = (query) => new Promise((resolve) => rl.question(query, resolve));
 
-      console.log('\n\x1b[1m\x1b[36m🏛️  THE BORING COMPANY — SOCRATIC INTERVIEW (Marcus CPO)\x1b[0m');
+      console.log('\n\x1b[1m\x1b[36m🏛️  THE ASAS COMPANY — SOCRATIC INTERVIEW (Marcus CPO)\x1b[0m');
       console.log(`\x1b[90mSharpening requirements for:\x1b[0m "${task}"\n`);
 
       for (const q of questions) {
@@ -126,10 +126,10 @@ class SocraticEngine {
 
 - **Date**: ${timestamp}
 - **Status**: Approved
-- **Conductor**: Marcus Chen (CPO) & The Boring Company Executive Suite
+- **Conductor**: Marcus Chen (CPO) & The Asas Company Executive Suite
 
 ## Context
-A mission was submitted to The Boring Company engineering fleet: "${task}".
+A mission was submitted to The Asas Company engineering fleet: "${task}".
 To eliminate future regressions, the frontier was resolved via the Socratic Interview.
 
 ## Decisions Settled
@@ -149,7 +149,7 @@ To eliminate future regressions, the frontier was resolved via the Socratic Inte
   updateGlossary(task) {
     this.ensureDocsDirs();
     if (!fs.existsSync(this.glossaryFile)) {
-      const header = `# Canonical Domain Glossary (The Boring Company)
+      const header = `# Canonical Domain Glossary (The Asas Company)
 
 This glossary defines invariant domain terminology to prevent overloaded semantic drift across all 72 agents.
 

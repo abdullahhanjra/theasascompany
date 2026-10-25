@@ -2,7 +2,7 @@
 
 /**
  * @file src/storage/db.js
- * @description Native SQLite Ledger Database Adapter for The Boring Company OS.
+ * @description Native SQLite Ledger Database Adapter for The Asas Company OS.
  * Uses Node.js native `node:sqlite` (DatabaseSync) with zero external npm dependencies.
  * Provides transactional state persistence, execution leases, verification run logs,
  * token accounting, and tamper-proof governance audit events.
@@ -15,7 +15,7 @@ try {
   DatabaseSync = require('node:sqlite').DatabaseSync;
 } catch (e) {
   throw new Error(
-    `The Boring Company OS native SQLite ledger requires Node.js >= 22.5.0 (found ${process.version}). Please upgrade Node.js.`
+    `The Asas Company OS native SQLite ledger requires Node.js >= 22.5.0 (found ${process.version}). Please upgrade Node.js.`
   );
 }
 
@@ -69,7 +69,7 @@ class CompanyDatabase {
     // Ensure default relational root entities exist
     this.db.exec(`
       INSERT OR IGNORE INTO companies (id, name, description, status, created_at, updated_at)
-      VALUES ('comp_boring', 'The Boring Company Software', 'Autonomous Multi-Agent Enterprise', 'active', datetime('now'), datetime('now'));
+      VALUES ('comp_boring', 'The Asas Company Software', 'Autonomous Multi-Agent Enterprise', 'active', datetime('now'), datetime('now'));
 
       INSERT OR IGNORE INTO departments (id, company_id, name, description, created_at, updated_at)
       VALUES ('dept_eng', 'comp_boring', 'Engineering & Operations', 'Autonomous Software Delivery', datetime('now'), datetime('now'));

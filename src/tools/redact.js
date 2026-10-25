@@ -2,7 +2,7 @@
 
 /**
  * @file src/tools/redact.js
- * @description Secret Redactor & Credential Sanitizer for The Boring Company OS.
+ * @description Secret Redactor & Credential Sanitizer for The Asas Company OS.
  * Strips API keys, authorization bearer tokens, passwords, and private hashes
  * from logs, tool outputs, error traces, and persisted database payloads.
  */

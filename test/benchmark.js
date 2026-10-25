@@ -3,7 +3,7 @@
 
 /**
  * @file test/benchmark.js
- * @description Empirical Performance Benchmark Harness for The Boring Company OS.
+ * @description Empirical Performance Benchmark Harness for The Asas Company OS.
  * Quantitatively measures runtime latencies (p50, p95, p99) under load
  * to provide [MEASURED] empirical evidence instead of uncalibrated claims.
  */
@@ -29,7 +29,7 @@ function percentile(arr, p) {
 function runBenchmark() {
   console.log(`
 ╔══════════════════════════════════════════════════════════════════════════════════╗
-║               🏢 THE BORING COMPANY — EMPIRICAL BENCHMARK HARNESS                ║
+║               🏛️ THE ASAS COMPANY — EMPIRICAL BENCHMARK HARNESS                 ║
 ║           [MEASURED] Runtime Performance, Latency & Throughput Audit             ║
 ╚══════════════════════════════════════════════════════════════════════════════════╝
 `);

@@ -2,7 +2,7 @@
 
 /**
  * @file src/engine/pipeline.js
- * @description Autonomous Task Execution Pipeline for The Boring Company OS.
+ * @description Autonomous Task Execution Pipeline for The Asas Company OS.
  * Orchestrates the full lifecycle:
  * 1. Plan & Gate (Task creation, idempotency check, relational ledger persistence)
  * 2. Recon & Context Modeling (Workspace file & rule inspection)
@@ -186,7 +186,7 @@ class ExecutionPipeline {
     }
 
     // Step 4: Multi-turn Agent Loop with Tool Dispatch
-    const systemPrompt = `You are the Lead Software Engineer at The Boring Company autonomous engineering system.
+    const systemPrompt = `You are the Lead Software Engineer at The Asas Company autonomous engineering system.
 You are tasked with executing an autonomous engineering mission against a real codebase.
 You have access to safe tools within the workspace:
 - readFile(path): Read existing files.
@@ -520,7 +520,7 @@ Please diagnose the defect, inspect the affected files, and apply a minimal fix.
     }
 
     const content = `[CONTEXT_CLEARED / SMART_ZONE_PRESERVED]
-You are executing a focused ticket within The Boring Company Autonomous Engineering Enterprise OS.
+You are executing a focused ticket within The Asas Company Autonomous Engineering Enterprise OS.
 All past conversational turns and extraneous tool outputs have been cleared to preserve the 150k-token Smart Zone.
 
 Ticket: ${title}

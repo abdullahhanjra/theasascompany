@@ -131,7 +131,7 @@ describe('Tier 1: Routing Engine & Multi-Scale Categorization & Context Hygiene'
   test('Test 10 [F10]: formatRoute formats high-contrast terminal representation', () => {
     const res = router.route('Fix checkout bug');
     const formatted = router.formatRoute(res);
-    assert.ok(formatted.includes('THE BORING COMPANY'));
+    assert.ok(formatted.includes('THE ASAS COMPANY'));
     assert.ok(formatted.includes('Classification:'));
     assert.ok(formatted.includes('Assigned Leadership:'));
     assert.ok(formatted.includes('Disciplined Execution Path:'));

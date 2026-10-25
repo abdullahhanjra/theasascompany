@@ -1,11 +1,12 @@
 {
-  "name": "theboringcompany",
+  "name": "theasascompany",
   "version": "1.2.0",
   "description": "Stop babysitting chatbots. Run a real AI software company in your terminal. 72 specialists that plan, write, and prove code passes your tests before shipping. Pure Node.js.",
   "main": "cli.js",
   "bin": {
     "boss": "./cli.js",
-    "boring-company": "./cli.js",
+    "asas": "./cli.js",
+    "theasascompany": "./cli.js",
     "theboringcompany": "./cli.js"
   },
   "scripts": {

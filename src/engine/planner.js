@@ -3,7 +3,7 @@
 /**
  * @file src/engine/planner.js
  * @description Autonomous Sprint Planner & Relational DAG Sequencer
- * for The Boring Company Autonomous Engineering Enterprise OS.
+ * for The Asas Company Autonomous Engineering Enterprise OS.
  *
  * Responsibilities:
  * 1. Takes Executive Council decisions and translates them into an acyclic topological DAG.
@@ -157,7 +157,7 @@ class AutonomousPlanner {
     const lines = [
       '',
       border,
-      `\x1b[1m\x1b[32m🚀  THE BORING COMPANY — AUTONOMOUS SPRINT FLIGHT BOARD\x1b[0m`,
+      `\x1b[1m\x1b[32m🏛️  THE ASAS COMPANY — AUTONOMOUS SPRINT FLIGHT BOARD\x1b[0m`,
       `\x1b[90mTarget Objective:\x1b[0m \x1b[1m"${goal}"\x1b[0m`,
       border,
       ''

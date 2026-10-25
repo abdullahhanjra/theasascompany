@@ -2,7 +2,7 @@
 
 /**
  * @file src/providers/base.js
- * @description Abstract base model provider for The Boring Company OS.
+ * @description Abstract base model provider for The Asas Company OS.
  * Enforces unified contract, token tracking, timeouts, and error classification.
  */
 

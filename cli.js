@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * 🏢 The Boring Company — Autonomous Multi-Agent Dispatch CLI
+ * 🏛️ The Asas Company — Autonomous Multi-Agent Dispatch CLI
  * Real Autonomous Engineering Enterprise OS & Multi-Agent Runtime Framework.
  * Dispatches missions through the 6-Phase Engineering Loop, Controlled Workspace,
  * Model Providers, SQLite Relational Ledger, and the Trustworthy Reality Gate.
@@ -198,7 +198,7 @@ function printDepartments() {
 
 function printHelp() {
   console.log(`
-\x1b[1m\x1b[32mThe Boring Company — Autonomous AI Enterprise Dispatch CLI\x1b[0m
+\x1b[1m\x1b[32mThe Asas Company — Autonomous AI Enterprise Dispatch CLI\x1b[0m
 
 Usage:
   node cli.js [options]
@@ -231,7 +231,7 @@ Options:
 function printBanner() {
   console.log(`
 \x1b[1m\x1b[36m╔══════════════════════════════════════════════════════════════════════════════════╗
-║               🏢 THE BORING COMPANY — MULTI-AGENT OPERATING SYSTEM                ║
+║               🏛️ THE ASAS COMPANY — MULTI-AGENT OPERATING SYSTEM                 ║
 ║           Autonomous Engineering Enterprise • Reality Gate Interlock             ║
 ╚══════════════════════════════════════════════════════════════════════════════════╝\x1b[0m
 `);
@@ -245,7 +245,7 @@ To give the AI team a mission, just type:
   \x1b[36mboss "Your task here"\x1b[0m
   \x1b[36mboss meet "Your architecture or feature goal"\x1b[0m   (Autonomous Board Meeting)
   \x1b[36mboss ask "Your question or bug"\x1b[0m                 (Instant <15ms smart route)
-  \x1b[36mnpx theboringcompany meet "Your goal"\x1b[0m
+  \x1b[36mnpx theasascompany meet "Your goal"\x1b[0m
 
 Examples:
   boss meet "Build OAuth2 login with Google and GitHub"

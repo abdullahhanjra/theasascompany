@@ -1,16 +1,16 @@
 <div align="center">
 
-<a href="https://github.com/abdullahhanjraa/theboringcompany">
-  <img src="docs/assets/banner.svg" alt="The Boring Company Banner" width="100%">
+<a href="https://github.com/abdullahhanjraa/theasascompany">
+  <img src="docs/assets/banner.svg" alt="The Asas Company Banner" width="100%">
 </a>
 
 <br/><br/>
 
-<a href="https://github.com/abdullahhanjraa/theboringcompany">
-  <img src="docs/assets/logo.png" alt="The Boring Company Logo" width="130" height="130">
+<a href="https://github.com/abdullahhanjraa/theasascompany">
+  <img src="docs/assets/logo.png" alt="The Asas Company Logo" width="130" height="130">
 </a>
 
-# 🏢 The Boring Company
+# 🏛️ The Asas Company
 ### **Stop babysitting chatbots that lie to your face.**
 ### **Run an entire autonomous software company in your terminal.**
 
@@ -18,7 +18,7 @@
 
 <br/>
 
-[![Reality Gate CI](https://github.com/abdullahhanjraa/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjraa/theboringcompany/actions)
+[![Reality Gate CI](https://github.com/abdullahhanjraa/theasascompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjraa/theasascompany/actions)
 [![Reality Gate Tests](https://img.shields.io/badge/Reality%20Gate-97%20passing-22c55e.svg?style=flat-square)](test/)
 [![Specialist Fleet](https://img.shields.io/badge/Specialist%20Team-72%20Agents-8b5cf6.svg?style=flat-square)](#-meet-the-6-departments)
 [![Zero Dependencies](https://img.shields.io/badge/External%20Packages-0%20needed-3b82f6.svg?style=flat-square)](package.json)
@@ -56,7 +56,7 @@ Because a solo chatbot is like an **eager intern working alone at 2 AM with no s
 
 ## 🚀 The Hero Solution: You Are The Founder. We Are Your Company.
 
-**The Boring Company** replaces the lonely chatbot with a **complete, disciplined virtual software company**.
+**The Asas Company** replaces the lonely chatbot with a **complete, disciplined virtual software company**.
 
 You sit in the Founder's chair. You give your team a goal in plain English. Your team of **72 specialized AI teammates across 6 departments** takes over:
 
@@ -146,7 +146,7 @@ boss meet "Should we use PostgreSQL or SQLite for storing user sessions?"
 
 ```text
 ══════════════════════════════════════════════════════════════════════════════════
-🏢  THE BORING COMPANY — EXECUTIVE COUNCIL CHAMBERS
+🏛️  THE ASAS COMPANY — EXECUTIVE COUNCIL CHAMBERS
 Session Objective: "Should we use PostgreSQL or SQLite for storing user sessions?"
 Consensus: UNANIMOUS (MOTION PASSED) | Track: Track B (Feature Sprint) | Latency: 37ms
 ══════════════════════════════════════════════════════════════════════════════════
@@ -196,13 +196,13 @@ You don't need to install 50 npm packages. This runs on **pure Node.js** (versio
 ### 1. Instant Run Without Installing (`npx`)
 Run inside **any project on your computer**:
 ```bash
-npx theboringcompany meet "Build social login with Google and GitHub"
+npx theasascompany meet "Build social login with Google and GitHub"
 ```
 
 ### 2. Install Once, Use Everywhere (`boss`)
 Install globally:
 ```bash
-npm install -g theboringcompany
+npm install -g theasascompany
 ```
 
 Now, in **any folder anywhere on your computer**, just type:
@@ -224,13 +224,13 @@ boss --plan "Build user authentication system"
 Export all 72 specialist agent definitions directly into your favorite editor:
 ```bash
 # Export into Cursor (.cursor/rules/)
-npx theboringcompany install --tool cursor
+npx theasascompany install --tool cursor
 
 # Export into Claude Code (~/.claude/agents/)
-npx theboringcompany install --tool claude
+npx theasascompany install --tool claude
 
 # Export into Antigravity (.agents/)
-npx theboringcompany install --tool antigravity
+npx theasascompany install --tool antigravity
 ```
 Now type `/boss "your task"` directly inside your editor's chat window!
 
@@ -241,7 +241,7 @@ Now type `/boss "your task"` directly inside your editor's chat window!
 
 Every other AI tool uses **"narrative confirmation"** — the AI says it works, so the tool claims victory.
 
-The Boring Company uses **The Reality Gate Interlock**:
+The Asas Company uses **The Reality Gate Interlock**:
 
 ```
                        ┌─────────────────────────────────┐
@@ -302,7 +302,7 @@ Our 72 specialists work in 6 disciplined departments:
 <a id="comparison"></a>
 ## 📊 Why This Beats Every Other AI Tool
 
-| Feature | Standard Chatbots (ChatGPT / Copilot) | AI Coding Agents (Devin / Cursor Agent) | 🏢 **The Boring Company** |
+| Feature | Standard Chatbots (ChatGPT / Copilot) | AI Coding Agents (Devin / Cursor Agent) | 🏛️ **The Asas Company** |
 | :--- | :---: | :---: | :---: |
 | **Verification Method** | None. It guesses and promises. | Basic commands, often hallucinates passing tests. | **Physical Reality Gate: Exit code 0 ($? === 0) on your actual machine.** |
 | **Prevents Cheating** | ❌ No | ❌ No (can modify or delete test files) | **✔ Anti-Tamper SHA-256 fingerprinting catches cheating.** |
@@ -317,7 +317,7 @@ Our 72 specialists work in 6 disciplined departments:
 <a id="models"></a>
 ## 🤖 Works With Any AI Provider (Or 100% Offline Free)
 
-You can run The Boring Company with whichever AI engine you prefer:
+You can run The Asas Company with whichever AI engine you prefer:
 
 | Provider | Supported Models | Best For |
 | :--- | :--- | :--- |
@@ -341,5 +341,5 @@ Distributed under the **MIT License**. Free for personal and commercial use fore
 <br/>
 
 <div align="center">
-  <b>Welcome to The Boring Company. Be The Founder, and let your AI company build the future. ☕</b>
+  <b>Welcome to The Asas Company. Be The Founder, and let your AI company build the future. ☕</b>
 </div>
