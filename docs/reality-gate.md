@@ -22,7 +22,7 @@ Why does this happen? Standard AI models are designed to generate text that *sou
 
 ## 🔒 How The Reality Gate Protects You
 
-The **Reality Gate** is an automated safety check built into The Boring Company. Angela Martin (our Head of QA) never takes an AI's word for it. She executes your computer's real test runner directly on your machine.
+The **Reality Gate** is an automated safety check built into The Asas Company. Angela Martin (our Head of QA) never takes an AI's word for it. She executes your computer's real test runner directly on your machine.
 
 If your computer reports even one failure, the code is rejected immediately.
 
@@ -58,7 +58,7 @@ flowchart TD
 
 When a test fails, standard chatbots often panic, guess randomly, and make the code worse. 
 
-The Boring Company never guesses. When tests fail, the team halts and chooses one of four calm, proven steps:
+The Asas Company never guesses. When tests fail, the team halts and chooses one of four calm, proven steps:
 
 | Step | What It Means | Why It Helps |
 | :--- | :--- | :--- |

@@ -1,6 +1,6 @@
 # Security Policy
 
-The Boring Company OS is designed for enterprise autonomy where AI agents execute code, manage files, and interact with operating system environments. Because agents possess autonomous execution capabilities, security and fail-closed isolation are foundational requirements.
+The Asas Company OS is designed for enterprise autonomy where AI agents execute code, manage files, and interact with operating system environments. Because agents possess autonomous execution capabilities, security and fail-closed isolation are foundational requirements.
 
 ---
 
@@ -27,7 +27,7 @@ The Boring Company OS is designed for enterprise autonomy where AI agents execut
 
 ## 🚨 Reporting a Vulnerability
 
-If you discover a security vulnerability within The Boring Company OS, please do **NOT** open a public issue.
+If you discover a security vulnerability within The Asas Company OS, please do **NOT** open a public issue.
 
 Instead, please send an advisory email directly to:
 

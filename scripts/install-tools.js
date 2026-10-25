@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * 🏢 The Boring Company — Universal Multi-Tool Agent Installer
+ * 🏢 The Asas Company — Universal Multi-Tool Agent Installer
  * Zero-dependency installer that exports all 72 specialist agents into
  * Claude Code, Cursor (.cursor/rules/), Antigravity, and Windsurf.
  */
@@ -36,7 +36,7 @@ for (let i = 0; i < args.length; i++) {
 
 function printHelp() {
   console.log(`
-\x1b[1m\x1b[32mThe Boring Company — Universal Multi-Tool Agent Installer\x1b[0m
+\x1b[1m\x1b[32mThe Asas Company — Universal Multi-Tool Agent Installer\x1b[0m
 
 Usage:
   node scripts/install-tools.js [options]
@@ -245,7 +245,7 @@ function main() {
   const skills = loadAllSkills();
 
   if (listOnly) {
-    console.log(`\n\x1b[1m\x1b[32m🏢 The Boring Company — 72 Specialist Fleet Roster\x1b[0m\n`);
+    console.log(`\n\x1b[1m\x1b[32m🏢 The Asas Company — 72 Specialist Fleet Roster\x1b[0m\n`);
     console.log(`Total active agents discovered: \x1b[1m${agents.length}\x1b[0m\n`);
     agents.forEach((a, idx) => {
       console.log(`  ${(idx + 1).toString().padStart(2, ' ')}. \x1b[36m${a.id.padEnd(30, ' ')}\x1b[0m ${a.description}`);
@@ -253,7 +253,7 @@ function main() {
     return;
   }
 
-  console.log(`\x1b[1m\x1b[32m🏢 The Boring Company — Multi-Tool Agent Installer\x1b[0m`);
+  console.log(`\x1b[1m\x1b[32m🏢 The Asas Company — Multi-Tool Agent Installer\x1b[0m`);
   console.log(`Discovered \x1b[1m${agents.length}\x1b[0m valid specialist agents and \x1b[1m${skills.length}\x1b[0m skills.`);
 
   if (dryRun) {

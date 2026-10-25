@@ -1,6 +1,6 @@
-# Contributing to The Boring Company OS
+# Contributing to The Asas Company OS
 
-Thank you for your interest in contributing to **The Boring Company OS**. We welcome contributions from engineers, researchers, and builders who share our philosophy:
+Thank you for your interest in contributing to **The Asas Company OS**. We welcome contributions from engineers, researchers, and builders who share our philosophy:
 
 > **"Build and operate software as a production engineering system, not a code generation tool."**
 
@@ -17,12 +17,12 @@ Before submitting any code, familiarize yourself with our core tenets:
 
 ## 🛠️ Development Setup
 
-The Boring Company OS is intentionally lightweight and has **zero external production dependencies**. It runs natively on Node.js 18+.
+The Asas Company OS is intentionally lightweight and has **zero external production dependencies**. It runs natively on Node.js 18+.
 
 ```bash
 # 1. Fork the repo and clone your fork
-git clone https://github.com/<your-username>/theboringcompany.git
-cd theboringcompany
+git clone https://github.com/<your-username>/theasascompany.git
+cd theasascompany
 
 # 2. Verify your environment with the Reality Gate test suite
 npm test

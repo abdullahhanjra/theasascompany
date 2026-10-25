@@ -7,7 +7,7 @@
 
 ## ⚡ Executive Summary
 
-The Boring Company OS operates under a **sub-15ms p99 execution budget** for all local orchestration, verification, and memory retrieval paths. By eliminating runtime dependencies and relying on native standard libraries, the system introduces near-zero overhead to autonomous agent operations.
+The Asas Company OS operates under a **sub-15ms p99 execution budget** for all local orchestration, verification, and memory retrieval paths. By eliminating runtime dependencies and relying on native standard libraries, the system introduces near-zero overhead to autonomous agent operations.
 
 ```
 ┌───────────────────────────────────────┬────────────┬───────────┬───────────┐

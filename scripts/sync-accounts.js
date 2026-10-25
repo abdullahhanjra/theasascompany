@@ -2,7 +2,7 @@
 'use strict';
 
 /**
- * 🏢 The Boring Company — Dual-Account Repository Synchronizer
+ * 🏢 The Asas Company — Dual-Account Repository Synchronizer
  * Automatically executes Reality Gate tests and pushes identical commits,
  * descriptions, and discoverability topics to both official accounts:
  * 1. abdullahhanjraa/theboringcompany
@@ -69,7 +69,7 @@ async function updateMetadata(token, repoOwner, repoName) {
 
 async function main() {
   console.log(`\n\x1b[1m\x1b[36m╔══════════════════════════════════════════════════════════════════════════════════╗\x1b[0m`);
-  console.log(`\x1b[1m\x1b[36m║           🏢 THE BORING COMPANY — DUAL REPOSITORY SYNCHRONIZER                  ║\x1b[0m`);
+  console.log(`\x1b[1m\x1b[36m║           🏢 THE ASAS COMPANY — DUAL REPOSITORY SYNCHRONIZER                  ║\x1b[0m`);
   console.log(`\x1b[1m\x1b[36m╚══════════════════════════════════════════════════════════════════════════════════╝\x1b[0m\n`);
 
   if (!TOKEN_A && !TOKEN_B) {
@@ -92,7 +92,7 @@ async function main() {
   if (TOKEN_A) {
     console.log(`\x1b[90m[STEP 2/3]\x1b[0m Synchronizing commits to abdullahhanjraa/theboringcompany...`);
     try {
-      const authUrlA = `https://${TOKEN_A}@github.com/abdullahhanjraa/theboringcompany.git`;
+      const authUrlA = `https://${TOKEN_A}@github.com/abdullahhanjraa/theasascompany.git`;
       execSync(`git push "${authUrlA}" main`, { stdio: 'pipe' });
       console.log(`\x1b[32m✔ Account 1 (abdullahhanjraa): Commits pushed cleanly.\x1b[0m`);
       await updateMetadata(TOKEN_A, 'abdullahhanjraa', 'theboringcompany');
@@ -106,7 +106,7 @@ async function main() {
   if (TOKEN_B) {
     console.log(`\x1b[90m[STEP 3/3]\x1b[0m Synchronizing commits to abdullahhanjra153/theboringcompany...`);
     try {
-      const authUrlB = `https://${TOKEN_B}@github.com/abdullahhanjra153/theboringcompany.git`;
+      const authUrlB = `https://${TOKEN_B}@github.com/abdullahhanjra153/theasascompany.git`;
       execSync(`git push "${authUrlB}" main`, { stdio: 'pipe' });
       console.log(`\x1b[32m✔ Account 2 (abdullahhanjra153): Commits pushed cleanly.\x1b[0m`);
       await updateMetadata(TOKEN_B, 'abdullahhanjra153', 'theboringcompany');

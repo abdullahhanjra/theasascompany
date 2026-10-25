@@ -1,12 +1,12 @@
-# 🗺️ The Boring Company OS — Engineering Roadmap
+# 🗺️ The Asas Company OS — Engineering Roadmap
 
-This roadmap outlines the milestones, capabilities, and architectural trajectory of **The Boring Company OS**.
+This roadmap outlines the milestones, capabilities, and architectural trajectory of **The Asas Company OS**.
 
 ---
 
 ## 📍 Version 1.0.0 — The Enterprise Autonomous Foundation (Current)
 
-- [x] **Organizational Fleet**: 67 specialist agent definitions structured across Executive, Engineering, QA, Security, and Operations.
+- [x] **Organizational Fleet**: 72 specialist agent definitions structured across Executive, Engineering, QA, Security, and Operations.
 - [x] **Reality Gate Interlock**: Machine-grounded proof engine enforcing zero fabricated task completions.
 - [x] **Relational Operating Ledger**: SQLite enterprise relational schema (45+ tables) tracking leases, tokens, and audit events.
 - [x] **3-Track Velocity Engine**: Dynamic task routing for Rapid Fixes (<60s), Feature Sprints (2-3m), and Core Architecture (5-8m).
@@ -20,7 +20,7 @@ This roadmap outlines the milestones, capabilities, and architectural trajectory
 ## 🚀 Version 1.1.0 — Pluggable Extensibility & Local Vector Memory (Q1 2027)
 
 - [ ] **Agent Manifest JSON Schema (`agent.schema.json`)**: Automated schema validation in CI and IDE autocomplete.
-- [ ] **Pluggable Agent Directory**: Ability to load external custom agents via `BORING_AGENTS_DIR` without modifying core files.
+- [ ] **Pluggable Agent Directory**: Ability to load external custom agents via `ASAS_AGENTS_DIR` without modifying core files.
 - [ ] **ChromaDB Semantic Memory Bridge**: Local vector retrieval pipeline for agent experience compounding and fast post-mortem lookup.
 - [ ] **Lightweight Web Mission Control**: Embedded local dashboard for inspecting real-time agent mailbox state and SQLite ledger metrics.
 - [ ] **Exportable Executive Clarity Cards**: Export certified mission cards to Markdown, JSON, and Slack/Discord webhooks.

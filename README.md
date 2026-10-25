@@ -10,11 +10,11 @@
   <img src="docs/assets/logo.png" alt="The Asas Company Logo" width="130" height="130">
 </a>
 
-# 🏛️ The Asas Company
+# 🏛️ The Asas Company (شركة الأساس)
 ### **Stop babysitting chatbots that lie to your face.**
 ### **Run an entire autonomous software company in your terminal.**
 
-*72 specialized AI teammates across 6 departments who debate features, write clean code under 50 lines, and prove every fix passes your real tests before shipping. Pure Node.js, zero external packages, 100% private.*
+*Asas (أَسَاس — "The Unshakeable Foundation"): 72 specialized AI teammates across 6 departments who debate features, write clean code under 50 lines, and prove every fix passes your real tests before shipping. Pure Node.js, zero external packages, 100% private.*
 
 <br/>
 

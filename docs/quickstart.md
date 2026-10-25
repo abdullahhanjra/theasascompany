@@ -1,6 +1,6 @@
 # 🚀 Developer Quickstart Guide
 
-This guide walks you through cloning, configuring, and executing missions with **The Boring Company OS**.
+This guide walks you through cloning, configuring, and executing missions with **The Asas Company OS**.
 
 ---
 
@@ -18,20 +18,20 @@ The framework requires zero external dependencies from npm. Clone and verify imm
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/youtubrabdullah1626/theboringcompany.git
+git clone https://github.com/abdullahhanjraa/theasascompany.git
 
 # 2. Enter workspace
-cd theboringcompany
+cd theasascompany
 
-# 3. Verify the system against the Reality Gate (20 Automated Tests)
+# 3. Verify the system against the Reality Gate (97 Automated Tests across 6 Suites)
 npm test
 ```
 
 You should see output similar to:
 ```
-# tests 20
-# suites 0
-# pass 20
+# tests 97
+# suites 6
+# pass 97
 # fail 0
 # duration_ms 1740
 ```
@@ -97,7 +97,7 @@ node cli.js --provider test --task "Run offline hermetic verification"
 
 ## 🎯 Dispatching Custom Missions on Target Repositories
 
-You can point The Boring Company OS at any existing repository on your machine:
+You can point The Asas Company OS at any existing repository on your machine:
 
 ```bash
 # Dispatch against an external codebase
@@ -123,13 +123,13 @@ npm run benchmark
 
 | Variable | Description | Default |
 |---|---|---|
-| `BORING_PROVIDER` | Default AI provider (`anthropic`, `openai`, `gemini`, `ollama`, `test`) | `auto` |
-| `BORING_MODEL` | Default model identifier | Provider default |
+| `ASAS_PROVIDER` | Default AI provider (`anthropic`, `openai`, `gemini`, `ollama`, `test`) | `auto` |
+| `ASAS_MODEL` | Default model identifier | Provider default |
 | `ANTHROPIC_API_KEY` | Anthropic API key | None |
 | `OPENAI_API_KEY` | OpenAI API key | None |
 | `GEMINI_API_KEY` | Google Gemini API key | None |
 | `OLLAMA_BASE_URL` | Ollama local endpoint | `http://127.0.0.1:11434` |
-| `BORING_COMPANY_DB` | Path to the SQLite operating ledger | `./database/company.db` |
+| `ASAS_COMPANY_DB` | Path to the SQLite operating ledger | `./database/company.db` |
 
 ---
 

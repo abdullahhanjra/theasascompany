@@ -1,4 +1,4 @@
-# 🏛️ The Boring Company: Executive Decision Log
+# 🏛️ The Asas Company: Executive Decision Log
 
 Chronological register of architectural, product, and engineering decisions certified by the Executive Council.
 

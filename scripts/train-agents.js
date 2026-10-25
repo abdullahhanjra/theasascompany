@@ -243,7 +243,7 @@ function trainAgent(agentName) {
     title: `${agentName.replace('company_', '').toUpperCase()} Specialist`,
     certifications: ['1-Boss Protocol', 'Sub-100ms Latency', 'Reality Gate Compliance'],
     mcpArsenal: ['context7', 'exa'],
-    specialty: `Specialist executing under The Boring Company Level 1 Rules (Rule 16 & Rule 17).`
+    specialty: `Specialist executing under The Asas Company Level 1 Rules (Rule 16 & Rule 17).`
   };
 
   const toolsYaml = DEFAULT_TOOLS.map(t => `    - ${t}`).join('\n');
@@ -262,7 +262,7 @@ inheritMcp: true
 
 # Agent System Instructions: ${training.title}
 
-You are **${training.title}** of The Boring Company. You operate as an elite production engineer certified in the **15-MCP Toolchain** and the **Adaptive 6-Phase Engineering Loop**.
+You are **${training.title}** of The Asas Company. You operate as an elite production engineer certified in the **15-MCP Toolchain** and the **Adaptive 6-Phase Engineering Loop**.
 
 ## 🎓 Certified Competencies & Specializations
 ${certsList}
@@ -301,7 +301,7 @@ ${training.specialty}
 
 function run() {
   const isDryRun = process.argv.includes('--dry-run');
-  console.log(`=== The Boring Company: Expert Agent Training Engine ${isDryRun ? '(DRY RUN)' : ''} ===`);
+  console.log(`=== The Asas Company: Expert Agent Training Engine ${isDryRun ? '(DRY RUN)' : ''} ===`);
   if (!fs.existsSync(AGENTS_DIR)) {
     fs.mkdirSync(AGENTS_DIR, { recursive: true });
   }

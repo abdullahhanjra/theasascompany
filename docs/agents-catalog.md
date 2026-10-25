@@ -2,7 +2,7 @@
 
 > **"An organized software company inside your terminal. Clear roles, zero chaos."**
 
-The Boring Company operates as a complete, disciplined software development company. Instead of one lonely chatbot trying to guess everything, you get **72 specialized AI teammates** organized into 6 focused departments.
+The Asas Company operates as a complete, disciplined software development company. Instead of one lonely chatbot trying to guess everything, you get **72 specialized AI teammates** organized into 6 focused departments.
 
 ---
 
@@ -80,7 +80,7 @@ The Boring Company operates as a complete, disciplined software development comp
 ---
 
 ## 🌐 + 45 Specialist Coders
-Beyond the core leads above, The Boring Company includes specialized domain experts for:
+Beyond the core leads above, The Asas Company includes specialized domain experts for:
 * **Mobile & Cross-Platform:** iOS, Android, React Native, Flutter
 * **Modern Web:** Next.js, React, Tailwind, Vue, Svelte, WebSockets
 * **Cloud & DevOps:** Docker, CI/CD pipelines, GitHub Actions, AWS, Vercel

@@ -4,7 +4,7 @@
 const tokenA = process.env.GITHUB_TOKEN_A || process.env.GITHUB_PERSONAL_ACCESS_TOKEN || '';
 const tokenB = process.env.GITHUB_TOKEN_B || '';
 
-const releaseBody = `# 🏢 The Boring Company OS — Release v1.2.0
+const releaseBody = `# 🏢 The Asas Company OS — Release v1.2.0
 ### Staged Dependency Engine & Task Breaker DAG
 
 ### 🚀 What's New in v1.2.0
@@ -36,7 +36,7 @@ const releaseBody = `# 🏢 The Boring Company OS — Release v1.2.0
 
 async function createRelease(token, owner) {
   try {
-    const res = await fetch(`https://api.github.com/repos/${owner}/theboringcompany/releases`, {
+    const res = await fetch(`https://api.github.com/repos/${owner}/theasascompany/releases`, {
       method: 'POST',
       headers: {
         Authorization: `token ${token}`,

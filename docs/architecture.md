@@ -1,12 +1,12 @@
 # 🏛️ Architecture & System Design
 
-The Boring Company OS is an autonomous software engineering operating system. It translates high-level founder objectives into verified, production-ready code through a distributed multi-agent hierarchy governed by an immutable SQLite ledger and a strict Reality Gate verification protocol.
+The Asas Company OS is an autonomous software engineering operating system. It translates high-level founder objectives into verified, production-ready code through a distributed multi-agent hierarchy governed by an immutable SQLite ledger and a strict Reality Gate verification protocol.
 
 ---
 
 ## 🔄 The 6-Phase Engineering Loop
 
-Every engineering mission executed by The Boring Company OS passes through a deterministic 6-phase lifecycle:
+Every engineering mission executed by The Asas Company OS passes through a deterministic 6-phase lifecycle:
 
 ```
 ALIGN & CLASSIFY ➔ RECON & MODEL ➔ PLAN & GATE ➔ EXECUTE & OBSERVE ➔ VERIFY & PROVE ➔ COMPLETE

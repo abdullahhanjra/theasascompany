@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 scripts/vector_memory.py
-Autonomous Semantic Vector Memory Bridge for The Boring Company OS.
+Autonomous Semantic Vector Memory Bridge for The Asas Company OS.
 
 Features:
 - Dual-mode architecture:

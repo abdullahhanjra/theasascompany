@@ -26,7 +26,7 @@ const CLI_PATH = path.join(ROOT_DIR, 'cli.js');
 async function runHostileAcceptanceSuite() {
   console.log(`
 ╔══════════════════════════════════════════════════════════════════════════════════╗
-║        🏢 THE BORING COMPANY — PHASE 3 HOSTILE ACCEPTANCE TEST HARNESS           ║
+║        🏢 THE ASAS COMPANY — PHASE 3 HOSTILE ACCEPTANCE TEST HARNESS           ║
 ║       Hostile 10-Step Verification Protocol • Zero Assumptions • Machine Reality   ║
 ╚══════════════════════════════════════════════════════════════════════════════════╝
 `);
