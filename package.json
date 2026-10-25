@@ -1,7 +1,7 @@
 {
   "name": "theasascompany",
   "version": "1.2.0",
-  "description": "Stop babysitting chatbots. Run a real AI software company in your terminal. 72 specialists that plan, write, and prove code passes your tests before shipping. Pure Node.js.",
+  "description": "Your AI software company in the terminal. 72 specialists plan, build, and prove every fix works on your real machine — before anything ships. Pure Node.js, zero extra packages.",
   "main": "cli.js",
   "bin": {
     "boss": "./cli.js",
