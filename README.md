@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://github.com/abdullahhanjra153/theboringcompany">
+<a href="https://github.com/abdullahhanjraa/theboringcompany">
   <img src="docs/assets/banner.svg" alt="The Boring Company Banner" width="100%">
 </a>
 
@@ -14,7 +14,7 @@
 
 <br/>
 
-[![Reality Gate CI](https://github.com/abdullahhanjra153/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjra153/theboringcompany/actions)
+[![Reality Gate CI](https://github.com/abdullahhanjraa/theboringcompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjraa/theboringcompany/actions)
 [![Reality Gate Tests](https://img.shields.io/badge/Reality%20Gate-97%20passing-22c55e.svg?style=flat-square)](test/)
 [![Specialist Fleet](https://img.shields.io/badge/Specialist%20Team-72%20Agents-8b5cf6.svg?style=flat-square)](#-meet-the-6-departments)
 [![Zero Dependencies](https://img.shields.io/badge/External%20Packages-0%20needed-3b82f6.svg?style=flat-square)](package.json)
@@ -331,7 +331,7 @@ Distributed under the **MIT License**. Free for personal and commercial use fore
 
 ### 👤 Creator & Maintainer
 * **Abdullah Hanjra** — Software Architect & Systems Builder
-* **GitHub**: [@abdullahhanjra153](https://github.com/abdullahhanjra153) • [@abdullahhanjraa](https://github.com/abdullahhanjraa)
+* **GitHub**: [@abdullahhanjraa](https://github.com/abdullahhanjraa)
 * **LinkedIn**: [linkedin.com/in/abdullahhanjracodes](https://www.linkedin.com/in/abdullahhanjracodes/)
 
 <br/>
