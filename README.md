@@ -330,7 +330,7 @@ You can run The Boring Company with whichever AI engine you prefer:
 Distributed under the **MIT License**. Free for personal and commercial use forever.
 
 ### 👤 Creator & Maintainer
-* **Abdullah Hanjra** — Software Architect & Systems Builder
+* **Abdullah Hanjra** — AI Engineer, Software Architect & Systems Builder
 * **GitHub**: [@abdullahhanjraa](https://github.com/abdullahhanjraa)
 * **LinkedIn**: [linkedin.com/in/abdullahhanjracodes](https://www.linkedin.com/in/abdullahhanjracodes/)
 
