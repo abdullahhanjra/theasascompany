@@ -10,7 +10,7 @@
   <img src="docs/assets/logo.png" alt="The Asas Company Logo" width="130" height="130">
 </a>
 
-# 🏛️ The Asas Company (شركة الأساس)
+# 🏛️ The Asas Company
 ### **Stop babysitting chatbots that lie to your face.**
 ### **Run an entire autonomous software company in your terminal.**
 
@@ -57,9 +57,9 @@ Because a solo chatbot is like an **eager intern working alone at 2 AM with zero
 
 ## 🚀 The Hero Solution: You Are The Founder. We Are Your Company.
 
-**The Asas Company (شركة الأساس)** replaces the lonely chatbot with a **complete, disciplined virtual software company**.
+**The Asas Company** replaces the lonely chatbot with a **complete, disciplined virtual software company**.
 
-> **Why Asas?** *Asas* (أساس) means *"The Foundation"* in Arabic and Urdu. It represents the unshakeable engineering foundation you need to build great software without anxiety or endless babysitting.
+> **Why Asas?** *Asas* means *"The Foundation"* — representing the unshakeable engineering foundation you need to build great software without anxiety or endless babysitting.
 
 You sit in the Founder's chair. You give your team a goal in plain, everyday English. Your team of **72 specialized AI teammates across 6 helpful departments** takes over:
 
