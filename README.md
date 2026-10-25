@@ -1,12 +1,12 @@
 <div align="center">
 
-<a href="https://github.com/abdullahhanjraa/theasascompany">
+<a href="https://github.com/abdullahhanjra/theasascompany">
   <img src="docs/assets/banner.svg" alt="The Asas Company Banner" width="100%">
 </a>
 
 <br/><br/>
 
-<a href="https://github.com/abdullahhanjraa/theasascompany">
+<a href="https://github.com/abdullahhanjra/theasascompany">
   <img src="docs/assets/logo.png" alt="The Asas Company Logo" width="130" height="130">
 </a>
 
@@ -18,7 +18,7 @@
 
 <br/>
 
-[![Reality Gate CI](https://github.com/abdullahhanjraa/theasascompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjraa/theasascompany/actions)
+[![Reality Gate CI](https://github.com/abdullahhanjra/theasascompany/actions/workflows/ci.yml/badge.svg)](https://github.com/abdullahhanjra/theasascompany/actions)
 [![Tests](https://img.shields.io/badge/Reality%20Gate-97%20passing-22c55e.svg?style=flat-square)](test/)
 [![Team Size](https://img.shields.io/badge/Specialists-72%20Agents-8b5cf6.svg?style=flat-square)](#departments)
 [![Zero Deps](https://img.shields.io/badge/Extra%20Packages-0-3b82f6.svg?style=flat-square)](package.json)
