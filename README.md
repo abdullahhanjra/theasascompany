@@ -6,6 +6,10 @@
 
 <br/><br/>
 
+<a href="https://github.com/abdullahhanjraa/theboringcompany">
+  <img src="docs/assets/logo.png" alt="The Boring Company Logo" width="130" height="130">
+</a>
+
 # 🏢 The Boring Company
 ### **Stop babysitting chatbots that lie to your face.**
 ### **Run an entire autonomous software company in your terminal.**
